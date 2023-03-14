@@ -47,3 +47,5 @@ project/**/metals.sbt
 
 target
 /project/project/
+
+.DS_STORE
