@@ -28,7 +28,7 @@ jobs:
           echo $PGP_SECRET | base64 --decode | gpg --batch --import
           export GPG_TTY=$(tty)
           echo "Releasing version $VERSION Sonatype as snapshot"
-          sbt "clean" "project scalaModels" "set isSnapshot := true" "release $VERSION"
+          sbt "clean" "project scalaModels" "set isSnapshot := true" "release release-version $VERSION"
         env:
           PGP_SECRET: ${{ secrets.PGP_SECRET }}
           PGP_PASSPHRASE: ${{ secrets.PGP_PASSPHRASE }}
