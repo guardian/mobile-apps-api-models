@@ -8,7 +8,14 @@ enum RowType {
 
 enum CardType {
     ARTICLE,
-    COMPACT
+    PODCAST,
+    VIDEO
+}
+
+enum MediaType {
+    VIDEO,
+    AUDIO,
+    IMAGE
 }
 
 struct Palette {
@@ -39,35 +46,54 @@ struct Links {
 struct Image {
     1: optional string altText
     2: optional string caption
-    3: optional string cleanCaption
-    4: optional string cleanCredit
-    5: optional string credit
-    6: required i32 height
-    7: required string orientation
-    8: required string urlTemplate
-    9: required i32 width
+    3: optional string credit
+    4: required i32 height
+    5: required string orientation
+    6: required string urlTemplate
+    7: required i32 width
 }
 
-struct BlueprintArticle {
-    1: optional string byline
-    2: optional list<Image> images
-    3: required Links links
-    4: optional string kicker
-    5: optional string title
-    6: optional string trailText
+struct Article {
+    1: required string id
+    2: optional string byline
+    3: optional list<Image> images
+    4: required Links links
+    5: optional string kicker
+    6: required string title
+    7: optional string trailText
+    8: optional i16 rating
+    9: optional i32 commentCount
+    10: optional string publishedDate
+    11: optional string lastUpdatedDate
+    12: optional MediaType mediaType
+    13: optional i32 durationInSeconds
+    14: optional Image profileImage
+    15: optional list<LiveEvent> events
+    16: optional Palette paletteLight
+    17: optional Palette paletteDark
 }
 
-struct BlueprintCard {
-    1: required list<BlueprintArticle> articles
-    2: optional Palette palette
+struct LiveEvent {
+    1: required string id
+    2: required string title
+    3: required string body
+    4: optional string publishedDate
+    5: optional string lastUpdatedDate
+}
+
+struct Card {
+    1: required list<Article> articles
+    2: optional Palette paletteLight
     3: optional Palette paletteDark
     4: required CardType type
-    5: optional list<BlueprintArticle> sublinks
+    5: optional bool boosted
+    6: optional bool compact
+    7: optional list<Article> sublinks
 }
 
-struct BlueprintColumn {
-    1: required list<BlueprintCard> cards
-    2: optional Palette palette
+struct Column {
+    1: required list<Card> cards
+    2: optional Palette paletteLight
     3: optional Palette paletteDark
     4: required i32 preferredWidth
 }
@@ -76,19 +102,19 @@ struct Thrasher {
     1: required string uri
 }
 
-struct BlueprintRow {
-    1: optional list<BlueprintColumn> columns
-    2: optional Palette palette
+struct Row {
+    1: optional list<Column> columns
+    2: optional Palette paletteLight
     3: optional Palette paletteDark
     4: optional i32 preferredNumberOfColumns
     5: optional Thrasher thrasher
     6: required RowType type
 }
 
-struct BlueprintCollection {
+struct Collection {
     1: required string id
-    2: optional Palette palette
+    2: optional Palette paletteLight
     3: optional Palette paletteDark
-    4: required list<BlueprintRow> rows
+    4: required list<Row> rows
     5: optional string title
 }
