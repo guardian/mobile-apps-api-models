@@ -20,3 +20,4 @@ You must then:
 - The tag should ideally have format "vX.X.X-SNAPSHOT" (the workflow will account for a missing `v` or `-SNAPSHOT`).
 - Double-check that the "Set as pre-release" box is ticket.
 - To automatically release the snapshot to sonatype, click the "Publish release" button.
+- You should be able to find the snapshot release [here](https://oss.sonatype.org/content/repositories/snapshots/com/gu/)
