@@ -1,0 +1,15 @@
+name: 'Generate native models'
+description: 'Generate native models from thrift schema'
+inputs:
+  personal-access-token:
+    description: 'Personal access token used to interact with repo'
+    required: true
+  branch-name:
+    description: 'Branch to commit generated models to'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.personal-access-token }}
+    - ${{ inputs.branch-name }}
