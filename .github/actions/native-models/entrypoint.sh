@@ -36,7 +36,6 @@ git add Sources/Collection/*.swift
 # --allow-empty because we don't want to fail if model is exactly the same (?)
 git commit --allow-empty -m "Update swift models"
 
-#git log -n 2
 git push origin HEAD
 
 echo "Finished!"
