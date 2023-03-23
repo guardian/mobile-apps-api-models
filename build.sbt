@@ -47,7 +47,7 @@ lazy val scalaModels = project.in(file("models") / "scala")
           runTest,
           setReleaseVersion,
           commitReleaseVersion,
-          tagRelease,
+          // tagRelease, don't tag as part of the release? tag has already been created...
           // For non cross-build projects, use releaseStepCommand("publishSigned")
           releaseStepCommandAndRemaining("+publishSigned"),
           releaseStepCommand("publishSigned"),
