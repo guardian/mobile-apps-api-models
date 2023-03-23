@@ -19,6 +19,7 @@ jobs:
           personal-access-token: ${{ secrets.GEN_SWIFT_ACCESS_TOKEN }}
           branch-name: ${{ inputs.branch_name }}
   release_snapshot_sonatype:
+    needs: generate_native_models
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -37,9 +38,9 @@ jobs:
 
           echo $PGP_SECRET | base64 --decode | gpg --batch --import
           export GPG_TTY=$(tty)
-          echo "Releasing version v0.0.3-006-SNAPSHOT Sonatype as snapshot"
+          echo "Releasing version 0.0.3-006-SNAPSHOT Sonatype as snapshot"
 
-          sbt "clean" "project scalaModels" "set isSnapshot := true" "release release-version v0.0.3-006-SNAPSHOT with-defaults"
+          sbt "clean" "project scalaModels" "set isSnapshot := true" "release release-version 0.0.3-006-SNAPSHOT with-defaults"
         env:
           PGP_SECRET: ${{ secrets.PGP_SECRET }}
           PGP_PASSPHRASE: ${{ secrets.PGP_PASSPHRASE }}
