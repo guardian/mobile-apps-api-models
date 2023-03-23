@@ -23,6 +23,9 @@ jobs:
           git config user.email "david.lawes@guardian.co.uk"
           git config user.name "David Lawes"
 
+          git push origin :${{ github.event.release.tag_name }}
+          git tag -d ${{ github.event.release.tag_name }}
+
           echo "RELEASE_VERSION= $GITHUB_REF"
           echo "Tag name = ${{ github.event.release.tag_name }}"
 
@@ -37,6 +40,7 @@ jobs:
           echo $PGP_SECRET | base64 --decode | gpg --batch --import
           export GPG_TTY=$(tty)
           echo "Releasing version $VERSION Sonatype as snapshot"
+
           sbt "clean" "project scalaModels" "set isSnapshot := true" "release release-version $VERSION with-defaults"
         env:
           PGP_SECRET: ${{ secrets.PGP_SECRET }}
