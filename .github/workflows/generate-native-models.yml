@@ -1,0 +1,20 @@
+name: Generate native models
+on:
+  workflow_dispatch:
+    inputs:
+      branch_name:
+        description: 'Define branch name'
+        required: true
+        default: 'main'
+
+jobs:
+  generate_native_models:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout
+      - uses: ./.github/actions/native-models
+        name: Generate native models
+        with:
+          personal-access-token: ${{ secrets.GEN_SWIFT_ACCESS_TOKEN }}
+          branch-name: ${{ inputs.branch_name }}
