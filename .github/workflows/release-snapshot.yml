@@ -22,7 +22,7 @@ jobs:
           echo "RELEASE_VERSION= $GITHUB_REF"
           echo "Tag name = ${{ github.event.release.tag_name }}"
 
-          VERSION=$(git describe --tags | cut -f2 -d"@")
+          VERSION=${{ github.event.release.tag_name }}
           if [[ ${VERSION:0:1} == "v" ]] ; then
             VERSION=${VERSION:1}
           fi
