@@ -24,7 +24,6 @@ jobs:
           git config user.name "David Lawes"
 
           git push origin :${{ github.event.release.tag_name }}
-          git tag -d ${{ github.event.release.tag_name }}
 
           echo "RELEASE_VERSION= $GITHUB_REF"
           echo "Tag name = ${{ github.event.release.tag_name }}"
