@@ -42,11 +42,18 @@ lazy val scalaModels = project.in(file("models") / "scala")
     releaseProcess := {
       val process = Seq[ReleaseStep](
         checkSnapshotDependencies,
-        inquireVersions,
-        runClean,
-        runTest,
-        setReleaseVersion,
-        releaseStepCommand("publishSigned"),
+          inquireVersions,
+          runClean,
+          runTest,
+          setReleaseVersion,
+          commitReleaseVersion,
+          tagRelease,
+          // For non cross-build projects, use releaseStepCommand("publishSigned")
+          releaseStepCommandAndRemaining("+publishSigned"),
+          releaseStepCommand("publishSigned"),
+          setNextVersion,
+          commitNextVersion,
+          pushChanges
       )
 
       if (!isSnapshot.value) {
@@ -55,17 +62,4 @@ lazy val scalaModels = project.in(file("models") / "scala")
         process
       }
     }
-  )
-
-lazy val javaModels = project.in(file("models") / "java")
-  .settings(commonSettings)
-  .settings(
-    name := "mobile-apps-api-java-models",
-
-    Compile / scroogeLanguages := Seq("java"),
-
-    libraryDependencies ++= Seq(
-      "org.apache.thrift" % "libthrift" % "0.16.0",
-      "com.twitter" %% "scrooge-core" % "22.1.0",
-    )
   )
