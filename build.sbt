@@ -1,12 +1,13 @@
 import ReleaseTransformations._
 
 ThisBuild / organization := "com.gu"
-ThisBuild / scalaVersion := "2.12.11"
+ThisBuild / scalaVersion := "2.12.17"
+ThisBuild / scalacOptions ++= Seq("-release:11")
 ThisBuild / licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html"))
 
 lazy val commonSettings = Seq(
   Compile / scroogeDisableStrict := true,
-  Compile / scroogeThriftSourceFolder := baseDirectory.value / "../src/main/thrift",
+  Compile / scroogeThriftSourceFolder := baseDirectory.value / "../src/main/thrift"
 )
 
 lazy val scalaModels = project.in(file("models") / "scala")
@@ -18,7 +19,7 @@ lazy val scalaModels = project.in(file("models") / "scala")
 
     libraryDependencies ++= Seq(
       "org.apache.thrift" % "libthrift" % "0.16.0",
-      "com.twitter" %% "scrooge-core" % "22.1.0",
+      "com.twitter" %% "scrooge-core" % "22.1.0"
     ),
 
 
