@@ -19,6 +19,10 @@ jobs:
           cache: sbt
       - name: Release Snapshot to Sonatype
         run: |
+          echo "setting git config"
+          git config user.email "david.lawes@guardian.co.uk"
+          git config user.name "David Lawes"
+
           echo "RELEASE_VERSION= $GITHUB_REF"
           echo "Tag name = ${{ github.event.release.tag_name }}"
 
