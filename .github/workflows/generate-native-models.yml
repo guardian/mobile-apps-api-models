@@ -9,6 +9,8 @@ jobs:
     if: "github.event.release.prerelease"
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+        name: Checkout
       - name: Validate release version
         run: |
           VERSION=$(git describe --tags | cut -f2 -d"@")
