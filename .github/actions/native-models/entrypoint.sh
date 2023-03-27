@@ -17,7 +17,7 @@ export VERSION=$2
 
 # Clone repos
 git clone https://github.com/guardian/mobile-apps-api-models.git
-git clone https://github.com:guardian/mapi-models-swift.git
+git clone https://github.com/guardian/mapi-models-swift.git
 
 # for swift package let's assume that we only build from main
 # We will generate a new commit on the target branch
