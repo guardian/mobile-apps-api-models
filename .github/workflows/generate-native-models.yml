@@ -1,14 +1,28 @@
-name: Generate native models
+name: Generate and publish models
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Define version'
-        required: true
-        default: '0.0.1'
+  release:
+    types: [published]
 
 jobs:
-  generate_native_models:
+  validate_version:
+    name: Validate release version
+    if: "github.event.release.prerelease"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate release version
+        run: |
+          VERSION=$(git describe --tags | cut -f2 -d"@")
+          if [[ ${VERSION:0:1} == "v" ]] ; then
+            VERSION=${VERSION:1}
+          fi
+          if [[ ${VERSION: -9} != "-SNAPSHOT" ]] ; then
+            echo "Version must end in -SNAPSHOT. Adding -SNAPSHOT suffix"
+            VERSION="$VERSION-SNAPSHOT"
+          fi
+          echo "version=$VERSION" >> $GITHUB_ENV
+  publish_swift:
+    name: Publish swift models to Package
+    needs: validate_version
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -17,4 +31,27 @@ jobs:
         name: Generate native models
         with:
           personal-access-token: ${{ secrets.GEN_SWIFT_ACCESS_TOKEN }}
-          version: ${{ inputs.version }}
+          version: ${{ env.version }}
+  publish_scala:
+    name: Publish scala models to Sonatype
+    needs: validate_version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout
+      - uses: actions/setup-java@v3
+        with:
+          distribution: corretto
+          java-version: 11
+          cache: sbt
+      - name: Release Snapshot to Sonatype
+        run: |
+          echo $PGP_SECRET | base64 --decode | gpg --batch --import
+          export GPG_TTY=$(tty)
+          echo "Releasing snapshot version ${{ env.version }}"
+          sbt "clean" "project scalaModels" "set isSnapshot := true" "release release-version ${{ env.version }} with-defaults"
+        env:
+          PGP_SECRET: ${{ secrets.PGP_SECRET }}
+          PGP_PASSPHRASE: ${{ secrets.PGP_PASSPHRASE }}
+          SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
+          SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}

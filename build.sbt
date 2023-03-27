@@ -42,18 +42,18 @@ lazy val scalaModels = project.in(file("models") / "scala")
     releaseProcess := {
       val process = Seq[ReleaseStep](
         checkSnapshotDependencies,
-          inquireVersions,
-          runClean,
-          runTest,
-          setReleaseVersion,
-          commitReleaseVersion,
-          tagRelease,
-          // For non cross-build projects, use releaseStepCommand("publishSigned")
-          releaseStepCommandAndRemaining("+publishSigned"),
-          releaseStepCommand("publishSigned"),
-          setNextVersion,
-          commitNextVersion,
-          pushChanges
+        inquireVersions,
+        runClean,
+        runTest,
+        setReleaseVersion,
+//        commitReleaseVersion,
+//        tagRelease,
+        // For non cross-build projects, use releaseStepCommand("publishSigned")
+//        releaseStepCommandAndRemaining("+publishSigned"),
+        releaseStepCommand("publishSigned"),
+//        setNextVersion,
+//        commitNextVersion,
+//        pushChanges
       )
 
       if (!isSnapshot.value) {

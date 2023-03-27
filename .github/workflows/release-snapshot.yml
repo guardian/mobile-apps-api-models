@@ -6,7 +6,7 @@ on:
 
 jobs:
   release_snapshot_sonatype:
-    if: "github.event.release.prerelease"
+    if: "!github.event.release.prerelease"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
