@@ -2,10 +2,10 @@ name: Generate native models
 on:
   workflow_dispatch:
     inputs:
-      branch_name:
-        description: 'Define branch name'
+      version:
+        description: 'Define version'
         required: true
-        default: 'main'
+        default: '0.0.1'
 
 jobs:
   generate_native_models:
@@ -17,7 +17,7 @@ jobs:
         name: Generate native models
         with:
           personal-access-token: ${{ secrets.GEN_SWIFT_ACCESS_TOKEN }}
-          branch-name: ${{ inputs.branch_name }}
+          version: ${{ inputs.version }}
   release_snapshot_sonatype:
     needs: generate_native_models
     runs-on: ubuntu-latest

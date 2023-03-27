@@ -12,30 +12,38 @@ git config --global user.email '<>'
 # fixes error: "fatal: detected dubious ownership in repository at '/github/workspace'"
 git config --global --add safe.directory /github/workspace
 
-# We get the branch name from an input
-export BRANCH=$2
+# We get the version from an input
+export VERSION=$2
 
-# Clone repo
+# Clone repos
 git clone https://github.com/guardian/mobile-apps-api-models.git
+git clone https://github.com:guardian/mapi-models-swift.git
 
+# for swift package let's assume that we only build from main
 # We will generate a new commit on the target branch
-echo "Checking out branch: $BRANCH"
-cd mobile-apps-api-models
-git checkout $BRANCH
+#echo "Checking out branch: $BRANCH"
+#cd mobile-apps-api-models
+#git checkout $BRANCH
 
 # Generate Swift (output will be in gen-swift folder)
-echo "Generating Swift code..."
-thrift --gen swift -r models/src/main/thrift/collection.thrift
+echo "Generating Swift code for version $VERSION..."
+thrift --gen swift -r mobile-apps-api-models/models/src/main/thrift/collection.thrift
 
 # Hopefully -f is a first-time-only thing
-rm -f Sources/Collection/*.swift
-cp gen-swift/* Sources/Collection
+rm -f mapi-models-swift/Sources/Collection/*.swift
+cp gen-swift/* mapi-models-swift/Sources/Collection
 
+# Commit and tag latest swift models
+cd mapi-models-swift
 git add Sources/Collection/*.swift
 
 # --allow-empty because we don't want to fail if model is exactly the same (?)
-git commit --allow-empty -m "Update swift models"
+git commit --allow-empty -m "Update swift models based on https://github.com/guardian/mobile-apps-api-models/releases/tag/$VERSION"
 
-git push origin HEAD
+git tag $VERSION
+
+# Push the changes (and tags)
+git push -u origin main
+git push --tags
 
 echo "Finished!"
