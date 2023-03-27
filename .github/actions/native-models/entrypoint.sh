@@ -22,8 +22,9 @@ git clone https://github.com:guardian/mapi-models-swift.git
 # for swift package let's assume that we only build from main
 # We will generate a new commit on the target branch
 #echo "Checking out branch: $BRANCH"
-#cd mobile-apps-api-models
-#git checkout $BRANCH
+cd mapi-models-swift
+git checkout -b test-workflow
+cd ..
 
 # Generate Swift (output will be in gen-swift folder)
 echo "Generating Swift code for version $VERSION..."
@@ -40,10 +41,10 @@ git add Sources/Collection/*.swift
 # --allow-empty because we don't want to fail if model is exactly the same (?)
 git commit --allow-empty -m "Update swift models based on https://github.com/guardian/mobile-apps-api-models/releases/tag/$VERSION"
 
-git tag $VERSION
+#git tag $VERSION
 
 # Push the changes (and tags)
-git push -u origin main
-git push --tags
+git push -u origin HEAD
+#git push --tags
 
 echo "Finished!"
