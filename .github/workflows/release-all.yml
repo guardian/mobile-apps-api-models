@@ -16,7 +16,7 @@ jobs:
       - name: Validate release version
         id: validate_version
         run: |
-          VERSION=$(git describe --tags | cut -f2 -d"@")
+          VERSION=${{ github.event.release.tag_name }}
           if [[ ${VERSION:0:1} == "v" ]] ; then
             VERSION=${VERSION:1}
           fi
@@ -39,7 +39,6 @@ jobs:
         with:
           personal-access-token: ${{ secrets.GEN_SWIFT_ACCESS_TOKEN }}
           version: ${{ env.VERSION }}
-
   publish_scala:
     name: Publish scala models to Sonatype
     needs: validate_version
