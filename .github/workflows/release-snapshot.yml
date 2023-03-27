@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-java@v3
         with:
           distribution: corretto
-          java-version: 8
+          java-version: 11
           cache: sbt
       - name: Release Snapshot to Sonatype
         run: |
@@ -27,7 +27,7 @@ jobs:
           fi
           echo $PGP_SECRET | base64 --decode | gpg --batch --import
           export GPG_TTY=$(tty)
-          echo "Releasing version $VERSION Sonatype as snapshot"
+          echo "Releasing version $VERSION to Sonatype as snapshot"
           sbt "clean" "project scalaModels" "set isSnapshot := true" "release release-version $VERSION with-defaults"
         env:
           PGP_SECRET: ${{ secrets.PGP_SECRET }}

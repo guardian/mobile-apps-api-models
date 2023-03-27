@@ -4,12 +4,12 @@ inputs:
   personal-access-token:
     description: 'Personal access token used to interact with repo'
     required: true
-  branch-name:
-    description: 'Branch to commit generated models to'
+  version:
+    description: 'Version of MAPI models'
     required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.personal-access-token }}
-    - ${{ inputs.branch-name }}
+    - ${{ inputs.version }}

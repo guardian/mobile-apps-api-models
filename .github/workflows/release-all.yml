@@ -1,0 +1,66 @@
+name: Generate and publish models for all platforms
+on:
+  release:
+    types: [published]
+
+jobs:
+  validate_version:
+    name: Validate release version
+    if: "!github.event.release.prerelease"
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.validate_version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout
+      - name: Validate release version
+        id: validate_version
+        run: |
+          VERSION=$(git describe --tags | cut -f2 -d"@")
+          if [[ ${VERSION:0:1} == "v" ]] ; then
+            VERSION=${VERSION:1}
+          fi
+          if [[ ${VERSION: -9} != "-SNAPSHOT" ]] ; then
+            echo "Version must not end in -SNAPSHOT. Exiting."
+            exit
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+  publish_swift:
+    name: Publish swift models to Package
+    needs: validate_version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout
+      - uses: ./.github/actions/native-models
+        name: Generate native models
+        env:
+          VERSION: ${{ needs.validate_version.outputs.version }}
+        with:
+          personal-access-token: ${{ secrets.GEN_SWIFT_ACCESS_TOKEN }}
+          version: ${{ env.VERSION }}
+
+  publish_scala:
+    name: Publish scala models to Sonatype
+    needs: validate_version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout
+      - uses: actions/setup-java@v3
+        with:
+          distribution: corretto
+          java-version: 11
+          cache: sbt
+      - name: Release to Sonatype
+        env:
+          PGP_SECRET: ${{ secrets.PGP_SECRET }}
+          PGP_PASSPHRASE: ${{ secrets.PGP_PASSPHRASE }}
+          SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
+          SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
+          VERSION: ${{ needs.validate_version.outputs.version }}
+        run: |
+          echo $PGP_SECRET | base64 --decode | gpg --batch --import
+          export GPG_TTY=$(tty)
+          echo "Releasing version $VERSION"
+          sbt "clean" "project scalaModels" "set isSnapshot := false" "release release-version $VERSION with-defaults"
