@@ -20,7 +20,7 @@ jobs:
           if [[ ${VERSION:0:1} == "v" ]] ; then
             VERSION=${VERSION:1}
           fi
-          if [[ ${VERSION: -9} != "-SNAPSHOT" ]] ; then
+          if [[ ${VERSION: -9} == "-SNAPSHOT" ]] ; then
             echo "Version must not end in -SNAPSHOT. Exiting."
             exit 1
           fi
