@@ -22,7 +22,7 @@ jobs:
           fi
           if [[ ${VERSION: -9} != "-SNAPSHOT" ]] ; then
             echo "Version must not end in -SNAPSHOT. Exiting."
-            exit
+            exit 1
           fi
           echo "version=$VERSION" >> $GITHUB_OUTPUT
   publish_swift:
