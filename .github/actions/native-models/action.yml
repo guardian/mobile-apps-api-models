@@ -1,15 +1,19 @@
 name: 'Generate native models'
 description: 'Generate native models from thrift schema'
 inputs:
-  personal-access-token:
+  personal_access_token:
     description: 'Personal access token used to interact with repo'
     required: true
   version:
-    description: 'Version of MAPI models'
+    description: 'Release version'
+    required: true
+  tag:
+    description: 'Release tag'
     required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.personal-access-token }}
+    - ${{ inputs.personal_access_token }}
     - ${{ inputs.version }}
+    - ${{ inputs.tag }}

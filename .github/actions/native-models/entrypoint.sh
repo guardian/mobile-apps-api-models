@@ -12,8 +12,9 @@ git config --global user.email '<>'
 # fixes error: "fatal: detected dubious ownership in repository at '/github/workspace'"
 git config --global --add safe.directory /github/workspace
 
-# We get the version from an input
+# We get the version and tag from inputs
 export VERSION=$2
+export TAG=$3
 
 # Clone repos
 git clone https://github.com/guardian/mobile-apps-api-models.git
@@ -33,7 +34,7 @@ cd mapi-models-swift
 git add Sources/Collection/*.swift
 
 # --allow-empty because we don't want to fail if model is exactly the same (?)
-git commit --allow-empty -m "Update swift models based on https://github.com/guardian/mobile-apps-api-models/releases/tag/$VERSION"
+git commit --allow-empty -m "Update swift models based on https://github.com/guardian/mobile-apps-api-models/releases/tag/$TAG"
 git tag $VERSION
 
 # Push the commit and tag

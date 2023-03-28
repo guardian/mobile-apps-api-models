@@ -37,8 +37,9 @@ jobs:
         env:
           VERSION: ${{ needs.validate_version.outputs.version }}
         with:
-          personal-access-token: ${{ secrets.GEN_SWIFT_ACCESS_TOKEN }}
+          personal_access_token: ${{ secrets.GEN_SWIFT_ACCESS_TOKEN }}
           version: ${{ env.VERSION }}
+          tag: ${{ github.event.release.tag_name }}
   publish_scala:
     name: Publish scala models to Sonatype
     needs: validate_version
