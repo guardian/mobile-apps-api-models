@@ -1,3 +1,3 @@
 #!/bin/bash
-echo username=DavidLawes
+echo username=MapiModelRelease
 echo password=$ACCESS_TOKEN

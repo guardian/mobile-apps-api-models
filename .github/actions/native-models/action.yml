@@ -1,8 +1,8 @@
 name: 'Generate native models'
 description: 'Generate native models from thrift schema'
 inputs:
-  personal_access_token:
-    description: 'Personal access token used to interact with repo'
+  github_token:
+    description: 'Github token used to interact with repo'
     required: true
   version:
     description: 'Release version'
@@ -14,6 +14,6 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.personal_access_token }}
+    - ${{ inputs.github_token }}
     - ${{ inputs.version }}
     - ${{ inputs.tag }}
