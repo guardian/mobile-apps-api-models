@@ -82,13 +82,11 @@ struct LiveEvent {
 }
 
 struct Card {
-    1: required list<Article> articles
-    2: optional Palette paletteLight
-    3: optional Palette paletteDark
-    4: required CardType type
-    5: optional bool boosted
-    6: optional bool compact
-    7: optional list<Article> sublinks
+    1: required Article article
+    2: required CardType type
+    3: optional bool boosted
+    4: optional bool compact
+    5: optional list<Article> sublinks
 }
 
 struct Column {
