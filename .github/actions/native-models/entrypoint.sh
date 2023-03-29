@@ -26,12 +26,12 @@ echo "Generating Swift models..."
 thrift --gen swift -r mobile-apps-api-models/models/src/main/thrift/collection.thrift
 
 # Hopefully -f is a first-time-only thing
-rm -f mapi-models-swift/Sources/Collection/*.swift
-cp gen-swift/* mapi-models-swift/Sources/Collection
+rm -f mapi-models-swift/Sources/Blueprint/*.swift
+cp gen-swift/* mapi-models-swift/Sources/Blueprint
 
 # Commit and tag latest swift models
 cd mapi-models-swift
-git add Sources/Collection/*.swift
+git add Sources/Blueprint/*.swift
 
 # --allow-empty because we don't want to fail if model is exactly the same (?)
 git commit --allow-empty -m "Update swift models based on https://github.com/guardian/mobile-apps-api-models/releases/tag/$TAG"
