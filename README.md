@@ -5,7 +5,7 @@
 # Mobile Apps Api Models
 
 These models are used to communicate between MAPI and the native apps. 
-This repository currently defines the thrift [schema](./models/src/main/thrift/collection.thrift) for "blueprint" collections.
+This repository currently defines the thrift [schema](thrift/collection.thrift) for "blueprint" collections.
 
 ## Releases
 
