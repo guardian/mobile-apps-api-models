@@ -12,11 +12,35 @@ plugins {
 
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
+    id("org.jetbrains.dokka") version "1.8.10"
     `maven-publish`
     signing
 
     id("com.microsoft.thrifty") version "3.1.0"
 }
+
+import org.jetbrains.dokka.DokkaConfiguration.Visibility
+import org.jetbrains.dokka.gradle.DokkaTask
+import org.jetbrains.dokka.Platform
+import java.net.URL
+
+java {
+    // withJavadocJar()
+    withSourcesJar()
+}
+
+
+tasks.withType<DokkaTask>().configureEach {
+    dokkaSourceSets.configureEach {
+        suppressGeneratedFiles.set(false) // document generated code
+    }
+}
+
+val javadocJar by tasks.registering(Jar::class) {
+    archiveClassifier.set("javadoc")
+    from(tasks.dokkaHtml)
+}
+
 
 repositories {
     // Use Maven Central for resolving dependencies.
@@ -44,10 +68,6 @@ tasks.named<Test>("test") {
     useJUnitPlatform()
 }
 
-val javadocJar by tasks.creating(Jar::class) {
-    // There are no docs here
-    archiveClassifier.set("javadoc")
-}
 
 artifacts {
     archives(javadocJar)
@@ -75,7 +95,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "org.gradle.sample"
             artifactId = "library"
-            version = "1.4"
+            version = "1.6"
 
             from(components["kotlin"])
         }
