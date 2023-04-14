@@ -1,42 +1,22 @@
 import ReleaseTransformations._
 
 ThisBuild / organization := "com.gu"
-ThisBuild / scalaVersion := "2.12.11"
+ThisBuild / scalaVersion := "2.12.17"
 ThisBuild / licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html"))
 
-lazy val commonSettings = Seq(
-  Compile / scroogeDisableStrict := true,
-  Compile / scroogeThriftSourceFolder := baseDirectory.value / "../src/main/thrift",
-)
-
-lazy val scalaModels = project.in(file("models") / "scala")
-  .settings(commonSettings)
+lazy val scalaModels = project.in(file("."))
   .settings(
     name := "mobile-apps-api-models",
 
-    Compile / scroogeLanguages := Seq("scala"),
-
     libraryDependencies ++= Seq(
-      "org.apache.thrift" % "libthrift" % "0.16.0",
-      "com.twitter" %% "scrooge-core" % "22.1.0",
+      "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"
     ),
 
+    Compile / PB.targets := Seq(
+      scalapb.gen() -> (Compile / sourceManaged).value / "scalapb"
+    ),
 
-    publishTo := sonatypePublishToBundle.value,
-
-    scmInfo := Some(ScmInfo(
-      url("https://github.com/guardian/mobile-apps-api-models"),
-      "scm:git:git@github.com:guardian/mobile-apps-api-models.git"
-    )),
-
-    homepage := Some(url("https://github.com/guardian/mobile-apps-api-models")),
-
-    developers := List(Developer(
-      id = "Guardian",
-      name = "Guardian",
-      email = null,
-      url = url("https://github.com/guardian")
-    )),
+    Compile / PB.protoSources := Seq(baseDirectory.value / "./proto"),
 
     releaseProcess := {
       val process = Seq[ReleaseStep](
@@ -54,17 +34,4 @@ lazy val scalaModels = project.in(file("models") / "scala")
         process
       }
     }
-  )
-
-lazy val javaModels = project.in(file("models") / "java")
-  .settings(commonSettings)
-  .settings(
-    name := "mobile-apps-api-java-models",
-
-    Compile / scroogeLanguages := Seq("java"),
-
-    libraryDependencies ++= Seq(
-      "org.apache.thrift" % "libthrift" % "0.16.0",
-      "com.twitter" %% "scrooge-core" % "22.1.0",
-    )
   )
