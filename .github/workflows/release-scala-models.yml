@@ -6,7 +6,6 @@ on:
 
 jobs:
   release_snapshot_sonatype:
-    if: "github.event.release.prerelease"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -17,18 +16,24 @@ jobs:
           cache: sbt
       - name: Release Snapshot to Sonatype
         run: |
-          VERSION=$(git describe --tags | cut -f2 -d"@")
+          VERSION=${{ github.event.release.tag_name }}
+          IS_SNAPSHOT=${{ github.event.release.prerelease }}
           if [[ ${VERSION:0:1} == "v" ]] ; then
             VERSION=${VERSION:1}
           fi
           if [[ ${VERSION: -9} != "-SNAPSHOT" ]] ; then
-            echo "Version must end in -SNAPSHOT. Adding -SNAPSHOT suffix"
-            VERSION="$VERSION-SNAPSHOT"
+            if [[ IS_SNAPSHOT ]] ; then
+              echo "Version must end in -SNAPSHOT. Adding -SNAPSHOT suffix"
+              VERSION="$VERSION-SNAPSHOT"
+            else
+              echo "Version must not end in -SNAPSHOT. Exiting."
+              exit 1
+            fi
           fi
           echo $PGP_SECRET | base64 --decode | gpg --batch --import
           export GPG_TTY=$(tty)
           echo "Releasing version $VERSION Sonatype as snapshot"
-          sbt "clean" "project scalaModels" "set isSnapshot := true" "release release-version $VERSION with-defaults"
+          sbt "clean" "project scalaModels" "set isSnapshot := $IS_SNAPSHOT" "release release-version $VERSION with-defaults"
         env:
           PGP_SECRET: ${{ secrets.PGP_SECRET }}
           PGP_PASSPHRASE: ${{ secrets.PGP_PASSPHRASE }}
