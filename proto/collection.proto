@@ -1,0 +1,138 @@
+// blueprint.proto
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+option swift_prefix="Blueprint";
+option java_package = "com.gu.mobile.mapi.models";
+
+enum MediaType {
+  MEDIA_TYPE_VIDEO = 0;
+  MEDIA_TYPE_AUDIO = 1;
+  MEDIA_TYPE_IMAGE = 2;
+}
+
+message Palette {
+  string accent_colour = 1;
+  string background = 2;
+  string comment_count = 3;
+  string element_background = 4;
+  string headline = 5;
+  string immersive_kicker = 6;
+  string main = 7;
+  string media_background = 8;
+  string media_icon = 9;
+  string meta_text = 10;
+  string pill = 11;
+  string pillar = 12;
+  string secondary = 13;
+  string shadow = 14;
+  string top_border = 15;
+}
+
+message Links {
+  string uri = 3;
+  string short_url = 2;
+  string web_uri = 4;
+  string related_uri = 1;
+}
+
+message Image {
+  optional string alt_text = 1;
+  optional string caption = 2;
+  optional string credit = 3;
+  int32 height = 4;
+  string orientation = 5;
+  string url_template = 6;
+  int32 width = 7;
+}
+
+message Article {
+  string id = 1;
+  string title = 6;
+  Links links = 4;
+  optional string byline = 2;
+  optional string kicker = 5;
+  optional string trail_text = 7;
+  optional Palette palette_light = 16;
+  optional Palette palette_dark = 17;
+  repeated Image images = 3;
+  optional Image profile_image = 14;
+  repeated LiveEvent events = 15;
+  optional int32 rating = 8;
+  optional int32 comment_count = 9;
+  optional google.protobuf.Timestamp published_date = 10;
+  optional google.protobuf.Timestamp last_updated_date = 11;
+  optional MediaType media_type = 12;
+  optional google.protobuf.Duration duration = 13;
+  optional string apple_podcast_url = 18;
+  optional string google_podcast_url = 19;
+  optional string spotify_podcast_url = 20;
+
+}
+
+message LiveEvent {
+  string id = 1;
+  string title = 2;
+  string body = 3;
+  optional google.protobuf.Timestamp published_date = 4;
+  optional google.protobuf.Timestamp last_updated_date = 5;
+}
+
+message Thrasher {
+  string uri = 1;
+}
+
+message Branding {
+  string branding_type = 1;
+  string sponsor_name = 2;
+  string logo = 3;
+  string sponsor_uri = 4;
+  string label = 5;
+  string about_uri = 6;
+}
+
+message Card {
+  enum CardType {
+    CARD_TYPE_ARTICLE = 0;
+    CARD_TYPE_PODCAST = 1;
+    CARD_TYPE_VIDEO = 2;
+  }
+  CardType type = 1;
+  Article article = 2;
+  optional bool boosted = 3;
+  optional bool compact = 4;
+  repeated Article sublinks = 5;
+  optional string htmlFallback = 6;
+}
+
+message Column {
+  repeated Card cards = 1;
+  optional Palette palette_light = 2;
+  optional Palette palette_dark = 3;
+  int32 preferred_width = 4;
+}
+
+message Row {
+  enum RowType {
+    ROW_TYPE_LAYOUT = 0;
+    ROW_TYPE_CAROUSEL = 1;
+    ROW_TYPE_THRASHER = 2;
+  }
+  RowType type = 6;
+  optional string title = 7;
+  repeated Column columns = 1;
+  optional Palette palette_light = 2;
+  optional Palette palette_dark = 3;
+  optional int32 preferred_number_of_columns = 4;
+  optional Thrasher thrasher = 5;
+}
+
+message Collection {
+  string id = 1;
+  optional string title = 5;
+  repeated Row rows = 4;
+  optional Palette palette_light = 2;
+  optional Palette palette_dark = 3;
+}

@@ -1,3 +1,6 @@
+<img src="https://img.shields.io/github/v/release/guardian/mobile-apps-api-models?label=schema%20version">
+<img src="https://img.shields.io/maven-central/v/com.gu/mobile-apps-api-models_2.12?label=scala%202.12">
+
 # Mobile Apps Api Models
 
 These models are used to communicate between MAPI and the native apps.
