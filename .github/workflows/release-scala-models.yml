@@ -18,20 +18,19 @@ jobs:
         run: |
           VERSION=${{ github.event.release.tag_name }}
           IS_SNAPSHOT=${{ github.event.release.prerelease }}
-          HAS_VERSION_SUFFIX = ${VERSION: -9} == "-SNAPSHOT"
           if [[ ${VERSION:0:1} == "v" ]] ; then
             VERSION=${VERSION:1}
           fi
-          if [[ HAS_VERSION_SUFFIX ]] && [[ !IS_SNAPSHOT ]] ; then
-              echo "Version must not end in -SNAPSHOT. Exiting."
-              exit 1
-          elif [[ !HAS_VERSION_SUFFIX ]] && [[ IS_SNAPSHOT ]] ; then
-              echo "Version must end in -SNAPSHOT. Adding -SNAPSHOT suffix"
-              VERSION="$VERSION-SNAPSHOT"
+          if [[ ${VERSION: -9} == "-SNAPSHOT" ]] && [[ $IS_SNAPSHOT == "false" ]] ; then
+            echo "Version must not end in -SNAPSHOT. Exiting."
+            exit 1
+          elif [[ ${VERSION: -9} != "-SNAPSHOT" ]] && [[ $IS_SNAPSHOT == "true" ]] ; then
+            echo "Snapshot version must end in -SNAPSHOT. Adding -SNAPSHOT suffix"
+            VERSION="$VERSION-SNAPSHOT"
           fi
           echo $PGP_SECRET | base64 --decode | gpg --batch --import
           export GPG_TTY=$(tty)
-          echo "Releasing version $VERSION Sonatype as snapshot"
+          echo "Releasing version $VERSION"
           sbt "clean" "project scalaModels" "set isSnapshot := $IS_SNAPSHOT" "release release-version $VERSION with-defaults"
         env:
           PGP_SECRET: ${{ secrets.PGP_SECRET }}
