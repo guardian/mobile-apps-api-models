@@ -12,12 +12,12 @@ jobs:
       - uses: actions/setup-java@v3
         with:
           distribution: corretto
-          java-version: 8
+          java-version: 11
           cache: sbt
       - name: Release Snapshot to Sonatype
         run: |
-          VERSION = ${{ github.event.release.tag_name }}
-          IS_SNAPSHOT = ${{ github.event.release.prerelease }}
+          VERSION=${{ github.event.release.tag_name }}
+          IS_SNAPSHOT=${{ github.event.release.prerelease }}
           HAS_VERSION_SUFFIX = ${VERSION: -9} == "-SNAPSHOT"
           if [[ ${VERSION:0:1} == "v" ]] ; then
             VERSION=${VERSION:1}
