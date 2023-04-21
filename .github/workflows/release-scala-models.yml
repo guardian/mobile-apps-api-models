@@ -5,7 +5,7 @@ on:
     types: [published]
 
 jobs:
-  release_snapshot_sonatype:
+  release_scala_models:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -14,7 +14,7 @@ jobs:
           distribution: corretto
           java-version: 11
           cache: sbt
-      - name: Release Snapshot to Sonatype
+      - name: Release Scala Models
         run: |
           VERSION=${{ github.event.release.tag_name }}
           IS_SNAPSHOT=${{ github.event.release.prerelease }}
