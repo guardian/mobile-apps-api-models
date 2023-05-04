@@ -100,6 +100,7 @@ message Article {
     optional string apple_podcast_url = 18;
     optional string google_podcast_url = 19;
     optional string spotify_podcast_url = 20;
+    optional string pocket_cast_podcast_url = 23;
     repeated Video videos = 21;
     optional bool isLive = 22;
 }
