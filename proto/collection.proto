@@ -101,6 +101,7 @@ message Article {
     optional string google_podcast_url = 19;
     optional string spotify_podcast_url = 20;
     repeated Video videos = 21;
+    optional bool isLive = 22;
 }
 
 message Card {
