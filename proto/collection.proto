@@ -79,6 +79,11 @@ message Branding {
     string about_uri = 6;
 }
 
+message RenderingPlatformSupport {
+    string minBridgetVersion = 1;
+    string uri = 2;
+}
+
 message Article {
     string id = 1;
     string title = 6;
@@ -103,6 +108,8 @@ message Article {
     optional string pocket_cast_podcast_url = 23;
     repeated Video videos = 21;
     optional bool isLive = 22;
+    optional RenderingPlatformSupport renderedItemProd = 24;
+    optional RenderingPlatformSupport renderedItemBeta = 24;    
 }
 
 message Card {
