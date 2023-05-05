@@ -109,7 +109,7 @@ message Article {
     repeated Video videos = 21;
     optional bool isLive = 22;
     optional RenderingPlatformSupport renderedItemProd = 24;
-    optional RenderingPlatformSupport renderedItemBeta = 24;    
+    optional RenderingPlatformSupport renderedItemBeta = 25;    
 }
 
 message Card {
