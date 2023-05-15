@@ -145,7 +145,7 @@ message Row {
     repeated Column columns = 1;
     optional Palette palette_light = 2;
     optional Palette palette_dark = 3;
-    optional int32 preferred_number_of_columns = 4;
+    int32 preferred_number_of_columns = 4;
     optional Thrasher thrasher = 5;
 }
 
