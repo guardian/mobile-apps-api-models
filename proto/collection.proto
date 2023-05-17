@@ -125,6 +125,7 @@ message Card {
     optional bool compact = 4;
     repeated Article sublinks = 5;
     optional string htmlFallback = 6;
+    optional bool paidContent = 7;
 }
 
 message Column {
