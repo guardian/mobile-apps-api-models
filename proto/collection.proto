@@ -126,6 +126,7 @@ message Card {
     repeated Article sublinks = 5;
     optional string htmlFallback = 6;
     optional bool paidContent = 7;
+    optional bool premiumContent = 8;
 }
 
 message Column {
@@ -157,4 +158,5 @@ message Collection {
     optional Palette palette_light = 2;
     optional Palette palette_dark = 3;
     optional Branding branding = 6;
+    optional bool premiumContent = 7;
 }
