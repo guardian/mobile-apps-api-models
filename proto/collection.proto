@@ -39,13 +39,13 @@ enum MediaType {
 }
 
 message Image {
+    reserved 5
     optional string alt_text = 1;
     optional string caption = 2;
     optional string credit = 3;
-    int32 height = 4;
-    string orientation = 5;
+    optional int32 height = 4;
     string url_template = 6;
-    int32 width = 7;
+    optional int32 width = 7;
 }
 
 message Video {
