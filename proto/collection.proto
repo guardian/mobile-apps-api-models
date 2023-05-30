@@ -39,7 +39,6 @@ enum MediaType {
 }
 
 message Image {
-    reserved 5
     optional string alt_text = 1;
     optional string caption = 2;
     optional string credit = 3;
