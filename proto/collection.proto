@@ -117,6 +117,8 @@ message Card {
         CARD_TYPE_PODCAST = 1;
         CARD_TYPE_VIDEO = 2;
         CARD_TYPE_CROSSWORD = 3;
+        CARD_TYPE_DISPLAY = 4;
+        CARD_TYPE_MOSTVIEWED = 5;
     }
     CardType type = 1;
     Article article = 2;
@@ -126,6 +128,8 @@ message Card {
     optional string htmlFallback = 6;
     optional Branding branding = 7;
     optional bool premium_content = 8;
+    optional Palette sublinks_palette_light = 9;
+    optional Palette sublinks_palette_dark = 10;
 }
 
 message Column {
