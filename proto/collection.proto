@@ -154,6 +154,17 @@ message Row {
     optional Thrasher thrasher = 5;
 }
 
+message FollowUp {
+    enum FollowUpType {
+        FOLLOW_UP_TYPE_LIST = 0;
+        FOLLOW_UP_TYPE_FRONT = 1;
+        FOLLOW_UP_TYPE_INAPP = 2;
+    }
+    FollowUpType type = 0;
+    string uri = 1;
+    optional string blueprint_uri = 2;
+}
+
 message Collection {
     string id = 1;
     optional string title = 5;
@@ -162,4 +173,5 @@ message Collection {
     optional Palette palette_dark = 3;
     optional Branding branding = 6;
     optional bool premium_content = 7;
+    FollowUp followup = 8;
 }
