@@ -173,5 +173,5 @@ message Collection {
     optional Palette palette_dark = 3;
     optional Branding branding = 6;
     optional bool premium_content = 7;
-    FollowUp follow_up = 8;
+    optional FollowUp follow_up = 8;
 }
