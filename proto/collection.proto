@@ -79,7 +79,7 @@ message Branding {
 }
 
 message RenderingPlatformSupport {
-    string minBridgetVersion = 1;
+    string min_bridget_version = 1;
     string uri = 2;
 }
 
@@ -106,9 +106,9 @@ message Article {
     optional string spotify_podcast_url = 20;
     optional string pocket_cast_podcast_url = 23;
     repeated Video videos = 21;
-    optional bool isLive = 22;
-    optional RenderingPlatformSupport renderedItemProd = 24;
-    optional RenderingPlatformSupport renderedItemBeta = 25;    
+    optional bool is_live = 22;
+    optional RenderingPlatformSupport rendered_item_prod = 24;
+    optional RenderingPlatformSupport rendered_item_beta = 25;    
 }
 
 message Card {
@@ -125,7 +125,7 @@ message Card {
     optional bool boosted = 3;
     optional bool compact = 4;
     repeated Article sublinks = 5;
-    optional string htmlFallback = 6;
+    optional string html_fallback = 6;
     optional Branding branding = 7;
     optional bool premium_content = 8;
     optional Palette sublinks_palette_light = 9;
