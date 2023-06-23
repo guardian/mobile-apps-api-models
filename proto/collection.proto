@@ -26,10 +26,10 @@ message Palette {
 }
 
 message Links {
-    string uri = 3;
-    string short_url = 2;
-    string web_uri = 4;
     string related_uri = 1;
+    string short_url = 2;
+    string uri = 3;
+    string web_uri = 4;
 }
 
 enum MediaType {
@@ -85,30 +85,30 @@ message RenderingPlatformSupport {
 
 message Article {
     string id = 1;
-    string title = 6;
-    Links links = 4;
     optional string byline = 2;
-    optional string kicker = 5;
-    optional string trail_text = 7;
-    optional Palette palette_light = 16;
-    optional Palette palette_dark = 17;
     repeated Image images = 3;
-    optional Image profile_image = 14;
-    repeated LiveEvent events = 15;
+    Links links = 4;
+    optional string kicker = 5;
+    string title = 6;
+    optional string trail_text = 7;
     optional int32 rating = 8;
     optional int32 comment_count = 9;
     optional google.protobuf.Timestamp published_date = 10;
     optional google.protobuf.Timestamp last_updated_date = 11;
     optional MediaType media_type = 12;
     optional google.protobuf.Duration duration = 13;
+    optional Image profile_image = 14;
+    repeated LiveEvent events = 15;
+    optional Palette palette_light = 16;
+    optional Palette palette_dark = 17;
     optional string apple_podcast_url = 18;
     optional string google_podcast_url = 19;
     optional string spotify_podcast_url = 20;
-    optional string pocket_cast_podcast_url = 23;
     repeated Video videos = 21;
     optional bool is_live = 22;
+    optional string pocket_cast_podcast_url = 23;
     optional RenderingPlatformSupport rendered_item_prod = 24;
-    optional RenderingPlatformSupport rendered_item_beta = 25;    
+    optional RenderingPlatformSupport rendered_item_beta = 25;
 }
 
 message Card {
@@ -145,13 +145,13 @@ message Row {
         ROW_TYPE_CAROUSEL = 1;
         ROW_TYPE_THRASHER = 2;
     }
-    RowType type = 6;
-    optional string title = 7;
     repeated Column columns = 1;
     optional Palette palette_light = 2;
     optional Palette palette_dark = 3;
     int32 preferred_number_of_columns = 4;
     optional Thrasher thrasher = 5;
+    RowType type = 6;
+    optional string title = 7;
 }
 
 message FollowUp {
@@ -167,10 +167,10 @@ message FollowUp {
 
 message Collection {
     string id = 1;
-    optional string title = 5;
-    repeated Row rows = 4;
     optional Palette palette_light = 2;
     optional Palette palette_dark = 3;
+    repeated Row rows = 4;
+    optional string title = 5;
     optional Branding branding = 6;
     optional bool premium_content = 7;
     optional FollowUp follow_up = 8;
