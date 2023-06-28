@@ -3,7 +3,11 @@
 # Otherwise it will run snyk test
 name: Snyk
 
-on: push
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   security:
