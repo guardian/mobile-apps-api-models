@@ -16,5 +16,5 @@ jobs:
 
       - name: Validate no breaking changes
         run: |
-          pwd
-          protolock status --uptodate --lockdir . --protoroot ./proto
+          cd proto
+          protolock status --uptodate
