@@ -6,6 +6,20 @@
 These models are used to communicate between MAPI and the native apps.
 This repository defines the protobuf [schema](./proto/collection.proto) for "blueprint" collections.
 
+## Linting
+
+[Protolint](https://github.com/yoheimuta/protolint) is used to lint the proto files in this repository.
+Protolint follows the official Google [style guide](https://protobuf.dev/programming-guides/style/).
+
+If the proto file isn't linted correctly status checks on a PR will fail.
+
+To fix any lint errors:
+
+```
+brew install protolint
+protolint -fix ./proto/.
+```
+
 ## Releases
 
 Use the GitHub UI to generate schema releases.
