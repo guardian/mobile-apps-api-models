@@ -1,5 +1,6 @@
 <img src="https://img.shields.io/github/v/release/guardian/mobile-apps-api-models?label=schema%20version">
-<img src="https://img.shields.io/maven-central/v/com.gu/mobile-apps-api-models_2.12?label=scala%202.12">
+
+[![mobile-apps-api-models Scala version support](https://index.scala-lang.org/guardian/mobile-apps-api-models/mobile-apps-api-models/latest-by-scala-version.svg?platform=jvm)](https://index.scala-lang.org/guardian/mobile-apps-api-models/mobile-apps-api-models)
 
 # Mobile Apps Api Models
 
