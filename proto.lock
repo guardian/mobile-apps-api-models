@@ -1,0 +1,4459 @@
+{
+  "definitions": [
+    {
+      "protopath": "proto:/:collection.proto",
+      "def": {
+        "enums": [
+          {
+            "name": "MediaType",
+            "enum_fields": [
+              {
+                "name": "MEDIA_TYPE_VIDEO"
+              },
+              {
+                "name": "MEDIA_TYPE_AUDIO",
+                "integer": 1
+              },
+              {
+                "name": "MEDIA_TYPE_IMAGE",
+                "integer": 2
+              }
+            ]
+          },
+          {
+            "name": "Card.CardType",
+            "enum_fields": [
+              {
+                "name": "CARD_TYPE_ARTICLE"
+              },
+              {
+                "name": "CARD_TYPE_PODCAST",
+                "integer": 1
+              },
+              {
+                "name": "CARD_TYPE_VIDEO",
+                "integer": 2
+              },
+              {
+                "name": "CARD_TYPE_CROSSWORD",
+                "integer": 3
+              },
+              {
+                "name": "CARD_TYPE_DISPLAY",
+                "integer": 4
+              },
+              {
+                "name": "CARD_TYPE_MOSTVIEWED",
+                "integer": 5
+              }
+            ]
+          },
+          {
+            "name": "Row.RowType",
+            "enum_fields": [
+              {
+                "name": "ROW_TYPE_LAYOUT"
+              },
+              {
+                "name": "ROW_TYPE_CAROUSEL",
+                "integer": 1
+              },
+              {
+                "name": "ROW_TYPE_THRASHER",
+                "integer": 2
+              }
+            ]
+          },
+          {
+            "name": "FollowUp.FollowUpType",
+            "enum_fields": [
+              {
+                "name": "FOLLOW_UP_TYPE_LIST"
+              },
+              {
+                "name": "FOLLOW_UP_TYPE_FRONT",
+                "integer": 1
+              },
+              {
+                "name": "FOLLOW_UP_TYPE_INAPP",
+                "integer": 2
+              }
+            ]
+          }
+        ],
+        "messages": [
+          {
+            "name": "Palette",
+            "fields": [
+              {
+                "id": 1,
+                "name": "accent_colour",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "background",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "comment_count",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "element_background",
+                "type": "string"
+              },
+              {
+                "id": 5,
+                "name": "headline",
+                "type": "string"
+              },
+              {
+                "id": 6,
+                "name": "immersive_kicker",
+                "type": "string"
+              },
+              {
+                "id": 7,
+                "name": "main",
+                "type": "string"
+              },
+              {
+                "id": 8,
+                "name": "media_background",
+                "type": "string"
+              },
+              {
+                "id": 9,
+                "name": "media_icon",
+                "type": "string"
+              },
+              {
+                "id": 10,
+                "name": "meta_text",
+                "type": "string"
+              },
+              {
+                "id": 11,
+                "name": "pill",
+                "type": "string"
+              },
+              {
+                "id": 12,
+                "name": "pillar",
+                "type": "string"
+              },
+              {
+                "id": 13,
+                "name": "secondary",
+                "type": "string"
+              },
+              {
+                "id": 14,
+                "name": "shadow",
+                "type": "string"
+              },
+              {
+                "id": 15,
+                "name": "top_border",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "Links",
+            "fields": [
+              {
+                "id": 1,
+                "name": "related_uri",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "short_url",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "uri",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "web_uri",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "Image",
+            "fields": [
+              {
+                "id": 1,
+                "name": "alt_text",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "caption",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "credit",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "height",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "url_template",
+                "type": "string"
+              },
+              {
+                "id": 7,
+                "name": "width",
+                "type": "int32",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Video",
+            "fields": [
+              {
+                "id": 1,
+                "name": "alt_text",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "caption",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "credit",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "height",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "orientation",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "url",
+                "type": "string"
+              },
+              {
+                "id": 7,
+                "name": "width",
+                "type": "int32",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "LiveEvent",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "body",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "published_date",
+                "type": "google.protobuf.Timestamp",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "last_updated_date",
+                "type": "google.protobuf.Timestamp",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Thrasher",
+            "fields": [
+              {
+                "id": 1,
+                "name": "uri",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "Branding",
+            "fields": [
+              {
+                "id": 1,
+                "name": "branding_type",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "sponsor_name",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "logo",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "sponsor_uri",
+                "type": "string"
+              },
+              {
+                "id": 5,
+                "name": "label",
+                "type": "string"
+              },
+              {
+                "id": 6,
+                "name": "about_uri",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "RenderingPlatformSupport",
+            "fields": [
+              {
+                "id": 1,
+                "name": "min_bridget_version",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "uri",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "Article",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "byline",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "images",
+                "type": "Image",
+                "is_repeated": true
+              },
+              {
+                "id": 4,
+                "name": "links",
+                "type": "Links"
+              },
+              {
+                "id": 5,
+                "name": "kicker",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "id": 7,
+                "name": "trail_text",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "rating",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 9,
+                "name": "comment_count",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 10,
+                "name": "published_date",
+                "type": "google.protobuf.Timestamp",
+                "optional": true
+              },
+              {
+                "id": 11,
+                "name": "last_updated_date",
+                "type": "google.protobuf.Timestamp",
+                "optional": true
+              },
+              {
+                "id": 12,
+                "name": "media_type",
+                "type": "MediaType",
+                "optional": true
+              },
+              {
+                "id": 13,
+                "name": "duration",
+                "type": "google.protobuf.Duration",
+                "optional": true
+              },
+              {
+                "id": 14,
+                "name": "profile_image",
+                "type": "Image",
+                "optional": true
+              },
+              {
+                "id": 15,
+                "name": "events",
+                "type": "LiveEvent",
+                "is_repeated": true
+              },
+              {
+                "id": 16,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 17,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 18,
+                "name": "apple_podcast_url",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 19,
+                "name": "google_podcast_url",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 20,
+                "name": "spotify_podcast_url",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 21,
+                "name": "videos",
+                "type": "Video",
+                "is_repeated": true
+              },
+              {
+                "id": 22,
+                "name": "is_live",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 23,
+                "name": "pocket_cast_podcast_url",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 24,
+                "name": "rendered_item_prod",
+                "type": "RenderingPlatformSupport",
+                "optional": true
+              },
+              {
+                "id": 25,
+                "name": "rendered_item_beta",
+                "type": "RenderingPlatformSupport",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Card",
+            "fields": [
+              {
+                "id": 1,
+                "name": "type",
+                "type": "CardType"
+              },
+              {
+                "id": 2,
+                "name": "article",
+                "type": "Article"
+              },
+              {
+                "id": 3,
+                "name": "boosted",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "compact",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "sublinks",
+                "type": "Article",
+                "is_repeated": true
+              },
+              {
+                "id": 6,
+                "name": "html_fallback",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "branding",
+                "type": "Branding",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "premium_content",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 9,
+                "name": "sublinks_palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 10,
+                "name": "sublinks_palette_dark",
+                "type": "Palette",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Column",
+            "fields": [
+              {
+                "id": 1,
+                "name": "cards",
+                "type": "Card",
+                "is_repeated": true
+              },
+              {
+                "id": 2,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "preferred_width",
+                "type": "int32"
+              }
+            ]
+          },
+          {
+            "name": "Row",
+            "fields": [
+              {
+                "id": 1,
+                "name": "columns",
+                "type": "Column",
+                "is_repeated": true
+              },
+              {
+                "id": 2,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "preferred_number_of_columns",
+                "type": "int32"
+              },
+              {
+                "id": 5,
+                "name": "thrasher",
+                "type": "Thrasher",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "type",
+                "type": "RowType"
+              },
+              {
+                "id": 7,
+                "name": "title",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "FollowUp",
+            "fields": [
+              {
+                "id": 1,
+                "name": "type",
+                "type": "FollowUpType"
+              },
+              {
+                "id": 2,
+                "name": "uri",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "blueprint_uri",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Collection",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "rows",
+                "type": "Row",
+                "is_repeated": true
+              },
+              {
+                "id": 5,
+                "name": "title",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "branding",
+                "type": "Branding",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "premium_content",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "follow_up",
+                "type": "FollowUp",
+                "optional": true
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "google/protobuf/timestamp.proto"
+          },
+          {
+            "path": "google/protobuf/duration.proto"
+          }
+        ],
+        "package": {
+          "name": "com.gu.mobile.mapi.models"
+        },
+        "options": [
+          {
+            "name": "swift_prefix",
+            "value": "Blueprint"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "target:/:protobuf_external:/:google:/:protobuf:/:any.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "Any",
+            "fields": [
+              {
+                "id": 1,
+                "name": "type_url",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "value",
+                "type": "bytes"
+              }
+            ]
+          }
+        ],
+        "package": {
+          "name": "google.protobuf"
+        },
+        "options": [
+          {
+            "name": "csharp_namespace",
+            "value": "Google.Protobuf.WellKnownTypes"
+          },
+          {
+            "name": "go_package",
+            "value": "google.golang.org/protobuf/types/known/anypb"
+          },
+          {
+            "name": "java_package",
+            "value": "com.google.protobuf"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "AnyProto"
+          },
+          {
+            "name": "java_multiple_files",
+            "value": "true"
+          },
+          {
+            "name": "objc_class_prefix",
+            "value": "GPB"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "target:/:protobuf_external:/:google:/:protobuf:/:api.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "Api",
+            "fields": [
+              {
+                "id": 1,
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "methods",
+                "type": "Method",
+                "is_repeated": true
+              },
+              {
+                "id": 3,
+                "name": "options",
+                "type": "Option",
+                "is_repeated": true
+              },
+              {
+                "id": 4,
+                "name": "version",
+                "type": "string"
+              },
+              {
+                "id": 5,
+                "name": "source_context",
+                "type": "SourceContext"
+              },
+              {
+                "id": 6,
+                "name": "mixins",
+                "type": "Mixin",
+                "is_repeated": true
+              },
+              {
+                "id": 7,
+                "name": "syntax",
+                "type": "Syntax"
+              }
+            ]
+          },
+          {
+            "name": "Method",
+            "fields": [
+              {
+                "id": 1,
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "request_type_url",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "request_streaming",
+                "type": "bool"
+              },
+              {
+                "id": 4,
+                "name": "response_type_url",
+                "type": "string"
+              },
+              {
+                "id": 5,
+                "name": "response_streaming",
+                "type": "bool"
+              },
+              {
+                "id": 6,
+                "name": "options",
+                "type": "Option",
+                "is_repeated": true
+              },
+              {
+                "id": 7,
+                "name": "syntax",
+                "type": "Syntax"
+              }
+            ]
+          },
+          {
+            "name": "Mixin",
+            "fields": [
+              {
+                "id": 1,
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "root",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "google/protobuf/source_context.proto"
+          },
+          {
+            "path": "google/protobuf/type.proto"
+          }
+        ],
+        "package": {
+          "name": "google.protobuf"
+        },
+        "options": [
+          {
+            "name": "csharp_namespace",
+            "value": "Google.Protobuf.WellKnownTypes"
+          },
+          {
+            "name": "java_package",
+            "value": "com.google.protobuf"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ApiProto"
+          },
+          {
+            "name": "java_multiple_files",
+            "value": "true"
+          },
+          {
+            "name": "objc_class_prefix",
+            "value": "GPB"
+          },
+          {
+            "name": "go_package",
+            "value": "google.golang.org/protobuf/types/known/apipb"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "target:/:protobuf_external:/:google:/:protobuf:/:compiler:/:plugin.proto",
+      "def": {
+        "enums": [
+          {
+            "name": "CodeGeneratorResponse.Feature",
+            "enum_fields": [
+              {
+                "name": "FEATURE_NONE"
+              },
+              {
+                "name": "FEATURE_PROTO3_OPTIONAL",
+                "integer": 1
+              }
+            ]
+          }
+        ],
+        "messages": [
+          {
+            "name": "Version",
+            "fields": [
+              {
+                "id": 1,
+                "name": "major",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "minor",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "patch",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "suffix",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "CodeGeneratorRequest",
+            "fields": [
+              {
+                "id": 1,
+                "name": "file_to_generate",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 2,
+                "name": "parameter",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 15,
+                "name": "proto_file",
+                "type": "FileDescriptorProto",
+                "is_repeated": true
+              },
+              {
+                "id": 3,
+                "name": "compiler_version",
+                "type": "Version",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "CodeGeneratorResponse",
+            "fields": [
+              {
+                "id": 1,
+                "name": "error",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "supported_features",
+                "type": "uint64",
+                "optional": true
+              },
+              {
+                "id": 15,
+                "name": "file",
+                "type": "File",
+                "is_repeated": true
+              }
+            ],
+            "messages": [
+              {
+                "name": "File",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "name",
+                    "type": "string",
+                    "optional": true
+                  },
+                  {
+                    "id": 2,
+                    "name": "insertion_point",
+                    "type": "string",
+                    "optional": true
+                  },
+                  {
+                    "id": 15,
+                    "name": "content",
+                    "type": "string",
+                    "optional": true
+                  },
+                  {
+                    "id": 16,
+                    "name": "generated_code_info",
+                    "type": "GeneratedCodeInfo",
+                    "optional": true
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "google/protobuf/descriptor.proto"
+          }
+        ],
+        "package": {
+          "name": "google.protobuf.compiler"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "com.google.protobuf.compiler"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "PluginProtos"
+          },
+          {
+            "name": "go_package",
+            "value": "google.golang.org/protobuf/types/pluginpb"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "target:/:protobuf_external:/:google:/:protobuf:/:descriptor.proto",
+      "def": {
+        "enums": [
+          {
+            "name": "FieldDescriptorProto.Type",
+            "enum_fields": [
+              {
+                "name": "TYPE_DOUBLE",
+                "integer": 1
+              },
+              {
+                "name": "TYPE_FLOAT",
+                "integer": 2
+              },
+              {
+                "name": "TYPE_INT64",
+                "integer": 3
+              },
+              {
+                "name": "TYPE_UINT64",
+                "integer": 4
+              },
+              {
+                "name": "TYPE_INT32",
+                "integer": 5
+              },
+              {
+                "name": "TYPE_FIXED64",
+                "integer": 6
+              },
+              {
+                "name": "TYPE_FIXED32",
+                "integer": 7
+              },
+              {
+                "name": "TYPE_BOOL",
+                "integer": 8
+              },
+              {
+                "name": "TYPE_STRING",
+                "integer": 9
+              },
+              {
+                "name": "TYPE_GROUP",
+                "integer": 10
+              },
+              {
+                "name": "TYPE_MESSAGE",
+                "integer": 11
+              },
+              {
+                "name": "TYPE_BYTES",
+                "integer": 12
+              },
+              {
+                "name": "TYPE_UINT32",
+                "integer": 13
+              },
+              {
+                "name": "TYPE_ENUM",
+                "integer": 14
+              },
+              {
+                "name": "TYPE_SFIXED32",
+                "integer": 15
+              },
+              {
+                "name": "TYPE_SFIXED64",
+                "integer": 16
+              },
+              {
+                "name": "TYPE_SINT32",
+                "integer": 17
+              },
+              {
+                "name": "TYPE_SINT64",
+                "integer": 18
+              }
+            ]
+          },
+          {
+            "name": "FieldDescriptorProto.Label",
+            "enum_fields": [
+              {
+                "name": "LABEL_OPTIONAL",
+                "integer": 1
+              },
+              {
+                "name": "LABEL_REQUIRED",
+                "integer": 2
+              },
+              {
+                "name": "LABEL_REPEATED",
+                "integer": 3
+              }
+            ]
+          },
+          {
+            "name": "FileOptions.OptimizeMode",
+            "enum_fields": [
+              {
+                "name": "SPEED",
+                "integer": 1
+              },
+              {
+                "name": "CODE_SIZE",
+                "integer": 2
+              },
+              {
+                "name": "LITE_RUNTIME",
+                "integer": 3
+              }
+            ]
+          },
+          {
+            "name": "FieldOptions.CType",
+            "enum_fields": [
+              {
+                "name": "STRING"
+              },
+              {
+                "name": "CORD",
+                "integer": 1
+              },
+              {
+                "name": "STRING_PIECE",
+                "integer": 2
+              }
+            ]
+          },
+          {
+            "name": "FieldOptions.JSType",
+            "enum_fields": [
+              {
+                "name": "JS_NORMAL"
+              },
+              {
+                "name": "JS_STRING",
+                "integer": 1
+              },
+              {
+                "name": "JS_NUMBER",
+                "integer": 2
+              }
+            ]
+          },
+          {
+            "name": "MethodOptions.IdempotencyLevel",
+            "enum_fields": [
+              {
+                "name": "IDEMPOTENCY_UNKNOWN"
+              },
+              {
+                "name": "NO_SIDE_EFFECTS",
+                "integer": 1
+              },
+              {
+                "name": "IDEMPOTENT",
+                "integer": 2
+              }
+            ]
+          }
+        ],
+        "messages": [
+          {
+            "name": "FileDescriptorSet",
+            "fields": [
+              {
+                "id": 1,
+                "name": "file",
+                "type": "FileDescriptorProto",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "FileDescriptorProto",
+            "fields": [
+              {
+                "id": 1,
+                "name": "name",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "package",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "dependency",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 10,
+                "name": "public_dependency",
+                "type": "int32",
+                "is_repeated": true
+              },
+              {
+                "id": 11,
+                "name": "weak_dependency",
+                "type": "int32",
+                "is_repeated": true
+              },
+              {
+                "id": 4,
+                "name": "message_type",
+                "type": "DescriptorProto",
+                "is_repeated": true
+              },
+              {
+                "id": 5,
+                "name": "enum_type",
+                "type": "EnumDescriptorProto",
+                "is_repeated": true
+              },
+              {
+                "id": 6,
+                "name": "service",
+                "type": "ServiceDescriptorProto",
+                "is_repeated": true
+              },
+              {
+                "id": 7,
+                "name": "extension",
+                "type": "FieldDescriptorProto",
+                "is_repeated": true
+              },
+              {
+                "id": 8,
+                "name": "options",
+                "type": "FileOptions",
+                "optional": true
+              },
+              {
+                "id": 9,
+                "name": "source_code_info",
+                "type": "SourceCodeInfo",
+                "optional": true
+              },
+              {
+                "id": 12,
+                "name": "syntax",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "DescriptorProto",
+            "fields": [
+              {
+                "id": 1,
+                "name": "name",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "field",
+                "type": "FieldDescriptorProto",
+                "is_repeated": true
+              },
+              {
+                "id": 6,
+                "name": "extension",
+                "type": "FieldDescriptorProto",
+                "is_repeated": true
+              },
+              {
+                "id": 3,
+                "name": "nested_type",
+                "type": "DescriptorProto",
+                "is_repeated": true
+              },
+              {
+                "id": 4,
+                "name": "enum_type",
+                "type": "EnumDescriptorProto",
+                "is_repeated": true
+              },
+              {
+                "id": 5,
+                "name": "extension_range",
+                "type": "ExtensionRange",
+                "is_repeated": true
+              },
+              {
+                "id": 8,
+                "name": "oneof_decl",
+                "type": "OneofDescriptorProto",
+                "is_repeated": true
+              },
+              {
+                "id": 7,
+                "name": "options",
+                "type": "MessageOptions",
+                "optional": true
+              },
+              {
+                "id": 9,
+                "name": "reserved_range",
+                "type": "ReservedRange",
+                "is_repeated": true
+              },
+              {
+                "id": 10,
+                "name": "reserved_name",
+                "type": "string",
+                "is_repeated": true
+              }
+            ],
+            "messages": [
+              {
+                "name": "ExtensionRange",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "start",
+                    "type": "int32",
+                    "optional": true
+                  },
+                  {
+                    "id": 2,
+                    "name": "end",
+                    "type": "int32",
+                    "optional": true
+                  },
+                  {
+                    "id": 3,
+                    "name": "options",
+                    "type": "ExtensionRangeOptions",
+                    "optional": true
+                  }
+                ]
+              },
+              {
+                "name": "ReservedRange",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "start",
+                    "type": "int32",
+                    "optional": true
+                  },
+                  {
+                    "id": 2,
+                    "name": "end",
+                    "type": "int32",
+                    "optional": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "ExtensionRangeOptions",
+            "fields": [
+              {
+                "id": 999,
+                "name": "uninterpreted_option",
+                "type": "UninterpretedOption",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "FieldDescriptorProto",
+            "fields": [
+              {
+                "id": 1,
+                "name": "name",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "number",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "label",
+                "type": "Label",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "type",
+                "type": "Type",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "type_name",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "extendee",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "default_value",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 9,
+                "name": "oneof_index",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 10,
+                "name": "json_name",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "options",
+                "type": "FieldOptions",
+                "optional": true
+              },
+              {
+                "id": 17,
+                "name": "proto3_optional",
+                "type": "bool",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "OneofDescriptorProto",
+            "fields": [
+              {
+                "id": 1,
+                "name": "name",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "options",
+                "type": "OneofOptions",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "EnumDescriptorProto",
+            "fields": [
+              {
+                "id": 1,
+                "name": "name",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "value",
+                "type": "EnumValueDescriptorProto",
+                "is_repeated": true
+              },
+              {
+                "id": 3,
+                "name": "options",
+                "type": "EnumOptions",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "reserved_range",
+                "type": "EnumReservedRange",
+                "is_repeated": true
+              },
+              {
+                "id": 5,
+                "name": "reserved_name",
+                "type": "string",
+                "is_repeated": true
+              }
+            ],
+            "messages": [
+              {
+                "name": "EnumReservedRange",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "start",
+                    "type": "int32",
+                    "optional": true
+                  },
+                  {
+                    "id": 2,
+                    "name": "end",
+                    "type": "int32",
+                    "optional": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "EnumValueDescriptorProto",
+            "fields": [
+              {
+                "id": 1,
+                "name": "name",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "number",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "options",
+                "type": "EnumValueOptions",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "ServiceDescriptorProto",
+            "fields": [
+              {
+                "id": 1,
+                "name": "name",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "method",
+                "type": "MethodDescriptorProto",
+                "is_repeated": true
+              },
+              {
+                "id": 3,
+                "name": "options",
+                "type": "ServiceOptions",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "MethodDescriptorProto",
+            "fields": [
+              {
+                "id": 1,
+                "name": "name",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "input_type",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "output_type",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "options",
+                "type": "MethodOptions",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "client_streaming",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "id": 6,
+                "name": "server_streaming",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "FileOptions",
+            "fields": [
+              {
+                "id": 1,
+                "name": "java_package",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "java_outer_classname",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 10,
+                "name": "java_multiple_files",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "id": 20,
+                "name": "java_generate_equals_and_hash",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "id": 27,
+                "name": "java_string_check_utf8",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "id": 9,
+                "name": "optimize_for",
+                "type": "OptimizeMode",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "SPEED"
+                  }
+                ]
+              },
+              {
+                "id": 11,
+                "name": "go_package",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 16,
+                "name": "cc_generic_services",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "id": 17,
+                "name": "java_generic_services",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "id": 18,
+                "name": "py_generic_services",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "id": 42,
+                "name": "php_generic_services",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "id": 23,
+                "name": "deprecated",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "id": 31,
+                "name": "cc_enable_arenas",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "id": 36,
+                "name": "objc_class_prefix",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 37,
+                "name": "csharp_namespace",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 39,
+                "name": "swift_prefix",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 40,
+                "name": "php_class_prefix",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 41,
+                "name": "php_namespace",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 44,
+                "name": "php_metadata_namespace",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 45,
+                "name": "ruby_package",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 999,
+                "name": "uninterpreted_option",
+                "type": "UninterpretedOption",
+                "is_repeated": true
+              }
+            ],
+            "reserved_ids": [
+              38
+            ]
+          },
+          {
+            "name": "MessageOptions",
+            "fields": [
+              {
+                "id": 1,
+                "name": "message_set_wire_format",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "id": 2,
+                "name": "no_standard_descriptor_accessor",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "id": 3,
+                "name": "deprecated",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "id": 7,
+                "name": "map_entry",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 999,
+                "name": "uninterpreted_option",
+                "type": "UninterpretedOption",
+                "is_repeated": true
+              }
+            ],
+            "reserved_ids": [
+              4,
+              5,
+              6,
+              8,
+              9
+            ]
+          },
+          {
+            "name": "FieldOptions",
+            "fields": [
+              {
+                "id": 1,
+                "name": "ctype",
+                "type": "CType",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "STRING"
+                  }
+                ]
+              },
+              {
+                "id": 2,
+                "name": "packed",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "jstype",
+                "type": "JSType",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "JS_NORMAL"
+                  }
+                ]
+              },
+              {
+                "id": 5,
+                "name": "lazy",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "id": 3,
+                "name": "deprecated",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "id": 10,
+                "name": "weak",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "id": 999,
+                "name": "uninterpreted_option",
+                "type": "UninterpretedOption",
+                "is_repeated": true
+              }
+            ],
+            "reserved_ids": [
+              4
+            ]
+          },
+          {
+            "name": "OneofOptions",
+            "fields": [
+              {
+                "id": 999,
+                "name": "uninterpreted_option",
+                "type": "UninterpretedOption",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "EnumOptions",
+            "fields": [
+              {
+                "id": 2,
+                "name": "allow_alias",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "deprecated",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "id": 999,
+                "name": "uninterpreted_option",
+                "type": "UninterpretedOption",
+                "is_repeated": true
+              }
+            ],
+            "reserved_ids": [
+              5
+            ]
+          },
+          {
+            "name": "EnumValueOptions",
+            "fields": [
+              {
+                "id": 1,
+                "name": "deprecated",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "id": 999,
+                "name": "uninterpreted_option",
+                "type": "UninterpretedOption",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "ServiceOptions",
+            "fields": [
+              {
+                "id": 33,
+                "name": "deprecated",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "id": 999,
+                "name": "uninterpreted_option",
+                "type": "UninterpretedOption",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "MethodOptions",
+            "fields": [
+              {
+                "id": 33,
+                "name": "deprecated",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "id": 34,
+                "name": "idempotency_level",
+                "type": "IdempotencyLevel",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "IDEMPOTENCY_UNKNOWN"
+                  }
+                ]
+              },
+              {
+                "id": 999,
+                "name": "uninterpreted_option",
+                "type": "UninterpretedOption",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "UninterpretedOption",
+            "fields": [
+              {
+                "id": 2,
+                "name": "name",
+                "type": "NamePart",
+                "is_repeated": true
+              },
+              {
+                "id": 3,
+                "name": "identifier_value",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "positive_int_value",
+                "type": "uint64",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "negative_int_value",
+                "type": "int64",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "double_value",
+                "type": "double",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "string_value",
+                "type": "bytes",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "aggregate_value",
+                "type": "string",
+                "optional": true
+              }
+            ],
+            "messages": [
+              {
+                "name": "NamePart",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "name_part",
+                    "type": "string",
+                    "required": true
+                  },
+                  {
+                    "id": 2,
+                    "name": "is_extension",
+                    "type": "bool",
+                    "required": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "SourceCodeInfo",
+            "fields": [
+              {
+                "id": 1,
+                "name": "location",
+                "type": "Location",
+                "is_repeated": true
+              }
+            ],
+            "messages": [
+              {
+                "name": "Location",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "path",
+                    "type": "int32",
+                    "is_repeated": true,
+                    "options": [
+                      {
+                        "name": "packed",
+                        "value": "true"
+                      }
+                    ]
+                  },
+                  {
+                    "id": 2,
+                    "name": "span",
+                    "type": "int32",
+                    "is_repeated": true,
+                    "options": [
+                      {
+                        "name": "packed",
+                        "value": "true"
+                      }
+                    ]
+                  },
+                  {
+                    "id": 3,
+                    "name": "leading_comments",
+                    "type": "string",
+                    "optional": true
+                  },
+                  {
+                    "id": 4,
+                    "name": "trailing_comments",
+                    "type": "string",
+                    "optional": true
+                  },
+                  {
+                    "id": 6,
+                    "name": "leading_detached_comments",
+                    "type": "string",
+                    "is_repeated": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "GeneratedCodeInfo",
+            "fields": [
+              {
+                "id": 1,
+                "name": "annotation",
+                "type": "Annotation",
+                "is_repeated": true
+              }
+            ],
+            "messages": [
+              {
+                "name": "Annotation",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "path",
+                    "type": "int32",
+                    "is_repeated": true,
+                    "options": [
+                      {
+                        "name": "packed",
+                        "value": "true"
+                      }
+                    ]
+                  },
+                  {
+                    "id": 2,
+                    "name": "source_file",
+                    "type": "string",
+                    "optional": true
+                  },
+                  {
+                    "id": 3,
+                    "name": "begin",
+                    "type": "int32",
+                    "optional": true
+                  },
+                  {
+                    "id": 4,
+                    "name": "end",
+                    "type": "int32",
+                    "optional": true
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "package": {
+          "name": "google.protobuf"
+        },
+        "options": [
+          {
+            "name": "go_package",
+            "value": "google.golang.org/protobuf/types/descriptorpb"
+          },
+          {
+            "name": "java_package",
+            "value": "com.google.protobuf"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "DescriptorProtos"
+          },
+          {
+            "name": "csharp_namespace",
+            "value": "Google.Protobuf.Reflection"
+          },
+          {
+            "name": "objc_class_prefix",
+            "value": "GPB"
+          },
+          {
+            "name": "cc_enable_arenas",
+            "value": "true"
+          },
+          {
+            "name": "optimize_for",
+            "value": "SPEED"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "target:/:protobuf_external:/:google:/:protobuf:/:duration.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "Duration",
+            "fields": [
+              {
+                "id": 1,
+                "name": "seconds",
+                "type": "int64"
+              },
+              {
+                "id": 2,
+                "name": "nanos",
+                "type": "int32"
+              }
+            ]
+          }
+        ],
+        "package": {
+          "name": "google.protobuf"
+        },
+        "options": [
+          {
+            "name": "csharp_namespace",
+            "value": "Google.Protobuf.WellKnownTypes"
+          },
+          {
+            "name": "cc_enable_arenas",
+            "value": "true"
+          },
+          {
+            "name": "go_package",
+            "value": "google.golang.org/protobuf/types/known/durationpb"
+          },
+          {
+            "name": "java_package",
+            "value": "com.google.protobuf"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "DurationProto"
+          },
+          {
+            "name": "java_multiple_files",
+            "value": "true"
+          },
+          {
+            "name": "objc_class_prefix",
+            "value": "GPB"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "target:/:protobuf_external:/:google:/:protobuf:/:empty.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "Empty"
+          }
+        ],
+        "package": {
+          "name": "google.protobuf"
+        },
+        "options": [
+          {
+            "name": "csharp_namespace",
+            "value": "Google.Protobuf.WellKnownTypes"
+          },
+          {
+            "name": "go_package",
+            "value": "google.golang.org/protobuf/types/known/emptypb"
+          },
+          {
+            "name": "java_package",
+            "value": "com.google.protobuf"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "EmptyProto"
+          },
+          {
+            "name": "java_multiple_files",
+            "value": "true"
+          },
+          {
+            "name": "objc_class_prefix",
+            "value": "GPB"
+          },
+          {
+            "name": "cc_enable_arenas",
+            "value": "true"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "target:/:protobuf_external:/:google:/:protobuf:/:field_mask.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "FieldMask",
+            "fields": [
+              {
+                "id": 1,
+                "name": "paths",
+                "type": "string",
+                "is_repeated": true
+              }
+            ]
+          }
+        ],
+        "package": {
+          "name": "google.protobuf"
+        },
+        "options": [
+          {
+            "name": "csharp_namespace",
+            "value": "Google.Protobuf.WellKnownTypes"
+          },
+          {
+            "name": "java_package",
+            "value": "com.google.protobuf"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "FieldMaskProto"
+          },
+          {
+            "name": "java_multiple_files",
+            "value": "true"
+          },
+          {
+            "name": "objc_class_prefix",
+            "value": "GPB"
+          },
+          {
+            "name": "go_package",
+            "value": "google.golang.org/protobuf/types/known/fieldmaskpb"
+          },
+          {
+            "name": "cc_enable_arenas",
+            "value": "true"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "target:/:protobuf_external:/:google:/:protobuf:/:source_context.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "SourceContext",
+            "fields": [
+              {
+                "id": 1,
+                "name": "file_name",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "package": {
+          "name": "google.protobuf"
+        },
+        "options": [
+          {
+            "name": "csharp_namespace",
+            "value": "Google.Protobuf.WellKnownTypes"
+          },
+          {
+            "name": "java_package",
+            "value": "com.google.protobuf"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "SourceContextProto"
+          },
+          {
+            "name": "java_multiple_files",
+            "value": "true"
+          },
+          {
+            "name": "objc_class_prefix",
+            "value": "GPB"
+          },
+          {
+            "name": "go_package",
+            "value": "google.golang.org/protobuf/types/known/sourcecontextpb"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "target:/:protobuf_external:/:google:/:protobuf:/:struct.proto",
+      "def": {
+        "enums": [
+          {
+            "name": "NullValue",
+            "enum_fields": [
+              {
+                "name": "NULL_VALUE"
+              }
+            ]
+          }
+        ],
+        "messages": [
+          {
+            "name": "Struct",
+            "maps": [
+              {
+                "key_type": "string",
+                "field": {
+                  "id": 1,
+                  "name": "fields",
+                  "type": "Value"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Value",
+            "fields": [
+              {
+                "id": 1,
+                "name": "null_value",
+                "type": "NullValue"
+              },
+              {
+                "id": 2,
+                "name": "number_value",
+                "type": "double"
+              },
+              {
+                "id": 3,
+                "name": "string_value",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "bool_value",
+                "type": "bool"
+              },
+              {
+                "id": 5,
+                "name": "struct_value",
+                "type": "Struct"
+              },
+              {
+                "id": 6,
+                "name": "list_value",
+                "type": "ListValue"
+              }
+            ]
+          },
+          {
+            "name": "ListValue",
+            "fields": [
+              {
+                "id": 1,
+                "name": "values",
+                "type": "Value",
+                "is_repeated": true
+              }
+            ]
+          }
+        ],
+        "package": {
+          "name": "google.protobuf"
+        },
+        "options": [
+          {
+            "name": "csharp_namespace",
+            "value": "Google.Protobuf.WellKnownTypes"
+          },
+          {
+            "name": "cc_enable_arenas",
+            "value": "true"
+          },
+          {
+            "name": "go_package",
+            "value": "google.golang.org/protobuf/types/known/structpb"
+          },
+          {
+            "name": "java_package",
+            "value": "com.google.protobuf"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "StructProto"
+          },
+          {
+            "name": "java_multiple_files",
+            "value": "true"
+          },
+          {
+            "name": "objc_class_prefix",
+            "value": "GPB"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "target:/:protobuf_external:/:google:/:protobuf:/:timestamp.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "Timestamp",
+            "fields": [
+              {
+                "id": 1,
+                "name": "seconds",
+                "type": "int64"
+              },
+              {
+                "id": 2,
+                "name": "nanos",
+                "type": "int32"
+              }
+            ]
+          }
+        ],
+        "package": {
+          "name": "google.protobuf"
+        },
+        "options": [
+          {
+            "name": "csharp_namespace",
+            "value": "Google.Protobuf.WellKnownTypes"
+          },
+          {
+            "name": "cc_enable_arenas",
+            "value": "true"
+          },
+          {
+            "name": "go_package",
+            "value": "google.golang.org/protobuf/types/known/timestamppb"
+          },
+          {
+            "name": "java_package",
+            "value": "com.google.protobuf"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "TimestampProto"
+          },
+          {
+            "name": "java_multiple_files",
+            "value": "true"
+          },
+          {
+            "name": "objc_class_prefix",
+            "value": "GPB"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "target:/:protobuf_external:/:google:/:protobuf:/:type.proto",
+      "def": {
+        "enums": [
+          {
+            "name": "Field.Kind",
+            "enum_fields": [
+              {
+                "name": "TYPE_UNKNOWN"
+              },
+              {
+                "name": "TYPE_DOUBLE",
+                "integer": 1
+              },
+              {
+                "name": "TYPE_FLOAT",
+                "integer": 2
+              },
+              {
+                "name": "TYPE_INT64",
+                "integer": 3
+              },
+              {
+                "name": "TYPE_UINT64",
+                "integer": 4
+              },
+              {
+                "name": "TYPE_INT32",
+                "integer": 5
+              },
+              {
+                "name": "TYPE_FIXED64",
+                "integer": 6
+              },
+              {
+                "name": "TYPE_FIXED32",
+                "integer": 7
+              },
+              {
+                "name": "TYPE_BOOL",
+                "integer": 8
+              },
+              {
+                "name": "TYPE_STRING",
+                "integer": 9
+              },
+              {
+                "name": "TYPE_GROUP",
+                "integer": 10
+              },
+              {
+                "name": "TYPE_MESSAGE",
+                "integer": 11
+              },
+              {
+                "name": "TYPE_BYTES",
+                "integer": 12
+              },
+              {
+                "name": "TYPE_UINT32",
+                "integer": 13
+              },
+              {
+                "name": "TYPE_ENUM",
+                "integer": 14
+              },
+              {
+                "name": "TYPE_SFIXED32",
+                "integer": 15
+              },
+              {
+                "name": "TYPE_SFIXED64",
+                "integer": 16
+              },
+              {
+                "name": "TYPE_SINT32",
+                "integer": 17
+              },
+              {
+                "name": "TYPE_SINT64",
+                "integer": 18
+              }
+            ]
+          },
+          {
+            "name": "Field.Cardinality",
+            "enum_fields": [
+              {
+                "name": "CARDINALITY_UNKNOWN"
+              },
+              {
+                "name": "CARDINALITY_OPTIONAL",
+                "integer": 1
+              },
+              {
+                "name": "CARDINALITY_REQUIRED",
+                "integer": 2
+              },
+              {
+                "name": "CARDINALITY_REPEATED",
+                "integer": 3
+              }
+            ]
+          },
+          {
+            "name": "Syntax",
+            "enum_fields": [
+              {
+                "name": "SYNTAX_PROTO2"
+              },
+              {
+                "name": "SYNTAX_PROTO3",
+                "integer": 1
+              }
+            ]
+          }
+        ],
+        "messages": [
+          {
+            "name": "Type",
+            "fields": [
+              {
+                "id": 1,
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "fields",
+                "type": "Field",
+                "is_repeated": true
+              },
+              {
+                "id": 3,
+                "name": "oneofs",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 4,
+                "name": "options",
+                "type": "Option",
+                "is_repeated": true
+              },
+              {
+                "id": 5,
+                "name": "source_context",
+                "type": "SourceContext"
+              },
+              {
+                "id": 6,
+                "name": "syntax",
+                "type": "Syntax"
+              }
+            ]
+          },
+          {
+            "name": "Field",
+            "fields": [
+              {
+                "id": 1,
+                "name": "kind",
+                "type": "Kind"
+              },
+              {
+                "id": 2,
+                "name": "cardinality",
+                "type": "Cardinality"
+              },
+              {
+                "id": 3,
+                "name": "number",
+                "type": "int32"
+              },
+              {
+                "id": 4,
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "id": 6,
+                "name": "type_url",
+                "type": "string"
+              },
+              {
+                "id": 7,
+                "name": "oneof_index",
+                "type": "int32"
+              },
+              {
+                "id": 8,
+                "name": "packed",
+                "type": "bool"
+              },
+              {
+                "id": 9,
+                "name": "options",
+                "type": "Option",
+                "is_repeated": true
+              },
+              {
+                "id": 10,
+                "name": "json_name",
+                "type": "string"
+              },
+              {
+                "id": 11,
+                "name": "default_value",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "Enum",
+            "fields": [
+              {
+                "id": 1,
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "enumvalue",
+                "type": "EnumValue",
+                "is_repeated": true
+              },
+              {
+                "id": 3,
+                "name": "options",
+                "type": "Option",
+                "is_repeated": true
+              },
+              {
+                "id": 4,
+                "name": "source_context",
+                "type": "SourceContext"
+              },
+              {
+                "id": 5,
+                "name": "syntax",
+                "type": "Syntax"
+              }
+            ]
+          },
+          {
+            "name": "EnumValue",
+            "fields": [
+              {
+                "id": 1,
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "number",
+                "type": "int32"
+              },
+              {
+                "id": 3,
+                "name": "options",
+                "type": "Option",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "Option",
+            "fields": [
+              {
+                "id": 1,
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "value",
+                "type": "Any"
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "google/protobuf/any.proto"
+          },
+          {
+            "path": "google/protobuf/source_context.proto"
+          }
+        ],
+        "package": {
+          "name": "google.protobuf"
+        },
+        "options": [
+          {
+            "name": "csharp_namespace",
+            "value": "Google.Protobuf.WellKnownTypes"
+          },
+          {
+            "name": "cc_enable_arenas",
+            "value": "true"
+          },
+          {
+            "name": "java_package",
+            "value": "com.google.protobuf"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "TypeProto"
+          },
+          {
+            "name": "java_multiple_files",
+            "value": "true"
+          },
+          {
+            "name": "objc_class_prefix",
+            "value": "GPB"
+          },
+          {
+            "name": "go_package",
+            "value": "google.golang.org/protobuf/types/known/typepb"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "target:/:protobuf_external:/:google:/:protobuf:/:wrappers.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "DoubleValue",
+            "fields": [
+              {
+                "id": 1,
+                "name": "value",
+                "type": "double"
+              }
+            ]
+          },
+          {
+            "name": "FloatValue",
+            "fields": [
+              {
+                "id": 1,
+                "name": "value",
+                "type": "float"
+              }
+            ]
+          },
+          {
+            "name": "Int64Value",
+            "fields": [
+              {
+                "id": 1,
+                "name": "value",
+                "type": "int64"
+              }
+            ]
+          },
+          {
+            "name": "UInt64Value",
+            "fields": [
+              {
+                "id": 1,
+                "name": "value",
+                "type": "uint64"
+              }
+            ]
+          },
+          {
+            "name": "Int32Value",
+            "fields": [
+              {
+                "id": 1,
+                "name": "value",
+                "type": "int32"
+              }
+            ]
+          },
+          {
+            "name": "UInt32Value",
+            "fields": [
+              {
+                "id": 1,
+                "name": "value",
+                "type": "uint32"
+              }
+            ]
+          },
+          {
+            "name": "BoolValue",
+            "fields": [
+              {
+                "id": 1,
+                "name": "value",
+                "type": "bool"
+              }
+            ]
+          },
+          {
+            "name": "StringValue",
+            "fields": [
+              {
+                "id": 1,
+                "name": "value",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "BytesValue",
+            "fields": [
+              {
+                "id": 1,
+                "name": "value",
+                "type": "bytes"
+              }
+            ]
+          }
+        ],
+        "package": {
+          "name": "google.protobuf"
+        },
+        "options": [
+          {
+            "name": "csharp_namespace",
+            "value": "Google.Protobuf.WellKnownTypes"
+          },
+          {
+            "name": "cc_enable_arenas",
+            "value": "true"
+          },
+          {
+            "name": "go_package",
+            "value": "google.golang.org/protobuf/types/known/wrapperspb"
+          },
+          {
+            "name": "java_package",
+            "value": "com.google.protobuf"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "WrappersProto"
+          },
+          {
+            "name": "java_multiple_files",
+            "value": "true"
+          },
+          {
+            "name": "objc_class_prefix",
+            "value": "GPB"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "target:/:protobuf_external:/:scalapb:/:scalapb.proto",
+      "def": {
+        "enums": [
+          {
+            "name": "ScalaPbOptions.OptionsScope",
+            "enum_fields": [
+              {
+                "name": "FILE"
+              },
+              {
+                "name": "PACKAGE",
+                "integer": 1
+              }
+            ]
+          },
+          {
+            "name": "ScalaPbOptions.EnumValueNaming",
+            "enum_fields": [
+              {
+                "name": "AS_IN_PROTO"
+              },
+              {
+                "name": "CAMEL_CASE",
+                "integer": 1
+              }
+            ]
+          },
+          {
+            "name": "MatchType",
+            "enum_fields": [
+              {
+                "name": "CONTAINS"
+              },
+              {
+                "name": "EXACT",
+                "integer": 1
+              },
+              {
+                "name": "PRESENCE",
+                "integer": 2
+              }
+            ]
+          }
+        ],
+        "messages": [
+          {
+            "name": "ScalaPbOptions",
+            "fields": [
+              {
+                "id": 1,
+                "name": "package_name",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "flat_package",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "import",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 4,
+                "name": "preamble",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 5,
+                "name": "single_file",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "no_primitive_wrappers",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "primitive_wrappers",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "collection_type",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 9,
+                "name": "preserve_unknown_fields",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "id": 10,
+                "name": "object_name",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 11,
+                "name": "scope",
+                "type": "OptionsScope",
+                "optional": true
+              },
+              {
+                "id": 12,
+                "name": "lenses",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "id": 13,
+                "name": "retain_source_code_info",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 14,
+                "name": "map_type",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 15,
+                "name": "no_default_values_in_constructor",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 16,
+                "name": "enum_value_naming",
+                "type": "EnumValueNaming",
+                "optional": true
+              },
+              {
+                "id": 17,
+                "name": "enum_strip_prefix",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "id": 21,
+                "name": "bytes_type",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 23,
+                "name": "java_conversions",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 18,
+                "name": "aux_message_options",
+                "type": "AuxMessageOptions",
+                "is_repeated": true
+              },
+              {
+                "id": 19,
+                "name": "aux_field_options",
+                "type": "AuxFieldOptions",
+                "is_repeated": true
+              },
+              {
+                "id": 20,
+                "name": "aux_enum_options",
+                "type": "AuxEnumOptions",
+                "is_repeated": true
+              },
+              {
+                "id": 22,
+                "name": "aux_enum_value_options",
+                "type": "AuxEnumValueOptions",
+                "is_repeated": true
+              },
+              {
+                "id": 24,
+                "name": "preprocessors",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 25,
+                "name": "field_transformations",
+                "type": "FieldTransformation",
+                "is_repeated": true
+              },
+              {
+                "id": 26,
+                "name": "ignore_all_transformations",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 27,
+                "name": "getters",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "id": 999,
+                "name": "test_only_no_java_conversions",
+                "type": "bool",
+                "optional": true
+              }
+            ],
+            "messages": [
+              {
+                "name": "AuxMessageOptions",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "target",
+                    "type": "string",
+                    "optional": true
+                  },
+                  {
+                    "id": 2,
+                    "name": "options",
+                    "type": "MessageOptions",
+                    "optional": true
+                  }
+                ]
+              },
+              {
+                "name": "AuxFieldOptions",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "target",
+                    "type": "string",
+                    "optional": true
+                  },
+                  {
+                    "id": 2,
+                    "name": "options",
+                    "type": "FieldOptions",
+                    "optional": true
+                  }
+                ]
+              },
+              {
+                "name": "AuxEnumOptions",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "target",
+                    "type": "string",
+                    "optional": true
+                  },
+                  {
+                    "id": 2,
+                    "name": "options",
+                    "type": "EnumOptions",
+                    "optional": true
+                  }
+                ]
+              },
+              {
+                "name": "AuxEnumValueOptions",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "target",
+                    "type": "string",
+                    "optional": true
+                  },
+                  {
+                    "id": 2,
+                    "name": "options",
+                    "type": "EnumValueOptions",
+                    "optional": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "google.protobuf.FileOptions",
+            "fields": [
+              {
+                "id": 1020,
+                "name": "options",
+                "type": "ScalaPbOptions",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "MessageOptions",
+            "fields": [
+              {
+                "id": 1,
+                "name": "extends",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 2,
+                "name": "companion_extends",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 3,
+                "name": "annotations",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 4,
+                "name": "type",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "companion_annotations",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 6,
+                "name": "sealed_oneof_extends",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 7,
+                "name": "no_box",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "unknown_fields_annotations",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 9,
+                "name": "no_default_values_in_constructor",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 10,
+                "name": "sealed_oneof_companion_extends",
+                "type": "string",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "google.protobuf.MessageOptions",
+            "fields": [
+              {
+                "id": 1020,
+                "name": "message",
+                "type": "MessageOptions",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Collection",
+            "fields": [
+              {
+                "id": 1,
+                "name": "type",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "non_empty",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "adapter",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "FieldOptions",
+            "fields": [
+              {
+                "id": 1,
+                "name": "type",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "scala_name",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "collection_type",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "collection",
+                "type": "Collection",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "key_type",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "value_type",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "annotations",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 7,
+                "name": "map_type",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 9,
+                "name": "no_default_value_in_constructor",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 30,
+                "name": "no_box",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 31,
+                "name": "required",
+                "type": "bool",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "google.protobuf.FieldOptions",
+            "fields": [
+              {
+                "id": 1020,
+                "name": "field",
+                "type": "FieldOptions",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "EnumOptions",
+            "fields": [
+              {
+                "id": 1,
+                "name": "extends",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 2,
+                "name": "companion_extends",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 3,
+                "name": "type",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "base_annotations",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 5,
+                "name": "recognized_annotations",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 6,
+                "name": "unrecognized_annotations",
+                "type": "string",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "google.protobuf.EnumOptions",
+            "fields": [
+              {
+                "id": 1020,
+                "name": "enum_options",
+                "type": "EnumOptions",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "EnumValueOptions",
+            "fields": [
+              {
+                "id": 1,
+                "name": "extends",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 2,
+                "name": "scala_name",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "annotations",
+                "type": "string",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "google.protobuf.EnumValueOptions",
+            "fields": [
+              {
+                "id": 1020,
+                "name": "enum_value",
+                "type": "EnumValueOptions",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "OneofOptions",
+            "fields": [
+              {
+                "id": 1,
+                "name": "extends",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 2,
+                "name": "scala_name",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "google.protobuf.OneofOptions",
+            "fields": [
+              {
+                "id": 1020,
+                "name": "oneof",
+                "type": "OneofOptions",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "FieldTransformation",
+            "fields": [
+              {
+                "id": 1,
+                "name": "when",
+                "type": "google.protobuf.FieldDescriptorProto",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "match_type",
+                "type": "MatchType",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "CONTAINS"
+                  }
+                ]
+              },
+              {
+                "id": 3,
+                "name": "set",
+                "type": "google.protobuf.FieldOptions",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "PreprocessorOutput",
+            "maps": [
+              {
+                "key_type": "string",
+                "field": {
+                  "id": 1,
+                  "name": "options_by_file",
+                  "type": "ScalaPbOptions"
+                }
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "google/protobuf/descriptor.proto"
+          }
+        ],
+        "package": {
+          "name": "scalapb"
+        },
+        "options": [
+          {
+            "name": "go_package",
+            "value": "scalapb.github.io/protobuf/scalapb"
+          },
+          {
+            "name": "java_package",
+            "value": "scalapb.options"
+          },
+          {
+            "name": "(options)",
+            "aggregated": [
+              {
+                "name": "package_name",
+                "value": "scalapb.options"
+              },
+              {
+                "name": "flat_package",
+                "value": "true"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "target:/:scala-2.12:/:classes:/:collection.proto",
+      "def": {
+        "enums": [
+          {
+            "name": "MediaType",
+            "enum_fields": [
+              {
+                "name": "MEDIA_TYPE_VIDEO"
+              },
+              {
+                "name": "MEDIA_TYPE_AUDIO",
+                "integer": 1
+              },
+              {
+                "name": "MEDIA_TYPE_IMAGE",
+                "integer": 2
+              }
+            ]
+          },
+          {
+            "name": "Card.CardType",
+            "enum_fields": [
+              {
+                "name": "CARD_TYPE_ARTICLE"
+              },
+              {
+                "name": "CARD_TYPE_PODCAST",
+                "integer": 1
+              },
+              {
+                "name": "CARD_TYPE_VIDEO",
+                "integer": 2
+              }
+            ]
+          },
+          {
+            "name": "Row.RowType",
+            "enum_fields": [
+              {
+                "name": "ROW_TYPE_LAYOUT"
+              },
+              {
+                "name": "ROW_TYPE_CAROUSEL",
+                "integer": 1
+              },
+              {
+                "name": "ROW_TYPE_THRASHER",
+                "integer": 2
+              }
+            ]
+          }
+        ],
+        "messages": [
+          {
+            "name": "Palette",
+            "fields": [
+              {
+                "id": 1,
+                "name": "accent_colour",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "background",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "comment_count",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "element_background",
+                "type": "string"
+              },
+              {
+                "id": 5,
+                "name": "headline",
+                "type": "string"
+              },
+              {
+                "id": 6,
+                "name": "immersive_kicker",
+                "type": "string"
+              },
+              {
+                "id": 7,
+                "name": "main",
+                "type": "string"
+              },
+              {
+                "id": 8,
+                "name": "media_background",
+                "type": "string"
+              },
+              {
+                "id": 9,
+                "name": "media_icon",
+                "type": "string"
+              },
+              {
+                "id": 10,
+                "name": "meta_text",
+                "type": "string"
+              },
+              {
+                "id": 11,
+                "name": "pill",
+                "type": "string"
+              },
+              {
+                "id": 12,
+                "name": "pillar",
+                "type": "string"
+              },
+              {
+                "id": 13,
+                "name": "secondary",
+                "type": "string"
+              },
+              {
+                "id": 14,
+                "name": "shadow",
+                "type": "string"
+              },
+              {
+                "id": 15,
+                "name": "top_border",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "Links",
+            "fields": [
+              {
+                "id": 3,
+                "name": "uri",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "short_url",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "web_uri",
+                "type": "string"
+              },
+              {
+                "id": 1,
+                "name": "related_uri",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "Image",
+            "fields": [
+              {
+                "id": 1,
+                "name": "alt_text",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "caption",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "credit",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "height",
+                "type": "int32"
+              },
+              {
+                "id": 5,
+                "name": "orientation",
+                "type": "string"
+              },
+              {
+                "id": 6,
+                "name": "url_template",
+                "type": "string"
+              },
+              {
+                "id": 7,
+                "name": "width",
+                "type": "int32"
+              }
+            ]
+          },
+          {
+            "name": "Article",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 6,
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "links",
+                "type": "Links"
+              },
+              {
+                "id": 2,
+                "name": "byline",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "kicker",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "trail_text",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 16,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 17,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "images",
+                "type": "Image",
+                "is_repeated": true
+              },
+              {
+                "id": 14,
+                "name": "profile_image",
+                "type": "Image",
+                "optional": true
+              },
+              {
+                "id": 15,
+                "name": "events",
+                "type": "LiveEvent",
+                "is_repeated": true
+              },
+              {
+                "id": 8,
+                "name": "rating",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 9,
+                "name": "comment_count",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 10,
+                "name": "published_date",
+                "type": "google.protobuf.Timestamp",
+                "optional": true
+              },
+              {
+                "id": 11,
+                "name": "last_updated_date",
+                "type": "google.protobuf.Timestamp",
+                "optional": true
+              },
+              {
+                "id": 12,
+                "name": "media_type",
+                "type": "MediaType",
+                "optional": true
+              },
+              {
+                "id": 13,
+                "name": "duration",
+                "type": "google.protobuf.Duration",
+                "optional": true
+              },
+              {
+                "id": 18,
+                "name": "apple_podcast_url",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 19,
+                "name": "google_podcast_url",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 20,
+                "name": "spotify_podcast_url",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "LiveEvent",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "body",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "published_date",
+                "type": "google.protobuf.Timestamp",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "last_updated_date",
+                "type": "google.protobuf.Timestamp",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Thrasher",
+            "fields": [
+              {
+                "id": 1,
+                "name": "uri",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "Branding",
+            "fields": [
+              {
+                "id": 1,
+                "name": "branding_type",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "sponsor_name",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "logo",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "sponsor_uri",
+                "type": "string"
+              },
+              {
+                "id": 5,
+                "name": "label",
+                "type": "string"
+              },
+              {
+                "id": 6,
+                "name": "about_uri",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "Card",
+            "fields": [
+              {
+                "id": 1,
+                "name": "type",
+                "type": "CardType"
+              },
+              {
+                "id": 2,
+                "name": "article",
+                "type": "Article"
+              },
+              {
+                "id": 3,
+                "name": "boosted",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "compact",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "sublinks",
+                "type": "Article",
+                "is_repeated": true
+              },
+              {
+                "id": 6,
+                "name": "htmlFallback",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Column",
+            "fields": [
+              {
+                "id": 1,
+                "name": "cards",
+                "type": "Card",
+                "is_repeated": true
+              },
+              {
+                "id": 2,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "preferred_width",
+                "type": "int32"
+              }
+            ]
+          },
+          {
+            "name": "Row",
+            "fields": [
+              {
+                "id": 6,
+                "name": "type",
+                "type": "RowType"
+              },
+              {
+                "id": 7,
+                "name": "title",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 1,
+                "name": "columns",
+                "type": "Column",
+                "is_repeated": true
+              },
+              {
+                "id": 2,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "preferred_number_of_columns",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "thrasher",
+                "type": "Thrasher",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Collection",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 5,
+                "name": "title",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "rows",
+                "type": "Row",
+                "is_repeated": true
+              },
+              {
+                "id": 2,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "google/protobuf/timestamp.proto"
+          },
+          {
+            "path": "google/protobuf/duration.proto"
+          }
+        ],
+        "package": {
+          "name": "scalapb"
+        },
+        "options": [
+          {
+            "name": "swift_prefix",
+            "value": "Blueprint"
+          },
+          {
+            "name": "java_package",
+            "value": "com.gu.mobile.mapi.models"
+          }
+        ]
+      }
+    }
+  ]
+}
