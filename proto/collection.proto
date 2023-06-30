@@ -57,9 +57,7 @@ message Video {
     optional int32 width = 7;
 }
 
-/**
- * This message is only applicable to live blogs.
- */
+// This message is only applicable to live blogs.
 message LiveEvent {
     string id = 1;
     string title = 2;
@@ -69,8 +67,9 @@ message LiveEvent {
 }
 
 /**
- * This is a special type of container on a front that is delivered via editorial tools.
- * Thrashers are used to promote either features or commercial content.
+ * This is a special type of container on a front that is delivered via
+ * editorial tools.Thrashers are used to promote either features or
+ * commercial content.
  */
 message Thrasher {
     string uri = 1;
@@ -86,9 +85,10 @@ message Branding {
 }
 
 /**
- * The rendering platform support object is required to support opening AR articles on native clients.
- * We don't return this message if the corresponding article cannot be rendered by the server (instead
- * only by legacy article templates).
+ * The rendering platform support object is required to support opening AR
+ * articles on native clients.We don't return this message if the corresponding
+ * article cannot be rendered by the server (instead only by legacy article
+ * templates).
  */
 message RenderingPlatformSupport {
     string min_bridget_version = 1;
@@ -108,17 +108,27 @@ message Article {
     optional google.protobuf.Timestamp published_date = 10;
     optional google.protobuf.Timestamp last_updated_date = 11;
     optional MediaType media_type = 12;
-    optional google.protobuf.Duration duration = 13; // Only expected for video or audio content.
-    optional Image profile_image = 14; // MAPI will never return both images and a profile_image.
+    // Only expected for video or audio content.
+    optional google.protobuf.Duration duration = 13;
+    // MAPI will never return both images and a profile_image.
+    optional Image profile_image = 14;
     repeated LiveEvent events = 15;
     optional Palette palette_light = 16;
     optional Palette palette_dark = 17;
-    optional string apple_podcast_url = 18; // Only applicable to podcasts.
-    optional string google_podcast_url = 19; // Only applicable to podcasts.
-    optional string spotify_podcast_url = 20; // Only applicable to podcasts.
+    // Only applicable to podcasts.
+    optional string apple_podcast_url = 18;
+    // Only applicable to podcasts.
+    optional string google_podcast_url = 19;
+    // Only applicable to podcasts.
+    optional string spotify_podcast_url = 20;
     repeated Video videos = 21;
-    optional bool is_live = 22; // This is an indicator as to whether a live blog is still blogging, or if it's been closed.
-    optional string pocket_cast_podcast_url = 23; // Only applicable to podcasts.
+    /**
+     * This is an indicator as to whether a live blog is still blogging, or if
+     * it's been closed.
+     */
+    optional bool is_live = 22;
+    // Only applicable to podcasts.
+    optional string pocket_cast_podcast_url = 23;
     optional RenderingPlatformSupport rendered_item_prod = 24;
     optional RenderingPlatformSupport rendered_item_beta = 25;
 }
@@ -129,23 +139,37 @@ message Card {
         CARD_TYPE_PODCAST = 1;
         CARD_TYPE_VIDEO = 2;
         CARD_TYPE_CROSSWORD = 3;
-        CARD_TYPE_DISPLAY = 4; // Display cards have their own separate design (see figma designs for ref).
+        /**
+         * Display cards have their own separate design (see figma designs for
+         * ref).
+         */
+        CARD_TYPE_DISPLAY = 4;
         CARD_TYPE_MOSTVIEWED = 5;
     }
     CardType type = 1;
     Article article = 2;
-    optional bool boosted = 3; // Boosted cards show a boosted headline size and a main image that spans full width on mobile.
-    optional bool compact = 4; // Compact cards don't show all the information that non-compact cards do, and tend to appear in a carousel.
+    /**
+     * Boosted cards show a boosted headline size and a main image that spans
+     * full width on mobile.
+     */
+    optional bool boosted = 3;
+    /**
+     * Compact cards don't show all the information that non-compact cards do,
+     * and tend to appear in a carousel.
+     */
+    optional bool compact = 4;
     repeated Article sublinks = 5;
     optional string html_fallback = 6;
     /**
-     * Individual cards can be branded (and not be part of a branded container). Cards that are branded tend to show the
-     * sponsor logo and should be returned with a different palette.
+     * Individual cards can be branded and not be part of a branded container.
+     * Cards that are branded tend to show the sponsor logo and should be
+     * returned with a different palette.
      */
     optional Branding branding = 7;
     /**
-     * Individual cards can be defined as "premium content". If premium_content is true then it implies the card should be
-     * hidden from signed-in users (for example if the card has been paid for by an external sponsor).
+     * Individual cards can be defined as "premium content". If premium_content
+     * is true then it implies the card should be hidden from signed-in users,
+     * for example if the card has been paid for by an external sponsor.
      */
     optional bool premium_content = 8;
     optional Palette sublinks_palette_light = 9;
@@ -154,18 +178,20 @@ message Card {
 
 message Column {
     /**
-     * By default, if there are multiple cards in the cards array then it's expected that
-     * the client will display these as stacked vertical elements.
+     * By default, if there are multiple cards in the cards array then it's
+     * expected the client will display these as stacked vertical elements.
      */
     repeated Card cards = 1;
     optional Palette palette_light = 2;
     optional Palette palette_dark = 3;
-    int32 preferred_width = 4; // The card(s) in the column assume this preferred width.
+    // The card(s) in the column assume this preferred width.
+    int32 preferred_width = 4;
 }
 
 message Row {
     enum RowType {
-        ROW_TYPE_LAYOUT = 0; // Layout is the "default" way of laying out rows and columns.
+        // Layout is the "default" way of laying out rows and columns.
+        ROW_TYPE_LAYOUT = 0;
         ROW_TYPE_CAROUSEL = 1;
         ROW_TYPE_THRASHER = 2;
     }
@@ -173,9 +199,10 @@ message Row {
     optional Palette palette_light = 2;
     optional Palette palette_dark = 3;
     /**
-     * Tablet devices support a 4 column display, whereas mobile devices support a 2 column display.
-     * If a mobile device receives a row with a preferred number of columns greater than 2, the additional
-     * columns are "wrapped" onto an extra row (a bit like CSS flex-wrap).
+     * Tablet devices support a 4 column display, whereas mobile devices
+     * support a 2 column display. If a mobile device receives a row with a
+     * preferred number of columns greater than 2, the additional columns are
+     * "wrapped" onto an extra row (a bit like CSS flex-wrap).
      */
     int32 preferred_number_of_columns = 4;
     optional Thrasher thrasher = 5;
@@ -184,7 +211,8 @@ message Row {
 }
 
 /**
- * The follow up message contains links to get more information about the collection.
+ * The follow up message contains links to get more information about the
+ * collection.
  */
 message FollowUp {
     enum FollowUpType {
@@ -195,9 +223,10 @@ message FollowUp {
     FollowUpType type = 1;
     string uri = 2;
     /**
-     * At the time of creation MAPI couldn't support blueprint versions of the follow-on
-     * link so this field was marked as optional. As part of the migration work, MAPI will
-     * eventually support blueprint endpoints for all follow on links.
+     * At the time of creation MAPI couldn't support blueprint versions of the
+     * follow-on link so this field was marked as optional. As part of the
+     * migration work, MAPI will eventually support blueprint endpoints for all
+     * follow on links.
      */
     optional string blueprint_uri = 3;
 }
@@ -205,29 +234,33 @@ message FollowUp {
 message Collection {
     string id = 1;
     /**
-     * A palette at the collection level is currently mapped from MAPI's "navigation style".
-     * It's specified when the look and feel of an entire container should be changed,
-     * for example when a container is "branded" because the content has been paid for.
+     * A palette at the collection level is currently mapped from MAPI's
+     * "navigation style". It's specified when the look and feel of an entire
+     * container should be changed, for example when a container is "branded"
+     * because the content has been paid for.
      */
     optional Palette palette_light = 2;
     optional Palette palette_dark = 3;
     /**
-     * MAPI can technically return a list of empty rows. This might be because MAPI
-     * doesn't support the specific content that's included in the collection. In this
-     * case it's assumed the client will hide the entire collection from the reader.
+     * MAPI can technically return a list of empty rows. This might be because
+     * MAPI doesn't support the specific content that's included in the
+     * collection. In this case it's assumed the client will hide the entire
+     * collection from the reader.
      */
     repeated Row rows = 4;
     optional string title = 5;
     /**
-     * We define branding at the collection level because certain containers require a
-     * different look and feel, for example content published by Guardian Labs.
+     * We define branding at the collection level because certain containers
+     * require a different look and feel, for example content published by
+     * Guardian Labs.
      */
     optional Branding branding = 6;
     /**
-     * A container can be defined as "premium". Currently this is just for the Crosswords
-     * container for which only premium users are allowed to access (although it is visible to
-     * all users). Note that the Crosswords container is not curated by Editorial in the fronts
-     * tool but instead created on the fly by MAPI.
+     * A container can be defined as "premium". Currently this is just for the
+     * Crosswords container for which only premium users are allowed to access
+     * (although it is visible to all users). Note that the Crosswords
+     * container is not curated by Editorial in the fronts tool but instead
+     * created on the fly by MAPI.
      */
     optional bool premium_content = 7;
     optional FollowUp follow_up = 8;
