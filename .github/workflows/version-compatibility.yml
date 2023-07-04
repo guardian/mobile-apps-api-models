@@ -1,0 +1,18 @@
+name: Validate Schema Compatibility
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate_schema_compatibility:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v4
+
+      - name: Get protolock
+        run:  go install github.com/nilslice/protolock/cmd/protolock@latest
+
+      - name: Validate no breaking changes
+        run: protolock status --uptodate --protoroot ./proto/ -lockdir ./proto/
