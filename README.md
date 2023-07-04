@@ -7,6 +7,24 @@
 These models are used to communicate between MAPI and the native apps.
 This repository defines the protobuf [schema](./proto/collection.proto) for "blueprint" collections.
 
+## Validating Schema Changes
+
+We use [protolock](https://github.com/nilslice/protolock) to help us catch any unintentional breaking changes.
+In the proto directory a `proto.lock` file exists which captures a verbose state of the latest version of the proto file.
+When making changes to the proto file a [check](.github/workflows/version-compatibility.yml) will run on the PR to validate that [rules](https://github.com/nilslice/protolock) are enforced.
+The enforcement of rules helps to make sure that we don't accidentally introduce breaking changes.
+
+PRs will fail if there are any updates in the proto file that aren't recorded in the proto.lock. In order to update the lock file:
+- [Install](https://github.com/nilslice/protolock#install) protolock.
+- In the root of this repository run `protolock status --uptodate --protoroot ./proto/ -lockdir ./proto/ ` --> this will log any changes between the latest and locked proto file.
+- If there are non-breaking changes you wish to commit, then run: `protolock commit --protoroot ./proto/ -lockdir ./proto/` --> this will update the lock file with the latest changes.
+- We should commit _both_ the changes to the proto file and the proto.lock file.
+
+If the protolock `status` command reveals breaking changes:
+- Check if we can introduce the same changes in a non-breaking way.
+- If we want to make a breaking change to the proto file this would require coordination between MAPI and native clients.
+- If we want to commit and release a new major version of the proto file we can do this by running the command: `protolock commit --protoroot ./proto/ -lockdir ./proto/ --force`
+
 ## Releases
 
 Use the GitHub UI to generate schema releases.
