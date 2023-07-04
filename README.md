@@ -25,6 +25,20 @@ If the protolock `status` command reveals breaking changes:
 - If we want to make a breaking change to the proto file this would require coordination between MAPI and native clients.
 - If we want to commit and release a new major version of the proto file we can do this by running the command: `protolock commit --protoroot ./proto/ -lockdir ./proto/ --force`
 
+## Linting
+
+[Protolint](https://github.com/yoheimuta/protolint) is used to lint the proto files in this repository.
+Protolint follows the official Google [style guide](https://protobuf.dev/programming-guides/style/).
+
+If the proto file isn't linted correctly status checks on a PR will fail.
+
+To fix any lint errors:
+
+```
+brew install protolint
+protolint -fix ./proto/.
+```
+
 ## Releases
 
 Use the GitHub UI to generate schema releases.

@@ -1,0 +1,17 @@
+name: Lint
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  lint_proto_files:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get protolint
+        run: brew install protolint
+
+      - name: Lint proto files
+        run: protolint ./proto/.
