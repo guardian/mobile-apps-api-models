@@ -1,8 +1,10 @@
 import ReleaseTransformations._
 
 ThisBuild / organization := "com.gu"
-ThisBuild / scalaVersion := "2.12.17"
+ThisBuild / scalaVersion := "2.13.11"
 ThisBuild / licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html"))
+
+crossScalaVersions := Seq(scalaVersion.value, "2.12.18")
 
 lazy val scalaModels = project.in(file("."))
   .settings(
@@ -17,7 +19,7 @@ lazy val scalaModels = project.in(file("."))
     ),
 
     Compile / PB.protoSources := Seq(baseDirectory.value / "./proto"),
-
+    releaseCrossBuild := true
     releaseProcess := {
       val process = Seq[ReleaseStep](
         checkSnapshotDependencies,
@@ -25,7 +27,7 @@ lazy val scalaModels = project.in(file("."))
         runClean,
         runTest,
         setReleaseVersion,
-        releaseStepCommand("publishSigned"),
+        releaseStepCommand("+publishSigned"),
       )
 
       if (!isSnapshot.value) {
