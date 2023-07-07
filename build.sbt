@@ -27,7 +27,7 @@ lazy val scalaModels = project.in(file("."))
         runClean,
         runTest,
         setReleaseVersion,
-        releaseStepCommand("+publishSigned"),
+        releaseStepCommandAndRemaining("+publishSigned"),
       )
 
       if (!isSnapshot.value) {
