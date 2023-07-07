@@ -1,4 +1,4 @@
-name: Release Snapshot to Sonatype
+name: Release to Sonatype
 
 on:
   release:
