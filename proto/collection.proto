@@ -34,9 +34,10 @@ message Links {
 }
 
 enum MediaType {
-  MEDIA_TYPE_VIDEO_UNSPECIFIED = 0;
-  MEDIA_TYPE_AUDIO = 1;
-  MEDIA_TYPE_IMAGE = 2;
+  MEDIA_TYPE_UNSPECIFIED = 0;
+  MEDIA_TYPE_VIDEO = 1;
+  MEDIA_TYPE_AUDIO = 2;
+  MEDIA_TYPE_IMAGE = 3;
 }
 
 message Image {
@@ -136,16 +137,17 @@ message Article {
 
 message Card {
   enum CardType {
-    CARD_TYPE_ARTICLE_UNSPECIFIED = 0;
-    CARD_TYPE_PODCAST = 1;
-    CARD_TYPE_VIDEO = 2;
-    CARD_TYPE_CROSSWORD = 3;
+    CARD_TYPE_UNSPECIFIED = 0;
+    CARD_TYPE_ARTICLE = 1;
+    CARD_TYPE_PODCAST = 2;
+    CARD_TYPE_VIDEO = 3;
+    CARD_TYPE_CROSSWORD = 4;
     /**
      * Display cards have their own separate design (see figma designs for
      * ref).
      */
-    CARD_TYPE_DISPLAY = 4;
-    CARD_TYPE_MOSTVIEWED = 5;
+    CARD_TYPE_DISPLAY = 5;
+    CARD_TYPE_MOSTVIEWED = 6;
   }
   CardType type = 1;
   Article article = 2;
@@ -191,10 +193,11 @@ message Column {
 
 message Row {
   enum RowType {
+    ROW_TYPE_UNSPECIFIED = 0;
     // Layout is the "default" way of laying out rows and columns.
-    ROW_TYPE_LAYOUT_UNSPECIFIED = 0;
-    ROW_TYPE_CAROUSEL = 1;
-    ROW_TYPE_THRASHER = 2;
+    ROW_TYPE_LAYOUT = 1;
+    ROW_TYPE_CAROUSEL = 2;
+    ROW_TYPE_THRASHER = 3;
   }
   repeated Column columns = 1;
   optional Palette palette_light = 2;
@@ -217,9 +220,10 @@ message Row {
  */
 message FollowUp {
   enum FollowUpType {
-    FOLLOW_UP_TYPE_LIST_UNSPECIFIED = 0;
-    FOLLOW_UP_TYPE_FRONT = 1;
-    FOLLOW_UP_TYPE_INAPP = 2;
+    FOLLOW_UP_TYPE_UNSPECIFIED = 0;
+    FOLLOW_UP_TYPE_LIST = 1;
+    FOLLOW_UP_TYPE_FRONT = 2;
+    FOLLOW_UP_TYPE_INAPP = 3;
   }
   FollowUpType type = 1;
   string uri = 2;

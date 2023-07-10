@@ -8,15 +8,19 @@
             "name": "MediaType",
             "enum_fields": [
               {
-                "name": "MEDIA_TYPE_VIDEO_UNSPECIFIED"
+                "name": "MEDIA_TYPE_UNSPECIFIED"
               },
               {
-                "name": "MEDIA_TYPE_AUDIO",
+                "name": "MEDIA_TYPE_VIDEO",
                 "integer": 1
               },
               {
-                "name": "MEDIA_TYPE_IMAGE",
+                "name": "MEDIA_TYPE_AUDIO",
                 "integer": 2
+              },
+              {
+                "name": "MEDIA_TYPE_IMAGE",
+                "integer": 3
               }
             ]
           },
@@ -24,27 +28,31 @@
             "name": "Card.CardType",
             "enum_fields": [
               {
-                "name": "CARD_TYPE_ARTICLE_UNSPECIFIED"
+                "name": "CARD_TYPE_UNSPECIFIED"
               },
               {
-                "name": "CARD_TYPE_PODCAST",
+                "name": "CARD_TYPE_ARTICLE",
                 "integer": 1
               },
               {
-                "name": "CARD_TYPE_VIDEO",
+                "name": "CARD_TYPE_PODCAST",
                 "integer": 2
               },
               {
-                "name": "CARD_TYPE_CROSSWORD",
+                "name": "CARD_TYPE_VIDEO",
                 "integer": 3
               },
               {
-                "name": "CARD_TYPE_DISPLAY",
+                "name": "CARD_TYPE_CROSSWORD",
                 "integer": 4
               },
               {
-                "name": "CARD_TYPE_MOSTVIEWED",
+                "name": "CARD_TYPE_DISPLAY",
                 "integer": 5
+              },
+              {
+                "name": "CARD_TYPE_MOSTVIEWED",
+                "integer": 6
               }
             ]
           },
@@ -52,15 +60,19 @@
             "name": "Row.RowType",
             "enum_fields": [
               {
-                "name": "ROW_TYPE_LAYOUT_UNSPECIFIED"
+                "name": "ROW_TYPE_UNSPECIFIED"
               },
               {
-                "name": "ROW_TYPE_CAROUSEL",
+                "name": "ROW_TYPE_LAYOUT",
                 "integer": 1
               },
               {
-                "name": "ROW_TYPE_THRASHER",
+                "name": "ROW_TYPE_CAROUSEL",
                 "integer": 2
+              },
+              {
+                "name": "ROW_TYPE_THRASHER",
+                "integer": 3
               }
             ]
           },
@@ -68,15 +80,19 @@
             "name": "FollowUp.FollowUpType",
             "enum_fields": [
               {
-                "name": "FOLLOW_UP_TYPE_LIST_UNSPECIFIED"
+                "name": "FOLLOW_UP_TYPE_UNSPECIFIED"
               },
               {
-                "name": "FOLLOW_UP_TYPE_FRONT",
+                "name": "FOLLOW_UP_TYPE_LIST",
                 "integer": 1
               },
               {
-                "name": "FOLLOW_UP_TYPE_INAPP",
+                "name": "FOLLOW_UP_TYPE_FRONT",
                 "integer": 2
+              },
+              {
+                "name": "FOLLOW_UP_TYPE_INAPP",
+                "integer": 3
               }
             ]
           }
