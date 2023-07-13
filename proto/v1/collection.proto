@@ -1,7 +1,7 @@
 // collection.proto
 syntax = "proto3";
 
-package com.gu.mobile.mapi.models;
+package com.gu.mobile.mapi.models.v1;
 
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
@@ -24,6 +24,8 @@ message Palette {
   string secondary = 13;
   string shadow = 14;
   string top_border = 15;
+  string secondary_background = 16;
+  string tertiary_background = 17;
 }
 
 message Links {
@@ -148,6 +150,7 @@ message Card {
      */
     CARD_TYPE_DISPLAY = 5;
     CARD_TYPE_MOSTVIEWED = 6;
+    CARD_TYPE_RECIPE = 7;
   }
   CardType type = 1;
   Article article = 2;

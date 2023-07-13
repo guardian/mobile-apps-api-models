@@ -5,7 +5,7 @@
 # Mobile Apps Api Models
 
 These models are used to communicate between MAPI and the native apps.
-This repository defines the protobuf [schema](./proto/collection.proto) for "blueprint" collections.
+This repository defines the protobuf [schema](proto/v0/collection.proto) for "blueprint" collections.
 
 ## Validating Schema Changes
 
