@@ -9,23 +9,9 @@ import "google/protobuf/timestamp.proto";
 option swift_prefix="Blueprint";
 
 message Palette {
-  string accent_colour = 1;
-  string background = 2;
-  string comment_count = 3;
-  string element_background = 4;
-  string headline = 5;
-  string immersive_kicker = 6;
-  string main = 7;
-  string media_background = 8;
-  string media_icon = 9;
-  string meta_text = 10;
-  string pill = 11;
-  string pillar = 12;
-  string secondary = 13;
-  string shadow = 14;
-  string top_border = 15;
-  string secondary_background = 16;
-  string tertiary_background = 17;
+  string background = 1;
+  string secondary_background = 2;
+  string tertiary_background = 3;
 }
 
 message Links {
