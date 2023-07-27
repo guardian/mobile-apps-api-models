@@ -177,6 +177,8 @@ message Card {
   optional bool premium_content = 8;
   optional Palette sublinks_palette_light = 9;
   optional Palette sublinks_palette_dark = 10;
+  // Quoted headline shown for a card if selected in the fronts tool.
+  optional bool show_quoted_headline = 11;
 }
 
 message Column {

@@ -593,6 +593,12 @@
                 "name": "sublinks_palette_dark",
                 "type": "Palette",
                 "optional": true
+              },
+              {
+                "id": 11,
+                "name": "show_quoted_headline",
+                "type": "bool",
+                "optional": true
               }
             ]
           },
