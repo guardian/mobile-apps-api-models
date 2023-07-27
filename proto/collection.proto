@@ -148,6 +148,11 @@ message Card {
      */
     CARD_TYPE_DISPLAY = 5;
     CARD_TYPE_MOSTVIEWED = 6;
+    /**
+    * An empty card is used to indicate an empty space so that the native
+    * client do not stretch the previous card to occupy the space
+    */  
+    CARD_TYPE_EMPTY = 7;
   }
   CardType type = 1;
   Article article = 2;
