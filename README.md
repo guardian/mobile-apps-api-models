@@ -25,6 +25,15 @@ If the protolock `status` command reveals breaking changes:
 - If we want to make a breaking change to the proto file this would require coordination between MAPI and native clients.
 - If we want to commit and release a new major version of the proto file we can do this by running the command: `protolock commit --protoroot ./proto/ -lockdir ./proto/ --force`
 
+### Troubleshooting protolock
+
+If you've successfully installed protolock, but are getting a `zsh: command not found: protolock` error, try adding the following to your ~/.zshrc file:
+```
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
+export PATH="$GOBIN:$PATH"
+```
+
 ## Linting
 
 [Protolint](https://github.com/yoheimuta/protolint) is used to lint the proto files in this repository.
