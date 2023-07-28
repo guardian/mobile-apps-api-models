@@ -530,6 +530,12 @@
                 "name": "rendered_item_beta",
                 "type": "RenderingPlatformSupport",
                 "optional": true
+              },
+              {
+                "id": 26,
+                "name": "show_quoted_headline",
+                "type": "bool",
+                "optional": true
               }
             ]
           },
@@ -592,12 +598,6 @@
                 "id": 10,
                 "name": "sublinks_palette_dark",
                 "type": "Palette",
-                "optional": true
-              },
-              {
-                "id": 11,
-                "name": "show_quoted_headline",
-                "type": "bool",
                 "optional": true
               }
             ]
