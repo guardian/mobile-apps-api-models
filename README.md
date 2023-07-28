@@ -27,7 +27,7 @@ If the protolock `status` command reveals breaking changes:
 
 ### Troubleshooting protolock
 
-If you've successfully installed protolock, but are getting a `zsh: command not found: protolock` error, try adding the following to your ~/.zshrc file:
+If you've successfully installed protolock, but are getting a `zsh: command not found: protolock` error when running commands, try adding the following to your ~/.zshrc file:
 ```
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
