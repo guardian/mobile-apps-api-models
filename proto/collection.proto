@@ -133,6 +133,8 @@ message Article {
   optional string pocket_cast_podcast_url = 23;
   optional RenderingPlatformSupport rendered_item_prod = 24;
   optional RenderingPlatformSupport rendered_item_beta = 25;
+  // Quoted headline shown for a card if selected in the fronts tool.
+  optional bool show_quoted_headline = 26;
 }
 
 message Card {

@@ -534,6 +534,12 @@
                 "name": "rendered_item_beta",
                 "type": "RenderingPlatformSupport",
                 "optional": true
+              },
+              {
+                "id": 26,
+                "name": "show_quoted_headline",
+                "type": "bool",
+                "optional": true
               }
             ]
           },
