@@ -76,9 +76,9 @@ message Branding {
   
 /**
    * The rendering platform support object is required to support opening AR
-   * articles on native clients.We don't return this message if the corresponding
-   * article cannot be rendered by the server (instead only by legacy article
-   * templates).
+   * articles on native clients. We don't return this message if the 
+   * corresponding article cannot be rendered by the server (instead
+   *  only by legacy article templates).
    */
 message RenderingPlatformSupport {
   string min_bridget_version = 1;
