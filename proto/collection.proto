@@ -277,3 +277,9 @@ message Collection {
   optional bool premium_content = 7;
   optional FollowUp follow_up = 8;
 }
+
+message List {
+  optional Branding branding = 1;
+  optional FollowUp follow_up = 2;
+  Collection collection = 3;
+}
