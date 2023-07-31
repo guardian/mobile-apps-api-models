@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.gu.mobile.mapi.models.v0;
+
+import "shared.proto";  
+
+message List {
+  optional Branding branding = 1;
+  optional string next_page = 2;
+  repeated Row rows = 4;
+  optional string title = 5;
+}
