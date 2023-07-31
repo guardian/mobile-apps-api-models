@@ -125,6 +125,42 @@
     {
       "protopath": "list.proto",
       "def": {
+        "messages": [
+          {
+            "name": "List",
+            "fields": [
+              {
+                "id": 1,
+                "name": "branding",
+                "type": "Branding",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "next_page",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "rows",
+                "type": "Row",
+                "is_repeated": true
+              },
+              {
+                "id": 5,
+                "name": "title",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "shared.proto"
+          }
+        ],
         "package": {
           "name": "com.gu.mobile.mapi.models.v0"
         }
