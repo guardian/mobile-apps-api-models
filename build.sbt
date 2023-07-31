@@ -8,7 +8,7 @@ crossScalaVersions := Seq(scalaVersion.value, "2.12.18", "3.3.0")
 
 lazy val scalaModels = project.in(file("."))
   .settings(
-    name := "mobile-apps-api-models",
+    name := "mobile-apps-api-models-v0",
 
     libraryDependencies ++= Seq(
       "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"

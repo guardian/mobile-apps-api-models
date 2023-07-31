@@ -758,7 +758,7 @@
           }
         ],
         "package": {
-          "name": "com.gu.mobile.mapi.models"
+          "name": "com.gu.mobile.mapi.models.v0"
         },
         "options": [
           {
