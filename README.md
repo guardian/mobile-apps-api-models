@@ -7,6 +7,19 @@
 These models are used to communicate between MAPI and the native apps.
 This repository defines the protobuf [schema](./proto/collection.proto) for "blueprint" collections.
 
+## Versioning
+
+We should aim to _grow_ the Blueprint schema (e.g. adding new fields) rather than breaking it (removing fields or 
+changing their type).
+
+When it becomes advantageous or desirable to introduce a _breaking_ change to the schema we should do this in 
+collaboration with both server and native teams.
+
+When a new major version of the Blueprint schema is released, the Blueprint model will have a new package namespace and
+a new artifact name. There will also be associated server and native changes as a result of this.
+
+See the [documentation](https://github.com/guardian/mobile-apps-api/tree/main/doc/versioning-of-blueprint-endpoints.md) in MAPI for full details of the versioning considerations, proposal and process.
+
 ## Validating Schema Changes
 
 We use [protolock](https://github.com/nilslice/protolock) to help us catch any unintentional breaking changes.
