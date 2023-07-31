@@ -1,7 +1,7 @@
 // collection.proto
 syntax = "proto3";
 
-package com.gu.mobile.mapi.models;
+package com.gu.mobile.mapi.models.v0;
 
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
