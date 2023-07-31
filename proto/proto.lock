@@ -53,6 +53,10 @@
               {
                 "name": "CARD_TYPE_MOSTVIEWED",
                 "integer": 6
+              },
+              {
+                "name": "CARD_TYPE_EMPTY",
+                "integer": 7
               }
             ]
           },
