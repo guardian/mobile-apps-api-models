@@ -277,3 +277,12 @@ message Collection {
   optional bool premium_content = 7;
   optional FollowUp follow_up = 8;
 }
+
+message List {
+  string title = 1;
+  optional string next_page = 2;
+  optional Palette palette_light = 3;
+  optional Palette palette_dark = 4;
+  repeated Row rows = 5;
+  optional Branding branding = 6;
+}
