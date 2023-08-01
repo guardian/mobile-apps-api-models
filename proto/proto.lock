@@ -751,6 +751,46 @@
                 "optional": true
               }
             ]
+          },
+          {
+            "name": "List",
+            "fields": [
+              {
+                "id": 1,
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "next_page",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "rows",
+                "type": "Row",
+                "is_repeated": true
+              },
+              {
+                "id": 6,
+                "name": "branding",
+                "type": "Branding",
+                "optional": true
+              }
+            ]
           }
         ],
         "imports": [
