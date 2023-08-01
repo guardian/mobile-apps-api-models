@@ -826,6 +826,14 @@
             ]
           }
         ],
+        "imports": [
+          {
+            "path": "google/protobuf/duration.proto"
+          },
+          {
+            "path": "google/protobuf/timestamp.proto"
+          }
+        ],
         "package": {
           "name": "com.gu.mobile.mapi.models.v0"
         }
