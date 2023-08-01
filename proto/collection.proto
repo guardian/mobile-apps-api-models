@@ -3,12 +3,9 @@ syntax = "proto3";
 
 package com.gu.mobile.mapi.models.v0;
 
-import "google/protobuf/duration.proto";
-import "google/protobuf/timestamp.proto";
 import "shared.proto";  
 
 option swift_prefix="Blueprint";
-
 
 message Collection {
   string id = 1;

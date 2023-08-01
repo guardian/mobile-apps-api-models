@@ -4,6 +4,9 @@ package com.gu.mobile.mapi.models.v0;
 
 import "shared.proto";  
 
+option swift_prefix="Blueprint";
+
+
 message List {
   optional Branding branding = 1;
   optional string next_page = 2;

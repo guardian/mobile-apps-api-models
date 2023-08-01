@@ -102,12 +102,6 @@
         ],
         "imports": [
           {
-            "path": "google/protobuf/duration.proto"
-          },
-          {
-            "path": "google/protobuf/timestamp.proto"
-          },
-          {
             "path": "shared.proto"
           }
         ],
@@ -163,7 +157,13 @@
         ],
         "package": {
           "name": "com.gu.mobile.mapi.models.v0"
-        }
+        },
+        "options": [
+          {
+            "name": "swift_prefix",
+            "value": "Blueprint"
+          }
+        ]
       }
     },
     {
@@ -824,14 +824,6 @@
                 "optional": true
               }
             ]
-          }
-        ],
-        "imports": [
-          {
-            "path": "google/protobuf/duration.proto"
-          },
-          {
-            "path": "google/protobuf/timestamp.proto"
           }
         ],
         "package": {
