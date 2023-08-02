@@ -5,6 +5,26 @@
       "def": {
         "enums": [
           {
+            "name": "FollowUp.FollowUpType",
+            "enum_fields": [
+              {
+                "name": "FOLLOW_UP_TYPE_UNSPECIFIED"
+              },
+              {
+                "name": "FOLLOW_UP_TYPE_LIST",
+                "integer": 1
+              },
+              {
+                "name": "FOLLOW_UP_TYPE_FRONT",
+                "integer": 2
+              },
+              {
+                "name": "FOLLOW_UP_TYPE_INAPP",
+                "integer": 3
+              }
+            ]
+          },
+          {
             "name": "MediaType",
             "enum_fields": [
               {
@@ -79,29 +99,132 @@
                 "integer": 3
               }
             ]
-          },
-          {
-            "name": "FollowUp.FollowUpType",
-            "enum_fields": [
-              {
-                "name": "FOLLOW_UP_TYPE_UNSPECIFIED"
-              },
-              {
-                "name": "FOLLOW_UP_TYPE_LIST",
-                "integer": 1
-              },
-              {
-                "name": "FOLLOW_UP_TYPE_FRONT",
-                "integer": 2
-              },
-              {
-                "name": "FOLLOW_UP_TYPE_INAPP",
-                "integer": 3
-              }
-            ]
           }
         ],
         "messages": [
+          {
+            "name": "Collection",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "rows",
+                "type": "Row",
+                "is_repeated": true
+              },
+              {
+                "id": 5,
+                "name": "title",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "branding",
+                "type": "Branding",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "premium_content",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "follow_up",
+                "type": "FollowUp",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "FollowUp",
+            "fields": [
+              {
+                "id": 1,
+                "name": "type",
+                "type": "FollowUpType"
+              },
+              {
+                "id": 2,
+                "name": "uri",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "blueprint_uri",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Thrasher",
+            "fields": [
+              {
+                "id": 1,
+                "name": "uri",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "List",
+            "fields": [
+              {
+                "id": 1,
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "next_page_url",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "rows",
+                "type": "Row",
+                "is_repeated": true
+              },
+              {
+                "id": 6,
+                "name": "branding",
+                "type": "Branding",
+                "optional": true
+              }
+            ]
+          },
           {
             "name": "Palette",
             "fields": [
@@ -322,16 +445,6 @@
                 "name": "last_updated_date",
                 "type": "google.protobuf.Timestamp",
                 "optional": true
-              }
-            ]
-          },
-          {
-            "name": "Thrasher",
-            "fields": [
-              {
-                "id": 1,
-                "name": "uri",
-                "type": "string"
               }
             ]
           },
@@ -675,119 +788,6 @@
                 "id": 7,
                 "name": "title",
                 "type": "string",
-                "optional": true
-              }
-            ]
-          },
-          {
-            "name": "FollowUp",
-            "fields": [
-              {
-                "id": 1,
-                "name": "type",
-                "type": "FollowUpType"
-              },
-              {
-                "id": 2,
-                "name": "uri",
-                "type": "string"
-              },
-              {
-                "id": 3,
-                "name": "blueprint_uri",
-                "type": "string",
-                "optional": true
-              }
-            ]
-          },
-          {
-            "name": "Collection",
-            "fields": [
-              {
-                "id": 1,
-                "name": "id",
-                "type": "string"
-              },
-              {
-                "id": 2,
-                "name": "palette_light",
-                "type": "Palette",
-                "optional": true
-              },
-              {
-                "id": 3,
-                "name": "palette_dark",
-                "type": "Palette",
-                "optional": true
-              },
-              {
-                "id": 4,
-                "name": "rows",
-                "type": "Row",
-                "is_repeated": true
-              },
-              {
-                "id": 5,
-                "name": "title",
-                "type": "string",
-                "optional": true
-              },
-              {
-                "id": 6,
-                "name": "branding",
-                "type": "Branding",
-                "optional": true
-              },
-              {
-                "id": 7,
-                "name": "premium_content",
-                "type": "bool",
-                "optional": true
-              },
-              {
-                "id": 8,
-                "name": "follow_up",
-                "type": "FollowUp",
-                "optional": true
-              }
-            ]
-          },
-          {
-            "name": "List",
-            "fields": [
-              {
-                "id": 1,
-                "name": "title",
-                "type": "string"
-              },
-              {
-                "id": 2,
-                "name": "next_page",
-                "type": "string",
-                "optional": true
-              },
-              {
-                "id": 3,
-                "name": "palette_light",
-                "type": "Palette",
-                "optional": true
-              },
-              {
-                "id": 4,
-                "name": "palette_dark",
-                "type": "Palette",
-                "optional": true
-              },
-              {
-                "id": 5,
-                "name": "rows",
-                "type": "Row",
-                "is_repeated": true
-              },
-              {
-                "id": 6,
-                "name": "branding",
-                "type": "Branding",
                 "optional": true
               }
             ]
