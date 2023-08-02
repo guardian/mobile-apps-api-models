@@ -1,7 +1,7 @@
 {
   "definitions": [
     {
-      "protopath": "collection.proto",
+      "protopath": "blueprint.proto",
       "def": {
         "enums": [
           {
