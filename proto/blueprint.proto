@@ -1,4 +1,3 @@
-// collection.proto
 syntax = "proto3";
 
 package com.gu.mobile.mapi.models.v0;
@@ -84,11 +83,11 @@ message Thrasher {
 /************************* LIST *************************/
 
 // The following messages are used only to model the contents of our
-//list endpoints (tags, sections etc)
+// list endpoints (tags, sections etc)
 
 /**
   * A list is similar to a collection, except it is responsible for
-  * serving the contents of tags and list pages such as sections, 
+  * serving the contents of list pages such as tags and sections, 
   * rather than fronts
   */
 message List {
