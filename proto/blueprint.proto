@@ -91,7 +91,7 @@ message Thrasher {
   * rather than fronts
   */
 message List {
-  string title = 1;
+  string id = 1;
   /**
    * The native app will call this URL when a user has scrolled to the bottom
    * of the list and wants to load more content.
@@ -101,6 +101,7 @@ message List {
   optional Palette palette_dark = 4;
   repeated Row rows = 5;
   optional Branding branding = 6;
+  optional string title = 7;
 }
 
 
