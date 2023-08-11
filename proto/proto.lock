@@ -71,7 +71,7 @@
                 "integer": 5
               },
               {
-                "name": "CARD_TYPE_MOSTVIEWED",
+                "name": "CARD_TYPE_NUMBERED",
                 "integer": 6
               },
               {
@@ -715,6 +715,12 @@
                 "id": 10,
                 "name": "sublinks_palette_dark",
                 "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 11,
+                "name": "card_number",
+                "type": "int32",
                 "optional": true
               }
             ]
