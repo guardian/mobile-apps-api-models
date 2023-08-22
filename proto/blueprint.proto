@@ -103,6 +103,9 @@ message List {
   optional Branding branding = 6;
 }
 
+message ListSequence {
+  repeated List list = 1;
+}
 
 /************************* SHARED *************************/
 
