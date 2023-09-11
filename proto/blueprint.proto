@@ -243,7 +243,7 @@ message Card {
      * ref).
      */
     CARD_TYPE_DISPLAY = 5;
-    CARD_TYPE_MOSTVIEWED = 6;
+    CARD_TYPE_NUMBERED = 6;
     /**
     * An empty card is used to indicate an empty space so that the native
     * client do not stretch the previous card to occupy the space
@@ -278,6 +278,10 @@ message Card {
   optional bool premium_content = 8;
   optional Palette sublinks_palette_light = 9;
   optional Palette sublinks_palette_dark = 10;
+  /**
+   * This is the number to be used when the card type is CARD_TYPE_NUMBERED.
+   */
+  optional int32 card_number = 11;
 }
 
 message Column {
