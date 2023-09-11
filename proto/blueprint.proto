@@ -249,9 +249,19 @@ message Card {
     * client do not stretch the previous card to occupy the space
     */  
     CARD_TYPE_EMPTY = 7;
+    /**
+     * A thrasher (an atom for a front) can be added to any collection.
+     * When a thrasher is added as a "snap link" to a collection we expect
+     * to display the content.
+     */
+    CARD_TYPE_THRASHER = 8;
   }
   CardType type = 1;
-  Article article = 2;
+  oneof content {
+    Article article = 2;
+    Thrasher thrasher = 12;
+  }
+
   /**
    * Boosted cards show a boosted headline size and a main image that spans
    * full width on mobile.
