@@ -77,6 +77,10 @@
               {
                 "name": "CARD_TYPE_EMPTY",
                 "integer": 7
+              },
+              {
+                "name": "CARD_TYPE_THRASHER",
+                "integer": 8
               }
             ]
           },
@@ -521,7 +525,8 @@
               {
                 "id": 4,
                 "name": "links",
-                "type": "Links"
+                "type": "Links",
+                "optional": true
               },
               {
                 "id": 5,
@@ -532,7 +537,8 @@
               {
                 "id": 6,
                 "name": "title",
-                "type": "string"
+                "type": "string",
+                "optional": true
               },
               {
                 "id": 7,
@@ -652,6 +658,12 @@
                 "id": 26,
                 "name": "show_quoted_headline",
                 "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 27,
+                "name": "thrasher_uri",
+                "type": "string",
                 "optional": true
               }
             ]
