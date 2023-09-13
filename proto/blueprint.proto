@@ -195,9 +195,9 @@ message Article {
   string id = 1;
   optional string byline = 2;
   repeated Image images = 3;
-  Links links = 4;
+  optional Links links = 4;
   optional string kicker = 5;
-  string title = 6;
+  optional string title = 6;
   optional string trail_text = 7;
   optional int32 rating = 8;
   optional int32 comment_count = 9;
@@ -229,6 +229,8 @@ message Article {
   optional RenderingPlatformSupport rendered_item_beta = 25;
   // Quoted headline shown for a card if selected in the fronts tool.
   optional bool show_quoted_headline = 26;
+  // Only applicable to link snap (thrasher) cards
+  optional string thrasher_uri = 27;
 }
 
 message Card {
@@ -249,6 +251,12 @@ message Card {
     * client do not stretch the previous card to occupy the space
     */  
     CARD_TYPE_EMPTY = 7;
+    /**
+     * Used when a card has a "link snap", which is an atom for a front
+     * (= a thrasher) and is placed inside a regular container alongside
+     * other cards.
+     */
+    CARD_TYPE_THRASHER = 8;
   }
   CardType type = 1;
   Article article = 2;
