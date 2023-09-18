@@ -103,6 +103,16 @@ message List {
   optional Branding branding = 6;
 }
 
+message ListSequence {
+  repeated List lists = 1;
+}
+
+message MyGuardianGridListSequence {
+  repeated List myGuardianGrid = 1;
+  optional int32 page = 2;
+  optional int32 totalPages = 3;
+}
+
 
 /************************* SHARED *************************/
 
