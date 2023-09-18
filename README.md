@@ -7,6 +7,19 @@
 These models are used to communicate between MAPI and the native apps.
 This repository defines the protobuf [schema](./proto/collection.proto) for "blueprint" collections.
 
+## Versioning
+
+We should aim to _grow_ the Blueprint schema (e.g. adding new fields) rather than breaking it (removing fields or 
+changing their type).
+
+When it becomes advantageous or desirable to introduce a _breaking_ change to the schema we should do this in 
+collaboration with both server and native teams.
+
+When a new major version of the Blueprint schema is released, the Blueprint model will have a new package namespace and
+a new artifact name. There will also be associated server and native changes as a result of this.
+
+See the [documentation](https://github.com/guardian/mobile-apps-api/tree/main/doc/versioning-of-blueprint-endpoints.md) in MAPI for full details of the versioning considerations, proposal and process.
+
 ## Validating Schema Changes
 
 We use [protolock](https://github.com/nilslice/protolock) to help us catch any unintentional breaking changes.
@@ -24,6 +37,15 @@ If the protolock `status` command reveals breaking changes:
 - Check if we can introduce the same changes in a non-breaking way.
 - If we want to make a breaking change to the proto file this would require coordination between MAPI and native clients.
 - If we want to commit and release a new major version of the proto file we can do this by running the command: `protolock commit --protoroot ./proto/ -lockdir ./proto/ --force`
+
+### Troubleshooting protolock
+
+If you've successfully installed protolock, but are getting a `zsh: command not found: protolock` error when running commands, try adding the following to your ~/.zshrc file:
+```
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
+export PATH="$GOBIN:$PATH"
+```
 
 ## Linting
 

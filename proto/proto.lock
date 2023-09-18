@@ -1,22 +1,46 @@
 {
   "definitions": [
     {
-      "protopath": "collection.proto",
+      "protopath": "blueprint.proto",
       "def": {
         "enums": [
+          {
+            "name": "FollowUp.FollowUpType",
+            "enum_fields": [
+              {
+                "name": "FOLLOW_UP_TYPE_UNSPECIFIED"
+              },
+              {
+                "name": "FOLLOW_UP_TYPE_LIST",
+                "integer": 1
+              },
+              {
+                "name": "FOLLOW_UP_TYPE_FRONT",
+                "integer": 2
+              },
+              {
+                "name": "FOLLOW_UP_TYPE_INAPP",
+                "integer": 3
+              }
+            ]
+          },
           {
             "name": "MediaType",
             "enum_fields": [
               {
-                "name": "MEDIA_TYPE_VIDEO_UNSPECIFIED"
+                "name": "MEDIA_TYPE_UNSPECIFIED"
               },
               {
-                "name": "MEDIA_TYPE_AUDIO",
+                "name": "MEDIA_TYPE_VIDEO",
                 "integer": 1
               },
               {
-                "name": "MEDIA_TYPE_IMAGE",
+                "name": "MEDIA_TYPE_AUDIO",
                 "integer": 2
+              },
+              {
+                "name": "MEDIA_TYPE_IMAGE",
+                "integer": 3
               }
             ]
           },
@@ -24,27 +48,39 @@
             "name": "Card.CardType",
             "enum_fields": [
               {
-                "name": "CARD_TYPE_ARTICLE_UNSPECIFIED"
+                "name": "CARD_TYPE_UNSPECIFIED"
               },
               {
-                "name": "CARD_TYPE_PODCAST",
+                "name": "CARD_TYPE_ARTICLE",
                 "integer": 1
               },
               {
-                "name": "CARD_TYPE_VIDEO",
+                "name": "CARD_TYPE_PODCAST",
                 "integer": 2
               },
               {
-                "name": "CARD_TYPE_CROSSWORD",
+                "name": "CARD_TYPE_VIDEO",
                 "integer": 3
               },
               {
-                "name": "CARD_TYPE_DISPLAY",
+                "name": "CARD_TYPE_CROSSWORD",
                 "integer": 4
               },
               {
-                "name": "CARD_TYPE_MOSTVIEWED",
+                "name": "CARD_TYPE_DISPLAY",
                 "integer": 5
+              },
+              {
+                "name": "CARD_TYPE_NUMBERED",
+                "integer": 6
+              },
+              {
+                "name": "CARD_TYPE_EMPTY",
+                "integer": 7
+              },
+              {
+                "name": "CARD_TYPE_WEB_CONTENT",
+                "integer": 8
               }
             ]
           },
@@ -52,36 +88,147 @@
             "name": "Row.RowType",
             "enum_fields": [
               {
-                "name": "ROW_TYPE_LAYOUT_UNSPECIFIED"
+                "name": "ROW_TYPE_UNSPECIFIED"
+              },
+              {
+                "name": "ROW_TYPE_LAYOUT",
+                "integer": 1
               },
               {
                 "name": "ROW_TYPE_CAROUSEL",
-                "integer": 1
-              },
-              {
-                "name": "ROW_TYPE_THRASHER",
                 "integer": 2
-              }
-            ]
-          },
-          {
-            "name": "FollowUp.FollowUpType",
-            "enum_fields": [
-              {
-                "name": "FOLLOW_UP_TYPE_LIST_UNSPECIFIED"
               },
               {
-                "name": "FOLLOW_UP_TYPE_FRONT",
-                "integer": 1
-              },
-              {
-                "name": "FOLLOW_UP_TYPE_INAPP",
-                "integer": 2
+                "name": "ROW_TYPE_WEB_CONTENT",
+                "integer": 3
               }
             ]
           }
         ],
         "messages": [
+          {
+            "name": "Collection",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "rows",
+                "type": "Row",
+                "is_repeated": true
+              },
+              {
+                "id": 5,
+                "name": "title",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "branding",
+                "type": "Branding",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "premium_content",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "follow_up",
+                "type": "FollowUp",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "FollowUp",
+            "fields": [
+              {
+                "id": 1,
+                "name": "type",
+                "type": "FollowUpType"
+              },
+              {
+                "id": 2,
+                "name": "uri",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "blueprint_uri",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Thrasher",
+            "fields": [
+              {
+                "id": 1,
+                "name": "uri",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "List",
+            "fields": [
+              {
+                "id": 1,
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "next_page_url",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "rows",
+                "type": "Row",
+                "is_repeated": true
+              },
+              {
+                "id": 6,
+                "name": "branding",
+                "type": "Branding",
+                "optional": true
+              }
+            ]
+          },
           {
             "name": "Palette",
             "fields": [
@@ -306,16 +453,6 @@
             ]
           },
           {
-            "name": "Thrasher",
-            "fields": [
-              {
-                "id": 1,
-                "name": "uri",
-                "type": "string"
-              }
-            ]
-          },
-          {
             "name": "Branding",
             "fields": [
               {
@@ -388,7 +525,8 @@
               {
                 "id": 4,
                 "name": "links",
-                "type": "Links"
+                "type": "Links",
+                "optional": true
               },
               {
                 "id": 5,
@@ -399,7 +537,8 @@
               {
                 "id": 6,
                 "name": "title",
-                "type": "string"
+                "type": "string",
+                "optional": true
               },
               {
                 "id": 7,
@@ -514,6 +653,18 @@
                 "name": "rendered_item_beta",
                 "type": "RenderingPlatformSupport",
                 "optional": true
+              },
+              {
+                "id": 26,
+                "name": "show_quoted_headline",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 27,
+                "name": "web_content_uri",
+                "type": "string",
+                "optional": true
               }
             ]
           },
@@ -576,6 +727,12 @@
                 "id": 10,
                 "name": "sublinks_palette_dark",
                 "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 11,
+                "name": "card_number",
+                "type": "int32",
                 "optional": true
               }
             ]
@@ -652,79 +809,6 @@
                 "optional": true
               }
             ]
-          },
-          {
-            "name": "FollowUp",
-            "fields": [
-              {
-                "id": 1,
-                "name": "type",
-                "type": "FollowUpType"
-              },
-              {
-                "id": 2,
-                "name": "uri",
-                "type": "string"
-              },
-              {
-                "id": 3,
-                "name": "blueprint_uri",
-                "type": "string",
-                "optional": true
-              }
-            ]
-          },
-          {
-            "name": "Collection",
-            "fields": [
-              {
-                "id": 1,
-                "name": "id",
-                "type": "string"
-              },
-              {
-                "id": 2,
-                "name": "palette_light",
-                "type": "Palette",
-                "optional": true
-              },
-              {
-                "id": 3,
-                "name": "palette_dark",
-                "type": "Palette",
-                "optional": true
-              },
-              {
-                "id": 4,
-                "name": "rows",
-                "type": "Row",
-                "is_repeated": true
-              },
-              {
-                "id": 5,
-                "name": "title",
-                "type": "string",
-                "optional": true
-              },
-              {
-                "id": 6,
-                "name": "branding",
-                "type": "Branding",
-                "optional": true
-              },
-              {
-                "id": 7,
-                "name": "premium_content",
-                "type": "bool",
-                "optional": true
-              },
-              {
-                "id": 8,
-                "name": "follow_up",
-                "type": "FollowUp",
-                "optional": true
-              }
-            ]
           }
         ],
         "imports": [
@@ -736,7 +820,7 @@
           }
         ],
         "package": {
-          "name": "com.gu.mobile.mapi.models"
+          "name": "com.gu.mobile.mapi.models.v0"
         },
         "options": [
           {
