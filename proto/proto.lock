@@ -79,7 +79,7 @@
                 "integer": 7
               },
               {
-                "name": "CARD_TYPE_THRASHER",
+                "name": "CARD_TYPE_WEB_CONTENT",
                 "integer": 8
               }
             ]
@@ -99,7 +99,7 @@
                 "integer": 2
               },
               {
-                "name": "ROW_TYPE_THRASHER",
+                "name": "ROW_TYPE_WEB_CONTENT",
                 "integer": 3
               }
             ]
@@ -662,7 +662,7 @@
               },
               {
                 "id": 27,
-                "name": "thrasher_uri",
+                "name": "web_content_uri",
                 "type": "string",
                 "optional": true
               }

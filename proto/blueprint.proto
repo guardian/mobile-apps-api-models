@@ -229,8 +229,8 @@ message Article {
   optional RenderingPlatformSupport rendered_item_beta = 25;
   // Quoted headline shown for a card if selected in the fronts tool.
   optional bool show_quoted_headline = 26;
-  // Only applicable to link snap (thrasher) cards
-  optional string thrasher_uri = 27;
+  // Only applicable to cards that display web content (e.g. snap links)
+  optional string web_content_uri = 27;
 }
 
 message Card {
@@ -252,11 +252,11 @@ message Card {
     */  
     CARD_TYPE_EMPTY = 7;
     /**
-     * Used when a card has a "link snap", which is an atom for a front
-     * (= a thrasher) and is placed inside a regular container alongside
-     * other cards.
+     * Used when a card should display content using a web view. Initially
+     * this has been implemented for "snap links", which are atoms for a
+     * front placed inside a regular container alongside other cards.
      */
-    CARD_TYPE_THRASHER = 8;
+    CARD_TYPE_WEB_CONTENT = 8;
   }
   CardType type = 1;
   Article article = 2;
@@ -310,7 +310,11 @@ message Row {
     // Layout is the "default" way of laying out rows and columns.
     ROW_TYPE_LAYOUT = 1;
     ROW_TYPE_CAROUSEL = 2;
-    ROW_TYPE_THRASHER = 3;
+    /**
+     * Used when the entire row only contains web content, for example
+     * when thrashers are displayed inside a fixed/thrasher container.
+     */
+    ROW_TYPE_WEB_CONTENT = 3;
   }
   repeated Column columns = 1;
   optional Palette palette_light = 2;
