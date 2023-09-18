@@ -101,6 +101,7 @@ message List {
   optional Palette palette_dark = 4;
   repeated Row rows = 5;
   optional Branding branding = 6;
+  optional FollowUp followup = 7;
 }
 
 message ListSequence {
