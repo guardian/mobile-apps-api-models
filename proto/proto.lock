@@ -830,7 +830,7 @@
                 "type": "string"
               }
             ]
-          },
+          }
         ],
         "imports": [
           {
