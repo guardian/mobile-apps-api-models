@@ -226,6 +226,12 @@
                 "name": "branding",
                 "type": "Branding",
                 "optional": true
+              },
+              {
+                "id": 7,
+                "name": "topics",
+                "type": "Topic",
+                "is_repeated": true
               }
             ]
           },
@@ -809,7 +815,22 @@
                 "optional": true
               }
             ]
-          }
+          },
+          {
+            "name": "Topic",
+            "fields": [
+              {
+                "id": 1,
+                "name": "type",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "name",
+                "type": "string"
+              }
+            ]
+          },
         ],
         "imports": [
           {
