@@ -332,5 +332,5 @@ message Row {
 
 message Topic {
   string type = 1;
-  string name = 1;
+  string name = 2;
 }
