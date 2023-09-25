@@ -101,8 +101,8 @@ message List {
   optional Palette palette_dark = 4;
   repeated Row rows = 5;
   optional Branding branding = 6;
+  repeated Topic topics = 7;
 }
-
 
 /************************* SHARED *************************/
 
@@ -169,7 +169,6 @@ message LiveEvent {
   optional google.protobuf.Timestamp published_date = 4;
   optional google.protobuf.Timestamp last_updated_date = 5;
 }
-
 
 message Branding {
   string branding_type = 1;
@@ -329,4 +328,9 @@ message Row {
   optional Thrasher thrasher = 5;
   RowType type = 6;
   optional string title = 7;
+}
+
+message Topic {
+  string type = 1;
+  string name = 2;
 }
