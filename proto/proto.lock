@@ -490,6 +490,12 @@
                 "id": 6,
                 "name": "about_uri",
                 "type": "string"
+              },
+              {
+                "id": 7,
+                "name": "alt_logo",
+                "type": "string",
+                "optional": true
               }
             ]
           },
