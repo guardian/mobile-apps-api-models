@@ -177,6 +177,7 @@ message Branding {
   string sponsor_uri = 4;
   string label = 5;
   string about_uri = 6;
+  optional string alt_logo = 7;
 }
 
 /**
