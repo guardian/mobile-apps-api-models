@@ -235,7 +235,7 @@
               },
               {
                 "id": 8,
-                "name": "adTargetingPath",
+                "name": "ad_targeting_path",
                 "type": "string",
                 "optional": true
               }
