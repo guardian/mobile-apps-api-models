@@ -232,6 +232,12 @@
                 "name": "topics",
                 "type": "Topic",
                 "is_repeated": true
+              },
+              {
+                "id": 8,
+                "name": "ad_targeting_path",
+                "type": "string",
+                "optional": true
               }
             ]
           },
