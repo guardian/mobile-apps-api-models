@@ -102,6 +102,7 @@ message List {
   repeated Row rows = 5;
   optional Branding branding = 6;
   repeated Topic topics = 7;
+  optional string adTargetingPath = 8;
 }
 
 /************************* SHARED *************************/
