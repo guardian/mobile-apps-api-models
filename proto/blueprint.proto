@@ -103,6 +103,7 @@ message List {
   optional Branding branding = 6;
   repeated Topic topics = 7;
   optional string ad_targeting_path = 8;
+  optional string previous_page_url = 9;
 }
 
 /************************* SHARED *************************/
