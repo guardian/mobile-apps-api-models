@@ -238,6 +238,12 @@
                 "name": "ad_targeting_path",
                 "type": "string",
                 "optional": true
+              },
+              {
+                "id": 9,
+                "name": "previous_page_url",
+                "type": "string",
+                "optional": true
               }
             ]
           },
