@@ -104,6 +104,24 @@ message List {
   repeated Topic topics = 7;
   optional string ad_targeting_path = 8;
   optional string previous_page_url = 9;
+
+  /**
+   * These fields are for tracking.
+   */
+  Permutive permutive = 10;
+  optional string nielsen = 11;
+
+}
+
+message Permutive {
+  string id = 1;
+  string type = 2;
+  optional string title = 3;
+  optional string section = 4;
+  repeated string authors = 5;
+  repeated string keywords = 6;
+  optional google.protobuf.Timestamp published_at = 7;
+  optional string series = 8;
 }
 
 /************************* SHARED *************************/
