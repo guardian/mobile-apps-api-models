@@ -362,8 +362,8 @@ message Permutive {
   optional string series = 8;
 }
 
-/** Only used for Article message */
+/** Tracking, only used for Article message */
 message BasicTag { 
   string id = 1;
-  string webTitle = 2;
+  string web_title = 2;
 }

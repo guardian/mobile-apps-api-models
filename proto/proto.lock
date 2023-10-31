@@ -948,7 +948,7 @@
               },
               {
                 "id": 2,
-                "name": "webTitle",
+                "name": "web_title",
                 "type": "string"
               }
             ]
