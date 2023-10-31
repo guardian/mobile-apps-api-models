@@ -114,17 +114,6 @@ message Tracking {
   optional string nielsen_section = 2;
 }
 
-message Permutive {
-  string id = 1;
-  string type = 2;
-  optional string title = 3;
-  optional string section = 4;
-  repeated string authors = 5;
-  repeated string keywords = 6;
-  optional google.protobuf.Timestamp published_at = 7;
-  optional string series = 8;
-}
-
 /************************* SHARED *************************/
 
 
@@ -252,6 +241,10 @@ message Article {
   optional bool show_quoted_headline = 26;
   // Only applicable to cards that display web content (e.g. snap links)
   optional string web_content_uri = 27;
+  Permutive permutive = 28;
+  optional string nielsen = 29;
+  repeated BasicTag commissiong_desks = 30;
+  
 }
 
 message Card {
@@ -355,4 +348,22 @@ message Row {
 message Topic {
   string type = 1;
   string name = 2;
+}
+
+/** Tracking messages */
+message Permutive {
+  string id = 1;
+  string type = 2;
+  optional string title = 3;
+  optional string section = 4;
+  repeated string authors = 5;
+  repeated string keywords = 6;
+  optional google.protobuf.Timestamp published_at = 7;
+  optional string series = 8;
+}
+
+/** Only used for Article message */
+message BasicTag { 
+  string id = 1;
+  string webTitle = 2;
 }

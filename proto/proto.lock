@@ -269,57 +269,6 @@
             ]
           },
           {
-            "name": "Permutive",
-            "fields": [
-              {
-                "id": 1,
-                "name": "id",
-                "type": "string"
-              },
-              {
-                "id": 2,
-                "name": "type",
-                "type": "string"
-              },
-              {
-                "id": 3,
-                "name": "title",
-                "type": "string",
-                "optional": true
-              },
-              {
-                "id": 4,
-                "name": "section",
-                "type": "string",
-                "optional": true
-              },
-              {
-                "id": 5,
-                "name": "authors",
-                "type": "string",
-                "is_repeated": true
-              },
-              {
-                "id": 6,
-                "name": "keywords",
-                "type": "string",
-                "is_repeated": true
-              },
-              {
-                "id": 7,
-                "name": "published_at",
-                "type": "google.protobuf.Timestamp",
-                "optional": true
-              },
-              {
-                "id": 8,
-                "name": "series",
-                "type": "string",
-                "optional": true
-              }
-            ]
-          },
-          {
             "name": "Palette",
             "fields": [
               {
@@ -761,6 +710,23 @@
                 "name": "web_content_uri",
                 "type": "string",
                 "optional": true
+              },
+              {
+                "id": 28,
+                "name": "permutive",
+                "type": "Permutive"
+              },
+              {
+                "id": 29,
+                "name": "nielsen",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 30,
+                "name": "commissiong_desks",
+                "type": "BasicTag",
+                "is_repeated": true
               }
             ]
           },
@@ -917,6 +883,72 @@
               {
                 "id": 2,
                 "name": "name",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "Permutive",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "type",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "title",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "section",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "authors",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 6,
+                "name": "keywords",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 7,
+                "name": "published_at",
+                "type": "google.protobuf.Timestamp",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "series",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "BasicTag",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "webTitle",
                 "type": "string"
               }
             ]
