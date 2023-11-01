@@ -253,22 +253,6 @@
             ]
           },
           {
-            "name": "Tracking",
-            "fields": [
-              {
-                "id": 1,
-                "name": "permutive",
-                "type": "Permutive"
-              },
-              {
-                "id": 2,
-                "name": "nielsen_section",
-                "type": "string",
-                "optional": true
-              }
-            ]
-          },
-          {
             "name": "Palette",
             "fields": [
               {
@@ -713,20 +697,8 @@
               },
               {
                 "id": 28,
-                "name": "permutive",
-                "type": "Permutive"
-              },
-              {
-                "id": 29,
-                "name": "nielsen",
-                "type": "string",
-                "optional": true
-              },
-              {
-                "id": 30,
-                "name": "commissiong_desks",
-                "type": "BasicTag",
-                "is_repeated": true
+                "name": "tracking",
+                "type": "Tracking"
               }
             ]
           },
@@ -884,6 +856,28 @@
                 "id": 2,
                 "name": "name",
                 "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "Tracking",
+            "fields": [
+              {
+                "id": 1,
+                "name": "permutive",
+                "type": "Permutive"
+              },
+              {
+                "id": 2,
+                "name": "nielsen_section",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "commissioning_desks",
+                "type": "BasicTag",
+                "is_repeated": true
               }
             ]
           },

@@ -107,12 +107,6 @@ message List {
   Tracking tracking = 10;
 }
 
-/** Fields related to tracking on lists */
-
-message Tracking {
-  Permutive permutive = 1;
-  optional string nielsen_section = 2;
-}
 
 /************************* SHARED *************************/
 
@@ -241,9 +235,7 @@ message Article {
   optional bool show_quoted_headline = 26;
   // Only applicable to cards that display web content (e.g. snap links)
   optional string web_content_uri = 27;
-  Permutive permutive = 28;
-  optional string nielsen = 29;
-  repeated BasicTag commissiong_desks = 30;
+  Tracking tracking = 28;
   
 }
 
@@ -351,6 +343,13 @@ message Topic {
 }
 
 /** Tracking messages */
+
+message Tracking {
+  Permutive permutive = 1;
+  optional string nielsen_section = 2;
+  repeated BasicTag commissioning_desks = 3;
+}
+
 message Permutive {
   string id = 1;
   string type = 2;
@@ -362,7 +361,7 @@ message Permutive {
   optional string series = 8;
 }
 
-/** Tracking, only used for Article message */
+/** This tracking field is only used for Article message */
 message BasicTag { 
   string id = 1;
   string web_title = 2;
