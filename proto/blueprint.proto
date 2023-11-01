@@ -104,13 +104,14 @@ message List {
   repeated Topic topics = 7;
   optional string ad_targeting_path = 8;
   optional string previous_page_url = 9;
+  Tracking tracking = 10;
+}
 
-  /**
-   * These fields are for tracking.
-   */
-  Permutive permutive = 10;
-  optional string nielsen = 11;
+/** Fields related to tracking on lists */
 
+message Tracking {
+  Permutive permutive = 1;
+  optional string nielsen_section = 2;
 }
 
 message Permutive {

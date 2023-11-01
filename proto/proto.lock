@@ -247,12 +247,22 @@
               },
               {
                 "id": 10,
+                "name": "tracking",
+                "type": "Tracking"
+              }
+            ]
+          },
+          {
+            "name": "Tracking",
+            "fields": [
+              {
+                "id": 1,
                 "name": "permutive",
                 "type": "Permutive"
               },
               {
-                "id": 11,
-                "name": "nielsen",
+                "id": 2,
+                "name": "nielsen_section",
                 "type": "string",
                 "optional": true
               }
