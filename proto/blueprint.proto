@@ -45,6 +45,7 @@ message Collection {
    */
   optional bool premium_content = 7;
   optional FollowUp follow_up = 8;
+  bool collapsible = 9;
 }
 
 
