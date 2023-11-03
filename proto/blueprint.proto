@@ -107,7 +107,6 @@ message List {
   Tracking tracking = 10;
 }
 
-
 /************************* SHARED *************************/
 
 
@@ -366,3 +365,4 @@ message BasicTag {
   string id = 1;
   string web_title = 2;
 }
+
