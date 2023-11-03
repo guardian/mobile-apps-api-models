@@ -104,6 +104,7 @@ message List {
   repeated Topic topics = 7;
   optional string ad_targeting_path = 8;
   optional string previous_page_url = 9;
+  Tracking tracking = 10;
 }
 
 /************************* SHARED *************************/
@@ -336,4 +337,22 @@ message Row {
 message Topic {
   string type = 1;
   string name = 2;
+}
+
+/** Tracking messages */
+
+message Tracking {
+  Permutive permutive = 1;
+  optional string nielsen_section = 2;
+}
+
+message Permutive {
+  string id = 1;
+  string type = 2;
+  optional string title = 3;
+  optional string section = 4;
+  repeated string authors = 5;
+  repeated string keywords = 6;
+  optional google.protobuf.Timestamp published_at = 7;
+  optional string series = 8;
 }
