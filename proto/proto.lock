@@ -252,7 +252,7 @@
               },
               {
                 "id": 11,
-                "name": "lists",
+                "name": "adverts",
                 "type": "int32",
                 "is_repeated": true
               }
