@@ -249,6 +249,12 @@
                 "id": 10,
                 "name": "tracking",
                 "type": "Tracking"
+              },
+              {
+                "id": 11,
+                "name": "adverts",
+                "type": "int32",
+                "is_repeated": true
               }
             ]
           },
