@@ -368,8 +368,13 @@ message BasicTag {
 }
 
 message FollowTag {
+  enum TagType {
+      contributor = 0;
+      keyword = 1;
+      series = 2;
+  }
   string id = 1;
   string web_title = 2;
-  string type = 3;
+  TagType type = 3;
 }
 
