@@ -249,6 +249,12 @@
                 "id": 10,
                 "name": "tracking",
                 "type": "Tracking"
+              },
+              {
+                "id": 11,
+                "name": "followTag",
+                "type": "FollowTag",
+                "optional": true
               }
             ]
           },
@@ -943,6 +949,26 @@
               {
                 "id": 2,
                 "name": "web_title",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "FollowTag",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "web_title",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "type",
                 "type": "string"
               }
             ]

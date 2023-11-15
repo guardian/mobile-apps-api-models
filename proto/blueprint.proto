@@ -105,6 +105,7 @@ message List {
   optional string ad_targeting_path = 8;
   optional string previous_page_url = 9;
   Tracking tracking = 10;
+  optional FollowTag followTag = 11;
 }
 
 /************************* SHARED *************************/
@@ -364,5 +365,11 @@ message Permutive {
 message BasicTag { 
   string id = 1;
   string web_title = 2;
+}
+
+message FollowTag {
+  string id = 1;
+  string web_title = 2;
+  string type = 3;
 }
 
