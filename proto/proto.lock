@@ -450,6 +450,64 @@
             ]
           },
           {
+            "name": "Audio",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "source",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "duration_in_seconds",
+                "type": "in32",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "url",
+                "type": "string"
+              },
+              {
+                "id": 5,
+                "name": "ad_free_url",
+                "type": "string"
+              },
+              {
+                "id": 6,
+                "name": "mime_type",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "PodcastSeries",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "url",
+                "type": "string"
+              }
+            ]
+          },
+          {
             "name": "LiveEvent",
             "fields": [
               {
@@ -705,6 +763,18 @@
                 "id": 28,
                 "name": "tracking",
                 "type": "Tracking"
+              },
+              {
+                "id": 29,
+                "name": "audio",
+                "type": "Audio",
+                "optional": true
+              },
+              {
+                "id": 30,
+                "name": "podcast_series",
+                "type": "PodcastSeries",
+                "optional": true
               }
             ]
           },
