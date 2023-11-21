@@ -106,7 +106,7 @@ message List {
   optional string previous_page_url = 9;
   Tracking tracking = 10;
   repeated int32 adverts = 11;
-  optional FollowTag followTag = 12;
+  optional FollowTag follow_tag = 12;
 }
 
 /************************* SHARED *************************/
@@ -370,9 +370,10 @@ message BasicTag {
 
 message FollowTag {
   enum TagType {
-      contributor = 0;
-      keyword = 1;
-      series = 2;
+    TAG_TYPE_UNSPECIFIED = 0;
+    TAG_TYPE_CONTRIBUTOR = 1;
+    TAG_TYPE_KEYWORD = 2;
+    TAG_TYPE_SERIES = 3;
   }
   string id = 1;
   string web_title = 2;
