@@ -105,7 +105,8 @@ message List {
   optional string ad_targeting_path = 8;
   optional string previous_page_url = 9;
   Tracking tracking = 10;
-  optional FollowTag followTag = 11;
+  repeated int32 adverts = 11;
+  optional FollowTag followTag = 12;
 }
 
 /************************* SHARED *************************/

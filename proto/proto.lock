@@ -103,6 +103,22 @@
                 "integer": 3
               }
             ]
+          },
+          {
+            "name": "FollowTag.TagType",
+            "enum_fields": [
+              {
+                "name": "contributor"
+              },
+              {
+                "name": "keyword",
+                "integer": 1
+              },
+              {
+                "name": "series",
+                "integer": 2
+              }
+            ]
           }
         ],
         "messages": [
@@ -252,6 +268,12 @@
               },
               {
                 "id": 11,
+                "name": "adverts",
+                "type": "int32",
+                "is_repeated": true
+              },
+              {
+                "id": 12,
                 "name": "followTag",
                 "type": "FollowTag",
                 "optional": true
@@ -969,7 +991,7 @@
               {
                 "id": 3,
                 "name": "type",
-                "type": "string"
+                "type": "TagType"
               }
             ]
           }
