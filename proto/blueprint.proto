@@ -169,8 +169,8 @@ message Audio {
   string id = 1;
   optional string source = 2;
   optional int32 duration_in_seconds = 3;
-  string url = 4;
-  string ad_free_url = 5;
+  string uri = 4;
+  string ad_free_uri = 5;
   optional string mime_type = 6;
 }
 

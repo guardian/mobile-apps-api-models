@@ -471,12 +471,12 @@
               },
               {
                 "id": 4,
-                "name": "url",
+                "name": "uri",
                 "type": "string"
               },
               {
                 "id": 5,
-                "name": "ad_free_url",
+                "name": "ad_free_uri",
                 "type": "string"
               },
               {
