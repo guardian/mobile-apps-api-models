@@ -466,7 +466,7 @@
               {
                 "id": 3,
                 "name": "duration_in_seconds",
-                "type": "in32",
+                "type": "int32",
                 "optional": true
               },
               {
