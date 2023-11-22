@@ -165,6 +165,21 @@ message Video {
   optional int32 width = 7;
 }
 
+message Audio {
+  string id = 1;
+  optional string source = 2;
+  optional int32 duration_in_seconds = 3;
+  string uri = 4;
+  string ad_free_uri = 5;
+  optional string mime_type = 6;
+}
+
+message PodcastSeries {
+  string id = 1;
+  string title = 2;
+  string url = 3;
+}
+
 // This message is only applicable to live blogs.
 message LiveEvent {
   string id = 1;
@@ -236,7 +251,10 @@ message Article {
   // Only applicable to cards that display web content (e.g. snap links)
   optional string web_content_uri = 27;
   Tracking tracking = 28;
-  
+  // Only applicable to podcast card
+  optional Audio audio = 29;
+  // Only applicable to podcast card
+  optional PodcastSeries podcast_series = 30;
 }
 
 message Card {
