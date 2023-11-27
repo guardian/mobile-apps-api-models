@@ -392,6 +392,15 @@ message FollowTag {
     TAG_TYPE_CONTRIBUTOR = 1;
     TAG_TYPE_KEYWORD = 2;
     TAG_TYPE_SERIES = 3;
+    TAG_TYPE_NEWSPAPER_BOOK_SECTION = 4;
+    TAG_TYPE_NEWSPAPER_BOOK = 5;
+    TAG_TYPE_BLOG = 6;
+    TAG_TYPE_TONE = 7;
+    TAG_TYPE_TYPE = 8;
+    TAG_TYPE_PUBLICATION = 9;
+    TAG_TYPE_TRACKING = 10;
+    TAG_TYPE_PAID_CONTENT = 11;
+    TAG_TYPE_CAMPAIGN = 12;
   }
   string id = 1;
   string web_title = 2;
