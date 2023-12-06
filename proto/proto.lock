@@ -282,7 +282,7 @@
               },
               {
                 "id": 12,
-                "name": "follow_tag",
+                "name": "follow",
                 "type": "Follow",
                 "optional": true
               }
