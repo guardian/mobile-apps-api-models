@@ -317,6 +317,11 @@
                 "name": "follow_tag",
                 "type": "FollowTag",
                 "optional": true
+              },
+              {
+                "id": 13,
+                "name": "id",
+                "type": "string"
               }
             ]
           },
