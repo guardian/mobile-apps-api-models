@@ -105,7 +105,7 @@
             ]
           },
           {
-            "name": "Follow.Type",
+            "name": "Follow.FollowType",
             "enum_fields": [
               {
                 "name": "TYPE_UNSPECIFIED"
@@ -1069,7 +1069,7 @@
               {
                 "id": 3,
                 "name": "type",
-                "type": "Type"
+                "type": "FollowType"
               }
             ]
           }

@@ -387,7 +387,7 @@ message BasicTag {
 }
 
 message Follow {
-  enum Type {
+  enum FollowType {
     TYPE_UNSPECIFIED = 0;
     TYPE_CONTRIBUTOR = 1;
     TYPE_KEYWORD = 2;
@@ -396,6 +396,6 @@ message Follow {
   }
   string id = 1;
   string web_title = 2;
-  Type type = 3;
+  FollowType type = 3;
 }
 
