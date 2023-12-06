@@ -106,7 +106,7 @@ message List {
   optional string previous_page_url = 9;
   Tracking tracking = 10;
   repeated int32 adverts = 11;
-  optional Follow follow_tag = 12;
+  optional Follow follow = 12;
 }
 
 /************************* SHARED *************************/
