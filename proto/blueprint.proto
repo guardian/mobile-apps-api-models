@@ -106,7 +106,7 @@ message List {
   optional string previous_page_url = 9;
   Tracking tracking = 10;
   repeated int32 adverts = 11;
-  optional Follow follow = 12;
+  optional MyGuardianFollow my_guardian_follow = 12;
   string id = 13;
 }
 
@@ -387,7 +387,7 @@ message BasicTag {
   string web_title = 2;
 }
 
-message Follow {
+message MyGuardianFollow {
   enum FollowType {
     TYPE_UNSPECIFIED = 0;
     TYPE_CONTRIBUTOR = 1;
