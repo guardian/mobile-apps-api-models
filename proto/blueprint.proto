@@ -107,6 +107,7 @@ message List {
   Tracking tracking = 10;
   repeated int32 adverts = 11;
   optional Follow follow = 12;
+  string id = 13;
 }
 
 /************************* SHARED *************************/

@@ -285,6 +285,11 @@
                 "name": "follow",
                 "type": "Follow",
                 "optional": true
+              },
+              {
+                "id": 13,
+                "name": "id",
+                "type": "string"
               }
             ]
           },
