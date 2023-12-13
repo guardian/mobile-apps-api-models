@@ -47,8 +47,9 @@ message Collection {
   optional FollowUp follow_up = 8;
 
   /**
-    * This tells the app whether or not to render a "show/hide" button at the top right of the container. 
-    * For now, this is only used for thrashers, which we don't want to enable our users to hide.
+   * This tells the app whether or not to render a "show/hide" button at the
+   * top right of the container. For now, this is only used for thrashers,
+   *  which should not be hideable by the user. 
    */
   bool hideable = 9;
 }
