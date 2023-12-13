@@ -211,6 +211,11 @@
                 "name": "follow_up",
                 "type": "FollowUp",
                 "optional": true
+              },
+              {
+                "id": 9,
+                "name": "hideable",
+                "type": "bool"
               }
             ]
           },

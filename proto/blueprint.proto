@@ -45,6 +45,12 @@ message Collection {
    */
   optional bool premium_content = 7;
   optional FollowUp follow_up = 8;
+
+  /**
+    * This tells the app whether or not to render a "show/hide" button at the top right of the container. 
+    * For now, this is only used for thrashers, which we don't want to enable our users to hide.
+   */
+  bool hideable = 9;
 }
 
 
