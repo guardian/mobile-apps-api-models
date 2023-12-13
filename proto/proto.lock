@@ -105,58 +105,26 @@
             ]
           },
           {
-            "name": "FollowTag.TagType",
+            "name": "MyGuardianFollow.FollowType",
             "enum_fields": [
               {
-                "name": "TAG_TYPE_UNSPECIFIED"
+                "name": "FOLLOW_TYPE_UNSPECIFIED"
               },
               {
-                "name": "TAG_TYPE_CONTRIBUTOR",
+                "name": "FOLLOW_TYPE_CONTRIBUTOR",
                 "integer": 1
               },
               {
-                "name": "TAG_TYPE_KEYWORD",
+                "name": "FOLLOW_TYPE_KEYWORD",
                 "integer": 2
               },
               {
-                "name": "TAG_TYPE_SERIES",
+                "name": "FOLLOW_TYPE_SERIES",
                 "integer": 3
               },
               {
-                "name": "TAG_TYPE_NEWSPAPER_BOOK_SECTION",
+                "name": "FOLLOW_TYPE_SECTION",
                 "integer": 4
-              },
-              {
-                "name": "TAG_TYPE_NEWSPAPER_BOOK",
-                "integer": 5
-              },
-              {
-                "name": "TAG_TYPE_BLOG",
-                "integer": 6
-              },
-              {
-                "name": "TAG_TYPE_TONE",
-                "integer": 7
-              },
-              {
-                "name": "TAG_TYPE_TYPE",
-                "integer": 8
-              },
-              {
-                "name": "TAG_TYPE_PUBLICATION",
-                "integer": 9
-              },
-              {
-                "name": "TAG_TYPE_TRACKING",
-                "integer": 10
-              },
-              {
-                "name": "TAG_TYPE_PAID_CONTENT",
-                "integer": 11
-              },
-              {
-                "name": "TAG_TYPE_CAMPAIGN",
-                "integer": 12
               }
             ]
           }
@@ -319,8 +287,8 @@
               },
               {
                 "id": 12,
-                "name": "follow_tag",
-                "type": "FollowTag",
+                "name": "my_guardian_follow",
+                "type": "MyGuardianFollow",
                 "optional": true
               },
               {
@@ -1096,7 +1064,7 @@
             ]
           },
           {
-            "name": "FollowTag",
+            "name": "MyGuardianFollow",
             "fields": [
               {
                 "id": 1,
@@ -1111,7 +1079,7 @@
               {
                 "id": 3,
                 "name": "type",
-                "type": "TagType"
+                "type": "FollowType"
               }
             ]
           }
