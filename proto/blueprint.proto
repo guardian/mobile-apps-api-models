@@ -106,7 +106,7 @@ message List {
   optional string previous_page_url = 9;
   Tracking tracking = 10;
   repeated int32 adverts = 11;
-  optional FollowTag follow_tag = 12;
+  optional MyGuardianFollow my_guardian_follow = 12;
   string id = 13;
 }
 
@@ -387,24 +387,16 @@ message BasicTag {
   string web_title = 2;
 }
 
-message FollowTag {
-  enum TagType {
-    TAG_TYPE_UNSPECIFIED = 0;
-    TAG_TYPE_CONTRIBUTOR = 1;
-    TAG_TYPE_KEYWORD = 2;
-    TAG_TYPE_SERIES = 3;
-    TAG_TYPE_NEWSPAPER_BOOK_SECTION = 4;
-    TAG_TYPE_NEWSPAPER_BOOK = 5;
-    TAG_TYPE_BLOG = 6;
-    TAG_TYPE_TONE = 7;
-    TAG_TYPE_TYPE = 8;
-    TAG_TYPE_PUBLICATION = 9;
-    TAG_TYPE_TRACKING = 10;
-    TAG_TYPE_PAID_CONTENT = 11;
-    TAG_TYPE_CAMPAIGN = 12;
+message MyGuardianFollow {
+  enum FollowType {
+    FOLLOW_TYPE_UNSPECIFIED = 0;
+    FOLLOW_TYPE_CONTRIBUTOR = 1;
+    FOLLOW_TYPE_KEYWORD = 2;
+    FOLLOW_TYPE_SERIES = 3;
+    FOLLOW_TYPE_SECTION = 4;
   }
   string id = 1;
   string web_title = 2;
-  TagType type = 3;
+  FollowType type = 3;
 }
 
