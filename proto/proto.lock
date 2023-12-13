@@ -108,22 +108,22 @@
             "name": "MyGuardianFollow.FollowType",
             "enum_fields": [
               {
-                "name": "TYPE_UNSPECIFIED"
+                "name": "FOLLOW_TYPE_UNSPECIFIED"
               },
               {
-                "name": "TYPE_CONTRIBUTOR",
+                "name": "FOLLOW_TYPE_CONTRIBUTOR",
                 "integer": 1
               },
               {
-                "name": "TYPE_KEYWORD",
+                "name": "FOLLOW_TYPE_KEYWORD",
                 "integer": 2
               },
               {
-                "name": "TYPE_SERIES",
+                "name": "FOLLOW_TYPE_SERIES",
                 "integer": 3
               },
               {
-                "name": "TYPE_SECTION",
+                "name": "FOLLOW_TYPE_SECTION",
                 "integer": 4
               }
             ]
