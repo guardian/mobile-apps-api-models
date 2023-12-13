@@ -389,11 +389,11 @@ message BasicTag {
 
 message MyGuardianFollow {
   enum FollowType {
-    TYPE_UNSPECIFIED = 0;
-    TYPE_CONTRIBUTOR = 1;
-    TYPE_KEYWORD = 2;
-    TYPE_SERIES = 3;
-    TYPE_SECTION = 4;
+    FOLLOW_TYPE_TYPE_UNSPECIFIED = 0;
+    FOLLOW_TYPE_TYPE_CONTRIBUTOR = 1;
+    FOLLOW_TYPE_TYPE_KEYWORD = 2;
+    FOLLOW_TYPE_TYPE_SERIES = 3;
+    FOLLOW_TYPE_TYPE_SECTION = 4;
   }
   string id = 1;
   string web_title = 2;
