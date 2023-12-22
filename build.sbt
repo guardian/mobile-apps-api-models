@@ -23,7 +23,6 @@ lazy val scalaModels = project.in(file("."))
 
     Compile / PB.protoSources := Seq(baseDirectory.value / "./proto"),
     releaseCrossBuild := true,
-    releaseVersion := fromAggregatedAssessedCompatibilityWithLatestRelease().value,
     releaseProcess := Seq[ReleaseStep](
       checkSnapshotDependencies,
       inquireVersions,
