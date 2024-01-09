@@ -1,4 +1,5 @@
-import ReleaseTransformations._
+import ReleaseTransformations.*
+import sbtversionpolicy.withsbtrelease.ReleaseVersion.fromAggregatedAssessedCompatibilityWithLatestRelease
 
 ThisBuild / organization := "com.gu"
 ThisBuild / scalaVersion := "2.13.11"
@@ -14,26 +15,23 @@ lazy val scalaModels = project.in(file("."))
       "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"
     ),
 
+    Compile / scalacOptions ++= Seq("-release:11"),
+
     Compile / PB.targets := Seq(
       scalapb.gen() -> (Compile / sourceManaged).value / "scalapb"
     ),
 
     Compile / PB.protoSources := Seq(baseDirectory.value / "./proto"),
     releaseCrossBuild := true,
-    releaseProcess := {
-      val process = Seq[ReleaseStep](
-        checkSnapshotDependencies,
-        inquireVersions,
-        runClean,
-        runTest,
-        setReleaseVersion,
-        releaseStepCommandAndRemaining("+publishSigned"),
-      )
-
-      if (!isSnapshot.value) {
-        process ++ Seq[ReleaseStep](releaseStepCommand("sonatypeBundleRelease"))
-      } else {
-        process
-      }
-    }
+    releaseProcess := Seq[ReleaseStep](
+      checkSnapshotDependencies,
+      inquireVersions,
+      runClean,
+      runTest,
+      setReleaseVersion,
+      commitReleaseVersion,
+      tagRelease,
+      setNextVersion,
+      commitNextVersion
+    )
   )
