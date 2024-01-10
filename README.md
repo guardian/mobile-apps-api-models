@@ -1,6 +1,7 @@
 <img src="https://img.shields.io/github/v/release/guardian/mobile-apps-api-models?label=schema%20version">
 
-[![mobile-apps-api-models Scala version support](https://index.scala-lang.org/guardian/mobile-apps-api-models/mobile-apps-api-models/latest-by-scala-version.svg?platform=jvm)](https://index.scala-lang.org/guardian/mobile-apps-api-models/mobile-apps-api-models)
+[![mobile-apps-api-models-v0 Scala version support](https://index.scala-lang.org/guardian/mobile-apps-api-models/mobile-apps-api-models-v0/latest-by-scala-version.svg?platform=jvm)](https://index.scala-lang.org/guardian/mobile-apps-api-models/mobile-apps-api-models-v0)
+
 
 # Mobile Apps Api Models
 
@@ -81,6 +82,8 @@ running the release workflow.
 
 ## Non-production releases
 
-The GHA doesn't [yet](https://github.com/guardian/gha-scala-library-release-workflow/issues/10) support snapshot releases.
-We can test changes locally using the sbt command `publishLocal` but will not be able to e.g. deploy an instance of MAPI
-to CODE that references the local changes to mobile-apps-api-models. 
+`gha-scala-library-release-workflow` [supports preview releases](https://github.com/guardian/gha-scala-library-release-workflow/pull/19) -
+you just need to [select the PR branch](https://github.com/guardian/gha-scala-library-release-workflow/blob/main/docs/making-a-release.md#choose-release-type)
+before clicking the green `Run workflow` button.
+
+The resulting PREVIEW version can be used for evaluation in MAPI (eg, deployed to CODE) before the PR is merged.
