@@ -295,6 +295,17 @@
                 "id": 13,
                 "name": "id",
                 "type": "string"
+              },
+              {
+                "id": 14,
+                "name": "web_uri",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 15,
+                "name": "ad_targeting_params",
+                "type": "AdTargetingParams"
               }
             ]
           },
@@ -815,6 +826,11 @@
                 "name": "podcast_series",
                 "type": "PodcastSeries",
                 "optional": true
+              },
+              {
+                "id": 31,
+                "name": "ad_targeting_params",
+                "type": "AdTargetingParams"
               }
             ]
           },
@@ -976,6 +992,39 @@
             ]
           },
           {
+            "name": "MyGuardianFollow",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "web_title",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "type",
+                "type": "FollowType"
+              }
+            ]
+          },
+          {
+            "name": "AdTargetingParams",
+            "maps": [
+              {
+                "key_type": "string",
+                "field": {
+                  "id": 4,
+                  "name": "ad_targeting",
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          {
             "name": "Tracking",
             "fields": [
               {
@@ -1060,26 +1109,6 @@
                 "id": 2,
                 "name": "web_title",
                 "type": "string"
-              }
-            ]
-          },
-          {
-            "name": "MyGuardianFollow",
-            "fields": [
-              {
-                "id": 1,
-                "name": "id",
-                "type": "string"
-              },
-              {
-                "id": 2,
-                "name": "web_title",
-                "type": "string"
-              },
-              {
-                "id": 3,
-                "name": "type",
-                "type": "FollowType"
               }
             ]
           }
