@@ -115,6 +115,8 @@ message List {
   repeated int32 adverts = 11;
   optional MyGuardianFollow my_guardian_follow = 12;
   string id = 13;
+  optional string web_uri = 14;
+  AdTargetingParams ad_targeting_params = 15;
 }
 
 /************************* SHARED *************************/
@@ -264,6 +266,7 @@ message Article {
   optional Audio audio = 29;
   // Only applicable to podcast card
   optional PodcastSeries podcast_series = 30;
+  AdTargetingParams ad_targeting_params = 31;
 }
 
 message Card {
@@ -369,10 +372,33 @@ message Topic {
   string name = 2;
 }
 
+message MyGuardianFollow {
+  enum FollowType {
+    FOLLOW_TYPE_UNSPECIFIED = 0;
+    FOLLOW_TYPE_CONTRIBUTOR = 1;
+    FOLLOW_TYPE_KEYWORD = 2;
+    FOLLOW_TYPE_SERIES = 3;
+    FOLLOW_TYPE_SECTION = 4;
+  }
+  string id = 1;
+  string web_title = 2;
+  FollowType type = 3;
+}
+
+
+/** Used for advert targeting. We should perhaps consider moving
+ this into its own Commercial message along with adTargetingPath
+  in the future */
+message AdTargetingParams {
+  map<string, string> ad_targeting = 4;
+}
+
 /** Tracking messages */
 
 message Tracking {
   Permutive permutive = 1;
+  /** For some lists and articles we return nielsen tracking data
+   depending on the section they belong to */
   optional string nielsen_section = 2;
   repeated BasicTag commissioning_desks = 3;
 }
@@ -388,22 +414,12 @@ message Permutive {
   optional string series = 8;
 }
 
-/** This tracking field is only used for Article message */
+/** For some articles we return commissioning desk tracking (aka BasicTag) 
+data based on if the article has a "tracking" tag which is set in CAPI. 
+Commissioning desk data will never be included at the upper list level.
+*/
 message BasicTag { 
   string id = 1;
   string web_title = 2;
-}
-
-message MyGuardianFollow {
-  enum FollowType {
-    FOLLOW_TYPE_UNSPECIFIED = 0;
-    FOLLOW_TYPE_CONTRIBUTOR = 1;
-    FOLLOW_TYPE_KEYWORD = 2;
-    FOLLOW_TYPE_SERIES = 3;
-    FOLLOW_TYPE_SECTION = 4;
-  }
-  string id = 1;
-  string web_title = 2;
-  FollowType type = 3;
 }
 
