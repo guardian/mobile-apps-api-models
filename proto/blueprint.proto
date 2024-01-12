@@ -115,6 +115,10 @@ message List {
   repeated int32 adverts = 11;
   optional MyGuardianFollow my_guardian_follow = 12;
   string id = 13;
+  /**
+   * This is only neded for tracking, but keeping out of the tracking
+   * message incase that changes
+   */
   optional string web_uri = 14;
   AdTargetingParams ad_targeting_params = 15;
 }
