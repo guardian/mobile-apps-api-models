@@ -297,6 +297,7 @@ message Card {
      * front placed inside a regular container alongside other cards.
      */
     CARD_TYPE_WEB_CONTENT = 8;
+    CARD_TYPE_ADVERT = 9;
   }
   CardType type = 1;
   Article article = 2;
