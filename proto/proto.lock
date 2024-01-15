@@ -81,6 +81,10 @@
               {
                 "name": "CARD_TYPE_WEB_CONTENT",
                 "integer": 8
+              },
+              {
+                "name": "CARD_TYPE_ADVERT",
+                "integer": 9
               }
             ]
           },
