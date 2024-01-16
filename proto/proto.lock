@@ -287,7 +287,13 @@
                 "id": 11,
                 "name": "adverts",
                 "type": "int32",
-                "is_repeated": true
+                "is_repeated": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 12,
