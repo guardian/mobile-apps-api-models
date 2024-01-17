@@ -998,6 +998,11 @@
                 "id": 2,
                 "name": "name",
                 "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "display_name",
+                "type": "string"
               }
             ]
           },
