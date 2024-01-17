@@ -376,7 +376,9 @@ message Row {
 
 message Topic {
   string type = 1;
+  // let's change this to "id" in the future, name is a bit misleading
   string name = 2;
+  string display_name = 3;
 }
 
 message MyGuardianFollow {
