@@ -109,7 +109,8 @@ message List {
   repeated Row rows = 5;
   optional Branding branding = 6;
   repeated Topic topics = 7;
-  optional string ad_targeting_path = 8;
+  // use ad_unit instead 
+  optional string ad_targeting_path = 8 [deprecated = true];
   optional string previous_page_url = 9;
   Tracking tracking = 10;
   // Adverts are now a card type to be used in a normal row/column

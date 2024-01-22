@@ -270,7 +270,13 @@
                 "id": 8,
                 "name": "ad_targeting_path",
                 "type": "string",
-                "optional": true
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 9,
