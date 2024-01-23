@@ -2,10 +2,10 @@ import ReleaseTransformations.*
 import sbtversionpolicy.withsbtrelease.ReleaseVersion.fromAggregatedAssessedCompatibilityWithLatestRelease
 
 ThisBuild / organization := "com.gu"
-ThisBuild / scalaVersion := "2.13.11"
+ThisBuild / scalaVersion := "2.13.12"
 ThisBuild / licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html"))
 
-crossScalaVersions := Seq(scalaVersion.value, "2.12.18", "3.3.0")
+crossScalaVersions := Seq(scalaVersion.value, "2.12.18", "3.3.1")
 
 lazy val scalaModels = project.in(file("."))
   .settings(
