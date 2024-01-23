@@ -668,6 +668,21 @@
             ]
           },
           {
+            "name": "ListenToArticle",
+            "fields": [
+              {
+                "id": 1,
+                "name": "audio_uri",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "duration_in_seconds",
+                "type": "int32"
+              }
+            ]
+          },
+          {
             "name": "Article",
             "fields": [
               {
@@ -873,6 +888,12 @@
                 "id": 35,
                 "name": "should_hide_nav",
                 "type": "bool"
+              },
+              {
+                "id": 36,
+                "name": "listen_to_article",
+                "type": "ListenToArticle",
+                "optional": true
               }
             ]
           },

@@ -232,6 +232,15 @@ message RenderingPlatformSupport {
   string uri = 2;
 }
 
+/**
+ * The message provides the link to fetch the audio for listen-to-article
+ * feature on the article and other information for UI display.
+ */
+message ListenToArticle {
+  string audio_uri = 1;
+  int32 duration_in_seconds = 2;
+}
+
 message Article {
   string id = 1;
   optional string byline = 2;
@@ -289,6 +298,10 @@ message Article {
   bool should_hide_adverts = 34;
   // some design types (immersive/interactive) should hide the nav/tab bar
   bool should_hide_nav = 35;
+  /**
+   * It is available when the listen-to-article is supported on this article
+   */
+  optional ListenToArticle listen_to_article = 36;
 }
 
 message Card {
