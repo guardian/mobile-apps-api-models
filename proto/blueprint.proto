@@ -302,6 +302,11 @@ message Article {
    * It is available when the listen-to-article is supported on this article
    */
   optional ListenToArticle listen_to_article = 36;
+  /**
+   * The correspondingTags is to denote which of the tags that a user has
+   * selected are applied to a particular content item
+   */
+  repeated MyGuardianFollow correspondingTags = 37;
 }
 
 message Card {

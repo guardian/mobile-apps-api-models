@@ -894,6 +894,12 @@
                 "name": "listen_to_article",
                 "type": "ListenToArticle",
                 "optional": true
+              },
+              {
+                "id": 37,
+                "name": "correspondingTags",
+                "type": "MyGuardianFollow",
+                "is_repeated": true
               }
             ]
           },
