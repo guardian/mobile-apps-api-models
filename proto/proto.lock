@@ -270,7 +270,13 @@
                 "id": 8,
                 "name": "ad_targeting_path",
                 "type": "string",
-                "optional": true
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 9,
@@ -316,6 +322,11 @@
                 "id": 15,
                 "name": "ad_targeting_params",
                 "type": "AdTargetingParams"
+              },
+              {
+                "id": 16,
+                "name": "ad_unit",
+                "type": "string"
               }
             ]
           },
@@ -841,6 +852,27 @@
                 "id": 31,
                 "name": "ad_targeting_params",
                 "type": "AdTargetingParams"
+              },
+              {
+                "id": 32,
+                "name": "ad_unit",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 33,
+                "name": "should_hide_reader_revenue",
+                "type": "bool"
+              },
+              {
+                "id": 34,
+                "name": "should_hide_adverts",
+                "type": "bool"
+              },
+              {
+                "id": 35,
+                "name": "should_hide_nav",
+                "type": "bool"
               }
             ]
           },

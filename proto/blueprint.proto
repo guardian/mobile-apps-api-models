@@ -109,7 +109,8 @@ message List {
   repeated Row rows = 5;
   optional Branding branding = 6;
   repeated Topic topics = 7;
-  optional string ad_targeting_path = 8;
+  // use ad_unit instead 
+  optional string ad_targeting_path = 8 [deprecated = true];
   optional string previous_page_url = 9;
   Tracking tracking = 10;
   // Adverts are now a card type to be used in a normal row/column
@@ -122,6 +123,11 @@ message List {
    */
   optional string web_uri = 14;
   AdTargetingParams ad_targeting_params = 15;
+  /**
+   * Needed on lists and articles. Collections use the adUnit defined
+   * in the fronts response (e.g uk/fronts/home)
+   */
+  string ad_unit = 16;
 }
 
 /************************* SHARED *************************/
@@ -272,6 +278,17 @@ message Article {
   // Only applicable to podcast card
   optional PodcastSeries podcast_series = 30;
   AdTargetingParams ad_targeting_params = 31;
+  /**
+   * Needed on lists and articles whereas collections use the adUnit
+   * defined in the fronts response (e.g uk/fronts/home)
+   */
+  optional string ad_unit = 32;
+  // field we get from CAPI set by the editorial team
+  bool should_hide_reader_revenue = 33;
+  // field we get from CAPI set by the editorial team
+  bool should_hide_adverts = 34;
+  // some design types (immersive/interactive) should hide the nav/tab bar
+  bool should_hide_nav = 35;
 }
 
 message Card {
