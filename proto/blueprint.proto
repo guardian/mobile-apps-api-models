@@ -306,7 +306,7 @@ message Article {
    * The correspondingTags is to denote which of the tags that a user has
    * selected are applied to a particular content item
    */
-  repeated MyGuardianFollow correspondingTags = 37;
+  repeated MyGuardianFollow corresponding_tags = 37;
 }
 
 message Card {
