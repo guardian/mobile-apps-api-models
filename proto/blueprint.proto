@@ -298,6 +298,7 @@ message Article {
   bool should_hide_adverts = 34;
   // some design types (immersive/interactive) should hide the nav/tab bar
   bool should_hide_nav = 35;
+  /**
    * It is available when the listen-to-article is supported on this article
    */
   optional ListenToArticle listen_to_article = 36;
