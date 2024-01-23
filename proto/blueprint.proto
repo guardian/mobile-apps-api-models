@@ -302,11 +302,6 @@ message Article {
    * It is available when the listen-to-article is supported on this article
    */
   optional ListenToArticle listen_to_article = 36;
-  /**
-   * The correspondingTags is to denote which of the tags that a user has
-   * selected are applied to a particular content item
-   */
-  repeated MyGuardianFollow corresponding_tags = 37;
 }
 
 message Card {
@@ -368,6 +363,11 @@ message Card {
    * This is the number to be used when the card type is CARD_TYPE_NUMBERED.
    */
   optional int32 card_number = 11;
+  /**
+   * The correspondingTags is to denote which of the tags that a user has
+   * selected are applied to a particular content item
+   */
+  repeated MyGuardianFollow corresponding_tags = 37;
 }
 
 message Column {

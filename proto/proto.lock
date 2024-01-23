@@ -894,12 +894,6 @@
                 "name": "listen_to_article",
                 "type": "ListenToArticle",
                 "optional": true
-              },
-              {
-                "id": 37,
-                "name": "corresponding_tags",
-                "type": "MyGuardianFollow",
-                "is_repeated": true
               }
             ]
           },
@@ -969,6 +963,12 @@
                 "name": "card_number",
                 "type": "int32",
                 "optional": true
+              },
+              {
+                "id": 37,
+                "name": "corresponding_tags",
+                "type": "MyGuardianFollow",
+                "is_repeated": true
               }
             ]
           },
