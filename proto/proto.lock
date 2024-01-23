@@ -326,8 +326,7 @@
               {
                 "id": 16,
                 "name": "ad_unit",
-                "type": "string",
-                "optional": true
+                "type": "string"
               }
             ]
           },

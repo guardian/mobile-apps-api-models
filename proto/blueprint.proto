@@ -127,7 +127,7 @@ message List {
    * Needed on lists and articles. Collections use the adUnit defined
    * in the fronts response (e.g uk/fronts/home)
    */
-  optional string ad_unit = 16;
+  string ad_unit = 16;
 }
 
 /************************* SHARED *************************/
