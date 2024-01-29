@@ -113,8 +113,8 @@ message List {
   optional string ad_targeting_path = 8 [deprecated = true];
   optional string previous_page_url = 9;
   Tracking tracking = 10;
-  // Adverts are now a card type to be used in a normal row/column
-  repeated int32 adverts = 11 [deprecated = true];
+  // Tells the app when rows to insert adverts before (not after!)
+  repeated int32 adverts = 11;
   optional MyGuardianFollow my_guardian_follow = 12;
   string id = 13;
   /**
@@ -328,8 +328,6 @@ message Card {
      * front placed inside a regular container alongside other cards.
      */
     CARD_TYPE_WEB_CONTENT = 8;
-    // The advert card type is currently only used on lists. 
-    CARD_TYPE_ADVERT = 9;
   }
   CardType type = 1;
   Article article = 2;
