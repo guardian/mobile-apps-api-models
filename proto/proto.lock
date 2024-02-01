@@ -81,10 +81,6 @@
               {
                 "name": "CARD_TYPE_WEB_CONTENT",
                 "integer": 8
-              },
-              {
-                "name": "CARD_TYPE_ADVERT",
-                "integer": 9
               }
             ]
           },
@@ -293,13 +289,7 @@
                 "id": 11,
                 "name": "adverts",
                 "type": "int32",
-                "is_repeated": true,
-                "options": [
-                  {
-                    "name": "deprecated",
-                    "value": "true"
-                  }
-                ]
+                "is_repeated": true
               },
               {
                 "id": 12,
