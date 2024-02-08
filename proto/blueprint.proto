@@ -328,6 +328,12 @@ message Card {
      * front placed inside a regular container alongside other cards.
      */
     CARD_TYPE_WEB_CONTENT = 8;
+    /**
+     * A card showing a podcast series.  Internally it is represented as
+     * a snaplink with the type "link" and a link url pointing at a podcast
+     * series tag.
+     */
+    CARD_TYPE_PODCAST_SERIES = 9;
   }
   CardType type = 1;
   Article article = 2;
