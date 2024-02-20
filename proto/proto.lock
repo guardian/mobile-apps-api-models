@@ -188,6 +188,12 @@
                 "id": 9,
                 "name": "hideable",
                 "type": "bool"
+              },
+              {
+                "id": 10,
+                "name": "myguardian_follow",
+                "type": "MyGuardianFollow",
+                "optional": true
               }
             ]
           },
