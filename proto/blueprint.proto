@@ -54,6 +54,13 @@ message Collection {
   bool hideable = 9;
 
   optional MyGuardianFollow myguardian_follow = 10;
+
+  /**
+   * For some design on specific types of collections, we want to show 
+   * an image and a description in the collection header.
+   */
+  optional string description = 11;
+  optional Image image = 12;
 }
 
 
