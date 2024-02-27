@@ -2,7 +2,7 @@
 
 [![mobile-apps-api-models Scala version support](https://index.scala-lang.org/guardian/mobile-apps-api-models/mobile-apps-api-models/latest-by-scala-version.svg?platform=jvm)](https://index.scala-lang.org/guardian/mobile-apps-api-models/mobile-apps-api-models)
 
-# Mobile Apps Api Models
+# Mobile Apps Api Models [![Release](https://github.com/guardian/mobile-apps-api-models/actions/workflows/release.yml/badge.svg)](https://github.com/guardian/mobile-apps-api-models/actions/workflows/release.yml)
 
 These models are used to communicate between MAPI and the native apps.
 This repository defines the protobuf [schema](./proto/collection.proto) for "blueprint" collections.
