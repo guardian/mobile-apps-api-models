@@ -194,6 +194,18 @@
                 "name": "myguardian_follow",
                 "type": "MyGuardianFollow",
                 "optional": true
+              },
+              {
+                "id": 11,
+                "name": "description",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 12,
+                "name": "image",
+                "type": "Image",
+                "optional": true
               }
             ]
           },
