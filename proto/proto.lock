@@ -129,6 +129,38 @@
               {
                 "name": "FOLLOW_TYPE_SECTION",
                 "integer": 4
+              },
+              {
+                "name": "FOLLOW_TYPE_NEWSPAPER_BOOK_SECTION",
+                "integer": 5
+              },
+              {
+                "name": "FOLLOW_TYPE_NEWSPAPER_BOOK",
+                "integer": 6
+              },
+              {
+                "name": "FOLLOW_TYPE_BLOG",
+                "integer": 7
+              },
+              {
+                "name": "FOLLOW_TYPE_TONE",
+                "integer": 8
+              },
+              {
+                "name": "FOLLOW_TYPE_PUBLICATION",
+                "integer": 9
+              },
+              {
+                "name": "FOLLOW_TYPE_TRACKING",
+                "integer": 10
+              },
+              {
+                "name": "FOLLOW_TYPE_PAID_CONTENT",
+                "integer": 11
+              },
+              {
+                "name": "FOLLOW_TYPE_CAMPAIGN",
+                "integer": 12
               }
             ]
           }
