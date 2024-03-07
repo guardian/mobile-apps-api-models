@@ -161,6 +161,10 @@
               {
                 "name": "FOLLOW_TYPE_CAMPAIGN",
                 "integer": 12
+              },
+              {
+                "name": "FOLLOW_TYPE_TYPE",
+                "integer": 13
               }
             ]
           }
