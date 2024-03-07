@@ -444,6 +444,7 @@ message MyGuardianFollow {
     FOLLOW_TYPE_TRACKING = 10;
     FOLLOW_TYPE_PAID_CONTENT = 11;
     FOLLOW_TYPE_CAMPAIGN = 12;
+    FOLLOW_TYPE_TYPE = 13;
   }
   string id = 1;
   string web_title = 2;
