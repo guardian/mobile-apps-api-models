@@ -209,6 +209,9 @@ message PodcastSeries {
   string id = 1;
   string title = 2;
   string url = 3;
+  optional FollowUp follow_up = 4;
+  optional Image image = 5;
+  optional string description = 6;
 }
 
 // This message is only applicable to live blogs.
@@ -376,6 +379,11 @@ message Card {
    * This is the number to be used when the card type is CARD_TYPE_NUMBERED.
    */
   optional int32 card_number = 11;
+  /**
+   * This optional field is set if this card type is CARD_TYPE_PODCAST_SERIES.
+   * It provides the details on the podcast series.
+   */
+  optional PodcastSeries podcast_series = 12;
   /**
    * The correspondingTags is to denote which of the tags that a user has
    * selected are applied to a particular content item

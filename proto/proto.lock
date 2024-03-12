@@ -624,6 +624,24 @@
                 "id": 3,
                 "name": "url",
                 "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "follow_up",
+                "type": "FollowUp",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "image",
+                "type": "Image",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "description",
+                "type": "string",
+                "optional": true
               }
             ]
           },
@@ -1010,6 +1028,12 @@
                 "id": 11,
                 "name": "card_number",
                 "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 12,
+                "name": "podcast_series",
+                "type": "PodcastSeries",
                 "optional": true
               },
               {
