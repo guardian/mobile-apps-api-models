@@ -5,7 +5,7 @@ ThisBuild / organization := "com.gu"
 ThisBuild / scalaVersion := "2.13.13"
 ThisBuild / licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html"))
 
-crossScalaVersions := Seq(scalaVersion.value, "2.12.19", "3.3.1")
+crossScalaVersions := Seq(scalaVersion.value, "2.12.19", "3.3.3")
 
 lazy val scalaModels = project.in(file("."))
   .settings(
