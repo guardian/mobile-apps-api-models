@@ -63,7 +63,6 @@ message Collection {
   optional Image image = 12;
 }
 
-
 /**
  * The follow up message contains links to get more information about the
  * collection.
@@ -138,6 +137,39 @@ message List {
    */
   string ad_unit = 16;
 }
+
+/************************* MY GUARDIAN *************************/
+
+// The following messages are used only to model the contents of our
+// My Guardian endpoints (grid, feed etc)
+
+/**
+  * This message type is similar to Collection but with less information. 
+  * It will be used when the client will decide how to lay out
+  * the collection instead of the server. This is useful for My Guardian
+  * where the client will need to deduplicate the content from multiple 
+  * collections.
+  */
+message LayoutAgnosticCollection {
+  string id = 1;
+  /**
+    * A palette at the collection level is currently mapped from MAPI's
+    * "navigation style". It's specified when the look and feel of an entire
+    * container should be changed, for example when a container is "branded"
+    * because the content has been paid for.
+    */
+  optional Palette palette_light = 2;
+  optional Palette palette_dark = 3;
+  /**
+    * Here we return a list of cards instead of rows. This means that 
+    * the client will need to decide how to layout the cards.
+    */
+  repeated Card cards = 4;
+  optional string title = 5;
+  optional FollowUp follow_up = 6;
+}
+  
+  
 
 /************************* SHARED *************************/
 

@@ -379,6 +379,46 @@
             ]
           },
           {
+            "name": "LayoutAgnosticCollection",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "cards",
+                "type": "Card",
+                "is_repeated": true
+              },
+              {
+                "id": 5,
+                "name": "title",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "follow_up",
+                "type": "FollowUp",
+                "optional": true
+              }
+            ]
+          },
+          {
             "name": "Palette",
             "fields": [
               {
