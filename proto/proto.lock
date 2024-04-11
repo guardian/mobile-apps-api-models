@@ -246,81 +246,6 @@
             ]
           },
           {
-            "name": "CollectionGridDedupeSpike",
-            "fields": [
-              {
-                "id": 1,
-                "name": "id",
-                "type": "string"
-              },
-              {
-                "id": 2,
-                "name": "palette_light",
-                "type": "Palette",
-                "optional": true
-              },
-              {
-                "id": 3,
-                "name": "palette_dark",
-                "type": "Palette",
-                "optional": true
-              },
-              {
-                "id": 4,
-                "name": "cards",
-                "type": "Card",
-                "is_repeated": true
-              },
-              {
-                "id": 5,
-                "name": "title",
-                "type": "string",
-                "optional": true
-              },
-              {
-                "id": 6,
-                "name": "branding",
-                "type": "Branding",
-                "optional": true
-              },
-              {
-                "id": 7,
-                "name": "premium_content",
-                "type": "bool",
-                "optional": true
-              },
-              {
-                "id": 8,
-                "name": "follow_up",
-                "type": "FollowUp",
-                "optional": true
-              },
-              {
-                "id": 9,
-                "name": "hideable",
-                "type": "bool"
-              },
-              {
-                "id": 10,
-                "name": "myguardian_follow",
-                "type": "MyGuardianFollow",
-                "optional": true
-              },
-              {
-                "id": 11,
-                "name": "description",
-                "type": "string",
-                "optional": true
-              },
-              {
-                "id": 12,
-                "name": "image",
-                "type": "Image",
-                "optional": true
-              }
-            ]
-          },
-          {
             "name": "FollowUp",
             "fields": [
               {
@@ -450,6 +375,46 @@
                 "id": 16,
                 "name": "ad_unit",
                 "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "LayoutAgnosticCollection",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "cards",
+                "type": "Card",
+                "is_repeated": true
+              },
+              {
+                "id": 5,
+                "name": "title",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "follow_up",
+                "type": "FollowUp",
+                "optional": true
               }
             ]
           },
