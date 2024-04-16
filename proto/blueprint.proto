@@ -61,6 +61,13 @@ message Collection {
    */
   optional string description = 11;
   optional Image image = 12;
+
+  enum CollectionType {
+    COLLECTION_TYPE_UNSPECIFIED = 0;
+    COLLECTION_TYPE_REGULAR = 1;
+    COLLECTION_TYPE_PODCAST = 2;
+  }
+  optional CollectionType type = 13;
 }
 
 /**

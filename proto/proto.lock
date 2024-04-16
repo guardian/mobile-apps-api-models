@@ -5,6 +5,22 @@
       "def": {
         "enums": [
           {
+            "name": "Collection.CollectionType",
+            "enum_fields": [
+              {
+                "name": "COLLECTION_TYPE_UNSPECIFIED"
+              },
+              {
+                "name": "COLLECTION_TYPE_REGULAR",
+                "integer": 1
+              },
+              {
+                "name": "COLLECTION_TYPE_PODCAST",
+                "integer": 2
+              }
+            ]
+          },
+          {
             "name": "FollowUp.FollowUpType",
             "enum_fields": [
               {
@@ -241,6 +257,12 @@
                 "id": 12,
                 "name": "image",
                 "type": "Image",
+                "optional": true
+              },
+              {
+                "id": 13,
+                "name": "type",
+                "type": "CollectionType",
                 "optional": true
               }
             ]
