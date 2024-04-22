@@ -5,17 +5,17 @@
       "def": {
         "enums": [
           {
-            "name": "Collection.CollectionType",
+            "name": "Collection.CollectionDesign",
             "enum_fields": [
               {
-                "name": "COLLECTION_TYPE_UNSPECIFIED"
+                "name": "COLLECTION_DESIGN_UNSPECIFIED"
               },
               {
-                "name": "COLLECTION_TYPE_REGULAR",
+                "name": "COLLECTION_DESIGN_REGULAR",
                 "integer": 1
               },
               {
-                "name": "COLLECTION_TYPE_PODCAST",
+                "name": "COLLECTION_DESIGN_PODCAST",
                 "integer": 2
               }
             ]
@@ -261,8 +261,8 @@
               },
               {
                 "id": 13,
-                "name": "type",
-                "type": "CollectionType",
+                "name": "design",
+                "type": "CollectionDesign",
                 "optional": true
               }
             ]
