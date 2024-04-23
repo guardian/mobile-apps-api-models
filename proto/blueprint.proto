@@ -61,6 +61,16 @@ message Collection {
    */
   optional string description = 11;
   optional Image image = 12;
+
+  /**
+   * This tells the app which design to use to render the collection
+   */ 
+  enum CollectionDesign {
+    COLLECTION_DESIGN_UNSPECIFIED = 0;
+    COLLECTION_DESIGN_REGULAR = 1;
+    COLLECTION_DESIGN_PODCAST = 2;
+  }
+  optional CollectionDesign design = 13;
 }
 
 /**
