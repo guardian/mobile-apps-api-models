@@ -101,6 +101,10 @@
               {
                 "name": "CARD_TYPE_PODCAST_SERIES",
                 "integer": 9
+              },
+              {
+                "name": "CARD_TYPE_HIGHLIGHT",
+                "integer": 10
               }
             ]
           },

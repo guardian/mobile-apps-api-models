@@ -388,6 +388,11 @@ message Card {
      * series tag.
      */
     CARD_TYPE_PODCAST_SERIES = 9;
+    /**
+     * A card with a different design.  It is intended for highlights
+     * containers.
+     */
+    CARD_TYPE_HIGHLIGHT = 10;
   }
   CardType type = 1;
   Article article = 2;
