@@ -69,6 +69,7 @@ message Collection {
     COLLECTION_DESIGN_UNSPECIFIED = 0;
     COLLECTION_DESIGN_REGULAR = 1;
     COLLECTION_DESIGN_PODCAST = 2;
+    COLLECTION_DESIGN_TITLEPIECE = 3;
   }
   optional CollectionDesign design = 13;
 }

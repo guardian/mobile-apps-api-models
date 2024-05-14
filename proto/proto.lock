@@ -17,6 +17,10 @@
               {
                 "name": "COLLECTION_DESIGN_PODCAST",
                 "integer": 2
+              },
+              {
+                "name": "COLLECTION_DESIGN_TITLEPIECE",
+                "integer": 3
               }
             ]
           },
