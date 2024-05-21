@@ -27,6 +27,9 @@ message Collection {
    * MAPI doesn't support the specific content that's included in the
    * collection. In this case it's assumed the client will hide the entire
    * collection from the reader.
+   * Another reason for empty rows is that the collection is a titlepiece.
+   * In fact, we must keep the rows empty in this case in order not to break
+   * old versions of app that were built before titlepiece is introduced.
    */
   repeated Row rows = 4;
   optional string title = 5;
@@ -57,7 +60,9 @@ message Collection {
 
   /**
    * For some design on specific types of collections, we want to show 
-   * an image and a description in the collection header.
+   * an image and a description in the collection header.  This field is
+   * used for award text if the collection design is 
+   * COLLECTION_DESIGN_TITLEPIECE.
    */
   optional string description = 11;
   optional Image image = 12;
@@ -69,6 +74,7 @@ message Collection {
     COLLECTION_DESIGN_UNSPECIFIED = 0;
     COLLECTION_DESIGN_REGULAR = 1;
     COLLECTION_DESIGN_PODCAST = 2;
+    COLLECTION_DESIGN_TITLEPIECE = 3;
   }
   optional CollectionDesign design = 13;
 }
@@ -394,6 +400,11 @@ message Card {
      * series tag.
      */
     CARD_TYPE_PODCAST_SERIES = 9;
+    /**
+     * A card with a different design.  It is intended for highlights
+     * containers.
+     */
+    CARD_TYPE_HIGHLIGHT = 10;
   }
   CardType type = 1;
   Article article = 2;

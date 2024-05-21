@@ -17,6 +17,10 @@
               {
                 "name": "COLLECTION_DESIGN_PODCAST",
                 "integer": 2
+              },
+              {
+                "name": "COLLECTION_DESIGN_TITLEPIECE",
+                "integer": 3
               }
             ]
           },
@@ -101,6 +105,10 @@
               {
                 "name": "CARD_TYPE_PODCAST_SERIES",
                 "integer": 9
+              },
+              {
+                "name": "CARD_TYPE_HIGHLIGHT",
+                "integer": 10
               }
             ]
           },
