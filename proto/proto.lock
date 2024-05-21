@@ -517,6 +517,11 @@
                 "id": 15,
                 "name": "top_border",
                 "type": "string"
+              },
+              {
+                "id": 16,
+                "name": "kicker_text",
+                "type": "string"
               }
             ]
           },

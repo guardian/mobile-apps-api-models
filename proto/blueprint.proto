@@ -203,6 +203,12 @@ message Palette {
   string secondary = 13;
   string shadow = 14;
   string top_border = 15;
+  /*
+   * Used for kicker text colour post Fairground updates. For Live cards,
+   * `pill` colour provides the background and `kicker_text` is the text
+   * colour.
+   */
+  string kicker_text = 16;
 }
 
 message Links {
@@ -538,4 +544,3 @@ message BasicTag {
   string id = 1;
   string web_title = 2;
 }
-
