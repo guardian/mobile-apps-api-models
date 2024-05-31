@@ -641,6 +641,24 @@
                 "name": "width",
                 "type": "int32",
                 "optional": true
+              },
+              {
+                "id": 8,
+                "name": "youtube_id",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 9,
+                "name": "duration_in_seconds",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 10,
+                "name": "trail_image",
+                "type": "Image",
+                "optional": true
               }
             ]
           },
