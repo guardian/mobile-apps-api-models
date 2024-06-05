@@ -248,6 +248,9 @@ message Video {
   optional string orientation = 5;
   string url = 6;
   optional int32 width = 7;
+  optional string youtube_id = 8;
+  optional int32 duration_in_seconds = 9;
+  optional Image poster_image = 10;
 }
 
 message Audio {
