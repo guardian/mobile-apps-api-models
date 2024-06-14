@@ -412,8 +412,7 @@ message Card {
   CardType type = 1;
   Article article = 2;
   /**
-   * Boosted cards show a boosted headline size and a main image that spans
-   * full width on mobile.
+   * Boosted cards show a boosted headline size.
    */
   optional bool boosted = 3;
   /**
@@ -451,6 +450,10 @@ message Card {
    * selected are applied to a particular content item
    */
   repeated MyGuardianFollow corresponding_tags = 37;
+  /**
+   * Mega-boosted cards show a even larger headline size.
+   */
+  optional bool mega_boosted = 38;
 }
 
 message Column {

@@ -1134,6 +1134,12 @@
                 "name": "corresponding_tags",
                 "type": "MyGuardianFollow",
                 "is_repeated": true
+              },
+              {
+                "id": 38,
+                "name": "mega_boosted",
+                "type": "bool",
+                "optional": true
               }
             ]
           },
