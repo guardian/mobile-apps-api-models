@@ -21,10 +21,6 @@
               {
                 "name": "COLLECTION_DESIGN_TITLEPIECE",
                 "integer": 3
-              },
-              {
-                "name": "COLLECTION_DESIGN_HIGHLIGHTS",
-                "integer": 4
               }
             ]
           },
