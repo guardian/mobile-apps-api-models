@@ -75,7 +75,6 @@ message Collection {
     COLLECTION_DESIGN_REGULAR = 1;
     COLLECTION_DESIGN_PODCAST = 2;
     COLLECTION_DESIGN_TITLEPIECE = 3;
-    COLLECTION_DESIGN_HIGHLIGHTS = 4;
   }
   optional CollectionDesign design = 13;
 }
