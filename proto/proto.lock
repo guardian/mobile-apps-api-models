@@ -272,6 +272,12 @@
                 "name": "design",
                 "type": "CollectionDesign",
                 "optional": true
+              },
+              {
+                "id": 14,
+                "name": "compact_padding",
+                "type": "bool",
+                "optional": true
               }
             ]
           },
@@ -1212,6 +1218,12 @@
                 "id": 7,
                 "name": "title",
                 "type": "string",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "tighten_spacing",
+                "type": "bool",
                 "optional": true
               }
             ]

@@ -77,6 +77,12 @@ message Collection {
     COLLECTION_DESIGN_TITLEPIECE = 3;
   }
   optional CollectionDesign design = 13;
+
+  /**
+   * When this attribute is true, the vertical spacing is removed from 
+   * the collection.
+   */
+  optional bool compact_padding = 14;
 }
 
 /**
@@ -493,6 +499,12 @@ message Row {
   optional Thrasher thrasher = 5;
   RowType type = 6;
   optional string title = 7;
+
+  /**
+   * When this attribute is true, the spacing in between cards in the row is 
+   * reduced.
+   */
+  optional bool tighten_spacing = 8;
 }
 
 message Topic {
