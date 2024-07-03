@@ -1222,7 +1222,7 @@
               },
               {
                 "id": 8,
-                "name": "has_tight_spacing",
+                "name": "tighten_spacing",
                 "type": "bool",
                 "optional": true
               }

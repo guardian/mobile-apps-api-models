@@ -504,7 +504,7 @@ message Row {
    * When this attribute is true, the spacing in between cards in the row is 
    * reduced.
    */
-  optional bool has_tight_spacing = 8;
+  optional bool tighten_spacing = 8;
 }
 
 message Topic {
