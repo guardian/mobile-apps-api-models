@@ -278,6 +278,12 @@
                 "name": "compact_padding",
                 "type": "bool",
                 "optional": true
+              },
+              {
+                "id": 15,
+                "name": "tracking_id",
+                "type": "string",
+                "optional": true
               }
             ]
           },

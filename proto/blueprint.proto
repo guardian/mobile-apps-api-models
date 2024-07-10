@@ -83,6 +83,12 @@ message Collection {
    * the collection.
    */
   optional bool compact_padding = 14;
+
+  /**
+   * The property gives the ID of the collection to be used in 
+   * the tracking data.
+   */
+  optional string tracking_id = 15;
 }
 
 /**
