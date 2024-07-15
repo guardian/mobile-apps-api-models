@@ -457,6 +457,12 @@
                 "name": "follow_up",
                 "type": "FollowUp",
                 "optional": true
+              },
+              {
+                "id": 7,
+                "name": "tracking_id",
+                "type": "string",
+                "optional": true
               }
             ]
           },

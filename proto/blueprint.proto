@@ -195,6 +195,12 @@ message LayoutAgnosticCollection {
   repeated Card cards = 4;
   optional string title = 5;
   optional FollowUp follow_up = 6;
+
+  /**
+   * The property gives the ID of the collection to be used in 
+   * the tracking data.
+   */
+  optional string tracking_id = 7;
 }
   
   
