@@ -89,6 +89,13 @@ message Collection {
    * the tracking data.
    */
   optional string tracking_id = 15;
+
+  /**
+   * The property is added when we build small story carousel where
+   * the header is rendered in smaller size to show they are child
+   * sections within a main collection.
+   */
+  optional bool small_heading = 16;
 }
 
 /**
