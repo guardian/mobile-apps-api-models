@@ -284,6 +284,12 @@
                 "name": "tracking_id",
                 "type": "string",
                 "optional": true
+              },
+              {
+                "id": 16,
+                "name": "small_heading",
+                "type": "bool",
+                "optional": true
               }
             ]
           },
