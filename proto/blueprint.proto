@@ -481,31 +481,43 @@ message Card {
   optional bool mega_boosted = 38;
 
   /**
-   * Proposed new attributes
+   * Indicate how many columns the trail image is expected to take
    */
-  optional bool boosted_image = 39;
+  optional int32 trail_image_size = 39;
 
-  // image aspect ratio
+  /**
+   * Define constants for each image aspect ratio supported
+   */
   enum ImageAspectRatio {
     IMAGE_ASPECT_RATIO_UNSPECIFIED = 0;
-    IMAGE_LANDSCAPE_5_3 = 1;
-    IMAGE_LANDSCAPE_5_4 = 2;
-    IMAGE_PORTRAIT_4_5 = 3;
-    IMAGE_SQUARE = 4;
+    IMAGE_ASPECT_RATIO_LANDSCAPE_5_3 = 1;
+    IMAGE_ASPECT_RATIO_LANDSCAPE_5_4 = 2;
+    IMAGE_ASPECT_RATIO_PORTRAIT_4_5 = 3;
+    IMAGE_ASPECT_RATIO_SQUARE = 4;
   }
 
-  // 
+  /**
+   * Indicate in what aspect ratio the trail image should be rendered
+   */
   optional ImageAspectRatio trail_image_aspect_ratio = 40;
 
+  /**
+   * Define constants for the arrangement of sublinks on a card
+   */
   enum SublinksArrangement {
     SUBLINKS_ARRANGEMENT_UNSPECIFIED = 0;
-    SUBLINKS_LEFT_VERTICAL = 1;
-    SUBLINKS_BOTTOM_HORIZONTAL = 2;
+    SUBLINKS_ARRANGEMENT_VERTICAL = 1;
+    SUBLINKS_ARRANGEMENT_HORIZONTAL = 2;
   }
 
+  /**
+   * Indicate how sublinks are arranged.
+   */
   optional SublinksArrangement sublinks_arrangement = 41;
 
-  // 24 -> 28 -> 34 -> 42?
+  /**
+   * Define different levels for headline size
+   */
   enum BoostedHeadline {
     BOOSTED_HEADLINE_UNSPECIFIED = 0;
     BOOSTED_HEADLINE_STANDARD = 1;
@@ -514,7 +526,24 @@ message Card {
     BOOSTED_HEADLINE_BOOSTED_3 = 4;
   }
 
+  /**
+   * Indicate the size of a headline
+   */
   optional BoostedHeadline boosted_headline = 42;
+
+  /**
+   * Define constants for positions to display the headline in a card.
+   */
+  enum HeadlinePosition {
+    HEADLINE_POSITION_UNSPECIFIED = 0;
+    HEADLINE_POSITION_INLINE = 1;
+    HEADLINE_POSITION_TOP = 2;
+  }
+
+  /**
+   * Indictate where to display the headline.
+   */
+  optional HeadlinePosition headline_position = 43;
 }
 
 message Column {

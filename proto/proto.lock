@@ -119,19 +119,19 @@
                 "name": "IMAGE_ASPECT_RATIO_UNSPECIFIED"
               },
               {
-                "name": "IMAGE_LANDSCAPE_5_3",
+                "name": "IMAGE_ASPECT_RATIO_LANDSCAPE_5_3",
                 "integer": 1
               },
               {
-                "name": "IMAGE_LANDSCAPE_5_4",
+                "name": "IMAGE_ASPECT_RATIO_LANDSCAPE_5_4",
                 "integer": 2
               },
               {
-                "name": "IMAGE_PORTRAIT_4_5",
+                "name": "IMAGE_ASPECT_RATIO_PORTRAIT_4_5",
                 "integer": 3
               },
               {
-                "name": "IMAGE_SQUARE",
+                "name": "IMAGE_ASPECT_RATIO_SQUARE",
                 "integer": 4
               }
             ]
@@ -143,11 +143,11 @@
                 "name": "SUBLINKS_ARRANGEMENT_UNSPECIFIED"
               },
               {
-                "name": "SUBLINKS_LEFT_VERTICAL",
+                "name": "SUBLINKS_ARRANGEMENT_VERTICAL",
                 "integer": 1
               },
               {
-                "name": "SUBLINKS_BOTTOM_HORIZONTAL",
+                "name": "SUBLINKS_ARRANGEMENT_HORIZONTAL",
                 "integer": 2
               }
             ]
@@ -173,6 +173,22 @@
               {
                 "name": "BOOSTED_HEADLINE_BOOSTED_3",
                 "integer": 4
+              }
+            ]
+          },
+          {
+            "name": "Card.HeadlinePosition",
+            "enum_fields": [
+              {
+                "name": "HEADLINE_POSITION_UNSPECIFIED"
+              },
+              {
+                "name": "HEADLINE_POSITION_INLINE",
+                "integer": 1
+              },
+              {
+                "name": "HEADLINE_POSITION_TOP",
+                "integer": 2
               }
             ]
           },
@@ -1231,8 +1247,8 @@
               },
               {
                 "id": 39,
-                "name": "boosted_image",
-                "type": "bool",
+                "name": "trail_image_size",
+                "type": "int32",
                 "optional": true
               },
               {
@@ -1251,6 +1267,12 @@
                 "id": 42,
                 "name": "boosted_headline",
                 "type": "BoostedHeadline",
+                "optional": true
+              },
+              {
+                "id": 43,
+                "name": "headline_position",
+                "type": "HeadlinePosition",
                 "optional": true
               }
             ]
