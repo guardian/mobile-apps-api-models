@@ -113,6 +113,86 @@
             ]
           },
           {
+            "name": "Card.ImageAspectRatio",
+            "enum_fields": [
+              {
+                "name": "IMAGE_ASPECT_RATIO_UNSPECIFIED"
+              },
+              {
+                "name": "IMAGE_ASPECT_RATIO_LANDSCAPE_5_3",
+                "integer": 1
+              },
+              {
+                "name": "IMAGE_ASPECT_RATIO_LANDSCAPE_5_4",
+                "integer": 2
+              },
+              {
+                "name": "IMAGE_ASPECT_RATIO_PORTRAIT_4_5",
+                "integer": 3
+              },
+              {
+                "name": "IMAGE_ASPECT_RATIO_SQUARE",
+                "integer": 4
+              }
+            ]
+          },
+          {
+            "name": "Card.SublinksArrangement",
+            "enum_fields": [
+              {
+                "name": "SUBLINKS_ARRANGEMENT_UNSPECIFIED"
+              },
+              {
+                "name": "SUBLINKS_ARRANGEMENT_VERTICAL",
+                "integer": 1
+              },
+              {
+                "name": "SUBLINKS_ARRANGEMENT_HORIZONTAL",
+                "integer": 2
+              }
+            ]
+          },
+          {
+            "name": "Card.BoostedHeadline",
+            "enum_fields": [
+              {
+                "name": "BOOSTED_HEADLINE_UNSPECIFIED"
+              },
+              {
+                "name": "BOOSTED_HEADLINE_STANDARD",
+                "integer": 1
+              },
+              {
+                "name": "BOOSTED_HEADLINE_BOOSTED_1",
+                "integer": 2
+              },
+              {
+                "name": "BOOSTED_HEADLINE_BOOSTED_2",
+                "integer": 3
+              },
+              {
+                "name": "BOOSTED_HEADLINE_BOOSTED_3",
+                "integer": 4
+              }
+            ]
+          },
+          {
+            "name": "Card.HeadlinePosition",
+            "enum_fields": [
+              {
+                "name": "HEADLINE_POSITION_UNSPECIFIED"
+              },
+              {
+                "name": "HEADLINE_POSITION_INLINE",
+                "integer": 1
+              },
+              {
+                "name": "HEADLINE_POSITION_TOP",
+                "integer": 2
+              }
+            ]
+          },
+          {
             "name": "Row.RowType",
             "enum_fields": [
               {
@@ -1163,6 +1243,36 @@
                 "id": 38,
                 "name": "mega_boosted",
                 "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 39,
+                "name": "trail_image_size",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 40,
+                "name": "trail_image_aspect_ratio",
+                "type": "ImageAspectRatio",
+                "optional": true
+              },
+              {
+                "id": 41,
+                "name": "sublinks_arrangement",
+                "type": "SublinksArrangement",
+                "optional": true
+              },
+              {
+                "id": 42,
+                "name": "boosted_headline",
+                "type": "BoostedHeadline",
+                "optional": true
+              },
+              {
+                "id": 43,
+                "name": "headline_position",
+                "type": "HeadlinePosition",
                 "optional": true
               }
             ]
