@@ -173,6 +173,10 @@
               {
                 "name": "BOOSTED_HEADLINE_BOOSTED_3",
                 "integer": 4
+              },
+              {
+                "name": "BOOSTED_HEADLINE_BOOSTED_4",
+                "integer": 5
               }
             ]
           },
