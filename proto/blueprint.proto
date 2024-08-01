@@ -579,3 +579,30 @@ message BasicTag {
   string id = 1;
   string web_title = 2;
 }
+
+/************************* FOOTBALL *************************/
+
+
+message FootballMatch {
+  string id = 1;
+  FootballTeam home_team = 2;
+  FootballTeam away_team = 3;
+  google.protobuf.Timestamp kick_off = 4;
+  optional string score = 5;
+  optional string extra_time = 6;
+  optional string aggregate_score = 7;
+  optional string match_phase = 8;
+}
+
+message FootballTeam {
+  string id = 1;
+  string short_code = 2;
+  string name = 3;
+  string short_name = 4;
+  string crest = 5;
+}
+
+message FootballLeagueWithMatches {
+  repeated FootballMatch matches = 1;
+  string league = 2;
+}

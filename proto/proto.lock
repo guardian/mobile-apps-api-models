@@ -1374,6 +1374,101 @@
                 "type": "string"
               }
             ]
+          },
+          {
+            "name": "FootballMatch",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "home_team",
+                "type": "FootballTeam"
+              },
+              {
+                "id": 3,
+                "name": "away_team",
+                "type": "FootballTeam"
+              },
+              {
+                "id": 4,
+                "name": "kick_off",
+                "type": "google.protobuf.Timestamp"
+              },
+              {
+                "id": 5,
+                "name": "score",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "extra_time",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "aggregate_score",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "match_phase",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "FootballTeam",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "short_code",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "short_name",
+                "type": "string"
+              },
+              {
+                "id": 5,
+                "name": "crest",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "FootballLeagueWithMatches",
+            "fields": [
+              {
+                "id": 1,
+                "name": "matches",
+                "type": "FootballMatch",
+                "is_repeated": true
+              },
+              {
+                "id": 2,
+                "name": "league",
+                "type": "string"
+              }
+            ]
           }
         ],
         "imports": [
