@@ -191,6 +191,26 @@
                 "integer": 13
               }
             ]
+          },
+          {
+            "name": "FootballLeaguePlace.Form",
+            "enum_fields": [
+              {
+                "name": "FORM_UNSPECIFIED"
+              },
+              {
+                "name": "FORM_WIN",
+                "integer": 1
+              },
+              {
+                "name": "FORM_DRAW",
+                "integer": 2
+              },
+              {
+                "name": "FORM_LOSS",
+                "integer": 3
+              }
+            ]
           }
         ],
         "messages": [
@@ -1467,6 +1487,83 @@
                 "id": 2,
                 "name": "league",
                 "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "FootballLeaguePlace",
+            "fields": [
+              {
+                "id": 1,
+                "name": "team",
+                "type": "FootballTeam"
+              },
+              {
+                "id": 2,
+                "name": "position",
+                "type": "int32"
+              },
+              {
+                "id": 3,
+                "name": "played",
+                "type": "int32"
+              },
+              {
+                "id": 4,
+                "name": "won",
+                "type": "int32"
+              },
+              {
+                "id": 5,
+                "name": "drawn",
+                "type": "int32"
+              },
+              {
+                "id": 6,
+                "name": "lost",
+                "type": "int32"
+              },
+              {
+                "id": 7,
+                "name": "goals_for",
+                "type": "int32"
+              },
+              {
+                "id": 8,
+                "name": "goals_against",
+                "type": "int32"
+              },
+              {
+                "id": 9,
+                "name": "goal_difference",
+                "type": "int32"
+              },
+              {
+                "id": 10,
+                "name": "points",
+                "type": "int32"
+              },
+              {
+                "id": 11,
+                "name": "recent_form",
+                "type": "Form",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "FootballLeagueTable",
+            "fields": [
+              {
+                "id": 1,
+                "name": "league_name",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "teams",
+                "type": "FootballLeaguePlace",
+                "is_repeated": true
               }
             ]
           }

@@ -606,3 +606,29 @@ message FootballLeagueWithMatches {
   repeated FootballMatch matches = 1;
   string league = 2;
 }
+
+message FootballLeaguePlace {
+  FootballTeam team = 1;
+  int32 position = 2;
+  int32 played = 3;
+  int32 won = 4;
+  int32 drawn = 5;
+  int32 lost = 6;
+  int32 goals_for = 7;
+  int32 goals_against = 8;
+  int32 goal_difference = 9;
+  int32 points = 10;
+  repeated Form recent_form = 11;  // Represent the form in recent matches (e.g., last 5 matches)
+
+  enum Form {
+    FORM_UNSPECIFIED = 0;  // Default value
+    FORM_WIN = 1;
+    FORM_DRAW = 2;
+    FORM_LOSS = 3;
+  }
+}
+
+message FootballLeagueTable {
+  string league_name = 1;
+  repeated FootballLeaguePlace teams = 2;
+}
