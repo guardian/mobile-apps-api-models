@@ -618,7 +618,8 @@ message FootballLeaguePlace {
   int32 goals_against = 8;
   int32 goal_difference = 9;
   int32 points = 10;
-  repeated Form recent_form = 11;  // Represent the form in recent matches (e.g., last 5 matches)
+  // protolint:disable:next PLURAL_SINGULAR
+  repeated Form recent_form = 11;  
 
   enum Form {
     FORM_UNSPECIFIED = 0;  // Default value
