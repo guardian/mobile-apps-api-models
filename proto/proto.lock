@@ -1566,6 +1566,17 @@
                 "is_repeated": true
               }
             ]
+          },
+          {
+            "name": "FootballLeagueTables",
+            "fields": [
+              {
+                "id": 1,
+                "name": "tables",
+                "type": "FootballLeagueTable",
+                "is_repeated": true
+              }
+            ]
           }
         ],
         "imports": [
