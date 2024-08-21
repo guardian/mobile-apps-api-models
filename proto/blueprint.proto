@@ -618,7 +618,7 @@ message FootballLeaguePlace {
   int32 goals_against = 8;
   int32 goal_difference = 9;
   int32 points = 10;
-  // protolint:disable:next PLURAL_SINGULAR
+  // protolint:disable:next REPEATED_FIELD_NAMES_PLURALIZED
   repeated Form recent_form = 11;  
 
   enum Form {
