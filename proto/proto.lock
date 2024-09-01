@@ -1440,6 +1440,23 @@
                 "id": 8,
                 "name": "match_phase",
                 "type": "string",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "id": 9,
+                "name": "is_live",
+                "type": "bool"
+              },
+              {
+                "id": 10,
+                "name": "match_status",
+                "type": "string",
                 "optional": true
               }
             ]
@@ -1470,7 +1487,7 @@
               {
                 "id": 5,
                 "name": "crest",
-                "type": "string"
+                "type": "Image"
               }
             ]
           },
@@ -1548,6 +1565,11 @@
                 "name": "recent_form",
                 "type": "Form",
                 "is_repeated": true
+              },
+              {
+                "id": 12,
+                "name": "show_divider",
+                "type": "bool"
               }
             ]
           },

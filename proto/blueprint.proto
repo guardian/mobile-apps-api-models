@@ -587,11 +587,31 @@ message FootballMatch {
   string id = 1;
   FootballTeam home_team = 2;
   FootballTeam away_team = 3;
-  google.protobuf.Timestamp kick_off = 4;
-  optional string score = 5;
-  optional string extra_time = 6;
+  google.protobuf.Timestamp kick_off = 4; // change these two to score
+  optional string score = 5; // or kick off time so its more declarative
+
+  /// use match_status instead 
+  optional string extra_time = 6 = [deprecated = true];
   optional string aggregate_score = 7;
-  optional string match_phase = 8;
+
+  // Primarily for in app logic
+  optional string match_phase = 8 [deprecated = true]; 
+
+  bool is_live = 9;
+
+  // As we get it from PA, HT/FT etc
+  // case prematch = "F"
+  // case firstHalf = "1st"
+  // case halfTime = "HT"
+  // case secondHalf = "2nd"
+  // case fullTime = "FT"
+  // case extraTime = "ET"
+  // case penalties = "PT"
+  // case suspended = "S"
+  // case resumed = "R"
+  // case abandoned = "A"
+  // case cancelled = "C"
+  optional string match_status = 10;
 }
 
 message FootballTeam {
@@ -599,7 +619,7 @@ message FootballTeam {
   string short_code = 2;
   string name = 3;
   string short_name = 4;
-  string crest = 5;
+  Image crest = 5;
 }
 
 message FootballLeagueWithMatches {
@@ -620,6 +640,7 @@ message FootballLeaguePlace {
   int32 points = 10;
   // protolint:disable:next REPEATED_FIELD_NAMES_PLURALIZED
   repeated Form recent_form = 11;  
+  bool show_divider = 12;
 
   enum Form {
     FORM_UNSPECIFIED = 0;  // Default value
@@ -630,7 +651,7 @@ message FootballLeaguePlace {
 }
 
 message FootballLeagueTable {
-  string league_name = 1;
+  string league_name = 1; // rename this to group name!
   repeated FootballLeaguePlace teams = 2;
 }
 
