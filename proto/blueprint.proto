@@ -591,7 +591,7 @@ message FootballMatch {
   optional string score = 5; // or kick off time so its more declarative
 
   /// use match_status instead 
-  optional string extra_time = 6 = [deprecated = true];
+  optional string extra_time = 6 [deprecated = true];
   optional string aggregate_score = 7;
 
   // Primarily for in app logic

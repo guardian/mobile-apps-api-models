@@ -1428,7 +1428,13 @@
                 "id": 6,
                 "name": "extra_time",
                 "type": "string",
-                "optional": true
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 7,
