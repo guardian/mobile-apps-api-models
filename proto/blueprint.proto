@@ -587,8 +587,8 @@ message FootballMatch {
   string id = 1;
   FootballTeam home_team = 2;
   FootballTeam away_team = 3;
-  google.protobuf.Timestamp kick_off = 4; // change these two to score
-  optional string score = 5; // or kick off time so its more declarative
+  google.protobuf.Timestamp kick_off = 4;
+  optional string score = 5;
 
   /// use match_status instead 
   optional string extra_time = 6 [deprecated = true];
@@ -612,6 +612,14 @@ message FootballMatch {
   // case abandoned = "A"
   // case cancelled = "C"
   optional string match_status = 10;
+
+  // this will be for notifications
+  optional Topic topic = 11;
+
+  // will either be this or just a URI? It used to be two
+  // (match report AND live blog) but in DCAR it's just
+  // one link that can show oyu both 
+  optional Links links = 12;
 }
 
 message FootballTeam {
@@ -648,6 +656,8 @@ message FootballLeaguePlace {
     FORM_DRAW = 2;
     FORM_LOSS = 3;
   }
+
+  optional FollowUp follow_up = 13;
 }
 
 message FootballLeagueTable {
