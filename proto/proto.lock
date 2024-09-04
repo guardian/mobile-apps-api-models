@@ -1464,6 +1464,18 @@
                 "name": "match_status",
                 "type": "string",
                 "optional": true
+              },
+              {
+                "id": 11,
+                "name": "topic",
+                "type": "Topic",
+                "optional": true
+              },
+              {
+                "id": 12,
+                "name": "links",
+                "type": "Links",
+                "optional": true
               }
             ]
           },
@@ -1576,6 +1588,12 @@
                 "id": 12,
                 "name": "show_divider",
                 "type": "bool"
+              },
+              {
+                "id": 13,
+                "name": "follow_up",
+                "type": "FollowUp",
+                "optional": true
               }
             ]
           },
