@@ -211,6 +211,22 @@
                 "integer": 3
               }
             ]
+          },
+          {
+            "name": "PenaltyCard.CardColour",
+            "enum_fields": [
+              {
+                "name": "COLOUR_UNSPECIFIED"
+              },
+              {
+                "name": "COLOUR_YELLOW",
+                "integer": 1
+              },
+              {
+                "name": "COLOUR_RED",
+                "integer": 2
+              }
+            ]
           }
         ],
         "messages": [
@@ -1473,8 +1489,8 @@
               },
               {
                 "id": 12,
-                "name": "links",
-                "type": "Links",
+                "name": "match_info_uri",
+                "type": "string",
                 "optional": true
               }
             ]
@@ -1506,6 +1522,26 @@
                 "id": 5,
                 "name": "crest",
                 "type": "Image"
+              },
+              {
+                "id": 6,
+                "name": "colour_light",
+                "type": "string"
+              },
+              {
+                "id": 7,
+                "name": "text_colour_light",
+                "type": "string"
+              },
+              {
+                "id": 8,
+                "name": "colour_dark",
+                "type": "string"
+              },
+              {
+                "id": 9,
+                "name": "text_colour_dark",
+                "type": "string"
               }
             ]
           },
@@ -1621,6 +1657,182 @@
                 "name": "tables",
                 "type": "FootballLeagueTable",
                 "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "FootballStats",
+            "fields": [
+              {
+                "id": 1,
+                "name": "home_team",
+                "type": "FootballTeam"
+              },
+              {
+                "id": 2,
+                "name": "away_team",
+                "type": "FootballTeam"
+              },
+              {
+                "id": 3,
+                "name": "home_team_possession",
+                "type": "int32"
+              },
+              {
+                "id": 4,
+                "name": "away_team_possession",
+                "type": "int32"
+              },
+              {
+                "id": 5,
+                "name": "home_on_target",
+                "type": "int32"
+              },
+              {
+                "id": 6,
+                "name": "away_on_target",
+                "type": "int32"
+              },
+              {
+                "id": 7,
+                "name": "home_off_target",
+                "type": "int32"
+              },
+              {
+                "id": 8,
+                "name": "away_off_target",
+                "type": "int32"
+              },
+              {
+                "id": 9,
+                "name": "home_corners",
+                "type": "int32"
+              },
+              {
+                "id": 10,
+                "name": "away_corners",
+                "type": "int32"
+              },
+              {
+                "id": 11,
+                "name": "home_fouls",
+                "type": "int32"
+              },
+              {
+                "id": 12,
+                "name": "away_fouls",
+                "type": "int32"
+              },
+              {
+                "id": 13,
+                "name": "home_starting_players",
+                "type": "StartingPlayer",
+                "is_repeated": true
+              },
+              {
+                "id": 14,
+                "name": "away_starting_players",
+                "type": "StartingPlayer",
+                "is_repeated": true
+              },
+              {
+                "id": 15,
+                "name": "home_substitute_players",
+                "type": "SubstitutePlayer",
+                "is_repeated": true
+              },
+              {
+                "id": 16,
+                "name": "away_substitute_players",
+                "type": "SubstitutePlayer",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "FootballPlayer",
+            "fields": [
+              {
+                "id": 1,
+                "name": "first_name",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "last_name",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "shirt_number",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "penalty_cards",
+                "type": "PenaltyCard",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "StartingPlayer",
+            "fields": [
+              {
+                "id": 1,
+                "name": "player",
+                "type": "FootballPlayer"
+              },
+              {
+                "id": 2,
+                "name": "substitute",
+                "type": "FootballPlayer"
+              }
+            ]
+          },
+          {
+            "name": "SubstitutePlayer",
+            "fields": [
+              {
+                "id": 1,
+                "name": "player",
+                "type": "FootballPlayer"
+              },
+              {
+                "id": 2,
+                "name": "minute",
+                "type": "int32"
+              }
+            ]
+          },
+          {
+            "name": "PenaltyCard",
+            "fields": [
+              {
+                "id": 1,
+                "name": "colour",
+                "type": "CardColour"
+              },
+              {
+                "id": 2,
+                "name": "minute",
+                "type": "int32"
+              }
+            ]
+          },
+          {
+            "name": "FootballMatchStatsWithMatchLink",
+            "fields": [
+              {
+                "id": 1,
+                "name": "stats",
+                "type": "FootballStats"
+              },
+              {
+                "id": 2,
+                "name": "links",
+                "type": "Links",
+                "optional": true
               }
             ]
           }

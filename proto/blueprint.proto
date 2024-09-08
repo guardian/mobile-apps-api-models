@@ -616,10 +616,7 @@ message FootballMatch {
   // this will be for notifications
   optional Topic topic = 11;
 
-  // will either be this or just a URI? It used to be two
-  // (match report AND live blog) but in DCAR it's just
-  // one link that can show oyu both 
-  optional Links links = 12;
+  optional string match_info_uri = 12;
 }
 
 message FootballTeam {
@@ -628,6 +625,10 @@ message FootballTeam {
   string name = 3;
   string short_name = 4;
   Image crest = 5;
+  string colour_light = 6;
+  string text_colour_light = 7;
+  string colour_dark = 8;
+  string text_colour_dark = 9;
 }
 
 message FootballLeagueWithMatches {
@@ -668,4 +669,69 @@ message FootballLeagueTable {
 // Some leagues can have multiple tables, i.e group stage tables
 message FootballLeagueTables {
   repeated FootballLeagueTable tables = 1;
+}
+
+message FootballStats {
+  FootballTeam home_team = 1;
+  FootballTeam away_team = 2;
+
+  int32 home_team_possession = 3;
+  int32 away_team_possession = 4;
+
+  int32 home_on_target = 5;
+  int32 away_on_target = 6;
+  int32 home_off_target = 7;
+  int32 away_off_target = 8;
+
+  int32 home_corners = 9;
+  int32 away_corners = 10;
+
+  int32 home_fouls = 11;
+  int32 away_fouls = 12;
+
+  repeated StartingPlayer home_starting_players = 13;
+  repeated StartingPlayer away_starting_players = 14;
+
+  repeated SubstitutePlayer home_substitute_players = 15;
+  repeated SubstitutePlayer away_substitute_players = 16; 
+}
+
+message FootballPlayer {
+  string first_name = 1;
+  string last_name = 2;
+  string shirt_number = 3;
+  repeated PenaltyCard penalty_cards = 4;
+}
+
+message StartingPlayer {
+  FootballPlayer player = 1;
+  FootballPlayer substitute = 2;
+}
+
+message SubstitutePlayer {
+  FootballPlayer player = 1;
+  int32 minute = 2;
+} 
+
+message PenaltyCard {
+  CardColour colour = 1;
+  int32 minute = 2;
+
+  enum CardColour {
+    COLOUR_UNSPECIFIED = 0;
+    COLOUR_YELLOW = 1;
+    COLOUR_RED = 2;
+  }
+}
+
+message FootballMatchStatsWithMatchLink {
+  FootballStats stats = 1;
+
+  // will either be this or just a URI? It used to be two
+  // (match report AND live blog) but in DCAR it's just
+  // one link that can show you both
+  // but we need a way of tleling the app if its just stats
+  // or a match report! so two would be appropriate
+  // COULD make a new datatype for this.... rather than just links
+  optional Links links = 2;
 }
