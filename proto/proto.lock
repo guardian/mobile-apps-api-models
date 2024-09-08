@@ -1525,23 +1525,9 @@
               },
               {
                 "id": 6,
-                "name": "colour_light",
-                "type": "string"
-              },
-              {
-                "id": 7,
-                "name": "text_colour_light",
-                "type": "string"
-              },
-              {
-                "id": 8,
-                "name": "colour_dark",
-                "type": "string"
-              },
-              {
-                "id": 9,
-                "name": "text_colour_dark",
-                "type": "string"
+                "name": "palette",
+                "type": "FootballPalette",
+                "optional": true
               }
             ]
           },
@@ -1833,6 +1819,31 @@
                 "name": "links",
                 "type": "Links",
                 "optional": true
+              }
+            ]
+          },
+          {
+            "name": "FootballPalette",
+            "fields": [
+              {
+                "id": 1,
+                "name": "background_light",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "background_dark",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "text_light",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "text_dark",
+                "type": "string"
               }
             ]
           }

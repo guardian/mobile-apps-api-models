@@ -625,10 +625,7 @@ message FootballTeam {
   string name = 3;
   string short_name = 4;
   Image crest = 5;
-  string colour_light = 6;
-  string text_colour_light = 7;
-  string colour_dark = 8;
-  string text_colour_dark = 9;
+  optional FootballPalette palette = 6;
 }
 
 message FootballLeagueWithMatches {
@@ -734,4 +731,11 @@ message FootballMatchStatsWithMatchLink {
   // or a match report! so two would be appropriate
   // COULD make a new datatype for this.... rather than just links
   optional Links links = 2;
+}
+
+message FootballPalette {
+  string background_light = 1;
+  string background_dark = 2;
+  string text_light = 3;
+  string text_dark = 4;
 }
