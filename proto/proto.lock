@@ -216,14 +216,14 @@
             "name": "PenaltyCard.CardColour",
             "enum_fields": [
               {
-                "name": "COLOUR_UNSPECIFIED"
+                "name": "CARD_COLOUR_COLOUR_UNSPECIFIED"
               },
               {
-                "name": "COLOUR_YELLOW",
+                "name": "CARD_COLOUR_COLOUR_YELLOW",
                 "integer": 1
               },
               {
-                "name": "COLOUR_RED",
+                "name": "CARD_COLOUR_COLOUR_RED",
                 "integer": 2
               }
             ]

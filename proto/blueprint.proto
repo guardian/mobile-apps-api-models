@@ -718,9 +718,9 @@ message PenaltyCard {
   int32 minute = 2;
 
   enum CardColour {
-    COLOUR_UNSPECIFIED = 0;
-    COLOUR_YELLOW = 1;
-    COLOUR_RED = 2;
+    CARD_COLOUR_COLOUR_UNSPECIFIED = 0;
+    CARD_COLOUR_COLOUR_YELLOW = 1;
+    CARD_COLOUR_COLOUR_RED = 2;
   }
 }
 
