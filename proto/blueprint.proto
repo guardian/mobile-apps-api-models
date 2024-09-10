@@ -625,7 +625,8 @@ message FootballTeam {
   string name = 3;
   string short_name = 4;
   Image crest = 5;
-  optional FootballPalette palette = 6;
+  optional FootballPalette palette_light = 6;
+  optional FootballPalette palette_dark = 7;
 }
 
 message FootballLeagueWithMatches {
@@ -734,8 +735,6 @@ message FootballMatchStatsWithMatchLink {
 }
 
 message FootballPalette {
-  string background_light = 1;
-  string background_dark = 2;
-  string text_light = 3;
-  string text_dark = 4;
+  string background = 1;
+  string text = 2;
 }

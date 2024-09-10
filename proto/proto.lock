@@ -1525,7 +1525,13 @@
               },
               {
                 "id": 6,
-                "name": "palette",
+                "name": "palette_light",
+                "type": "FootballPalette",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "palette_dark",
                 "type": "FootballPalette",
                 "optional": true
               }
@@ -1827,22 +1833,12 @@
             "fields": [
               {
                 "id": 1,
-                "name": "background_light",
+                "name": "background",
                 "type": "string"
               },
               {
                 "id": 2,
-                "name": "background_dark",
-                "type": "string"
-              },
-              {
-                "id": 3,
-                "name": "text_light",
-                "type": "string"
-              },
-              {
-                "id": 4,
-                "name": "text_dark",
+                "name": "text",
                 "type": "string"
               }
             ]
