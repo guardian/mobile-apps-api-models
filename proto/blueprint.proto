@@ -171,6 +171,7 @@ message List {
    * in the fronts response (e.g uk/fronts/home)
    */
   string ad_unit = 16;
+  optional string description = 17;
 }
 
 /************************* MY GUARDIAN *************************/
