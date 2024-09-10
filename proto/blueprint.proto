@@ -545,6 +545,25 @@ message Card {
    * Indictate where to display the headline.
    */
   optional HeadlinePosition headline_position = 43;
+
+  /**
+   * Define card sizes
+   */
+  enum CardSize {
+    CARD_SIZE_UNSPECIFIED = 0;
+    CARD_SIZE_X_SMALL = 1;
+    CARD_SIZE_SMALL = 2;
+    CARD_SIZE_MEDIUM_HORIZONTAL = 3;
+    CARD_SIZE_MEDIUM_VERTICAL = 4;
+    CARD_SIZE_LARGE = 5;
+    CARD_SIZE_LARGE_HORIZONTAL = 6;
+    CARD_SIZE_X_LARGE = 7;
+    CARD_SIZE_HIGHLIGHTS = 8;
+  }
+
+  optional CardSize card_size = 44;
+
+  optional int32 boost_level = 45;
 }
 
 message Column {

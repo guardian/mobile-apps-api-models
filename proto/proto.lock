@@ -197,6 +197,46 @@
             ]
           },
           {
+            "name": "Card.CardSize",
+            "enum_fields": [
+              {
+                "name": "CARD_SIZE_UNSPECIFIED"
+              },
+              {
+                "name": "CARD_SIZE_X_SMALL",
+                "integer": 1
+              },
+              {
+                "name": "CARD_SIZE_SMALL",
+                "integer": 2
+              },
+              {
+                "name": "CARD_SIZE_MEDIUM_HORIZONTAL",
+                "integer": 3
+              },
+              {
+                "name": "CARD_SIZE_MEDIUM_VERTICAL",
+                "integer": 4
+              },
+              {
+                "name": "CARD_SIZE_LARGE",
+                "integer": 5
+              },
+              {
+                "name": "CARD_SIZE_LARGE_HORIZONTAL",
+                "integer": 6
+              },
+              {
+                "name": "CARD_SIZE_X_LARGE",
+                "integer": 7
+              },
+              {
+                "name": "CARD_SIZE_HIGHLIGHTS",
+                "integer": 8
+              }
+            ]
+          },
+          {
             "name": "Row.RowType",
             "enum_fields": [
               {
@@ -1277,6 +1317,18 @@
                 "id": 43,
                 "name": "headline_position",
                 "type": "HeadlinePosition",
+                "optional": true
+              },
+              {
+                "id": 44,
+                "name": "card_size",
+                "type": "CardSize",
+                "optional": true
+              },
+              {
+                "id": 45,
+                "name": "boost_level",
+                "type": "int32",
                 "optional": true
               }
             ]
