@@ -1201,6 +1201,12 @@
                 "name": "listen_to_article",
                 "type": "ListenToArticle",
                 "optional": true
+              },
+              {
+                "id": 37,
+                "name": "basic_tag",
+                "type": "BasicTag",
+                "is_repeated": true
               }
             ]
           },

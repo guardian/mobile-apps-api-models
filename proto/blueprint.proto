@@ -396,6 +396,9 @@ message Article {
    * It is available when the listen-to-article is supported on this article
    */
   optional ListenToArticle listen_to_article = 36;
+
+  repeated BasicTag basic_tag = 37;
+
 }
 
 message Card {
