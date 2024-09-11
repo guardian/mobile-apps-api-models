@@ -1204,7 +1204,7 @@
               },
               {
                 "id": 37,
-                "name": "basic_tag",
+                "name": "basic_tags",
                 "type": "BasicTag",
                 "is_repeated": true
               }

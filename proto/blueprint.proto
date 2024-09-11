@@ -397,7 +397,7 @@ message Article {
    */
   optional ListenToArticle listen_to_article = 36;
 
-  repeated BasicTag basic_tag = 37;
+  repeated BasicTag basic_tags = 37;
 
 }
 
