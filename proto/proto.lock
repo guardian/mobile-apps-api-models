@@ -507,6 +507,12 @@
                 "id": 16,
                 "name": "ad_unit",
                 "type": "string"
+              },
+              {
+                "id": 17,
+                "name": "description",
+                "type": "string",
+                "optional": true
               }
             ]
           },
