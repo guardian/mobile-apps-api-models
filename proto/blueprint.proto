@@ -565,7 +565,10 @@ message Card {
 
   optional int32 boost_level = 45;
   
-  /** Number of images in a gallery card. This is only useful when the media type is MEDIA_TYPE_IMAGE. */
+  /** 
+   * Number of images in a gallery card. This is used to display gallery 
+   * metadata on card when the media type is MEDIA_TYPE_IMAGE. 
+   */
   optional int32 gallery_image_count = 46;
 }
 
