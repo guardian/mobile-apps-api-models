@@ -1203,7 +1203,7 @@
                 "optional": true
               },
               {
-                "id": 46,
+                "id": 37,
                 "name": "gallery_image_count",
                 "type": "int32",
                 "optional": true

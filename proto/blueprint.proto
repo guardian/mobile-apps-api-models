@@ -401,7 +401,7 @@ message Article {
    * Number of images in a gallery card. This is used to display gallery 
    * metadata on card when the media_type is MEDIA_TYPE_IMAGE. 
    */
-  optional int32 gallery_image_count = 46;
+  optional int32 gallery_image_count = 37;
 }
 
 message Card {
