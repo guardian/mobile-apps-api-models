@@ -1330,6 +1330,12 @@
                 "name": "boost_level",
                 "type": "int32",
                 "optional": true
+              },
+              {
+                "id": 46,
+                "name": "gallery_image_count",
+                "type": "int32",
+                "optional": true
               }
             ]
           },
