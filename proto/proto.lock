@@ -1287,37 +1287,73 @@
                 "id": 38,
                 "name": "mega_boosted",
                 "type": "bool",
-                "optional": true
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 39,
                 "name": "trail_image_size",
                 "type": "int32",
-                "optional": true
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 40,
                 "name": "trail_image_aspect_ratio",
                 "type": "ImageAspectRatio",
-                "optional": true
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 41,
                 "name": "sublinks_arrangement",
                 "type": "SublinksArrangement",
-                "optional": true
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 42,
                 "name": "boosted_headline",
                 "type": "BoostedHeadline",
-                "optional": true
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 43,
                 "name": "headline_position",
                 "type": "HeadlinePosition",
-                "optional": true
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 44,
@@ -1329,6 +1365,12 @@
                 "id": 45,
                 "name": "boost_level",
                 "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 46,
+                "name": "preferred_sublinks_arrangement",
+                "type": "SublinksArrangement",
                 "optional": true
               }
             ]
