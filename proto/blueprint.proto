@@ -430,7 +430,9 @@ message Card {
     CARD_TYPE_PODCAST_SERIES = 9;
     /**
      * A card with a different design.  It is intended for highlights
-     * containers.
+     * containers.  
+     * This value will be deprecated soon.  We should set the card size
+     * to CARD_SIZE_HIGHLIGHTS instead.
      */
     CARD_TYPE_HIGHLIGHT = 10;
   }
@@ -438,13 +440,17 @@ message Card {
   Article article = 2;
   /**
    * Boosted cards show a boosted headline size.
+   * It is deprecated as we switch to card size and boost level to
+   * indicate the headline size.
    */
-  optional bool boosted = 3;
+  optional bool boosted = 3 [deprecated = true];
   /**
    * Compact cards don't show all the information that non-compact cards do,
    * and tend to appear in a carousel.
+   * It is deprecated as we switch to card size and boost level to
+   * indicate the card size.   
    */
-  optional bool compact = 4;
+  optional bool compact = 4 [deprecated = true];
   repeated Article sublinks = 5;
   optional string html_fallback = 6;
   /**
@@ -477,13 +483,17 @@ message Card {
   repeated MyGuardianFollow corresponding_tags = 37;
   /**
    * Mega-boosted cards show a even larger headline size.
+   * It is deprecated as we switch to card size and boost level to
+   * indicate the headline size.
    */
-  optional bool mega_boosted = 38;
+  optional bool mega_boosted = 38 [deprecated = true];
 
   /**
-   * Indicate how many columns the trail image is expected to take
+   * Indicate how many columns the trail image is expected to take.
+   * It is deprecated as we switch to card size and boost level to
+   * indicate in what size to display the trail image.   
    */
-  optional int32 trail_image_size = 39;
+  optional int32 trail_image_size = 39 [deprecated = true];
 
   /**
    * Define constants for each image aspect ratio supported
@@ -497,9 +507,11 @@ message Card {
   }
 
   /**
-   * Indicate in what aspect ratio the trail image should be rendered
+   * Indicate in what aspect ratio the trail image should be rendered.
+   * It is deprecated as the image aspect ratio is implied by
+   * the card size.
    */
-  optional ImageAspectRatio trail_image_aspect_ratio = 40;
+  optional ImageAspectRatio trail_image_aspect_ratio = 40 [deprecated = true];
 
   /**
    * Define constants for the arrangement of sublinks on a card
@@ -512,8 +524,10 @@ message Card {
 
   /**
    * Indicate how sublinks are arranged.
+   * It is deprecated as it is replaced by a new field named 
+   * preferred_sublinks_arrangement.
    */
-  optional SublinksArrangement sublinks_arrangement = 41;
+  optional SublinksArrangement sublinks_arrangement = 41 [deprecated = true];
 
   /**
    * Define different levels for headline size
@@ -528,9 +542,11 @@ message Card {
   }
 
   /**
-   * Indicate the size of a headline
+   * Indicate the size of a headline.
+   * It is deprecated as we switch to card size and boost level to
+   * indicate the headline size.
    */
-  optional BoostedHeadline boosted_headline = 42;
+  optional BoostedHeadline boosted_headline = 42 [deprecated = true];
 
   /**
    * Define constants for positions to display the headline in a card.
@@ -543,8 +559,10 @@ message Card {
 
   /**
    * Indictate where to display the headline.
+   * It is deprecated as the headline position is implied by
+   * the card size.   
    */
-  optional HeadlinePosition headline_position = 43;
+  optional HeadlinePosition headline_position = 43 [deprecated = true];
 
   /**
    * Define card sizes
@@ -564,6 +582,11 @@ message Card {
   optional CardSize card_size = 44;
 
   optional int32 boost_level = 45;
+
+  /**
+   * Indicate how sublinks are arranged.
+   */
+  optional SublinksArrangement preferred_sublinks_arrangement = 46;
 }
 
 message Column {
