@@ -583,22 +583,14 @@ message BasicTag {
 /************************* FOOTBALL *************************/
 
 
-message FootballMatch {
+message Match {
   string id = 1;
-  FootballTeam home_team = 2;
-  FootballTeam away_team = 3;
+  Team home_team = 2;
+  Team away_team = 3;
   google.protobuf.Timestamp kick_off = 4;
   optional string score = 5;
 
-  /// use match_status instead 
-  optional string extra_time = 6 [deprecated = true];
-  optional string aggregate_score = 7;
-
-  // Primarily for in app logic
-  optional string match_phase = 8 [deprecated = true]; 
-
-  bool is_live = 9;
-
+  // could be aggregate, status etc
   // As we get it from PA, HT/FT etc
   // case prematch = "F"
   // case firstHalf = "1st"
@@ -611,31 +603,41 @@ message FootballMatch {
   // case resumed = "R"
   // case abandoned = "A"
   // case cancelled = "C"
-  optional string match_status = 10;
+  optional string match_detail = 6;
+  bool is_live = 7;
 
   // this will be for notifications
-  optional Topic topic = 11;
-
-  optional string match_info_uri = 12;
+  optional Topic topic = 8;
+  optional string match_info_uri = 9;
 }
 
-message FootballTeam {
+message MatchDay {
+  google.protobuf.Timestamp date = 1;
+  string match_day_name = 3;
+  repeated Match matches = 2;
+  bool is_live = 4;
+}
+
+message Team {
   string id = 1;
   string short_code = 2;
   string name = 3;
   string short_name = 4;
   Image crest = 5;
-  optional FootballPalette palette_light = 6;
-  optional FootballPalette palette_dark = 7;
+
+  // might be set for match stats
+  optional TeamPalette palette_light = 6;
+  // might be set for match stats
+  optional TeamPalette palette_dark = 7;
 }
 
-message FootballLeagueWithMatches {
-  repeated FootballMatch matches = 1;
+message LeagueWithMatchDays {
+  repeated MatchDay match_days = 1;
   string league = 2;
 }
 
-message FootballLeaguePlace {
-  FootballTeam team = 1;
+message LeaguePosition {
+  Team team = 1;
   int32 position = 2;
   int32 played = 3;
   int32 won = 4;
@@ -659,42 +661,46 @@ message FootballLeaguePlace {
   optional FollowUp follow_up = 13;
 }
 
-message FootballLeagueTable {
-  string league_name = 1; // rename this to group name!
-  repeated FootballLeaguePlace teams = 2;
+message LeagueTable {
+   // rename this to group name!
+  string group_name = 1;
+  repeated LeaguePosition teams = 2;
 }
 
 // Some leagues can have multiple tables, i.e group stage tables
-message FootballLeagueTables {
-  repeated FootballLeagueTable tables = 1;
+message LeagueTables {
+  repeated LeagueTable tables = 1;
 }
 
-message FootballStats {
-  FootballTeam home_team = 1;
-  FootballTeam away_team = 2;
+message Stats {
+  Team home_team = 1;
+  Team away_team = 2;
 
-  int32 home_team_possession = 3;
-  int32 away_team_possession = 4;
+  int32 home_score = 3;
+  int32 away_score = 4;
 
-  int32 home_on_target = 5;
-  int32 away_on_target = 6;
-  int32 home_off_target = 7;
-  int32 away_off_target = 8;
+  int32 home_possession = 5;
+  int32 away_possession = 6;
 
-  int32 home_corners = 9;
-  int32 away_corners = 10;
+  int32 home_on_target = 7;
+  int32 away_on_target = 8;
+  int32 home_off_target = 9;
+  int32 away_off_target = 10;
 
-  int32 home_fouls = 11;
-  int32 away_fouls = 12;
+  int32 home_corners = 11;
+  int32 away_corners = 12;
 
-  repeated StartingPlayer home_starting_players = 13;
-  repeated StartingPlayer away_starting_players = 14;
+  int32 home_fouls = 13;
+  int32 away_fouls = 14;
 
-  repeated SubstitutePlayer home_substitute_players = 15;
-  repeated SubstitutePlayer away_substitute_players = 16; 
+  repeated StartingPlayer home_starting_players = 15;
+  repeated StartingPlayer away_starting_players = 16;
+
+  repeated SubstitutePlayer home_substitute_players = 17;
+  repeated SubstitutePlayer away_substitute_players = 18; 
 }
 
-message FootballPlayer {
+message Player {
   string first_name = 1;
   string last_name = 2;
   string shirt_number = 3;
@@ -702,12 +708,12 @@ message FootballPlayer {
 }
 
 message StartingPlayer {
-  FootballPlayer player = 1;
-  FootballPlayer substitute = 2;
+  Player player = 1;
+  Player substitute = 2;
 }
 
 message SubstitutePlayer {
-  FootballPlayer player = 1;
+  Player player = 1;
   int32 minute = 2;
 } 
 
@@ -722,8 +728,9 @@ message PenaltyCard {
   }
 }
 
-message FootballMatchStatsWithMatchLink {
-  FootballStats stats = 1;
+message StatsWithArticle {
+  // This won't exist for matches that we create a match report or blog for
+  optional Stats stats = 1;
 
   // will either be this or just a URI? It used to be two
   // (match report AND live blog) but in DCAR it's just
@@ -731,10 +738,12 @@ message FootballMatchStatsWithMatchLink {
   // but we need a way of tleling the app if its just stats
   // or a match report! so two would be appropriate
   // COULD make a new datatype for this.... rather than just links
-  optional Links links = 2;
+  optional string item_uri = 2;
+  optional string rendered_item_beta = 3;
+  optional string rendered_item_prod = 4;
 }
 
-message FootballPalette {
+message TeamPalette {
   string background = 1;
   string text = 2;
 }

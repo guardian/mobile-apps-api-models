@@ -193,7 +193,7 @@
             ]
           },
           {
-            "name": "FootballLeaguePlace.Form",
+            "name": "LeaguePosition.Form",
             "enum_fields": [
               {
                 "name": "FORM_UNSPECIFIED"
@@ -1412,7 +1412,7 @@
             ]
           },
           {
-            "name": "FootballMatch",
+            "name": "Match",
             "fields": [
               {
                 "id": 1,
@@ -1422,12 +1422,12 @@
               {
                 "id": 2,
                 "name": "home_team",
-                "type": "FootballTeam"
+                "type": "Team"
               },
               {
                 "id": 3,
                 "name": "away_team",
-                "type": "FootballTeam"
+                "type": "Team"
               },
               {
                 "id": 4,
@@ -1442,53 +1442,23 @@
               },
               {
                 "id": 6,
-                "name": "extra_time",
-                "type": "string",
-                "optional": true,
-                "options": [
-                  {
-                    "name": "deprecated",
-                    "value": "true"
-                  }
-                ]
-              },
-              {
-                "id": 7,
-                "name": "aggregate_score",
+                "name": "match_detail",
                 "type": "string",
                 "optional": true
               },
               {
-                "id": 8,
-                "name": "match_phase",
-                "type": "string",
-                "optional": true,
-                "options": [
-                  {
-                    "name": "deprecated",
-                    "value": "true"
-                  }
-                ]
-              },
-              {
-                "id": 9,
+                "id": 7,
                 "name": "is_live",
                 "type": "bool"
               },
               {
-                "id": 10,
-                "name": "match_status",
-                "type": "string",
-                "optional": true
-              },
-              {
-                "id": 11,
+                "id": 8,
                 "name": "topic",
                 "type": "Topic",
                 "optional": true
               },
               {
-                "id": 12,
+                "id": 9,
                 "name": "match_info_uri",
                 "type": "string",
                 "optional": true
@@ -1496,7 +1466,33 @@
             ]
           },
           {
-            "name": "FootballTeam",
+            "name": "MatchDay",
+            "fields": [
+              {
+                "id": 1,
+                "name": "date",
+                "type": "google.protobuf.Timestamp"
+              },
+              {
+                "id": 3,
+                "name": "match_day_name",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "matches",
+                "type": "Match",
+                "is_repeated": true
+              },
+              {
+                "id": 4,
+                "name": "is_live",
+                "type": "bool"
+              }
+            ]
+          },
+          {
+            "name": "Team",
             "fields": [
               {
                 "id": 1,
@@ -1526,24 +1522,24 @@
               {
                 "id": 6,
                 "name": "palette_light",
-                "type": "FootballPalette",
+                "type": "TeamPalette",
                 "optional": true
               },
               {
                 "id": 7,
                 "name": "palette_dark",
-                "type": "FootballPalette",
+                "type": "TeamPalette",
                 "optional": true
               }
             ]
           },
           {
-            "name": "FootballLeagueWithMatches",
+            "name": "LeagueWithMatchDays",
             "fields": [
               {
                 "id": 1,
-                "name": "matches",
-                "type": "FootballMatch",
+                "name": "match_days",
+                "type": "MatchDay",
                 "is_repeated": true
               },
               {
@@ -1554,12 +1550,12 @@
             ]
           },
           {
-            "name": "FootballLeaguePlace",
+            "name": "LeaguePosition",
             "fields": [
               {
                 "id": 1,
                 "name": "team",
-                "type": "FootballTeam"
+                "type": "Team"
               },
               {
                 "id": 2,
@@ -1626,115 +1622,125 @@
             ]
           },
           {
-            "name": "FootballLeagueTable",
+            "name": "LeagueTable",
             "fields": [
               {
                 "id": 1,
-                "name": "league_name",
+                "name": "group_name",
                 "type": "string"
               },
               {
                 "id": 2,
                 "name": "teams",
-                "type": "FootballLeaguePlace",
+                "type": "LeaguePosition",
                 "is_repeated": true
               }
             ]
           },
           {
-            "name": "FootballLeagueTables",
+            "name": "LeagueTables",
             "fields": [
               {
                 "id": 1,
                 "name": "tables",
-                "type": "FootballLeagueTable",
+                "type": "LeagueTable",
                 "is_repeated": true
               }
             ]
           },
           {
-            "name": "FootballStats",
+            "name": "Stats",
             "fields": [
               {
                 "id": 1,
                 "name": "home_team",
-                "type": "FootballTeam"
+                "type": "Team"
               },
               {
                 "id": 2,
                 "name": "away_team",
-                "type": "FootballTeam"
+                "type": "Team"
               },
               {
                 "id": 3,
-                "name": "home_team_possession",
+                "name": "home_score",
                 "type": "int32"
               },
               {
                 "id": 4,
-                "name": "away_team_possession",
+                "name": "away_score",
                 "type": "int32"
               },
               {
                 "id": 5,
-                "name": "home_on_target",
+                "name": "home_possession",
                 "type": "int32"
               },
               {
                 "id": 6,
-                "name": "away_on_target",
+                "name": "away_possession",
                 "type": "int32"
               },
               {
                 "id": 7,
-                "name": "home_off_target",
+                "name": "home_on_target",
                 "type": "int32"
               },
               {
                 "id": 8,
-                "name": "away_off_target",
+                "name": "away_on_target",
                 "type": "int32"
               },
               {
                 "id": 9,
-                "name": "home_corners",
+                "name": "home_off_target",
                 "type": "int32"
               },
               {
                 "id": 10,
-                "name": "away_corners",
+                "name": "away_off_target",
                 "type": "int32"
               },
               {
                 "id": 11,
-                "name": "home_fouls",
+                "name": "home_corners",
                 "type": "int32"
               },
               {
                 "id": 12,
-                "name": "away_fouls",
+                "name": "away_corners",
                 "type": "int32"
               },
               {
                 "id": 13,
+                "name": "home_fouls",
+                "type": "int32"
+              },
+              {
+                "id": 14,
+                "name": "away_fouls",
+                "type": "int32"
+              },
+              {
+                "id": 15,
                 "name": "home_starting_players",
                 "type": "StartingPlayer",
                 "is_repeated": true
               },
               {
-                "id": 14,
+                "id": 16,
                 "name": "away_starting_players",
                 "type": "StartingPlayer",
                 "is_repeated": true
               },
               {
-                "id": 15,
+                "id": 17,
                 "name": "home_substitute_players",
                 "type": "SubstitutePlayer",
                 "is_repeated": true
               },
               {
-                "id": 16,
+                "id": 18,
                 "name": "away_substitute_players",
                 "type": "SubstitutePlayer",
                 "is_repeated": true
@@ -1742,7 +1748,7 @@
             ]
           },
           {
-            "name": "FootballPlayer",
+            "name": "Player",
             "fields": [
               {
                 "id": 1,
@@ -1773,12 +1779,12 @@
               {
                 "id": 1,
                 "name": "player",
-                "type": "FootballPlayer"
+                "type": "Player"
               },
               {
                 "id": 2,
                 "name": "substitute",
-                "type": "FootballPlayer"
+                "type": "Player"
               }
             ]
           },
@@ -1788,7 +1794,7 @@
               {
                 "id": 1,
                 "name": "player",
-                "type": "FootballPlayer"
+                "type": "Player"
               },
               {
                 "id": 2,
@@ -1813,23 +1819,36 @@
             ]
           },
           {
-            "name": "FootballMatchStatsWithMatchLink",
+            "name": "StatsWithArticle",
             "fields": [
               {
                 "id": 1,
                 "name": "stats",
-                "type": "FootballStats"
+                "type": "Stats",
+                "optional": true
               },
               {
                 "id": 2,
-                "name": "links",
-                "type": "Links",
+                "name": "item_uri",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "rendered_item_beta",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "rendered_item_prod",
+                "type": "string",
                 "optional": true
               }
             ]
           },
           {
-            "name": "FootballPalette",
+            "name": "TeamPalette",
             "fields": [
               {
                 "id": 1,
