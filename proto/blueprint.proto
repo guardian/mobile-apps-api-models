@@ -437,8 +437,9 @@ message Card {
   }
   CardType type = 1;
   /**
-    The article that this card is representing. It is optional because not all cards
-    will have an article associated with them i.e Crosswords.
+    The article that this card is representing. It is optional 
+    because not all cards will have an article associated with 
+    them i.e Crosswords or Web content.
   */
   optional Article article = 2;
   /**
