@@ -396,6 +396,12 @@ message Article {
    * It is available when the listen-to-article is supported on this article
    */
   optional ListenToArticle listen_to_article = 36;
+  
+  /** 
+   * Number of images in a gallery card. This is used to display gallery 
+   * metadata on card when the media_type is MEDIA_TYPE_IMAGE. 
+   */
+  optional int32 gallery_image_count = 37;
 }
 
 message Card {
