@@ -5,7 +5,8 @@ package com.gu.mobile.mapi.models.v0;
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 
-option swift_prefix="Blueprint";
+// A prefix only used for the Swift models
+option swift_prefix="Proto";
 
 /************************* COLLECTION *************************/
 
@@ -441,7 +442,12 @@ message Card {
     CARD_TYPE_HIGHLIGHT = 10;
   }
   CardType type = 1;
-  Article article = 2;
+  /**
+    The article that this card is representing. It is optional 
+    because not all cards will have an article associated with 
+    them i.e Crosswords or Web content.
+  */
+  optional Article article = 2;
   /**
    * Boosted cards show a boosted headline size.
    */
