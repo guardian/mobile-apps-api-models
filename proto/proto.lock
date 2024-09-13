@@ -1215,7 +1215,8 @@
               {
                 "id": 2,
                 "name": "article",
-                "type": "Article"
+                "type": "Article",
+                "optional": true
               },
               {
                 "id": 3,
@@ -1568,7 +1569,7 @@
         "options": [
           {
             "name": "swift_prefix",
-            "value": "Blueprint"
+            "value": "Proto"
           }
         ]
       }
