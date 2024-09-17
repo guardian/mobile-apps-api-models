@@ -414,6 +414,18 @@
                 "name": "small_heading",
                 "type": "bool",
                 "optional": true
+              },
+              {
+                "id": 17,
+                "name": "ad_targeting_params",
+                "type": "AdTargetingParams",
+                "optional": true
+              },
+              {
+                "id": 18,
+                "name": "ad_unit",
+                "type": "string",
+                "optional": true
               }
             ]
           },
