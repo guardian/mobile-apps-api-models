@@ -97,6 +97,10 @@ message Collection {
    * sections within a main collection.
    */
   optional bool small_heading = 16;
+
+  optional AdTargetingParams ad_targeting_params = 17;
+
+  optional string ad_unit = 18;
 }
 
 /**
