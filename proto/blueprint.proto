@@ -96,11 +96,30 @@ message Collection {
    * the header is rendered in smaller size to show they are child
    * sections within a main collection.
    */
-  optional bool small_heading = 16;
+  optional bool small_heading = 16 [deprecated = true];
 
   optional AdTargetingParams ad_targeting_params = 17;
 
   optional string ad_unit = 18;
+
+  /**
+   * This tells the app in which style to display, or not display,
+   * the title.
+   */ 
+  enum HeadingStyle {
+    HEADING_STYLE_UNSPECIFIED = 0;
+    HEADING_STYLE_HIDDEN = 1;
+    HEADING_STYLE_REGULAR = 2;
+    HEADING_STYLE_SMALL = 3;
+  }
+  optional HeadingStyle heading_style = 19;
+
+  /**
+   * The title of this collection for display.  It replaces 
+   * the old "title" property.
+   */
+  optional string display_title = 20;
+
 }
 
 /**

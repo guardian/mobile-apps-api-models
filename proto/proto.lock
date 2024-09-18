@@ -25,6 +25,26 @@
             ]
           },
           {
+            "name": "Collection.HeadingStyle",
+            "enum_fields": [
+              {
+                "name": "HEADING_STYLE_UNSPECIFIED"
+              },
+              {
+                "name": "HEADING_STYLE_HIDDEN",
+                "integer": 1
+              },
+              {
+                "name": "HEADING_STYLE_REGULAR",
+                "integer": 2
+              },
+              {
+                "name": "HEADING_STYLE_SMALL",
+                "integer": 3
+              }
+            ]
+          },
+          {
             "name": "FollowUp.FollowUpType",
             "enum_fields": [
               {
@@ -413,7 +433,13 @@
                 "id": 16,
                 "name": "small_heading",
                 "type": "bool",
-                "optional": true
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 17,
@@ -424,6 +450,18 @@
               {
                 "id": 18,
                 "name": "ad_unit",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 19,
+                "name": "heading_style",
+                "type": "HeadingStyle",
+                "optional": true
+              },
+              {
+                "id": 20,
+                "name": "display_title",
                 "type": "string",
                 "optional": true
               }
