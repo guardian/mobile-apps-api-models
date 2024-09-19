@@ -267,10 +267,10 @@ message Palette {
 }
 
 message Links {
-  string related_uri = 1;
-  string short_url = 2;
+  optional string related_uri = 1;
+  optional string short_url = 2;
   string uri = 3;
-  string web_uri = 4;
+  optional string web_uri = 4;
 }
 
 enum MediaType {
