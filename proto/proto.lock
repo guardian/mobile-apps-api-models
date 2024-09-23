@@ -737,12 +737,14 @@
               {
                 "id": 1,
                 "name": "related_uri",
-                "type": "string"
+                "type": "string",
+                "optional": true
               },
               {
                 "id": 2,
                 "name": "short_url",
-                "type": "string"
+                "type": "string",
+                "optional": true
               },
               {
                 "id": 3,
@@ -752,7 +754,8 @@
               {
                 "id": 4,
                 "name": "web_uri",
-                "type": "string"
+                "type": "string",
+                "optional": true
               }
             ]
           },
