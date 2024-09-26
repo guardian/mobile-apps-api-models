@@ -606,7 +606,7 @@ message Match {
   optional string match_detail = 6;
   bool is_live = 7;
 
-  // this will be for notifications
+  // may not be needed at this level, used in stats instead
   optional Topic topic = 8;
   optional string match_info_uri = 9;
 }
@@ -741,6 +741,8 @@ message StatsWithArticle {
   optional string item_uri = 2;
   optional string rendered_item_beta = 3;
   optional string rendered_item_prod = 4;
+
+  optional Topic topic = 5;
 }
 
 message TeamPalette {

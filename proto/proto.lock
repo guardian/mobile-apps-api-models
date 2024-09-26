@@ -1844,6 +1844,12 @@
                 "name": "rendered_item_prod",
                 "type": "string",
                 "optional": true
+              },
+              {
+                "id": 5,
+                "name": "topic",
+                "type": "Topic",
+                "optional": true
               }
             ]
           },
