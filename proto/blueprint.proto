@@ -735,3 +735,173 @@ message BasicTag {
   string id = 1;
   string web_title = 2;
 }
+
+/************************* FOOTBALL *************************/
+
+
+message Match {
+  string id = 1;
+  Team home_team = 2;
+  Team away_team = 3;
+  google.protobuf.Timestamp kick_off = 4;
+  optional string score = 5;
+
+  // could be aggregate, status etc
+  // As we get it from PA, HT/FT etc
+  // case prematch = "F"
+  // case firstHalf = "1st"
+  // case halfTime = "HT"
+  // case secondHalf = "2nd"
+  // case fullTime = "FT"
+  // case extraTime = "ET"
+  // case penalties = "PT"
+  // case suspended = "S"
+  // case resumed = "R"
+  // case abandoned = "A"
+  // case cancelled = "C"
+  optional string match_detail = 6;
+  bool is_live = 7;
+
+  // may not be needed at this level, used in stats instead
+  optional Topic topic = 8;
+  optional string match_info_uri = 9;
+}
+
+message MatchDay {
+  google.protobuf.Timestamp date = 1;
+  string match_day_name = 3;
+  repeated Match matches = 2;
+  bool is_live = 4;
+}
+
+message Team {
+  string id = 1;
+  string short_code = 2;
+  string name = 3;
+  string short_name = 4;
+  Image crest = 5;
+
+  // might be set for match stats
+  optional TeamPalette palette_light = 6;
+  // might be set for match stats
+  optional TeamPalette palette_dark = 7;
+}
+
+message LeagueWithMatchDays {
+  repeated MatchDay match_days = 1;
+  string league = 2;
+}
+
+message LeaguePosition {
+  Team team = 1;
+  int32 position = 2;
+  int32 played = 3;
+  int32 won = 4;
+  int32 drawn = 5;
+  int32 lost = 6;
+  int32 goals_for = 7;
+  int32 goals_against = 8;
+  int32 goal_difference = 9;
+  int32 points = 10;
+  // protolint:disable:next REPEATED_FIELD_NAMES_PLURALIZED
+  repeated Form recent_form = 11;  
+  bool show_divider = 12;
+
+  enum Form {
+    FORM_UNSPECIFIED = 0;  // Default value
+    FORM_WIN = 1;
+    FORM_DRAW = 2;
+    FORM_LOSS = 3;
+  }
+
+  optional FollowUp follow_up = 13;
+}
+
+message LeagueTable {
+  // rename this to group name!
+  string group_name = 1;
+  repeated LeaguePosition teams = 2;
+}
+
+// Some leagues can have multiple tables, i.e group stage tables
+message LeagueTables {
+  repeated LeagueTable tables = 1;
+}
+
+message Stats {
+  Team home_team = 1;
+  Team away_team = 2;
+
+  int32 home_score = 3;
+  int32 away_score = 4;
+
+  int32 home_possession = 5;
+  int32 away_possession = 6;
+
+  int32 home_on_target = 7;
+  int32 away_on_target = 8;
+  int32 home_off_target = 9;
+  int32 away_off_target = 10;
+
+  int32 home_corners = 11;
+  int32 away_corners = 12;
+
+  int32 home_fouls = 13;
+  int32 away_fouls = 14;
+
+  repeated StartingPlayer home_starting_players = 15;
+  repeated StartingPlayer away_starting_players = 16;
+
+  repeated SubstitutePlayer home_substitute_players = 17;
+  repeated SubstitutePlayer away_substitute_players = 18; 
+}
+
+message Player {
+  string first_name = 1;
+  string last_name = 2;
+  string shirt_number = 3;
+  repeated PenaltyCard penalty_cards = 4;
+}
+
+message StartingPlayer {
+  Player player = 1;
+  Player substitute = 2;
+}
+
+message SubstitutePlayer {
+  Player player = 1;
+  int32 minute = 2;
+} 
+
+message PenaltyCard {
+  CardColour colour = 1;
+  int32 minute = 2;
+
+  enum CardColour {
+    CARD_COLOUR_COLOUR_UNSPECIFIED = 0;
+    CARD_COLOUR_COLOUR_YELLOW = 1;
+    CARD_COLOUR_COLOUR_RED = 2;
+  }
+}
+
+message StatsWithArticle {
+  // This won't exist for matches that we create a match report or blog for
+  optional Stats stats = 1;
+
+  // will either be this or just a URI? It used to be two
+  // (match report AND live blog) but in DCAR it's just
+  // one link that can show you both
+  // but we need a way of tleling the app if its just stats
+  // or a match report! so two would be appropriate
+  // COULD make a new datatype for this.... rather than just links
+  optional string item_uri = 2;
+  optional string rendered_item_beta = 3;
+  optional string rendered_item_prod = 4;
+
+  optional Topic topic = 5;
+}
+
+message TeamPalette {
+  string background = 1;
+  string text = 2;
+}
