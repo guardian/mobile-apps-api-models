@@ -12,7 +12,8 @@ lazy val scalaModels = project.in(file("."))
     name := "mobile-apps-api-models-v0",
 
     libraryDependencies ++= Seq(
-      "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"
+      "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf",
+      "com.google.protobuf" % "protobuf-java" % "3.25.5"
     ),
 
     Compile / scalacOptions ++= Seq("-release:11"),
