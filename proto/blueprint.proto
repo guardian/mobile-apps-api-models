@@ -647,6 +647,11 @@ message Row {
      * when thrashers are displayed inside a fixed/thrasher container.
      */
     ROW_TYPE_WEB_CONTENT = 3;
+    /**
+     * New carousel style on some new collection types such as 
+     * small story carousel on tablet
+     */
+    ROW_TYPE_PROGRAMMATIC_CAROUSEL = 4;
   }
   repeated Column columns = 1;
   optional Palette palette_light = 2;
