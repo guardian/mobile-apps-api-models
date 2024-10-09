@@ -273,6 +273,10 @@
               {
                 "name": "ROW_TYPE_WEB_CONTENT",
                 "integer": 3
+              },
+              {
+                "name": "ROW_TYPE_PROGRAMMATIC_CAROUSEL",
+                "integer": 4
               }
             ]
           },
