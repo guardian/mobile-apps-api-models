@@ -1515,6 +1515,12 @@
                 "name": "tighten_spacing",
                 "type": "bool",
                 "optional": true
+              },
+              {
+                "id": 9,
+                "name": "follow_up",
+                "type": "FollowUp",
+                "optional": true
               }
             ]
           },

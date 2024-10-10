@@ -672,6 +672,12 @@ message Row {
    * reduced.
    */
   optional bool tighten_spacing = 8;
+
+  /**
+   * Clicking the row title takes users to the page indicated by 
+   * this attribute.  The row title is not clickable if it is empty. 
+   */
+  optional FollowUp follow_up = 9;
 }
 
 message Topic {
