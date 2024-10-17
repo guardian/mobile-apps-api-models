@@ -119,7 +119,8 @@ message Collection {
    * the old "title" property.
    */
   optional string display_title = 20;
-
+  
+  optional google.protobuf.Timestamp last_updated_date = 21;
 }
 
 /**
@@ -195,6 +196,8 @@ message List {
    * in the fronts response (e.g uk/fronts/home)
    */
   string ad_unit = 16;
+  
+  optional google.protobuf.Timestamp last_updated_date = 17;
 }
 
 /************************* MY GUARDIAN *************************/

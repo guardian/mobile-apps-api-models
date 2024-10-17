@@ -468,6 +468,12 @@
                 "name": "display_title",
                 "type": "string",
                 "optional": true
+              },
+              {
+                "id": 21,
+                "name": "last_updated_date",
+                "type": "google.protobuf.Timestamp",
+                "optional": true
               }
             ]
           },
@@ -601,6 +607,12 @@
                 "id": 16,
                 "name": "ad_unit",
                 "type": "string"
+              },
+              {
+                "id": 17,
+                "name": "last_updated_date",
+                "type": "google.protobuf.Timestamp",
+                "optional": true
               }
             ]
           },
