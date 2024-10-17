@@ -1276,6 +1276,12 @@
                 "name": "gallery_image_count",
                 "type": "int32",
                 "optional": true
+              },
+              {
+                "id": 38,
+                "name": "basic_tags",
+                "type": "BasicTag",
+                "is_repeated": true
               }
             ]
           },
