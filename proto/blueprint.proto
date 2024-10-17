@@ -683,6 +683,15 @@ message Row {
    * this attribute.  The row title is not clickable if it is empty. 
    */
   optional FollowUp follow_up = 9;
+
+  /** Control the style of the title on row level */
+  optional Collection.HeadingStyle heading_style = 10;
+
+  /**
+   * The property gives the ID for tracking data which is sent by
+   * the apps when users tap the row title.
+   */
+  optional string tracking_id = 11;
 }
 
 message Topic {

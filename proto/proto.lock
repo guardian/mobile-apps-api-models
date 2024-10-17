@@ -1539,6 +1539,18 @@
                 "name": "follow_up",
                 "type": "FollowUp",
                 "optional": true
+              },
+              {
+                "id": 10,
+                "name": "heading_style",
+                "type": "Collection.HeadingStyle",
+                "optional": true
+              },
+              {
+                "id": 11,
+                "name": "tracking_id",
+                "type": "string",
+                "optional": true
               }
             ]
           },
