@@ -257,6 +257,22 @@
             ]
           },
           {
+            "name": "TopBorderStyle",
+            "enum_fields": [
+              {
+                "name": "TOP_BORDER_STYLE_UNSPECIFIED"
+              },
+              {
+                "name": "TOP_BORDER_STYLE_HIDDEN",
+                "integer": 1
+              },
+              {
+                "name": "TOP_BORDER_STYLE_REGULAR",
+                "integer": 2
+              }
+            ]
+          },
+          {
             "name": "Row.RowType",
             "enum_fields": [
               {
@@ -1453,6 +1469,12 @@
                 "id": 46,
                 "name": "preferred_sublinks_arrangement",
                 "type": "SublinksArrangement",
+                "optional": true
+              },
+              {
+                "id": 47,
+                "name": "top_border_style",
+                "type": "TopBorderStyle",
                 "optional": true
               }
             ]
