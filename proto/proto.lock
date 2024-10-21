@@ -1653,94 +1653,84 @@
             "fields": [
               {
                 "id": 1,
-                "name": "home_team",
-                "type": "Team"
-              },
-              {
-                "id": 2,
-                "name": "away_team",
-                "type": "Team"
-              },
-              {
-                "id": 3,
                 "name": "home_score",
                 "type": "int32"
               },
               {
-                "id": 4,
+                "id": 2,
                 "name": "away_score",
                 "type": "int32"
               },
               {
-                "id": 5,
+                "id": 3,
                 "name": "home_possession",
                 "type": "int32"
               },
               {
-                "id": 6,
+                "id": 4,
                 "name": "away_possession",
                 "type": "int32"
               },
               {
-                "id": 7,
+                "id": 5,
                 "name": "home_on_target",
                 "type": "int32"
               },
               {
-                "id": 8,
+                "id": 6,
                 "name": "away_on_target",
                 "type": "int32"
               },
               {
-                "id": 9,
+                "id": 7,
                 "name": "home_off_target",
                 "type": "int32"
               },
               {
-                "id": 10,
+                "id": 8,
                 "name": "away_off_target",
                 "type": "int32"
               },
               {
-                "id": 11,
+                "id": 9,
                 "name": "home_corners",
                 "type": "int32"
               },
               {
-                "id": 12,
+                "id": 10,
                 "name": "away_corners",
                 "type": "int32"
               },
               {
-                "id": 13,
+                "id": 11,
                 "name": "home_fouls",
                 "type": "int32"
               },
               {
-                "id": 14,
+                "id": 12,
                 "name": "away_fouls",
                 "type": "int32"
               },
               {
-                "id": 15,
+                "id": 13,
                 "name": "home_starting_players",
                 "type": "StartingPlayer",
                 "is_repeated": true
               },
               {
-                "id": 16,
+                "id": 14,
                 "name": "away_starting_players",
                 "type": "StartingPlayer",
                 "is_repeated": true
               },
               {
-                "id": 17,
+                "id": 15,
                 "name": "home_substitute_players",
                 "type": "SubstitutePlayer",
                 "is_repeated": true
               },
               {
-                "id": 18,
+                "id": 16,
                 "name": "away_substitute_players",
                 "type": "SubstitutePlayer",
                 "is_repeated": true
@@ -1823,30 +1813,40 @@
             "fields": [
               {
                 "id": 1,
+                "name": "home_team",
+                "type": "Team"
+              },
+              {
+                "id": 2,
+                "name": "away_team",
+                "type": "Team"
+              },
+              {
+                "id": 3,
                 "name": "stats",
                 "type": "Stats",
                 "optional": true
               },
               {
-                "id": 2,
+                "id": 4,
                 "name": "item_uri",
                 "type": "string",
                 "optional": true
               },
               {
-                "id": 3,
+                "id": 5,
                 "name": "rendered_item_beta",
                 "type": "string",
                 "optional": true
               },
               {
-                "id": 4,
+                "id": 6,
                 "name": "rendered_item_prod",
                 "type": "string",
                 "optional": true
               },
               {
-                "id": 5,
+                "id": 7,
                 "name": "topic",
                 "type": "Topic",
                 "optional": true

@@ -673,31 +673,28 @@ message LeagueTables {
 }
 
 message Stats {
-  Team home_team = 1;
-  Team away_team = 2;
+  int32 home_score = 1;
+  int32 away_score = 2;
 
-  int32 home_score = 3;
-  int32 away_score = 4;
+  int32 home_possession = 3;
+  int32 away_possession = 4;
 
-  int32 home_possession = 5;
-  int32 away_possession = 6;
+  int32 home_on_target = 5;
+  int32 away_on_target = 6;
+  int32 home_off_target = 7;
+  int32 away_off_target = 8;
 
-  int32 home_on_target = 7;
-  int32 away_on_target = 8;
-  int32 home_off_target = 9;
-  int32 away_off_target = 10;
+  int32 home_corners = 9;
+  int32 away_corners = 10;
 
-  int32 home_corners = 11;
-  int32 away_corners = 12;
+  int32 home_fouls = 11;
+  int32 away_fouls = 12;
 
-  int32 home_fouls = 13;
-  int32 away_fouls = 14;
+  repeated StartingPlayer home_starting_players = 13;
+  repeated StartingPlayer away_starting_players = 14;
 
-  repeated StartingPlayer home_starting_players = 15;
-  repeated StartingPlayer away_starting_players = 16;
-
-  repeated SubstitutePlayer home_substitute_players = 17;
-  repeated SubstitutePlayer away_substitute_players = 18; 
+  repeated SubstitutePlayer home_substitute_players = 15;
+  repeated SubstitutePlayer away_substitute_players = 16; 
 }
 
 message Player {
@@ -729,8 +726,13 @@ message PenaltyCard {
 }
 
 message StatsWithArticle {
-  // This won't exist for matches that we create a match report or blog for
-  optional Stats stats = 1;
+
+  Team home_team = 1;
+  Team away_team = 2;
+
+  // This won't exist for matches that we are able to
+  // create a match report or blog for
+  optional Stats stats = 3;
 
   // will either be this or just a URI? It used to be two
   // (match report AND live blog) but in DCAR it's just
@@ -738,11 +740,11 @@ message StatsWithArticle {
   // but we need a way of tleling the app if its just stats
   // or a match report! so two would be appropriate
   // COULD make a new datatype for this.... rather than just links
-  optional string item_uri = 2;
-  optional string rendered_item_beta = 3;
-  optional string rendered_item_prod = 4;
+  optional string item_uri = 4;
+  optional string rendered_item_beta = 5;
+  optional string rendered_item_prod = 6;
 
-  optional Topic topic = 5;
+  optional Topic topic = 7;
 }
 
 message TeamPalette {
