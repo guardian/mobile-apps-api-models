@@ -627,6 +627,17 @@ message Card {
    * Indicate how sublinks are arranged.
    */
   optional SublinksArrangement preferred_sublinks_arrangement = 46;
+
+  /**
+   * Control how the top border is displayed.
+   */
+  optional TopBorderStyle top_border_style = 47;
+}
+
+enum TopBorderStyle {
+  TOP_BORDER_STYLE_UNSPECIFIED = 0;
+  TOP_BORDER_STYLE_HIDDEN = 1;
+  TOP_BORDER_STYLE_REGULAR = 2;
 }
 
 message Column {
