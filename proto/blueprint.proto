@@ -231,13 +231,15 @@ message LayoutAgnosticCollection {
   optional FollowUp follow_up = 6;
 
   /**
-   * The property gives the ID of the collection to be used in 
+   * The property gives the ID of the collection to be used in
    * the tracking data.
    */
   optional string tracking_id = 7;
+
+  optional Image image = 8;
 }
-  
-  
+
+
 
 /************************* SHARED *************************/
 

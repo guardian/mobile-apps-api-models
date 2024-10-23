@@ -675,6 +675,12 @@
                 "name": "tracking_id",
                 "type": "string",
                 "optional": true
+              },
+              {
+                "id": 8,
+                "name": "image",
+                "type": "Image",
+                "optional": true
               }
             ]
           },
