@@ -104,7 +104,8 @@ message Collection {
 
   /**
    * This tells the app in which style to display, or not display,
-   * the title.
+   * the title.  It should not be used any more as a new equivalent
+   * enum class named "TitleStyle" is defined on the top level.
    */ 
   enum HeadingStyle {
     HEADING_STYLE_UNSPECIFIED = 0;
@@ -112,6 +113,11 @@ message Collection {
     HEADING_STYLE_REGULAR = 2;
     HEADING_STYLE_SMALL = 3;
   }
+  /**
+   * This property is deprecated in favour of the property title_style.
+   * We still set this property to the same semantic value as
+   * the title style for backward compatibility.
+   */
   optional HeadingStyle heading_style = 19;
 
   /**
@@ -121,6 +127,11 @@ message Collection {
   optional string display_title = 20;
   
   optional google.protobuf.Timestamp last_updated_date = 21;
+
+  /**
+   * Control in what style to display the collection title.
+   */
+  optional TitleStyle title_style = 22;
 }
 
 /**
@@ -340,6 +351,16 @@ message Branding {
   string label = 5;
   string about_uri = 6;
   optional string alt_logo = 7;
+}
+
+/**
+  * Control in what style to display a title.
+  */ 
+enum TitleStyle {
+  TITLE_STYLE_UNSPECIFIED = 0;
+  TITLE_STYLE_HIDDEN = 1;
+  TITLE_STYLE_REGULAR = 2;
+  TITLE_STYLE_SMALL = 3;
 }
 
 /**
@@ -695,14 +716,20 @@ message Row {
    */
   optional FollowUp follow_up = 9;
 
-  /** Control the style of the title on row level */
-  optional Collection.HeadingStyle heading_style = 10;
+  /** Deprecated.  It was the old heading style. */
+  reserved "heading_style";
+  reserved 10;
 
   /**
    * The property gives the ID for tracking data which is sent by
    * the apps when users tap the row title.
    */
   optional string tracking_id = 11;
+
+  /**
+   * Control in what style to display the row title.
+   */
+  optional TitleStyle title_style = 12;
 }
 
 message Topic {

@@ -85,6 +85,26 @@
             ]
           },
           {
+            "name": "TitleStyle",
+            "enum_fields": [
+              {
+                "name": "TITLE_STYLE_UNSPECIFIED"
+              },
+              {
+                "name": "TITLE_STYLE_HIDDEN",
+                "integer": 1
+              },
+              {
+                "name": "TITLE_STYLE_REGULAR",
+                "integer": 2
+              },
+              {
+                "name": "TITLE_STYLE_SMALL",
+                "integer": 3
+              }
+            ]
+          },
+          {
             "name": "Card.CardType",
             "enum_fields": [
               {
@@ -489,6 +509,12 @@
                 "id": 21,
                 "name": "last_updated_date",
                 "type": "google.protobuf.Timestamp",
+                "optional": true
+              },
+              {
+                "id": 22,
+                "name": "title_style",
+                "type": "TitleStyle",
                 "optional": true
               }
             ]
@@ -1563,17 +1589,23 @@
                 "optional": true
               },
               {
-                "id": 10,
-                "name": "heading_style",
-                "type": "Collection.HeadingStyle",
-                "optional": true
-              },
-              {
                 "id": 11,
                 "name": "tracking_id",
                 "type": "string",
                 "optional": true
+              },
+              {
+                "id": 12,
+                "name": "title_style",
+                "type": "TitleStyle",
+                "optional": true
               }
+            ],
+            "reserved_ids": [
+              10
+            ],
+            "reserved_names": [
+              "heading_style"
             ]
           },
           {
