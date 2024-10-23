@@ -53,16 +53,16 @@ message Collection {
   /**
    * This tells the app whether or not to render a "show/hide" button at the
    * top right of the container. For now, this is only used for thrashers,
-   *  which should not be hideable by the user. 
+   *  which should not be hideable by the user.
    */
   bool hideable = 9;
 
   optional MyGuardianFollow myguardian_follow = 10;
 
   /**
-   * For some design on specific types of collections, we want to show 
+   * For some design on specific types of collections, we want to show
    * an image and a description in the collection header.  This field is
-   * used for award text if the collection design is 
+   * used for award text if the collection design is
    * COLLECTION_DESIGN_TITLEPIECE.
    */
   optional string description = 11;
@@ -70,7 +70,7 @@ message Collection {
 
   /**
    * This tells the app which design to use to render the collection
-   */ 
+   */
   enum CollectionDesign {
     COLLECTION_DESIGN_UNSPECIFIED = 0;
     COLLECTION_DESIGN_REGULAR = 1;
@@ -80,13 +80,13 @@ message Collection {
   optional CollectionDesign design = 13;
 
   /**
-   * When this attribute is true, the vertical spacing is removed from 
+   * When this attribute is true, the vertical spacing is removed from
    * the collection.
    */
   optional bool compact_padding = 14;
 
   /**
-   * The property gives the ID of the collection to be used in 
+   * The property gives the ID of the collection to be used in
    * the tracking data.
    */
   optional string tracking_id = 15;
@@ -105,7 +105,7 @@ message Collection {
   /**
    * This tells the app in which style to display, or not display,
    * the title.
-   */ 
+   */
   enum HeadingStyle {
     HEADING_STYLE_UNSPECIFIED = 0;
     HEADING_STYLE_HIDDEN = 1;
@@ -115,11 +115,11 @@ message Collection {
   optional HeadingStyle heading_style = 19;
 
   /**
-   * The title of this collection for display.  It replaces 
+   * The title of this collection for display.  It replaces
    * the old "title" property.
    */
   optional string display_title = 20;
-  
+
   optional google.protobuf.Timestamp last_updated_date = 21;
 }
 
@@ -162,7 +162,7 @@ message Thrasher {
 
 /**
   * A list is similar to a collection, except it is responsible for
-  * serving the contents of list pages such as tags and sections, 
+  * serving the contents of list pages such as tags and sections,
   * rather than fronts
   */
 message List {
@@ -177,7 +177,7 @@ message List {
   repeated Row rows = 5;
   optional Branding branding = 6;
   repeated Topic topics = 7;
-  // use ad_unit instead 
+  // use ad_unit instead
   optional string ad_targeting_path = 8 [deprecated = true];
   optional string previous_page_url = 9;
   Tracking tracking = 10;
@@ -196,7 +196,7 @@ message List {
    * in the fronts response (e.g uk/fronts/home)
    */
   string ad_unit = 16;
-  
+
   optional google.protobuf.Timestamp last_updated_date = 17;
 }
 
@@ -206,10 +206,10 @@ message List {
 // My Guardian endpoints (grid, feed etc)
 
 /**
-  * This message type is similar to Collection but with less information. 
+  * This message type is similar to Collection but with less information.
   * It will be used when the client will decide how to lay out
   * the collection instead of the server. This is useful for My Guardian
-  * where the client will need to deduplicate the content from multiple 
+  * where the client will need to deduplicate the content from multiple
   * collections.
   */
 message LayoutAgnosticCollection {
@@ -223,7 +223,7 @@ message LayoutAgnosticCollection {
   optional Palette palette_light = 2;
   optional Palette palette_dark = 3;
   /**
-    * Here we return a list of cards instead of rows. This means that 
+    * Here we return a list of cards instead of rows. This means that
     * the client will need to decide how to layout the cards.
     */
   repeated Card cards = 4;
@@ -238,8 +238,6 @@ message LayoutAgnosticCollection {
 
   optional Image image = 8;
 }
-
-
 
 /************************* SHARED *************************/
 
@@ -451,7 +449,7 @@ message Card {
     /**
     * An empty card is used to indicate an empty space so that the native
     * client do not stretch the previous card to occupy the space
-    */  
+    */
     CARD_TYPE_EMPTY = 7;
     /**
      * Used when a card should display content using a web view. Initially
@@ -467,7 +465,7 @@ message Card {
     CARD_TYPE_PODCAST_SERIES = 9;
     /**
      * A card with a different design.  It is intended for highlights
-     * containers.  
+     * containers.
      * This value will be deprecated soon.  We should set the card size
      * to CARD_SIZE_HIGHLIGHTS instead.
      */
@@ -475,22 +473,22 @@ message Card {
   }
   CardType type = 1;
   /**
-    The article that this card is representing. It is optional 
-    because not all cards will have an article associated with 
+    The article that this card is representing. It is optional
+    because not all cards will have an article associated with
     them i.e Crosswords or Web content.
   */
   optional Article article = 2;
   /**
    * Boosted cards show a boosted headline size.
-   * It will be deprecated after we have switched to card size and 
+   * It will be deprecated after we have switched to card size and
    * boost level to indicate the headline size.
    */
   optional bool boosted = 3;
   /**
    * Compact cards don't show all the information that non-compact cards do,
    * and tend to appear in a carousel.
-   * It will be deprecated after we have switched to card size and 
-   * boost level to indicate the card size.   
+   * It will be deprecated after we have switched to card size and
+   * boost level to indicate the card size.
    */
   optional bool compact = 4;
   repeated Article sublinks = 5;
@@ -533,7 +531,7 @@ message Card {
   /**
    * Indicate how many columns the trail image is expected to take.
    * It is deprecated as we switch to card size and boost level to
-   * indicate in what size to display the trail image.   
+   * indicate in what size to display the trail image.
    */
   optional int32 trail_image_size = 39 [deprecated = true];
 
@@ -566,7 +564,7 @@ message Card {
 
   /**
    * Indicate how sublinks are arranged.
-   * It is deprecated as it is replaced by a new field named 
+   * It is deprecated as it is replaced by a new field named
    * preferred_sublinks_arrangement.
    */
   optional SublinksArrangement sublinks_arrangement = 41 [deprecated = true];
@@ -602,7 +600,7 @@ message Card {
   /**
    * Indictate where to display the headline.
    * It is deprecated as the headline position is implied by
-   * the card size.   
+   * the card size.
    */
   optional HeadlinePosition headline_position = 43 [deprecated = true];
 
@@ -666,7 +664,7 @@ message Row {
      */
     ROW_TYPE_WEB_CONTENT = 3;
     /**
-     * New carousel style on some new collection types such as 
+     * New carousel style on some new collection types such as
      * small story carousel on tablet
      */
     ROW_TYPE_PROGRAMMATIC_CAROUSEL = 4;
@@ -686,14 +684,14 @@ message Row {
   optional string title = 7;
 
   /**
-   * When this attribute is true, the spacing in between cards in the row is 
+   * When this attribute is true, the spacing in between cards in the row is
    * reduced.
    */
   optional bool tighten_spacing = 8;
 
   /**
-   * Clicking the row title takes users to the page indicated by 
-   * this attribute.  The row title is not clickable if it is empty. 
+   * Clicking the row title takes users to the page indicated by
+   * this attribute.  The row title is not clickable if it is empty.
    */
   optional FollowUp follow_up = 9;
 
@@ -765,11 +763,11 @@ message Permutive {
   optional string series = 8;
 }
 
-/** For some articles we return commissioning desk tracking (aka BasicTag) 
-data based on if the article has a "tracking" tag which is set in CAPI. 
+/** For some articles we return commissioning desk tracking (aka BasicTag)
+data based on if the article has a "tracking" tag which is set in CAPI.
 Commissioning desk data will never be included at the upper list level.
 */
-message BasicTag { 
+message BasicTag {
   string id = 1;
   string web_title = 2;
 }
