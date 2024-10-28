@@ -132,6 +132,11 @@ message Collection {
    * Control in what style to display the collection title.
    */
   optional TitleStyle title_style = 22;
+
+  /**
+   * The default aspect ratio for trail images in this collection.
+   */
+  optional ImageAspectRatio preferred_image_aspect_ratio = 23;
 }
 
 /**
@@ -557,22 +562,14 @@ message Card {
   optional int32 trail_image_size = 39 [deprecated = true];
 
   /**
-   * Define constants for each image aspect ratio supported
+   * Deprecated field.  It was the aspect ratio for trail image but
+   * it was no longer needed because the card size can imply the image
+   * aspect ratio needed.  When a card size can support a new image
+   * aspect ratio and the old 5:3 crop, the native can check
+   * the preferred_image_aspect_ratio property in the collection.
    */
-  enum ImageAspectRatio {
-    IMAGE_ASPECT_RATIO_UNSPECIFIED = 0;
-    IMAGE_ASPECT_RATIO_LANDSCAPE_5_3 = 1;
-    IMAGE_ASPECT_RATIO_LANDSCAPE_5_4 = 2;
-    IMAGE_ASPECT_RATIO_PORTRAIT_4_5 = 3;
-    IMAGE_ASPECT_RATIO_SQUARE = 4;
-  }
-
-  /**
-   * Indicate in what aspect ratio the trail image should be rendered.
-   * It is deprecated as the image aspect ratio is implied by
-   * the card size.
-   */
-  optional ImageAspectRatio trail_image_aspect_ratio = 40 [deprecated = true];
+  reserved 40;
+  reserved "trail_image_aspect_ratio";
 
   /**
    * Define constants for the arrangement of sublinks on a card
@@ -659,6 +656,17 @@ enum TopBorderStyle {
   TOP_BORDER_STYLE_UNSPECIFIED = 0;
   TOP_BORDER_STYLE_HIDDEN = 1;
   TOP_BORDER_STYLE_REGULAR = 2;
+}
+
+/**
+  * Define constants for each image aspect ratio supported
+  */
+enum ImageAspectRatio {
+  IMAGE_ASPECT_RATIO_UNSPECIFIED = 0;
+  IMAGE_ASPECT_RATIO_LANDSCAPE_5_3 = 1;
+  IMAGE_ASPECT_RATIO_LANDSCAPE_5_4 = 2;
+  IMAGE_ASPECT_RATIO_PORTRAIT_4_5 = 3;
+  IMAGE_ASPECT_RATIO_SQUARE = 4;
 }
 
 message Column {
