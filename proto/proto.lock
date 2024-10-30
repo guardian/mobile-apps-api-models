@@ -85,6 +85,26 @@
             ]
           },
           {
+            "name": "TitleStyle",
+            "enum_fields": [
+              {
+                "name": "TITLE_STYLE_UNSPECIFIED"
+              },
+              {
+                "name": "TITLE_STYLE_HIDDEN",
+                "integer": 1
+              },
+              {
+                "name": "TITLE_STYLE_REGULAR",
+                "integer": 2
+              },
+              {
+                "name": "TITLE_STYLE_SMALL",
+                "integer": 3
+              }
+            ]
+          },
+          {
             "name": "Card.CardType",
             "enum_fields": [
               {
@@ -129,30 +149,6 @@
               {
                 "name": "CARD_TYPE_HIGHLIGHT",
                 "integer": 10
-              }
-            ]
-          },
-          {
-            "name": "Card.ImageAspectRatio",
-            "enum_fields": [
-              {
-                "name": "IMAGE_ASPECT_RATIO_UNSPECIFIED"
-              },
-              {
-                "name": "IMAGE_ASPECT_RATIO_LANDSCAPE_5_3",
-                "integer": 1
-              },
-              {
-                "name": "IMAGE_ASPECT_RATIO_LANDSCAPE_5_4",
-                "integer": 2
-              },
-              {
-                "name": "IMAGE_ASPECT_RATIO_PORTRAIT_4_5",
-                "integer": 3
-              },
-              {
-                "name": "IMAGE_ASPECT_RATIO_SQUARE",
-                "integer": 4
               }
             ]
           },
@@ -269,6 +265,30 @@
               {
                 "name": "TOP_BORDER_STYLE_REGULAR",
                 "integer": 2
+              }
+            ]
+          },
+          {
+            "name": "ImageAspectRatio",
+            "enum_fields": [
+              {
+                "name": "IMAGE_ASPECT_RATIO_UNSPECIFIED"
+              },
+              {
+                "name": "IMAGE_ASPECT_RATIO_LANDSCAPE_5_3",
+                "integer": 1
+              },
+              {
+                "name": "IMAGE_ASPECT_RATIO_LANDSCAPE_5_4",
+                "integer": 2
+              },
+              {
+                "name": "IMAGE_ASPECT_RATIO_PORTRAIT_4_5",
+                "integer": 3
+              },
+              {
+                "name": "IMAGE_ASPECT_RATIO_SQUARE",
+                "integer": 4
               }
             ]
           },
@@ -490,6 +510,18 @@
                 "name": "last_updated_date",
                 "type": "google.protobuf.Timestamp",
                 "optional": true
+              },
+              {
+                "id": 22,
+                "name": "title_style",
+                "type": "TitleStyle",
+                "optional": true
+              },
+              {
+                "id": 23,
+                "name": "preferred_image_aspect_ratio",
+                "type": "ImageAspectRatio",
+                "optional": true
               }
             ]
           },
@@ -674,6 +706,12 @@
                 "id": 7,
                 "name": "tracking_id",
                 "type": "string",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "image",
+                "type": "Image",
                 "optional": true
               }
             ]
@@ -1406,18 +1444,6 @@
                 ]
               },
               {
-                "id": 40,
-                "name": "trail_image_aspect_ratio",
-                "type": "ImageAspectRatio",
-                "optional": true,
-                "options": [
-                  {
-                    "name": "deprecated",
-                    "value": "true"
-                  }
-                ]
-              },
-              {
                 "id": 41,
                 "name": "sublinks_arrangement",
                 "type": "SublinksArrangement",
@@ -1477,6 +1503,12 @@
                 "type": "TopBorderStyle",
                 "optional": true
               }
+            ],
+            "reserved_ids": [
+              40
+            ],
+            "reserved_names": [
+              "trail_image_aspect_ratio"
             ]
           },
           {
@@ -1563,17 +1595,23 @@
                 "optional": true
               },
               {
-                "id": 10,
-                "name": "heading_style",
-                "type": "Collection.HeadingStyle",
-                "optional": true
-              },
-              {
                 "id": 11,
                 "name": "tracking_id",
                 "type": "string",
                 "optional": true
+              },
+              {
+                "id": 12,
+                "name": "title_style",
+                "type": "TitleStyle",
+                "optional": true
               }
+            ],
+            "reserved_ids": [
+              10
+            ],
+            "reserved_names": [
+              "heading_style"
             ]
           },
           {
