@@ -5,7 +5,7 @@ ThisBuild / organization := "com.gu"
 ThisBuild / scalaVersion := "2.13.15"
 ThisBuild / licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html"))
 
-crossScalaVersions := Seq(scalaVersion.value, "2.12.20", "3.3.3")
+crossScalaVersions := Seq(scalaVersion.value, "2.12.20", "3.3.4")
 
 lazy val scalaModels = project.in(file("."))
   .settings(
@@ -13,7 +13,7 @@ lazy val scalaModels = project.in(file("."))
 
     libraryDependencies ++= Seq(
       "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf",
-      "com.google.protobuf" % "protobuf-java" % "3.25.5"
+      "com.google.protobuf" % "protobuf-java" % "4.28.2"
     ),
 
     Compile / scalacOptions ++= Seq("-release:11"),
