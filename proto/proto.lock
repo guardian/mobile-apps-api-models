@@ -149,6 +149,10 @@
               {
                 "name": "CARD_TYPE_HIGHLIGHT",
                 "integer": 10
+              },
+              {
+                "name": "CARD_TYPE_NAVIGATION",
+                "integer": 11
               }
             ]
           },
