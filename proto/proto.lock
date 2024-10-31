@@ -1340,6 +1340,12 @@
                 "name": "basic_tags",
                 "type": "BasicTag",
                 "is_repeated": true
+              },
+              {
+                "id": 39,
+                "name": "follow_up",
+                "type": "FollowUp",
+                "optional": true
               }
             ]
           },

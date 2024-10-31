@@ -457,6 +457,9 @@ message Article {
   optional int32 gallery_image_count = 37;
 
   repeated BasicTag basic_tags = 38;
+
+  // Only applicable to navigational card
+  optional FollowUp follow_up = 39;
 }
 
 message Card {
