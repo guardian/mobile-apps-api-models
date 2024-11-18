@@ -337,6 +337,7 @@ message PodcastSeries {
   optional FollowUp follow_up = 4;
   optional Image image = 5;
   optional string description = 6;
+  optional string lastest_episode = 7;
 }
 
 // This message is only applicable to live blogs.

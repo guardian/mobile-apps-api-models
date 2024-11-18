@@ -1006,6 +1006,12 @@
                 "name": "description",
                 "type": "string",
                 "optional": true
+              },
+              {
+                "id": 7,
+                "name": "lastest_episode",
+                "type": "string",
+                "optional": true
               }
             ]
           },
