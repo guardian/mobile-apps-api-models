@@ -149,6 +149,10 @@
               {
                 "name": "CARD_TYPE_HIGHLIGHT",
                 "integer": 10
+              },
+              {
+                "name": "CARD_TYPE_NAVIGATION",
+                "integer": 11
               }
             ]
           },
@@ -1352,6 +1356,12 @@
                 "name": "basic_tags",
                 "type": "BasicTag",
                 "is_repeated": true
+              },
+              {
+                "id": 39,
+                "name": "follow_up",
+                "type": "FollowUp",
+                "optional": true
               }
             ]
           },
