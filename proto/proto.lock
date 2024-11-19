@@ -1009,7 +1009,7 @@
               },
               {
                 "id": 7,
-                "name": "lastest_episode",
+                "name": "latest_episode",
                 "type": "string",
                 "optional": true
               }
