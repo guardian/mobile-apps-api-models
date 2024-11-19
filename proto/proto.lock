@@ -293,6 +293,22 @@
             ]
           },
           {
+            "name": "FontWeight",
+            "enum_fields": [
+              {
+                "name": "FONT_WEIGHT_UNSPECIFIED"
+              },
+              {
+                "name": "FONT_WEIGHT_STANDARD",
+                "integer": 1
+              },
+              {
+                "name": "FONT_WEIGHT_LIGHT",
+                "integer": 2
+              }
+            ]
+          },
+          {
             "name": "Row.RowType",
             "enum_fields": [
               {
@@ -1502,6 +1518,12 @@
                 "name": "top_border_style",
                 "type": "TopBorderStyle",
                 "optional": true
+              },
+              {
+                "id": 48,
+                "name": "headline_weight",
+                "type": "FontWeight",
+                "optional": true
               }
             ],
             "reserved_ids": [
@@ -1547,18 +1569,6 @@
                 "name": "columns",
                 "type": "Column",
                 "is_repeated": true
-              },
-              {
-                "id": 2,
-                "name": "palette_light",
-                "type": "Palette",
-                "optional": true
-              },
-              {
-                "id": 3,
-                "name": "palette_dark",
-                "type": "Palette",
-                "optional": true
               },
               {
                 "id": 4,
@@ -1608,9 +1618,13 @@
               }
             ],
             "reserved_ids": [
+              2,
+              3,
               10
             ],
             "reserved_names": [
+              "palette_light",
+              "palette_dark",
               "heading_style"
             ]
           },
