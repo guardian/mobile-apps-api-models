@@ -706,12 +706,12 @@ message Player {
 
 message StartingPlayer {
   Player player = 1;
-  Player substitute = 2;
+  repeated Player substitute = 2;
 }
 
 message SubstitutePlayer {
   Player player = 1;
-  int32 minute = 2;
+  optional int32 minute = 2;
 } 
 
 message PenaltyCard {

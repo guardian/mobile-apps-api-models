@@ -1774,7 +1774,8 @@
               {
                 "id": 2,
                 "name": "substitute",
-                "type": "Player"
+                "type": "Player",
+                "is_repeated": true
               }
             ]
           },
@@ -1789,7 +1790,8 @@
               {
                 "id": 2,
                 "name": "minute",
-                "type": "int32"
+                "type": "int32",
+                "optional": true
               }
             ]
           },
