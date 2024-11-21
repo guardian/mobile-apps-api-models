@@ -886,7 +886,7 @@ message TableGroups {
  * A team, their position within a league and other stats,
  * i.e Luton Town at 2nd place with n goal difference etc.
  */
-message LeaguePosition {
+message TablePosition {
 
   // A football team
   Team team = 1;

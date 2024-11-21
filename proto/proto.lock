@@ -397,7 +397,7 @@
             ]
           },
           {
-            "name": "LeaguePosition.Form",
+            "name": "TablePosition.Form",
             "enum_fields": [
               {
                 "name": "FORM_UNSPECIFIED"
@@ -1857,7 +1857,7 @@
             ]
           },
           {
-            "name": "LeaguePosition",
+            "name": "TablePosition",
             "fields": [
               {
                 "id": 1,
