@@ -395,6 +395,26 @@
                 "integer": 13
               }
             ]
+          },
+          {
+            "name": "TablePosition.Form",
+            "enum_fields": [
+              {
+                "name": "FORM_UNSPECIFIED"
+              },
+              {
+                "name": "FORM_WIN",
+                "integer": 1
+              },
+              {
+                "name": "FORM_DRAW",
+                "integer": 2
+              },
+              {
+                "name": "FORM_LOSS",
+                "integer": 3
+              }
+            ]
           }
         ],
         "messages": [
@@ -1776,6 +1796,135 @@
                 "id": 2,
                 "name": "web_title",
                 "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "Team",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "short_code",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "crest",
+                "type": "Image"
+              }
+            ]
+          },
+          {
+            "name": "Table",
+            "fields": [
+              {
+                "id": 1,
+                "name": "group_name",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "teams",
+                "type": "TablePosition",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "TableGroups",
+            "fields": [
+              {
+                "id": 1,
+                "name": "competition_name",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "tables",
+                "type": "Table",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "TablePosition",
+            "fields": [
+              {
+                "id": 1,
+                "name": "team",
+                "type": "Team"
+              },
+              {
+                "id": 2,
+                "name": "position",
+                "type": "int32"
+              },
+              {
+                "id": 3,
+                "name": "played",
+                "type": "int32"
+              },
+              {
+                "id": 4,
+                "name": "won",
+                "type": "int32"
+              },
+              {
+                "id": 5,
+                "name": "drawn",
+                "type": "int32"
+              },
+              {
+                "id": 6,
+                "name": "lost",
+                "type": "int32"
+              },
+              {
+                "id": 7,
+                "name": "goals_for",
+                "type": "int32"
+              },
+              {
+                "id": 8,
+                "name": "goals_against",
+                "type": "int32"
+              },
+              {
+                "id": 9,
+                "name": "goal_difference",
+                "type": "int32"
+              },
+              {
+                "id": 10,
+                "name": "points",
+                "type": "int32"
+              },
+              {
+                "id": 11,
+                "name": "recent_form",
+                "type": "Form",
+                "is_repeated": true
+              },
+              {
+                "id": 12,
+                "name": "show_divider",
+                "type": "bool"
+              },
+              {
+                "id": 13,
+                "name": "follow_up",
+                "type": "FollowUp",
+                "optional": true
               }
             ]
           }

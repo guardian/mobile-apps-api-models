@@ -838,3 +838,155 @@ message BasicTag {
   string id = 1;
   string web_title = 2;
 }
+
+/************************* FOOTBALL *************************/
+
+
+// The following messages are used to model the contents for our
+// blueprint football endpoints. Currently a WIP and not in prod/beta.
+
+/**
+ * A football team
+ */
+message Team {
+  /**
+   * Each team will have a unique numerical ID
+   */
+  string id = 1;
+
+  /**
+   * The name of the team, i.e "Luton Town"
+   */
+  string name = 2;
+
+  /**
+   * The short code name for the team, i.e "LUT"
+   */
+  string short_code = 3;
+
+  /**
+   * The team's crest or flag for countries
+   */
+  Image crest = 4;
+}
+
+/**
+ * Some leagues can have multiple tables, i.e group stage tables
+ */
+ message TableGroups {
+
+  /**
+   * The name of the competition, i.e "UEFA Nations League"
+   */
+  string competition_name = 1;
+
+  /**
+   * The table (or tables) for that league.
+   */
+  repeated Table tables = 2;
+}
+
+/**
+ * A football table for either a competition or league.
+ * One competition/league may be composed of many tables 
+ * in the case of those with groups. E.g., world cups 
+ * have group stages. 
+ */
+message Table {
+  /**
+   * The group name, for example "Group A". Only useful
+    * for competitions with groups.
+   */
+  optional string group_name = 1;
+
+  /**
+   * Each team and their position in the table
+   */
+  repeated TablePosition teams = 2;
+}
+
+/**
+ * A team, their position within a league and other stats,
+ * i.e Luton Town at 2nd place with n goal difference etc.
+ */
+message TablePosition {
+
+  /**
+   * A football team
+   */
+  Team team = 1;
+
+  /**
+   * The team's position in the table, i.e 2 for 2nd place
+   */
+  int32 position = 2;
+
+  /**
+   * The number of games played
+   */
+  int32 played = 3;
+
+  /**
+   * The number of games won
+   */
+  int32 won = 4;
+
+  /**
+   * The number of games drawn
+   */
+  int32 drawn = 5;
+
+  /**
+   * The number of games lost
+   */
+  int32 lost = 6;
+
+  /**
+   * The number of goals scored
+   */
+  int32 goals_for = 7;
+
+  /**
+   * The number of goals conceded
+   */
+  int32 goals_against = 8;
+
+  /**
+   * The goal difference
+   */
+  int32 goal_difference = 9;
+
+  /**
+   * The number of points
+   */
+  int32 points = 10;
+  
+  /**
+   * The recent form of the team
+   *
+   */
+   // protolint:disable:next REPEATED_FIELD_NAMES_PLURALIZED
+  repeated Form recent_form = 11;
+  
+  /**
+   * Whether to show a divider after this team in the table
+   * to illustrate the relegation/promotion line
+   */
+  bool show_divider = 12;
+
+  /**
+   * Tells you if a previous game was won, drawn or lost
+   */
+  enum Form {
+    FORM_UNSPECIFIED = 0;
+    FORM_WIN = 1;
+    FORM_DRAW = 2;
+    FORM_LOSS = 3;
+  }
+
+  /** 
+   * The in-app follow-up if the team is clicked.
+   * This will be used to navigate to the tag page for that team
+   */
+  optional FollowUp follow_up = 13;
+}
