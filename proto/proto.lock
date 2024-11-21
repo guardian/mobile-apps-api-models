@@ -1835,7 +1835,7 @@
               {
                 "id": 2,
                 "name": "teams",
-                "type": "LeaguePosition",
+                "type": "TablePosition",
                 "is_repeated": true
               }
             ]

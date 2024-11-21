@@ -868,7 +868,7 @@ message Table {
   string group_name = 1;
 
   // Each team and their position in the table
-  repeated LeaguePosition teams = 2;
+  repeated TablePosition teams = 2;
 }
 
 
