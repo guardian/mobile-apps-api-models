@@ -873,7 +873,7 @@ message Team {
 /**
  * Some leagues can have multiple tables, i.e group stage tables
  */
- message TableGroups {
+message TableGroups {
 
   /**
    * The name of the competition, i.e "UEFA Nations League"
@@ -965,7 +965,7 @@ message TablePosition {
    * The recent form of the team
    *
    */
-   // protolint:disable:next REPEATED_FIELD_NAMES_PLURALIZED
+  // protolint:disable:next REPEATED_FIELD_NAMES_PLURALIZED
   repeated Form recent_form = 11;
   
   /**
