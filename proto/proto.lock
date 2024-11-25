@@ -149,6 +149,10 @@
               {
                 "name": "CARD_TYPE_HIGHLIGHT",
                 "integer": 10
+              },
+              {
+                "name": "CARD_TYPE_NAVIGATION",
+                "integer": 11
               }
             ]
           },
@@ -289,6 +293,22 @@
               {
                 "name": "IMAGE_ASPECT_RATIO_SQUARE",
                 "integer": 4
+              }
+            ]
+          },
+          {
+            "name": "FontWeight",
+            "enum_fields": [
+              {
+                "name": "FONT_WEIGHT_UNSPECIFIED"
+              },
+              {
+                "name": "FONT_WEIGHT_STANDARD",
+                "integer": 1
+              },
+              {
+                "name": "FONT_WEIGHT_LIGHT",
+                "integer": 2
               }
             ]
           },
@@ -1342,6 +1362,12 @@
                 "name": "basic_tags",
                 "type": "BasicTag",
                 "is_repeated": true
+              },
+              {
+                "id": 39,
+                "name": "follow_up",
+                "type": "FollowUp",
+                "optional": true
               }
             ]
           },
@@ -1508,6 +1534,12 @@
                 "name": "top_border_style",
                 "type": "TopBorderStyle",
                 "optional": true
+              },
+              {
+                "id": 48,
+                "name": "headline_weight",
+                "type": "FontWeight",
+                "optional": true
               }
             ],
             "reserved_ids": [
@@ -1553,18 +1585,6 @@
                 "name": "columns",
                 "type": "Column",
                 "is_repeated": true
-              },
-              {
-                "id": 2,
-                "name": "palette_light",
-                "type": "Palette",
-                "optional": true
-              },
-              {
-                "id": 3,
-                "name": "palette_dark",
-                "type": "Palette",
-                "optional": true
               },
               {
                 "id": 4,
@@ -1614,9 +1634,13 @@
               }
             ],
             "reserved_ids": [
+              2,
+              3,
               10
             ],
             "reserved_names": [
+              "palette_light",
+              "palette_dark",
               "heading_style"
             ]
           },

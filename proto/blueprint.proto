@@ -106,7 +106,7 @@ message Collection {
    * This tells the app in which style to display, or not display,
    * the title.  It should not be used any more as a new equivalent
    * enum class named "TitleStyle" is defined on the top level.
-   */ 
+   */
   enum HeadingStyle {
     HEADING_STYLE_UNSPECIFIED = 0;
     HEADING_STYLE_HIDDEN = 1;
@@ -361,7 +361,7 @@ message Branding {
 
 /**
   * Control in what style to display a title.
-  */ 
+  */
 enum TitleStyle {
   TITLE_STYLE_UNSPECIFIED = 0;
   TITLE_STYLE_HIDDEN = 1;
@@ -458,6 +458,9 @@ message Article {
   optional int32 gallery_image_count = 37;
 
   repeated BasicTag basic_tags = 38;
+
+  // Only applicable to navigational card
+  optional FollowUp follow_up = 39;
 }
 
 message Card {
@@ -497,6 +500,8 @@ message Card {
      * to CARD_SIZE_HIGHLIGHTS instead.
      */
     CARD_TYPE_HIGHLIGHT = 10;
+
+    CARD_TYPE_NAVIGATION = 11;
   }
   CardType type = 1;
   /**
@@ -651,6 +656,11 @@ message Card {
    * Control how the top border is displayed.
    */
   optional TopBorderStyle top_border_style = 47;
+
+  /**
+   * Control what font weight to use for the headline.
+   */
+  optional FontWeight headline_weight = 48;
 }
 
 enum TopBorderStyle {
@@ -668,6 +678,15 @@ enum ImageAspectRatio {
   IMAGE_ASPECT_RATIO_LANDSCAPE_5_4 = 2;
   IMAGE_ASPECT_RATIO_PORTRAIT_4_5 = 3;
   IMAGE_ASPECT_RATIO_SQUARE = 4;
+}
+
+/**
+  * Define different levels for font weight
+  */
+enum FontWeight {
+  FONT_WEIGHT_UNSPECIFIED = 0;
+  FONT_WEIGHT_STANDARD = 1;
+  FONT_WEIGHT_LIGHT = 2;
 }
 
 message Column {
@@ -700,8 +719,21 @@ message Row {
     ROW_TYPE_PROGRAMMATIC_CAROUSEL = 4;
   }
   repeated Column columns = 1;
-  optional Palette palette_light = 2;
-  optional Palette palette_dark = 3;
+
+  /**
+   * Deprecate the palette_light property in a Row as we did
+   * not and will not use this property.
+   */
+  reserved "palette_light";
+  reserved 2;
+
+  /**
+   * Deprecate the palette_dark property in a Row as we did
+   * not and will not use this property.
+   */
+  reserved "palette_dark";
+  reserved 3;
+
   /**
    * Tablet devices support a 4 column display, whereas mobile devices
    * support a 2 column display. If a mobile device receives a row with a
