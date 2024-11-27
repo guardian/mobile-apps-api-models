@@ -1825,22 +1825,6 @@
             ]
           },
           {
-            "name": "Table",
-            "fields": [
-              {
-                "id": 1,
-                "name": "group_name",
-                "type": "string"
-              },
-              {
-                "id": 2,
-                "name": "teams",
-                "type": "TablePosition",
-                "is_repeated": true
-              }
-            ]
-          },
-          {
             "name": "TableGroups",
             "fields": [
               {
@@ -1852,6 +1836,23 @@
                 "id": 2,
                 "name": "tables",
                 "type": "Table",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "Table",
+            "fields": [
+              {
+                "id": 1,
+                "name": "group_name",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "teams",
+                "type": "TablePosition",
                 "is_repeated": true
               }
             ]
@@ -1924,6 +1925,96 @@
                 "id": 13,
                 "name": "follow_up",
                 "type": "FollowUp",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "CompetitionWithMatchDays",
+            "fields": [
+              {
+                "id": 1,
+                "name": "match_days",
+                "type": "MatchDay",
+                "is_repeated": true
+              },
+              {
+                "id": 2,
+                "name": "competition_name",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "MatchDay",
+            "fields": [
+              {
+                "id": 1,
+                "name": "date",
+                "type": "google.protobuf.Timestamp"
+              },
+              {
+                "id": 3,
+                "name": "match_day_name",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "matches",
+                "type": "Match",
+                "is_repeated": true
+              },
+              {
+                "id": 4,
+                "name": "is_live",
+                "type": "bool"
+              }
+            ]
+          },
+          {
+            "name": "Match",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "home_team",
+                "type": "Team"
+              },
+              {
+                "id": 3,
+                "name": "away_team",
+                "type": "Team"
+              },
+              {
+                "id": 4,
+                "name": "kick_off",
+                "type": "google.protobuf.Timestamp"
+              },
+              {
+                "id": 5,
+                "name": "score",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "match_detail",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "is_live",
+                "type": "bool"
+              },
+              {
+                "id": 9,
+                "name": "match_info_uri",
+                "type": "string",
                 "optional": true
               }
             ]
