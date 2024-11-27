@@ -1046,6 +1046,12 @@
                 "name": "description",
                 "type": "string",
                 "optional": true
+              },
+              {
+                "id": 7,
+                "name": "latest_episode",
+                "type": "Audio",
+                "optional": true
               }
             ]
           },
