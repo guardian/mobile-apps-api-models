@@ -962,11 +962,11 @@ message TablePosition {
    */
   int32 points = 10;
   
+  // protolint:disable:next REPEATED_FIELD_NAMES_PLURALIZED
   /**
    * The recent form of the team
    *
    */
-  // protolint:disable:next REPEATED_FIELD_NAMES_PLURALIZED
   repeated Form recent_form = 11;
   
   /**
