@@ -1054,11 +1054,6 @@ message Match {
   optional string match_detail = 6;
 
   /**
-   * Whether the match is live or not
-   */
-  bool is_live = 7;
-
-  /**
    * The URL to retrieve the match report (if it exists),
    * stats and topic for notification.
    */

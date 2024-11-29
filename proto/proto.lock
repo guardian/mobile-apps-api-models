@@ -2013,11 +2013,6 @@
                 "optional": true
               },
               {
-                "id": 7,
-                "name": "is_live",
-                "type": "bool"
-              },
-              {
                 "id": 9,
                 "name": "match_info_uri",
                 "type": "string",
