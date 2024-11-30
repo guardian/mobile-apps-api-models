@@ -137,6 +137,18 @@ message Collection {
    * The default aspect ratio for trail images in this collection.
    */
   optional ImageAspectRatio preferred_image_aspect_ratio = 23;
+  
+  /**
+   * Vertical spacing between contents of the collection. This will apply to
+   * spacing between rows, and spacing between cards in a column.
+   */
+  optional VerticalSpacing content_vertical_spacing = 24;
+}
+
+enum VerticalSpacing {
+  VERTICAL_SPACING_UNSPECIFIED = 0;
+  VERTICAL_SPACING_REGULAR = 1;
+  VERTICAL_SPACING_COMPACT = 2;
 }
 
 /**
