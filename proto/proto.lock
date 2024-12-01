@@ -1969,11 +1969,6 @@
                 "name": "matches",
                 "type": "Match",
                 "is_repeated": true
-              },
-              {
-                "id": 4,
-                "name": "is_live",
-                "type": "bool"
               }
             ]
           },
@@ -2013,7 +2008,7 @@
                 "optional": true
               },
               {
-                "id": 9,
+                "id": 7,
                 "name": "match_info_uri",
                 "type": "string",
                 "optional": true

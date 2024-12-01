@@ -1026,12 +1026,6 @@ message MatchDay {
    * The matches for the competition on the date
    */
   repeated Match matches = 2;
-
-  /**
-   * Whether or not there are live matches happening and
-   * whether to show the live dot. 
-   */
-  bool is_live = 4;
 }
 
 message Match {
@@ -1057,5 +1051,5 @@ message Match {
    * The URL to retrieve the match report (if it exists),
    * stats and topic for notification.
    */
-  optional string match_info_uri = 9;
+  optional string match_info_uri = 7;
 }
