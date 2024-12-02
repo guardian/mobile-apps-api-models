@@ -962,11 +962,11 @@ message TablePosition {
    */
   int32 points = 10;
   
+  // protolint:disable:next REPEATED_FIELD_NAMES_PLURALIZED
   /**
    * The recent form of the team
    *
    */
-  // protolint:disable:next REPEATED_FIELD_NAMES_PLURALIZED
   repeated Form recent_form = 11;
   
   /**
@@ -990,4 +990,66 @@ message TablePosition {
    * This will be used to navigate to the tag page for that team
    */
   optional FollowUp follow_up = 13;
+}
+
+/**
+ * Each results/fixtures response will contain a list of match
+ * days for the chosen league. Fixtures will be returned in 
+  * chronological order and matches in reverse chronological order.
+ */
+message CompetitionWithMatchDays {
+
+  /**
+   * The match days for the league
+   */
+  repeated MatchDay match_days = 1;
+
+  /**
+   * The name of the competition, i.e "Premier League"
+   */
+  string competition_name = 2;
+}
+
+message MatchDay {
+
+  /**
+   * The date of the match day. Will be the start of the day.
+   */
+  google.protobuf.Timestamp date = 1;
+
+  /**
+   * i.e "Premier League" or if live "Premier League live"
+   */
+  string match_day_name = 3;
+
+  /**
+   * The matches for the competition on the date
+   */
+  repeated Match matches = 2;
+}
+
+message Match {
+  
+  string id = 1;
+  Team home_team = 2;
+  Team away_team = 3;
+  google.protobuf.Timestamp kick_off = 4;
+
+  /** 
+   * The score of the match, i.e "2-1". Optional as the match may not 
+   * have started yet.
+   */
+  optional string score = 5;
+
+  /** 
+   * Could be the status of the match, i.e "FT" for full time
+   or an aggregate score, i.e "2-1" for a two legged match.
+   */
+  optional string match_detail = 6;
+
+  /**
+   * The URL to retrieve the match report (if it exists),
+   * stats and topic for notification.
+   */
+  optional string match_info_uri = 7;
 }
