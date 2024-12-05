@@ -771,6 +771,17 @@ message Row {
    * Control in what style to display the row title.
    */
   optional TitleStyle title_style = 12;
+
+  /**
+   * Decide whether to show vertical dividers in between cards on
+   * this row
+   */
+  optional bool show_vertical_dividers = 13;
+
+  /**
+   * Decide whether to show horizontal dividers at the top of this row
+   */
+  optional bool show_horizontal_dividers = 14;
 }
 
 message Topic {
