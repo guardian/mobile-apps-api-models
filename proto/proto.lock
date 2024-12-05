@@ -45,6 +45,22 @@
             ]
           },
           {
+            "name": "VerticalSpacing",
+            "enum_fields": [
+              {
+                "name": "VERTICAL_SPACING_UNSPECIFIED"
+              },
+              {
+                "name": "VERTICAL_SPACING_REGULAR",
+                "integer": 1
+              },
+              {
+                "name": "VERTICAL_SPACING_COMPACT",
+                "integer": 2
+              }
+            ]
+          },
+          {
             "name": "FollowUp.FollowUpType",
             "enum_fields": [
               {
@@ -561,6 +577,12 @@
                 "id": 23,
                 "name": "preferred_image_aspect_ratio",
                 "type": "ImageAspectRatio",
+                "optional": true
+              },
+              {
+                "id": 24,
+                "name": "content_vertical_spacing",
+                "type": "VerticalSpacing",
                 "optional": true
               }
             ]
