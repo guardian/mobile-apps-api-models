@@ -1651,6 +1651,18 @@
                 "name": "title_style",
                 "type": "TitleStyle",
                 "optional": true
+              },
+              {
+                "id": 13,
+                "name": "show_vertical_dividers",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 14,
+                "name": "show_horizontal_dividers",
+                "type": "bool",
+                "optional": true
               }
             ],
             "reserved_ids": [
