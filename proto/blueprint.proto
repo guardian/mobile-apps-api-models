@@ -699,6 +699,12 @@ message Column {
   optional Palette palette_dark = 3;
   // The card(s) in the column assume this preferred width.
   int32 preferred_width = 4;
+
+  /**
+   * Decide whether to show horizontal dividers between cards which
+   * are stacked in this column.
+   */
+  optional bool show_horizontal_dividers = 5;
 }
 
 message Row {
