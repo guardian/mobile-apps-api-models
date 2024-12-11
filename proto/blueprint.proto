@@ -214,8 +214,26 @@ message List {
   string ad_unit = 16;
 
   optional google.protobuf.Timestamp last_updated_date = 17;
+
+  optional Header header = 18;
 }
 
+
+message Header {
+  string header_text = 0;
+  optional MyGuardianFollow my_guardian_follow = 1;
+  optional string description = 2;
+  AlignmentType alignment = 3;
+  optional Branding branding = 4;
+  optional Palette palette_light = 5;
+  optional Palette palette_dark = 6;
+  optional Image image = 7;
+}
+
+enum HeaderType {
+  HEADER_TYPE_CENTRE = 0;
+  HEADER_TYPE_LEFT = 1;
+}
 /************************* MY GUARDIAN *************************/
 
 // The following messages are used only to model the contents of our
