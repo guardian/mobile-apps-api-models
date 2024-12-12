@@ -71,7 +71,7 @@
                 "name": "HEADER_TYPE_CENTRE"
               },
               {
-                "name": "HEADER_TYPE_LEFT",
+                "name": "HEADER_TYPE_DEFAULT",
                 "integer": 1
               }
             ]
@@ -726,46 +726,47 @@
             "name": "Header",
             "fields": [
               {
+                "id": 1,
                 "name": "header_text",
                 "type": "string"
               },
               {
-                "id": 1,
+                "id": 2,
                 "name": "my_guardian_follow",
                 "type": "MyGuardianFollow",
                 "optional": true
               },
               {
-                "id": 2,
+                "id": 3,
                 "name": "description",
                 "type": "string",
                 "optional": true
               },
               {
-                "id": 3,
+                "id": 4,
                 "name": "alignment",
-                "type": "AlignmentType"
+                "type": "HeaderType"
               },
               {
-                "id": 4,
+                "id": 5,
                 "name": "branding",
                 "type": "Branding",
                 "optional": true
               },
               {
-                "id": 5,
+                "id": 6,
                 "name": "palette_light",
                 "type": "Palette",
                 "optional": true
               },
               {
-                "id": 6,
+                "id": 7,
                 "name": "palette_dark",
                 "type": "Palette",
                 "optional": true
               },
               {
-                "id": 7,
+                "id": 8,
                 "name": "image",
                 "type": "Image",
                 "optional": true

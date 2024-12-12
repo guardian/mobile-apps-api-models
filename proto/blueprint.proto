@@ -220,19 +220,19 @@ message List {
 
 
 message Header {
-  string header_text = 0;
-  optional MyGuardianFollow my_guardian_follow = 1;
-  optional string description = 2;
-  AlignmentType alignment = 3;
-  optional Branding branding = 4;
-  optional Palette palette_light = 5;
-  optional Palette palette_dark = 6;
-  optional Image image = 7;
+  string header_text = 1;
+  optional MyGuardianFollow my_guardian_follow = 2;
+  optional string description = 3;
+  HeaderType alignment = 4;
+  optional Branding branding = 5;
+  optional Palette palette_light = 6;
+  optional Palette palette_dark = 7;
+  optional Image image = 8;
 }
 
 enum HeaderType {
   HEADER_TYPE_CENTRE = 0;
-  HEADER_TYPE_LEFT = 1;
+  HEADER_TYPE_DEFAULT = 1;
 }
 /************************* MY GUARDIAN *************************/
 
@@ -924,9 +924,9 @@ message TableGroups {
 
 /**
  * A football table for either a competition or league.
- * One competition/league may be composed of many tables 
- * in the case of those with groups. E.g., world cups 
- * have group stages. 
+ * One competition/league may be composed of many tables
+ * in the case of those with groups. E.g., world cups
+ * have group stages.
  */
 message Table {
   /**
@@ -996,14 +996,14 @@ message TablePosition {
    * The number of points
    */
   int32 points = 10;
-  
+
   // protolint:disable:next REPEATED_FIELD_NAMES_PLURALIZED
   /**
    * The recent form of the team
    *
    */
   repeated Form recent_form = 11;
-  
+
   /**
    * Whether to show a divider after this team in the table
    * to illustrate the relegation/promotion line
@@ -1020,7 +1020,7 @@ message TablePosition {
     FORM_LOSS = 3;
   }
 
-  /** 
+  /**
    * The in-app follow-up if the team is clicked.
    * This will be used to navigate to the tag page for that team
    */
@@ -1029,7 +1029,7 @@ message TablePosition {
 
 /**
  * Each results/fixtures response will contain a list of match
- * days for the chosen league. Fixtures will be returned in 
+ * days for the chosen league. Fixtures will be returned in
   * chronological order and matches in reverse chronological order.
  */
 message CompetitionWithMatchDays {
@@ -1064,19 +1064,19 @@ message MatchDay {
 }
 
 message Match {
-  
+
   string id = 1;
   Team home_team = 2;
   Team away_team = 3;
   google.protobuf.Timestamp kick_off = 4;
 
-  /** 
-   * The score of the match, i.e "2-1". Optional as the match may not 
+  /**
+   * The score of the match, i.e "2-1". Optional as the match may not
    * have started yet.
    */
   optional string score = 5;
 
-  /** 
+  /**
    * Could be the status of the match, i.e "FT" for full time
    or an aggregate score, i.e "2-1" for a two legged match.
    */
