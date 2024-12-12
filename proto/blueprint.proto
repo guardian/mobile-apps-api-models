@@ -283,6 +283,16 @@ message Palette {
    * colour.
    */
   string kicker_text = 16;
+
+  /*
+  * The background colour of the pill on media cards.
+  */
+  string media_pill_background = 17;
+
+  /*
+  * The foreground colour of the pill on media cards.
+  */
+  string media_pill_foreground = 18;
 }
 
 message Links {
