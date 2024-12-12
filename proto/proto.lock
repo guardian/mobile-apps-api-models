@@ -68,11 +68,12 @@
             "name": "HeaderType",
             "enum_fields": [
               {
-                "name": "HEADER_TYPE_CENTRE"
+                "name": "HEADER_TYPE_CENTRE",
+                "integer": 1
               },
               {
                 "name": "HEADER_TYPE_DEFAULT",
-                "integer": 1
+                "integer": 2
               }
             ]
           },

@@ -231,8 +231,8 @@ message Header {
 }
 
 enum HeaderType {
-  HEADER_TYPE_CENTRE = 0;
-  HEADER_TYPE_DEFAULT = 1;
+  HEADER_TYPE_CENTRE = 1;
+  HEADER_TYPE_DEFAULT = 2;
 }
 /************************* MY GUARDIAN *************************/
 
