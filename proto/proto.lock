@@ -65,6 +65,18 @@
             ]
           },
           {
+            "name": "HeaderType",
+            "enum_fields": [
+              {
+                "name": "HEADER_TYPE_CENTRE"
+              },
+              {
+                "name": "HEADER_TYPE_LEFT",
+                "integer": 1
+              }
+            ]
+          },
+          {
             "name": "MediaType",
             "enum_fields": [
               {
@@ -700,6 +712,62 @@
                 "id": 17,
                 "name": "last_updated_date",
                 "type": "google.protobuf.Timestamp",
+                "optional": true
+              },
+              {
+                "id": 18,
+                "name": "header",
+                "type": "Header",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Header",
+            "fields": [
+              {
+                "name": "header_text",
+                "type": "string"
+              },
+              {
+                "id": 1,
+                "name": "my_guardian_follow",
+                "type": "MyGuardianFollow",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "description",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "alignment",
+                "type": "AlignmentType"
+              },
+              {
+                "id": 4,
+                "name": "branding",
+                "type": "Branding",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "image",
+                "type": "Image",
                 "optional": true
               }
             ]
