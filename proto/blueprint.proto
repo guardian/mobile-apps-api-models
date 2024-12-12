@@ -231,6 +231,7 @@ message Header {
 }
 
 enum HeaderType {
+  HEADER_TYPE_UNSPECIFIED = 0;
   HEADER_TYPE_CENTRE = 1;
   HEADER_TYPE_DEFAULT = 2;
 }
