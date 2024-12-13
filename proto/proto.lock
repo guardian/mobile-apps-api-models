@@ -838,6 +838,16 @@
                 "id": 16,
                 "name": "kicker_text",
                 "type": "string"
+              },
+              {
+                "id": 17,
+                "name": "media_pill_background",
+                "type": "string"
+              },
+              {
+                "id": 18,
+                "name": "media_pill_foreground",
+                "type": "string"
               }
             ]
           },
