@@ -221,13 +221,11 @@ message List {
 
 message Header {
   string header_text = 1;
-  optional MyGuardianFollow my_guardian_follow = 2;
-  optional string description = 3;
-  HeaderType alignment = 4;
-  optional Branding branding = 5;
-  optional Palette palette_light = 6;
-  optional Palette palette_dark = 7;
-  optional Image image = 8;
+  optional string description = 2;
+  HeaderType alignment = 3;
+  optional Palette palette_light = 4;
+  optional Palette palette_dark = 5;
+  optional Image image = 6;
 }
 
 enum HeaderType {

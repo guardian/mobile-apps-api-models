@@ -736,41 +736,29 @@
               },
               {
                 "id": 2,
-                "name": "my_guardian_follow",
-                "type": "MyGuardianFollow",
-                "optional": true
-              },
-              {
-                "id": 3,
                 "name": "description",
                 "type": "string",
                 "optional": true
               },
               {
-                "id": 4,
+                "id": 3,
                 "name": "alignment",
                 "type": "HeaderType"
               },
               {
-                "id": 5,
-                "name": "branding",
-                "type": "Branding",
-                "optional": true
-              },
-              {
-                "id": 6,
+                "id": 4,
                 "name": "palette_light",
                 "type": "Palette",
                 "optional": true
               },
               {
-                "id": 7,
+                "id": 5,
                 "name": "palette_dark",
                 "type": "Palette",
                 "optional": true
               },
               {
-                "id": 8,
+                "id": 6,
                 "name": "image",
                 "type": "Image",
                 "optional": true
