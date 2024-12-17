@@ -65,6 +65,22 @@
             ]
           },
           {
+            "name": "HeaderType",
+            "enum_fields": [
+              {
+                "name": "HEADER_TYPE_UNSPECIFIED"
+              },
+              {
+                "name": "HEADER_TYPE_CENTRE",
+                "integer": 1
+              },
+              {
+                "name": "HEADER_TYPE_DEFAULT",
+                "integer": 2
+              }
+            ]
+          },
+          {
             "name": "MediaType",
             "enum_fields": [
               {
@@ -700,6 +716,51 @@
                 "id": 17,
                 "name": "last_updated_date",
                 "type": "google.protobuf.Timestamp",
+                "optional": true
+              },
+              {
+                "id": 18,
+                "name": "header",
+                "type": "Header",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Header",
+            "fields": [
+              {
+                "id": 1,
+                "name": "header_text",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "description",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "alignment",
+                "type": "HeaderType"
+              },
+              {
+                "id": 4,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "image",
+                "type": "Image",
                 "optional": true
               }
             ]
