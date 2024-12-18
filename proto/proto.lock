@@ -73,10 +73,6 @@
               {
                 "name": "HEADER_TYPE_CENTRE",
                 "integer": 1
-              },
-              {
-                "name": "HEADER_TYPE_DEFAULT",
-                "integer": 2
               }
             ]
           },
