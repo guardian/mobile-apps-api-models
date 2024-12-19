@@ -165,6 +165,10 @@
               {
                 "name": "CARD_TYPE_NAVIGATION",
                 "integer": 11
+              },
+              {
+                "name": "CARD_TYPE_GALLERY",
+                "integer": 12
               }
             ]
           },
