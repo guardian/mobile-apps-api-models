@@ -528,6 +528,10 @@ message Card {
     CARD_TYPE_HIGHLIGHT = 10;
 
     CARD_TYPE_NAVIGATION = 11;
+    /**
+     * A card for a gallery item.
+     */
+    CARD_TYPE_GALLERY = 12;
   }
   CardType type = 1;
   /**
