@@ -354,7 +354,7 @@ message Audio {
   string uri = 4;
   string ad_free_uri = 5;
   optional string mime_type = 6;
-  optional string articleId = 7;
+  optional string article_id = 7;
   optional Links links = 8;
   optional string title = 9;
   optional string byline = 10;

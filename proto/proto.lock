@@ -1082,7 +1082,7 @@
               },
               {
                 "id": 7,
-                "name": "articleId",
+                "name": "article_id",
                 "type": "string",
                 "optional": true
               },
