@@ -1079,6 +1079,30 @@
                 "name": "mime_type",
                 "type": "string",
                 "optional": true
+              },
+              {
+                "id": 7,
+                "name": "articleId",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "links",
+                "type": "Links",
+                "optional": true
+              },
+              {
+                "id": 9,
+                "name": "title",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 10,
+                "name": "byline",
+                "type": "string",
+                "optional": true
               }
             ]
           },
