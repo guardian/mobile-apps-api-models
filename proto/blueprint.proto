@@ -354,6 +354,16 @@ message Audio {
   string uri = 4;
   string ad_free_uri = 5;
   optional string mime_type = 6;
+  /*
+    The following fields are used to give article
+    information about the audio file that is being played
+    This is used for the `latestEpisode` feature on
+    the podcast series cards
+   */
+  optional string article_id = 7;
+  optional Links links = 8;
+  optional string title = 9;
+  optional string byline = 10;
 }
 
 message PodcastSeries {
