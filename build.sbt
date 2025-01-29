@@ -13,7 +13,7 @@ lazy val scalaModels = project.in(file("."))
 
     libraryDependencies ++= Seq(
       "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf",
-      "com.google.protobuf" % "protobuf-java" % "4.29.2"
+      "com.google.protobuf" % "protobuf-java" % "4.29.3"
     ),
 
     Compile / scalacOptions ++= Seq("-release:11"),
