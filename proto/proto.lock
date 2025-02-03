@@ -578,6 +578,12 @@
                 "name": "preferred_image_aspect_ratio",
                 "type": "ImageAspectRatio",
                 "optional": true
+              },
+              {
+                "id": 24,
+                "name": "tighten_vertical_spacing",
+                "type": "bool",
+                "optional": true
               }
             ]
           },
@@ -722,6 +728,12 @@
                 "id": 18,
                 "name": "header",
                 "type": "Header",
+                "optional": true
+              },
+              {
+                "id": 19,
+                "name": "tighten_vertical_spacing",
+                "type": "bool",
                 "optional": true
               }
             ]

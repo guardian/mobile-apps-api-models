@@ -137,6 +137,8 @@ message Collection {
    * The default aspect ratio for trail images in this collection.
    */
   optional ImageAspectRatio preferred_image_aspect_ratio = 23;
+
+  optional bool tighten_vertical_spacing = 24;
 }
 
 /**
@@ -216,6 +218,8 @@ message List {
   optional google.protobuf.Timestamp last_updated_date = 17;
 
   optional Header header = 18;
+
+  optional bool tighten_vertical_spacing = 19;
 }
 
 
