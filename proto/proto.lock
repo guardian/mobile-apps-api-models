@@ -1053,6 +1053,11 @@
                 "name": "poster_image",
                 "type": "Image",
                 "optional": true
+              },
+              {
+                "id": 11,
+                "name": "is_live_video",
+                "type": "bool"
               }
             ]
           },

@@ -349,6 +349,7 @@ message Video {
   optional string youtube_id = 8;
   optional int32 duration_in_seconds = 9;
   optional Image poster_image = 10;
+  bool is_live_video = 11;
 }
 
 message Audio {
