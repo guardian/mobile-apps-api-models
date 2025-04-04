@@ -329,11 +329,10 @@ enum MediaType {
   MEDIA_TYPE_IMAGE = 3;
 }
 
-enum MediaPillType {
-  MEDIA_PILL_TYPE_UNSPECIFIED = 0;
-  MEDIA_PILL_TYPE_PODCAST = 1;
-  MEDIA_PILL_TYPE_VIDEO = 2;
-  MEDIA_PILL_TYPE_GALLERY = 3;
+message MediaPill {
+  string name = 1;
+  string icon = 2;
+  string detail = 3;
 }
 
 message Image {
@@ -511,7 +510,7 @@ message Article {
   optional FollowUp follow_up = 39;
 
   // The type of pill that apps should use on media cards.
-  optional MediaPillType media_pill_type = 40;
+  optional MediaPill media_pill = 40;
 }
 
 message Card {
