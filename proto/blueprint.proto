@@ -329,6 +329,13 @@ enum MediaType {
   MEDIA_TYPE_IMAGE = 3;
 }
 
+enum MediaPillType {
+  MEDIA_PILL_TYPE_UNSPECIFIED = 0;
+  MEDIA_PILL_TYPE_PODCAST = 1;
+  MEDIA_PILL_TYPE_VIDEO = 2;
+  MEDIA_PILL_TYPE_GALLERY = 3;
+}
+
 message Image {
   optional string alt_text = 1;
   optional string caption = 2;
@@ -502,6 +509,8 @@ message Article {
 
   // Only applicable to navigational card
   optional FollowUp follow_up = 39;
+
+  optional MediaPillType media_pill_type = 40;
 }
 
 message Card {

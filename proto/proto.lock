@@ -97,6 +97,26 @@
             ]
           },
           {
+            "name": "MediaPillType",
+            "enum_fields": [
+              {
+                "name": "MEDIA_PILL_TYPE_UNSPECIFIED"
+              },
+              {
+                "name": "MEDIA_PILL_TYPE_PODCAST",
+                "integer": 1
+              },
+              {
+                "name": "MEDIA_PILL_TYPE_VIDEO",
+                "integer": 2
+              },
+              {
+                "name": "MEDIA_PILL_TYPE_GALLERY",
+                "integer": 3
+              }
+            ]
+          },
+          {
             "name": "TitleStyle",
             "enum_fields": [
               {
@@ -1499,6 +1519,12 @@
                 "id": 39,
                 "name": "follow_up",
                 "type": "FollowUp",
+                "optional": true
+              },
+              {
+                "id": 40,
+                "name": "media_pill_type",
+                "type": "MediaPillType",
                 "optional": true
               }
             ]
