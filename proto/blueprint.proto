@@ -329,6 +329,12 @@ enum MediaType {
   MEDIA_TYPE_IMAGE = 3;
 }
 
+message MediaPill {
+  string name = 1;
+  string icon = 2;
+  string detail = 3;
+}
+
 message Image {
   optional string alt_text = 1;
   optional string caption = 2;
@@ -502,6 +508,9 @@ message Article {
 
   // Only applicable to navigational card
   optional FollowUp follow_up = 39;
+
+  // The pill details that media cards should display.
+  optional MediaPill media_pill = 40;
 }
 
 message Card {
