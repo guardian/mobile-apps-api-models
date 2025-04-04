@@ -510,6 +510,7 @@ message Article {
   // Only applicable to navigational card
   optional FollowUp follow_up = 39;
 
+  // The type of pill that apps should use on media cards.
   optional MediaPillType media_pill_type = 40;
 }
 
