@@ -381,6 +381,12 @@ message PodcastSeries {
   optional Audio latest_episode = 7;
 }
 
+message MediaPill {
+  string name = 1;
+  string icon = 2;
+  int32 detail = 3;
+}
+
 // This message is only applicable to live blogs.
 message LiveEvent {
   string id = 1;
@@ -502,6 +508,9 @@ message Article {
 
   // Only applicable to navigational card
   optional FollowUp follow_up = 39;
+
+  // The pill details that media cards should display.
+  optional MediaPill media_pill = 40;
 }
 
 message Card {
