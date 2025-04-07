@@ -384,6 +384,12 @@ message PodcastSeries {
 message MediaPill {
   string name = 1;
   string icon = 2;
+  /*
+    The detail varies depending on the type of pill:
+    for a video or podcast, it's the duration,
+    for a gallery it's the number of images,
+    for a newsletter it's the frequency
+   */
   int32 detail = 3;
 }
 
