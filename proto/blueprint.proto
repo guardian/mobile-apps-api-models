@@ -701,7 +701,9 @@ message Card {
     CARD_SIZE_LARGE_HORIZONTAL = 6;
     CARD_SIZE_X_LARGE = 7;
     CARD_SIZE_HIGHLIGHTS = 8;
+    CARD_SIZE_X_LARGE_HORIZONTAL = 9;
   }
+
 
   optional CardSize card_size = 44;
 
