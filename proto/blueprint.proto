@@ -704,7 +704,6 @@ message Card {
     CARD_SIZE_X_LARGE_HORIZONTAL = 9;
   }
 
-
   optional CardSize card_size = 44;
 
   optional int32 boost_level = 45;
