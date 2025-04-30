@@ -280,22 +280,22 @@
             "name": "NavCardType",
             "enum_fields": [
               {
-                "name": "Unspecified"
+                "name": "NAV_CARD_TYPE_UNSPECIFIED"
               },
               {
-                "name": "News",
+                "name": "NAV_CARD_TYPE_NEWS",
                 "integer": 1
               },
               {
-                "name": "Sport",
+                "name": "NAV_CARD_TYPE_SPORT",
                 "integer": 2
               },
               {
-                "name": "Lifestyle",
+                "name": "NAV_CARD_TYPE_LIFESTYLE",
                 "integer": 3
               },
               {
-                "name": "Narrative",
+                "name": "NAV_CARD_TYPE_NARRATIVE",
                 "integer": 4
               }
             ]
