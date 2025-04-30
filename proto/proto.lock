@@ -277,6 +277,30 @@
             ]
           },
           {
+            "name": "NavCardType",
+            "enum_fields": [
+              {
+                "name": "Unspecified"
+              },
+              {
+                "name": "News",
+                "integer": 1
+              },
+              {
+                "name": "Sport",
+                "integer": 2
+              },
+              {
+                "name": "Lifestyle",
+                "integer": 3
+              },
+              {
+                "name": "Narrative",
+                "integer": 4
+              }
+            ]
+          },
+          {
             "name": "TopBorderStyle",
             "enum_fields": [
               {
@@ -1701,6 +1725,12 @@
                 "id": 48,
                 "name": "headline_weight",
                 "type": "FontWeight",
+                "optional": true
+              },
+              {
+                "id": 49,
+                "name": "nav_card_type",
+                "type": "NavCardType",
                 "optional": true
               }
             ],
