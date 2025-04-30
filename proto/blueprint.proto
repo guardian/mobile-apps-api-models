@@ -722,8 +722,17 @@ message Card {
    * Control what font weight to use for the headline.
    */
   optional FontWeight headline_weight = 48;
+
+  optional NavCardType nav_card_type = 49;
 }
 
+enum NavCardType {
+    Unspecified = 0;
+    News = 1;
+    Sport = 2;
+    Lifestyle = 3;
+    Narrative = 4;
+}
 enum TopBorderStyle {
   TOP_BORDER_STYLE_UNSPECIFIED = 0;
   TOP_BORDER_STYLE_HIDDEN = 1;
