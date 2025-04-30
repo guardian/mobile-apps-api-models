@@ -727,12 +727,13 @@ message Card {
 }
 
 enum NavCardType {
-    Unspecified = 0;
-    News = 1;
-    Sport = 2;
-    Lifestyle = 3;
-    Narrative = 4;
+  NAV_CARD_TYPE_UNSPECIFIED = 0;
+  NAV_CARD_TYPE_NEWS = 1;
+  NAV_CARD_TYPE_SPORT = 2;
+  NAV_CARD_TYPE_LIFESTYLE = 3;
+  NAV_CARD_TYPE_NARRATIVE = 4;
 }
+
 enum TopBorderStyle {
   TOP_BORDER_STYLE_UNSPECIFIED = 0;
   TOP_BORDER_STYLE_HIDDEN = 1;
