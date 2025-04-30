@@ -277,6 +277,30 @@
             ]
           },
           {
+            "name": "NavCardType",
+            "enum_fields": [
+              {
+                "name": "NAV_CARD_TYPE_UNSPECIFIED"
+              },
+              {
+                "name": "NAV_CARD_TYPE_NEWS",
+                "integer": 1
+              },
+              {
+                "name": "NAV_CARD_TYPE_SPORT",
+                "integer": 2
+              },
+              {
+                "name": "NAV_CARD_TYPE_LIFESTYLE",
+                "integer": 3
+              },
+              {
+                "name": "NAV_CARD_TYPE_NARRATIVE",
+                "integer": 4
+              }
+            ]
+          },
+          {
             "name": "TopBorderStyle",
             "enum_fields": [
               {
@@ -1701,6 +1725,12 @@
                 "id": 48,
                 "name": "headline_weight",
                 "type": "FontWeight",
+                "optional": true
+              },
+              {
+                "id": 49,
+                "name": "nav_card_type",
+                "type": "NavCardType",
                 "optional": true
               }
             ],
