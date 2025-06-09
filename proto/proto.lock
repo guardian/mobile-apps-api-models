@@ -97,6 +97,22 @@
             ]
           },
           {
+            "name": "Platform",
+            "enum_fields": [
+              {
+                "name": "PLATFORM_UNSPECIFIED"
+              },
+              {
+                "name": "PLATFORM_YOUTUBE",
+                "integer": 1
+              },
+              {
+                "name": "PLATFORM_URL",
+                "integer": 2
+              }
+            ]
+          },
+          {
             "name": "TitleStyle",
             "enum_fields": [
               {
@@ -1088,7 +1104,13 @@
                 "id": 8,
                 "name": "youtube_id",
                 "type": "string",
-                "optional": true
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 9,
@@ -1105,6 +1127,23 @@
               {
                 "id": 11,
                 "name": "is_live_video",
+                "type": "bool"
+              },
+              {
+                "id": 12,
+                "name": "video_id",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 13,
+                "name": "platform",
+                "type": "Platform",
+                "optional": true
+              },
+              {
+                "id": 14,
+                "name": "is_looping",
                 "type": "bool"
               }
             ]
