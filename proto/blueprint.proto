@@ -139,6 +139,8 @@ message Collection {
   optional ImageAspectRatio preferred_image_aspect_ratio = 23;
 
   optional bool tighten_vertical_spacing = 24;
+
+  optional bool podcastTabCollection = 25;
 }
 
 /**

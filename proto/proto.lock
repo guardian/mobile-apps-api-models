@@ -612,6 +612,12 @@
                 "name": "tighten_vertical_spacing",
                 "type": "bool",
                 "optional": true
+              },
+              {
+                "id": 25,
+                "name": "podcastTabCollection",
+                "type": "bool",
+                "optional": true
               }
             ]
           },
