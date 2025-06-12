@@ -350,6 +350,12 @@ message Image {
   optional int32 width = 7;
 }
 
+enum Platform {
+  PLATFORM_UNSPECIFIED = 0;
+  PLATFORM_YOUTUBE = 1;
+  PLATFORM_URL = 2;
+}
+
 message Video {
   optional string alt_text = 1;
   optional string caption = 2;
@@ -358,10 +364,13 @@ message Video {
   optional string orientation = 5;
   string url = 6;
   optional int32 width = 7;
-  optional string youtube_id = 8;
+  optional string youtube_id = 8 [deprecated = true];
   optional int32 duration_in_seconds = 9;
   optional Image poster_image = 10;
   bool is_live_video = 11;
+  optional string video_id = 12;
+  optional Platform platform = 13;
+  bool is_looping = 14;
 }
 
 message Audio {
