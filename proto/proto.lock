@@ -1771,6 +1771,12 @@
                 "name": "nav_card_type",
                 "type": "NavCardType",
                 "optional": true
+              },
+              {
+                "id": 50,
+                "name": "should_hide_image",
+                "type": "bool",
+                "optional": true
               }
             ],
             "reserved_ids": [

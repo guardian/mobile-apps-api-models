@@ -733,6 +733,8 @@ message Card {
   optional FontWeight headline_weight = 48;
 
   optional NavCardType nav_card_type = 49;
+
+  optional bool should_hide_image = 50;
 }
 
 enum NavCardType {
