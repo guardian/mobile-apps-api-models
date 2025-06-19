@@ -1777,6 +1777,18 @@
                 "name": "should_hide_image",
                 "type": "bool",
                 "optional": true
+              },
+              {
+                "id": 51,
+                "name": "condensed_palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 52,
+                "name": "condensed_palette_dark",
+                "type": "Palette",
+                "optional": true
               }
             ],
             "reserved_ids": [

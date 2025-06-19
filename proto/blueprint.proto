@@ -735,6 +735,13 @@ message Card {
   optional NavCardType nav_card_type = 49;
 
   optional bool should_hide_image = 50;
+
+  /**
+   * Provide a separate palette for Android's condensed view.
+   */
+  optional Palette condensed_palette_light = 51;
+  optional Palette condensed_palette_dark = 52;
+
 }
 
 enum NavCardType {
