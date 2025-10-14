@@ -822,6 +822,12 @@
                 "name": "image",
                 "type": "Image",
                 "optional": true
+              },
+              {
+                "id": 7,
+                "name": "profile_image",
+                "type": "Image",
+                "optional": true
               }
             ]
           },
