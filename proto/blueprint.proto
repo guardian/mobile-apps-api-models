@@ -231,6 +231,7 @@ message Header {
   optional Palette palette_dark = 5;
   optional Image image = 6;
   optional Image profile_image = 7;
+  optional string descriptionHtml = 8;
 }
 
 enum HeaderType {
