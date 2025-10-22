@@ -831,7 +831,7 @@
               },
               {
                 "id": 8,
-                "name": "descriptionHtml",
+                "name": "description_html",
                 "type": "string",
                 "optional": true
               }
