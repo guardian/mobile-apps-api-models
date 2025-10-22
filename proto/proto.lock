@@ -828,6 +828,12 @@
                 "name": "profile_image",
                 "type": "Image",
                 "optional": true
+              },
+              {
+                "id": 8,
+                "name": "description_html",
+                "type": "string",
+                "optional": true
               }
             ]
           },
