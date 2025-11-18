@@ -1313,27 +1313,32 @@
               {
                 "id": 2,
                 "name": "sponsor_name",
-                "type": "string"
+                "type": "string",
+                "optional": true
               },
               {
                 "id": 3,
                 "name": "logo",
-                "type": "string"
+                "type": "string",
+                "optional": true
               },
               {
                 "id": 4,
                 "name": "sponsor_uri",
-                "type": "string"
+                "type": "string",
+                "optional": true
               },
               {
                 "id": 5,
                 "name": "label",
-                "type": "string"
+                "type": "string",
+                "optional": true
               },
               {
                 "id": 6,
                 "name": "about_uri",
-                "type": "string"
+                "type": "string",
+                "optional": true
               },
               {
                 "id": 7,

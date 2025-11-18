@@ -416,11 +416,11 @@ message LiveEvent {
 
 message Branding {
   string branding_type = 1;
-  string sponsor_name = 2;
-  string logo = 3;
-  string sponsor_uri = 4;
-  string label = 5;
-  string about_uri = 6;
+  optional string sponsor_name = 2;
+  optional string logo = 3;
+  optional string sponsor_uri = 4;
+  optional string label = 5;
+  optional string about_uri = 6;
   optional string alt_logo = 7;
 }
 
