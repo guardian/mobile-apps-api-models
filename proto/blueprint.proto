@@ -374,6 +374,10 @@ message Video {
   optional string video_id = 12;
   optional Platform platform = 13;
   bool is_looping = 14;
+  bool is_autoplay = 15;
+  bool is_interactive = 16;
+  bool show_progress_bar = 17;
+  bool show_subtitles = 18;
 }
 
 message Audio {

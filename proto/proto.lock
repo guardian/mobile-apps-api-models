@@ -1161,6 +1161,26 @@
                 "id": 14,
                 "name": "is_looping",
                 "type": "bool"
+              },
+              {
+                "id": 15,
+                "name": "is_autoplay",
+                "type": "bool"
+              },
+              {
+                "id": 16,
+                "name": "is_interactive",
+                "type": "bool"
+              },
+              {
+                "id": 17,
+                "name": "show_progress_bar",
+                "type": "bool"
+              },
+              {
+                "id": 18,
+                "name": "show_subtitles",
+                "type": "bool"
               }
             ]
           },
