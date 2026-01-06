@@ -117,17 +117,17 @@
             ]
           },
           {
-            "name": "VideoControlsAlignment",
+            "name": "VideoOverlayPosition",
             "enum_fields": [
               {
-                "name": "ALIGNMENT_UNSPECIFIED"
+                "name": "POSITION_UNSPECIFIED"
               },
               {
-                "name": "ALIGNMENT_BOTTOM",
+                "name": "POSITION_BOTTOM",
                 "integer": 1
               },
               {
-                "name": "ALIGNMENT_TOP",
+                "name": "POSITION_TOP",
                 "integer": 2
               }
             ]
@@ -1200,8 +1200,8 @@
               },
               {
                 "id": 19,
-                "name": "controls_alignment",
-                "type": "VideoControlsAlignment",
+                "name": "overlay_position",
+                "type": "VideoOverlayPosition",
                 "optional": true
               }
             ]
