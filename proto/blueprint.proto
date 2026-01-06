@@ -359,6 +359,12 @@ enum Platform {
   PLATFORM_URL = 2;
 }
 
+enum VideoControlsAlignment {
+  ALIGNMENT_UNSPECIFIED = 0;
+  ALIGNMENT_BOTTOM = 1;
+  ALIGNMENT_TOP = 2;
+}
+
 message Video {
   optional string alt_text = 1;
   optional string caption = 2;
@@ -378,6 +384,7 @@ message Video {
   bool is_interactive = 16;
   bool show_progress_bar = 17;
   bool show_subtitles = 18;
+  optional VideoControlsAlignment controls_alignment = 19;
 }
 
 message Audio {
