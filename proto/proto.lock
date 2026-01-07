@@ -120,15 +120,11 @@
             "name": "VideoOverlayPosition",
             "enum_fields": [
               {
-                "name": "VIDEO_OVERLAY_POSITION_UNSPECIFIED"
-              },
-              {
-                "name": "VIDEO_OVERLAY_POSITION_BOTTOM",
-                "integer": 1
+                "name": "VIDEO_OVERLAY_POSITION_BOTTOM"
               },
               {
                 "name": "VIDEO_OVERLAY_POSITION_TOP",
-                "integer": 2
+                "integer": 1
               }
             ]
           },
