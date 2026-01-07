@@ -1201,8 +1201,7 @@
               {
                 "id": 19,
                 "name": "overlay_position",
-                "type": "VideoOverlayPosition",
-                "optional": true
+                "type": "VideoOverlayPosition"
               }
             ]
           },

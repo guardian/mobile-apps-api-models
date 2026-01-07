@@ -384,7 +384,7 @@ message Video {
   bool is_interactive = 16;
   bool show_progress_bar = 17;
   bool show_subtitles = 18;
-  optional VideoOverlayPosition overlay_position = 19;
+  VideoOverlayPosition overlay_position = 19;
 }
 
 message Audio {
