@@ -359,6 +359,12 @@ enum Platform {
   PLATFORM_URL = 2;
 }
 
+enum VideoOverlayPosition {
+  VIDEO_OVERLAY_POSITION_UNSPECIFIED = 0;
+  VIDEO_OVERLAY_POSITION_BOTTOM = 1;
+  VIDEO_OVERLAY_POSITION_TOP = 2;
+}
+
 message Video {
   optional string alt_text = 1;
   optional string caption = 2;
@@ -378,6 +384,7 @@ message Video {
   bool is_interactive = 16;
   bool show_progress_bar = 17;
   bool show_subtitles = 18;
+  VideoOverlayPosition overlay_position = 19;
 }
 
 message Audio {

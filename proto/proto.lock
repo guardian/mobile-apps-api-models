@@ -117,6 +117,22 @@
             ]
           },
           {
+            "name": "VideoOverlayPosition",
+            "enum_fields": [
+              {
+                "name": "VIDEO_OVERLAY_POSITION_UNSPECIFIED"
+              },
+              {
+                "name": "VIDEO_OVERLAY_POSITION_BOTTOM",
+                "integer": 1
+              },
+              {
+                "name": "VIDEO_OVERLAY_POSITION_TOP",
+                "integer": 2
+              }
+            ]
+          },
+          {
             "name": "TitleStyle",
             "enum_fields": [
               {
@@ -1181,6 +1197,11 @@
                 "id": 18,
                 "name": "show_subtitles",
                 "type": "bool"
+              },
+              {
+                "id": 19,
+                "name": "overlay_position",
+                "type": "VideoOverlayPosition"
               }
             ]
           },
