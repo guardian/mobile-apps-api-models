@@ -2,7 +2,7 @@ import ReleaseTransformations.*
 import sbtversionpolicy.withsbtrelease.ReleaseVersion.fromAggregatedAssessedCompatibilityWithLatestRelease
 
 ThisBuild / organization := "com.gu"
-ThisBuild / scalaVersion := "2.13.16"
+ThisBuild / scalaVersion := "2.13.17"
 ThisBuild / licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.html"))
 
 crossScalaVersions := Seq(scalaVersion.value, "2.12.20", "3.3.6")
@@ -13,7 +13,7 @@ lazy val scalaModels = project.in(file("."))
 
     libraryDependencies ++= Seq(
       "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf",
-      "com.google.protobuf" % "protobuf-java" % "4.32.0"
+      "com.google.protobuf" % "protobuf-java" % "4.32.1"
     ),
 
     Compile / scalacOptions ++= Seq("-release:11"),
