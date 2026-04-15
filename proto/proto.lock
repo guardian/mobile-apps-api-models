@@ -1205,7 +1205,7 @@
               },
               {
                 "id": 20,
-                "name": "allow_mute",
+                "name": "support_audio",
                 "type": "bool"
               },
               {

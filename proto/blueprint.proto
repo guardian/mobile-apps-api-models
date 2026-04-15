@@ -386,9 +386,9 @@ message Video {
   bool show_subtitles = 18;
   VideoOverlayPosition overlay_position = 19;
   /*
-   * Allow users to mute / unmuate the video
+   * Allow users to unmute the video
    */
-  bool allow_mute = 20;
+  bool support_audio = 20;
   /*
    * Allow users to navigate the video for example
    * through a scrub bar
