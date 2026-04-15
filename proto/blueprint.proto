@@ -385,6 +385,24 @@ message Video {
   bool show_progress_bar = 17;
   bool show_subtitles = 18;
   VideoOverlayPosition overlay_position = 19;
+  /*
+   * Allow users to mute / unmuate the video
+   */
+  bool allow_mute = 20;
+  /*
+   * Allow users to navigate the video for example
+   * through a scrub bar
+   */
+  bool allow_seeking = 21;
+  /*
+   * Allow users to expand the video full screen
+   */
+  bool allow_fullscreen = 22;
+  /*
+   * Allow users to share the video via the platform's
+   * sharing capability
+   */
+  bool allow_sharing = 23;
 }
 
 message Audio {
