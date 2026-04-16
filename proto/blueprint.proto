@@ -399,10 +399,14 @@ message Video {
    */
   bool allow_fullscreen = 22;
   /*
+   * Display timestamp on the player
+   */
+  bool show_timestamp = 23;
+  /*
    * Allow users to share the video via the platform's
    * sharing capability
    */
-  bool allow_sharing = 23;
+  bool allow_sharing = 24;
 }
 
 message Audio {

@@ -1220,6 +1220,11 @@
               },
               {
                 "id": 23,
+                "name": "show_timestamp",
+                "type": "bool"
+              },
+              {
+                "id": 24,
                 "name": "allow_sharing",
                 "type": "bool"
               }
