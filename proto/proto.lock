@@ -1202,6 +1202,31 @@
                 "id": 19,
                 "name": "overlay_position",
                 "type": "VideoOverlayPosition"
+              },
+              {
+                "id": 20,
+                "name": "support_audio",
+                "type": "bool"
+              },
+              {
+                "id": 21,
+                "name": "allow_seeking",
+                "type": "bool"
+              },
+              {
+                "id": 22,
+                "name": "allow_fullscreen",
+                "type": "bool"
+              },
+              {
+                "id": 23,
+                "name": "show_timestamp",
+                "type": "bool"
+              },
+              {
+                "id": 24,
+                "name": "allow_sharing",
+                "type": "bool"
               }
             ]
           },
