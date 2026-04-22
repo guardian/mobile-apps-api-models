@@ -407,6 +407,11 @@ message Video {
    * sharing capability
    */
   bool allow_sharing = 24;
+  /**
+   * The property gives the ID for tracking data related
+   * to this video.
+   */
+  string tracking_id = 25;
 }
 
 message Audio {
