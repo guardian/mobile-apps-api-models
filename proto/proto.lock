@@ -1227,6 +1227,11 @@
                 "id": 24,
                 "name": "allow_sharing",
                 "type": "bool"
+              },
+              {
+                "id": 25,
+                "name": "tracking",
+                "type": "EventTracking"
               }
             ]
           },
@@ -2121,6 +2126,16 @@
                 "name": "series",
                 "type": "string",
                 "optional": true
+              }
+            ]
+          },
+          {
+            "name": "EventTracking",
+            "fields": [
+              {
+                "id": 1,
+                "name": "component_id",
+                "type": "string"
               }
             ]
           },
