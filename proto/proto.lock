@@ -1227,6 +1227,11 @@
                 "id": 24,
                 "name": "allow_sharing",
                 "type": "bool"
+              },
+              {
+                "id": 25,
+                "name": "tracking",
+                "type": "EventTracking"
               }
             ]
           },
