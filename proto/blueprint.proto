@@ -407,6 +407,11 @@ message Video {
    * sharing capability
    */
   bool allow_sharing = 24;
+  /**
+   * Provide meta data for the apps to send tracking data over
+   * this video object
+   */
+  EventTracking tracking = 25;
 }
 
 message Audio {
@@ -971,6 +976,11 @@ message Permutive {
   repeated string keywords = 6;
   optional google.protobuf.Timestamp published_at = 7;
   optional string series = 8;
+}
+
+/** For sending users' action tracking data to Ophan */
+message EventTracking {
+  string component_id = 1;
 }
 
 /** For some articles we return commissioning desk tracking (aka BasicTag)
