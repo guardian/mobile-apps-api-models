@@ -1232,6 +1232,11 @@
                 "id": 25,
                 "name": "tracking",
                 "type": "EventTracking"
+              },
+              {
+                "id": 26,
+                "name": "auto_hide_controls",
+                "type": "bool"
               }
             ]
           },
