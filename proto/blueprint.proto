@@ -569,6 +569,12 @@ message Article {
   optional MediaPill media_pill = 40;
 }
 
+message Puzzle {
+  string type = 1;
+  string sub_type = 2;
+  string uri = 3;
+}
+
 message Card {
   enum CardType {
     CARD_TYPE_UNSPECIFIED = 0;
@@ -612,6 +618,10 @@ message Card {
      * A card for a gallery item.
      */
     CARD_TYPE_GALLERY = 12;
+    /**
+     * A card for a puzzle item.
+     */
+    CARD_TYPE_PUZZLE = 13;
   }
   CardType type = 1;
   /**
@@ -782,6 +792,10 @@ message Card {
    */
   optional Palette condensed_palette_light = 51;
   optional Palette condensed_palette_dark = 52;
+
+  oneof card_content {
+    Puzzle puzzle = 53;
+  }
 
 }
 

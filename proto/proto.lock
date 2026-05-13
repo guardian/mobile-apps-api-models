@@ -205,6 +205,10 @@
               {
                 "name": "CARD_TYPE_GALLERY",
                 "integer": 12
+              },
+              {
+                "name": "CARD_TYPE_PUZZLE",
+                "integer": 13
               }
             ]
           },
@@ -1689,6 +1693,26 @@
             ]
           },
           {
+            "name": "Puzzle",
+            "fields": [
+              {
+                "id": 1,
+                "name": "type",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "sub_type",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "uri",
+                "type": "string"
+              }
+            ]
+          },
+          {
             "name": "Card",
             "fields": [
               {
@@ -1881,6 +1905,12 @@
                 "name": "condensed_palette_dark",
                 "type": "Palette",
                 "optional": true
+              },
+              {
+                "id": 53,
+                "name": "puzzle",
+                "type": "Puzzle",
+                "oneof_parent": "card_content"
               }
             ],
             "reserved_ids": [
