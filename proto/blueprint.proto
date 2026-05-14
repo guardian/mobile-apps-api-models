@@ -412,6 +412,10 @@ message Video {
    * this video object
    */
   EventTracking tracking = 25;
+  /**
+   * Auto hide UI controls on player
+   */
+  bool auto_hide_controls = 26;
 }
 
 message Audio {
