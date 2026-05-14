@@ -679,6 +679,12 @@
                 "id": 1,
                 "name": "uri",
                 "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "requiered",
+                "type": "bool",
+                "optional": true
               }
             ]
           },
