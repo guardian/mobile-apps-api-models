@@ -574,9 +574,9 @@ message Article {
 }
 
 message Puzzle {
-  string type = 1;
-  string sub_type = 2;
-  string uri = 3;
+  optional string type = 1;
+  optional string sub_type = 2;
+  optional string uri = 3;
 }
 
 message Card {
