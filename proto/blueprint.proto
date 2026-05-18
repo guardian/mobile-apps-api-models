@@ -797,9 +797,7 @@ message Card {
   optional Palette condensed_palette_light = 51;
   optional Palette condensed_palette_dark = 52;
 
-  oneof card_content {
-    Puzzle puzzle = 53;
-  }
+  optional Puzzle puzzle = 53;
 
 }
 

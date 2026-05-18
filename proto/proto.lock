@@ -1915,7 +1915,7 @@
                 "id": 53,
                 "name": "puzzle",
                 "type": "Puzzle",
-                "oneof_parent": "card_content"
+                "optional": true
               }
             ],
             "reserved_ids": [
