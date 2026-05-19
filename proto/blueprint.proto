@@ -575,30 +575,31 @@ message Article {
 
 enum PuzzleType {
   PUZZLE_TYPE_UNSPECIFIED = 0;
-  CROSSWORD = 1;
-  SUDOKU = 2;
-  WORD_WHEEL = 3;
-  WORDIPLY = 4;
-  ON_THE_BALL = 5;
-  FILM_REVEAL = 6;
+  PUZZLE_TYPE_CROSSWORD = 1;
+  PUZZLE_TYPE_SUDOKU = 2;
+  PUZZLE_TYPE_WORD_WHEEL = 3;
+  PUZZLE_TYPE_WORDIPLY = 4;
+  PUZZLE_TYPE_ON_THE_BALL = 5;
+  PUZZLE_TYPE_FILM_REVEAL = 6;
 }
 
 enum PuzzleSubType {
   PUZZLE_SUB_TYPE_UNSPECIFIED = 0;
-  QUICK_CROSSWORD = 1;
-  MINI_CROSSWORD = 2;
-  CRYPTIC_CROSSWORD = 3;
-  QUICK_CRYPTIC = 4;
-  WEEKEND_CROSSWORD = 5;
-  CROSSWORD_ARCHIVE = 6;
-  SUDOKU_EASY = 7;
-  SUDOKU_MEDIUM = 8;
-  SUDOKU_HARD = 9;
-  KILLER_SUDOKU = 10;
+  PUZZLE_SUB_TYPEQUICK_CROSSWORD = 1;
+  PUZZLE_SUB_TYPEMINI_CROSSWORD = 2;
+  PUZZLE_SUB_TYPECRYPTIC_CROSSWORD = 3;
+  PUZZLE_SUB_TYPEQUICK_CRYPTIC = 4;
+  PUZZLE_SUB_TYPEWEEKEND_CROSSWORD = 5;
+  PUZZLE_SUB_TYPECROSSWORD_ARCHIVE = 6;
+  PUZZLE_SUB_TYPESUDOKU_EASY = 7;
+  PUZZLE_SUB_TYPESUDOKU_MEDIUM = 8;
+  PUZZLE_SUB_TYPESUDOKU_HARD = 9;
+  PUZZLE_SUB_TYPEKILLER_SUDOKU = 10;
 }
 
-// For puzzle types that do not use sub types (e.g., WORDIPLY, WORD_WHEEL, ON_THE_BALL, FILM_REVEAL),
-// set sub_type = PUZZLE_SUB_TYPE_UNSPECIFIED. This is the idiomatic way to represent "no sub type" in proto3 enums.
+// For puzzle types that do not use sub types (e.g., WORDIPLY, WORD_WHEEL, 
+// ON_THE_BALL, FILM_REVEAL), set sub_type = PUZZLE_SUB_TYPE_UNSPECIFIED. 
+// This is the idiomatic way to represent "no sub type" in proto3 enums.
 message Puzzle {
   optional PuzzleType type = 1;
   optional PuzzleSubType sub_type = 2;
