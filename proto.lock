@@ -159,27 +159,27 @@
                 "name": "PUZZLE_TYPE_UNSPECIFIED"
               },
               {
-                "name": "CROSSWORD",
+                "name": "PUZZLE_TYPE_CROSSWORD",
                 "integer": 1
               },
               {
-                "name": "SUDOKU",
+                "name": "PUZZLE_TYPE_SUDOKU",
                 "integer": 2
               },
               {
-                "name": "WORD_WHEEL",
+                "name": "PUZZLE_TYPE_WORD_WHEEL",
                 "integer": 3
               },
               {
-                "name": "WORDIPLY",
+                "name": "PUZZLE_TYPE_WORDIPLY",
                 "integer": 4
               },
               {
-                "name": "ON_THE_BALL",
+                "name": "PUZZLE_TYPE_ON_THE_BALL",
                 "integer": 5
               },
               {
-                "name": "FILM_REVEAL",
+                "name": "PUZZLE_TYPE_FILM_REVEAL",
                 "integer": 6
               }
             ]
@@ -191,43 +191,43 @@
                 "name": "PUZZLE_SUB_TYPE_UNSPECIFIED"
               },
               {
-                "name": "QUICK_CROSSWORD",
+                "name": "PUZZLE_SUB_TYPE_QUICK_CROSSWORD",
                 "integer": 1
               },
               {
-                "name": "MINI_CROSSWORD",
+                "name": "PUZZLE_SUB_TYPE_MINI_CROSSWORD",
                 "integer": 2
               },
               {
-                "name": "CRYPTIC_CROSSWORD",
+                "name": "PUZZLE_SUB_TYPE_CRYPTIC_CROSSWORD",
                 "integer": 3
               },
               {
-                "name": "QUICK_CRYPTIC",
+                "name": "PUZZLE_SUB_TYPE_QUICK_CRYPTIC",
                 "integer": 4
               },
               {
-                "name": "WEEKEND_CROSSWORD",
+                "name": "PUZZLE_SUB_TYPE_WEEKEND_CROSSWORD",
                 "integer": 5
               },
               {
-                "name": "CROSSWORD_ARCHIVE",
+                "name": "PUZZLE_SUB_TYPE_CROSSWORD_ARCHIVE",
                 "integer": 6
               },
               {
-                "name": "SUDOKU_EASY",
+                "name": "PUZZLE_SUB_TYPE_SUDOKU_EASY",
                 "integer": 7
               },
               {
-                "name": "SUDOKU_MEDIUM",
+                "name": "PUZZLE_SUB_TYPE_SUDOKU_MEDIUM",
                 "integer": 8
               },
               {
-                "name": "SUDOKU_HARD",
+                "name": "PUZZLE_SUB_TYPE_SUDOKU_HARD",
                 "integer": 9
               },
               {
-                "name": "KILLER_SUDOKU",
+                "name": "PUZZLE_SUB_TYPE_KILLER_SUDOKU",
                 "integer": 10
               }
             ]
