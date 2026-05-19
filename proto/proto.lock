@@ -682,7 +682,7 @@
               },
               {
                 "id": 2,
-                "name": "requiered",
+                "name": "required",
                 "type": "bool",
                 "optional": true
               }

@@ -171,7 +171,7 @@ message FollowUp {
 message Thrasher {
   string uri = 1;
   // Determines if the thrasher should be removable by the user.
-  optional bool requiered = 2; 
+  optional bool required = 2; 
 }
 
 
