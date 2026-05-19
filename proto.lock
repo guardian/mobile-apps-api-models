@@ -1,0 +1,2506 @@
+{
+  "definitions": [
+    {
+      "protopath": "blueprint.proto",
+      "def": {
+        "enums": [
+          {
+            "name": "Collection.CollectionDesign",
+            "enum_fields": [
+              {
+                "name": "COLLECTION_DESIGN_UNSPECIFIED"
+              },
+              {
+                "name": "COLLECTION_DESIGN_REGULAR",
+                "integer": 1
+              },
+              {
+                "name": "COLLECTION_DESIGN_PODCAST",
+                "integer": 2
+              },
+              {
+                "name": "COLLECTION_DESIGN_TITLEPIECE",
+                "integer": 3
+              }
+            ]
+          },
+          {
+            "name": "Collection.HeadingStyle",
+            "enum_fields": [
+              {
+                "name": "HEADING_STYLE_UNSPECIFIED"
+              },
+              {
+                "name": "HEADING_STYLE_HIDDEN",
+                "integer": 1
+              },
+              {
+                "name": "HEADING_STYLE_REGULAR",
+                "integer": 2
+              },
+              {
+                "name": "HEADING_STYLE_SMALL",
+                "integer": 3
+              }
+            ]
+          },
+          {
+            "name": "FollowUp.FollowUpType",
+            "enum_fields": [
+              {
+                "name": "FOLLOW_UP_TYPE_UNSPECIFIED"
+              },
+              {
+                "name": "FOLLOW_UP_TYPE_LIST",
+                "integer": 1
+              },
+              {
+                "name": "FOLLOW_UP_TYPE_FRONT",
+                "integer": 2
+              },
+              {
+                "name": "FOLLOW_UP_TYPE_INAPP",
+                "integer": 3
+              }
+            ]
+          },
+          {
+            "name": "HeaderType",
+            "enum_fields": [
+              {
+                "name": "HEADER_TYPE_UNSPECIFIED"
+              },
+              {
+                "name": "HEADER_TYPE_CENTRE",
+                "integer": 1
+              },
+              {
+                "name": "HEADER_TYPE_LEADING",
+                "integer": 2
+              }
+            ]
+          },
+          {
+            "name": "MediaType",
+            "enum_fields": [
+              {
+                "name": "MEDIA_TYPE_UNSPECIFIED"
+              },
+              {
+                "name": "MEDIA_TYPE_VIDEO",
+                "integer": 1
+              },
+              {
+                "name": "MEDIA_TYPE_AUDIO",
+                "integer": 2
+              },
+              {
+                "name": "MEDIA_TYPE_IMAGE",
+                "integer": 3
+              }
+            ]
+          },
+          {
+            "name": "Platform",
+            "enum_fields": [
+              {
+                "name": "PLATFORM_UNSPECIFIED"
+              },
+              {
+                "name": "PLATFORM_YOUTUBE",
+                "integer": 1
+              },
+              {
+                "name": "PLATFORM_URL",
+                "integer": 2
+              }
+            ]
+          },
+          {
+            "name": "VideoOverlayPosition",
+            "enum_fields": [
+              {
+                "name": "VIDEO_OVERLAY_POSITION_UNSPECIFIED"
+              },
+              {
+                "name": "VIDEO_OVERLAY_POSITION_BOTTOM",
+                "integer": 1
+              },
+              {
+                "name": "VIDEO_OVERLAY_POSITION_TOP",
+                "integer": 2
+              }
+            ]
+          },
+          {
+            "name": "TitleStyle",
+            "enum_fields": [
+              {
+                "name": "TITLE_STYLE_UNSPECIFIED"
+              },
+              {
+                "name": "TITLE_STYLE_HIDDEN",
+                "integer": 1
+              },
+              {
+                "name": "TITLE_STYLE_REGULAR",
+                "integer": 2
+              },
+              {
+                "name": "TITLE_STYLE_SMALL",
+                "integer": 3
+              }
+            ]
+          },
+          {
+            "name": "PuzzleType",
+            "enum_fields": [
+              {
+                "name": "PUZZLE_TYPE_UNSPECIFIED"
+              },
+              {
+                "name": "CROSSWORD",
+                "integer": 1
+              },
+              {
+                "name": "SUDOKU",
+                "integer": 2
+              },
+              {
+                "name": "WORD_WHEEL",
+                "integer": 3
+              },
+              {
+                "name": "WORDIPLY",
+                "integer": 4
+              },
+              {
+                "name": "ON_THE_BALL",
+                "integer": 5
+              },
+              {
+                "name": "FILM_REVEAL",
+                "integer": 6
+              }
+            ]
+          },
+          {
+            "name": "PuzzleSubType",
+            "enum_fields": [
+              {
+                "name": "PUZZLE_SUB_TYPE_UNSPECIFIED"
+              },
+              {
+                "name": "QUICK_CROSSWORD",
+                "integer": 1
+              },
+              {
+                "name": "MINI_CROSSWORD",
+                "integer": 2
+              },
+              {
+                "name": "CRYPTIC_CROSSWORD",
+                "integer": 3
+              },
+              {
+                "name": "QUICK_CRYPTIC",
+                "integer": 4
+              },
+              {
+                "name": "WEEKEND_CROSSWORD",
+                "integer": 5
+              },
+              {
+                "name": "CROSSWORD_ARCHIVE",
+                "integer": 6
+              },
+              {
+                "name": "SUDOKU_EASY",
+                "integer": 7
+              },
+              {
+                "name": "SUDOKU_MEDIUM",
+                "integer": 8
+              },
+              {
+                "name": "SUDOKU_HARD",
+                "integer": 9
+              },
+              {
+                "name": "KILLER_SUDOKU",
+                "integer": 10
+              }
+            ]
+          },
+          {
+            "name": "Card.CardType",
+            "enum_fields": [
+              {
+                "name": "CARD_TYPE_UNSPECIFIED"
+              },
+              {
+                "name": "CARD_TYPE_ARTICLE",
+                "integer": 1
+              },
+              {
+                "name": "CARD_TYPE_PODCAST",
+                "integer": 2
+              },
+              {
+                "name": "CARD_TYPE_VIDEO",
+                "integer": 3
+              },
+              {
+                "name": "CARD_TYPE_CROSSWORD",
+                "integer": 4
+              },
+              {
+                "name": "CARD_TYPE_DISPLAY",
+                "integer": 5
+              },
+              {
+                "name": "CARD_TYPE_NUMBERED",
+                "integer": 6
+              },
+              {
+                "name": "CARD_TYPE_EMPTY",
+                "integer": 7
+              },
+              {
+                "name": "CARD_TYPE_WEB_CONTENT",
+                "integer": 8
+              },
+              {
+                "name": "CARD_TYPE_PODCAST_SERIES",
+                "integer": 9
+              },
+              {
+                "name": "CARD_TYPE_HIGHLIGHT",
+                "integer": 10
+              },
+              {
+                "name": "CARD_TYPE_NAVIGATION",
+                "integer": 11
+              },
+              {
+                "name": "CARD_TYPE_GALLERY",
+                "integer": 12
+              },
+              {
+                "name": "CARD_TYPE_PUZZLE",
+                "integer": 13
+              }
+            ]
+          },
+          {
+            "name": "Card.SublinksArrangement",
+            "enum_fields": [
+              {
+                "name": "SUBLINKS_ARRANGEMENT_UNSPECIFIED"
+              },
+              {
+                "name": "SUBLINKS_ARRANGEMENT_VERTICAL",
+                "integer": 1
+              },
+              {
+                "name": "SUBLINKS_ARRANGEMENT_HORIZONTAL",
+                "integer": 2
+              }
+            ]
+          },
+          {
+            "name": "Card.BoostedHeadline",
+            "enum_fields": [
+              {
+                "name": "BOOSTED_HEADLINE_UNSPECIFIED"
+              },
+              {
+                "name": "BOOSTED_HEADLINE_STANDARD",
+                "integer": 1
+              },
+              {
+                "name": "BOOSTED_HEADLINE_BOOSTED_1",
+                "integer": 2
+              },
+              {
+                "name": "BOOSTED_HEADLINE_BOOSTED_2",
+                "integer": 3
+              },
+              {
+                "name": "BOOSTED_HEADLINE_BOOSTED_3",
+                "integer": 4
+              },
+              {
+                "name": "BOOSTED_HEADLINE_BOOSTED_4",
+                "integer": 5
+              }
+            ]
+          },
+          {
+            "name": "Card.HeadlinePosition",
+            "enum_fields": [
+              {
+                "name": "HEADLINE_POSITION_UNSPECIFIED"
+              },
+              {
+                "name": "HEADLINE_POSITION_INLINE",
+                "integer": 1
+              },
+              {
+                "name": "HEADLINE_POSITION_TOP",
+                "integer": 2
+              }
+            ]
+          },
+          {
+            "name": "Card.CardSize",
+            "enum_fields": [
+              {
+                "name": "CARD_SIZE_UNSPECIFIED"
+              },
+              {
+                "name": "CARD_SIZE_X_SMALL",
+                "integer": 1
+              },
+              {
+                "name": "CARD_SIZE_SMALL",
+                "integer": 2
+              },
+              {
+                "name": "CARD_SIZE_MEDIUM_HORIZONTAL",
+                "integer": 3
+              },
+              {
+                "name": "CARD_SIZE_MEDIUM_VERTICAL",
+                "integer": 4
+              },
+              {
+                "name": "CARD_SIZE_LARGE",
+                "integer": 5
+              },
+              {
+                "name": "CARD_SIZE_LARGE_HORIZONTAL",
+                "integer": 6
+              },
+              {
+                "name": "CARD_SIZE_X_LARGE",
+                "integer": 7
+              },
+              {
+                "name": "CARD_SIZE_HIGHLIGHTS",
+                "integer": 8
+              },
+              {
+                "name": "CARD_SIZE_X_LARGE_HORIZONTAL",
+                "integer": 9
+              }
+            ]
+          },
+          {
+            "name": "NavCardType",
+            "enum_fields": [
+              {
+                "name": "NAV_CARD_TYPE_UNSPECIFIED"
+              },
+              {
+                "name": "NAV_CARD_TYPE_NEWS",
+                "integer": 1
+              },
+              {
+                "name": "NAV_CARD_TYPE_SPORT",
+                "integer": 2
+              },
+              {
+                "name": "NAV_CARD_TYPE_LIFESTYLE",
+                "integer": 3
+              },
+              {
+                "name": "NAV_CARD_TYPE_NARRATIVE",
+                "integer": 4
+              }
+            ]
+          },
+          {
+            "name": "TopBorderStyle",
+            "enum_fields": [
+              {
+                "name": "TOP_BORDER_STYLE_UNSPECIFIED"
+              },
+              {
+                "name": "TOP_BORDER_STYLE_HIDDEN",
+                "integer": 1
+              },
+              {
+                "name": "TOP_BORDER_STYLE_REGULAR",
+                "integer": 2
+              }
+            ]
+          },
+          {
+            "name": "ImageAspectRatio",
+            "enum_fields": [
+              {
+                "name": "IMAGE_ASPECT_RATIO_UNSPECIFIED"
+              },
+              {
+                "name": "IMAGE_ASPECT_RATIO_LANDSCAPE_5_3",
+                "integer": 1
+              },
+              {
+                "name": "IMAGE_ASPECT_RATIO_LANDSCAPE_5_4",
+                "integer": 2
+              },
+              {
+                "name": "IMAGE_ASPECT_RATIO_PORTRAIT_4_5",
+                "integer": 3
+              },
+              {
+                "name": "IMAGE_ASPECT_RATIO_SQUARE",
+                "integer": 4
+              }
+            ]
+          },
+          {
+            "name": "FontWeight",
+            "enum_fields": [
+              {
+                "name": "FONT_WEIGHT_UNSPECIFIED"
+              },
+              {
+                "name": "FONT_WEIGHT_STANDARD",
+                "integer": 1
+              },
+              {
+                "name": "FONT_WEIGHT_LIGHT",
+                "integer": 2
+              }
+            ]
+          },
+          {
+            "name": "Row.RowType",
+            "enum_fields": [
+              {
+                "name": "ROW_TYPE_UNSPECIFIED"
+              },
+              {
+                "name": "ROW_TYPE_LAYOUT",
+                "integer": 1
+              },
+              {
+                "name": "ROW_TYPE_CAROUSEL",
+                "integer": 2
+              },
+              {
+                "name": "ROW_TYPE_WEB_CONTENT",
+                "integer": 3
+              },
+              {
+                "name": "ROW_TYPE_PROGRAMMATIC_CAROUSEL",
+                "integer": 4
+              }
+            ]
+          },
+          {
+            "name": "MyGuardianFollow.FollowType",
+            "enum_fields": [
+              {
+                "name": "FOLLOW_TYPE_UNSPECIFIED"
+              },
+              {
+                "name": "FOLLOW_TYPE_CONTRIBUTOR",
+                "integer": 1
+              },
+              {
+                "name": "FOLLOW_TYPE_KEYWORD",
+                "integer": 2
+              },
+              {
+                "name": "FOLLOW_TYPE_SERIES",
+                "integer": 3
+              },
+              {
+                "name": "FOLLOW_TYPE_SECTION",
+                "integer": 4
+              },
+              {
+                "name": "FOLLOW_TYPE_NEWSPAPER_BOOK_SECTION",
+                "integer": 5
+              },
+              {
+                "name": "FOLLOW_TYPE_NEWSPAPER_BOOK",
+                "integer": 6
+              },
+              {
+                "name": "FOLLOW_TYPE_BLOG",
+                "integer": 7
+              },
+              {
+                "name": "FOLLOW_TYPE_TONE",
+                "integer": 8
+              },
+              {
+                "name": "FOLLOW_TYPE_PUBLICATION",
+                "integer": 9
+              },
+              {
+                "name": "FOLLOW_TYPE_TRACKING",
+                "integer": 10
+              },
+              {
+                "name": "FOLLOW_TYPE_PAID_CONTENT",
+                "integer": 11
+              },
+              {
+                "name": "FOLLOW_TYPE_CAMPAIGN",
+                "integer": 12
+              },
+              {
+                "name": "FOLLOW_TYPE_TYPE",
+                "integer": 13
+              }
+            ]
+          },
+          {
+            "name": "TablePosition.Form",
+            "enum_fields": [
+              {
+                "name": "FORM_UNSPECIFIED"
+              },
+              {
+                "name": "FORM_WIN",
+                "integer": 1
+              },
+              {
+                "name": "FORM_DRAW",
+                "integer": 2
+              },
+              {
+                "name": "FORM_LOSS",
+                "integer": 3
+              }
+            ]
+          }
+        ],
+        "messages": [
+          {
+            "name": "Collection",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "rows",
+                "type": "Row",
+                "is_repeated": true
+              },
+              {
+                "id": 5,
+                "name": "title",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "branding",
+                "type": "Branding",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "premium_content",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "follow_up",
+                "type": "FollowUp",
+                "optional": true
+              },
+              {
+                "id": 9,
+                "name": "hideable",
+                "type": "bool"
+              },
+              {
+                "id": 10,
+                "name": "myguardian_follow",
+                "type": "MyGuardianFollow",
+                "optional": true
+              },
+              {
+                "id": 11,
+                "name": "description",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 12,
+                "name": "image",
+                "type": "Image",
+                "optional": true
+              },
+              {
+                "id": 13,
+                "name": "design",
+                "type": "CollectionDesign",
+                "optional": true
+              },
+              {
+                "id": 14,
+                "name": "compact_padding",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 15,
+                "name": "tracking_id",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 16,
+                "name": "small_heading",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "id": 17,
+                "name": "ad_targeting_params",
+                "type": "AdTargetingParams",
+                "optional": true
+              },
+              {
+                "id": 18,
+                "name": "ad_unit",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 19,
+                "name": "heading_style",
+                "type": "HeadingStyle",
+                "optional": true
+              },
+              {
+                "id": 20,
+                "name": "display_title",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 21,
+                "name": "last_updated_date",
+                "type": "google.protobuf.Timestamp",
+                "optional": true
+              },
+              {
+                "id": 22,
+                "name": "title_style",
+                "type": "TitleStyle",
+                "optional": true
+              },
+              {
+                "id": 23,
+                "name": "preferred_image_aspect_ratio",
+                "type": "ImageAspectRatio",
+                "optional": true
+              },
+              {
+                "id": 24,
+                "name": "tighten_vertical_spacing",
+                "type": "bool",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "FollowUp",
+            "fields": [
+              {
+                "id": 1,
+                "name": "type",
+                "type": "FollowUpType"
+              },
+              {
+                "id": 2,
+                "name": "uri",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "blueprint_uri",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Thrasher",
+            "fields": [
+              {
+                "id": 1,
+                "name": "uri",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "List",
+            "fields": [
+              {
+                "id": 1,
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "next_page_url",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "rows",
+                "type": "Row",
+                "is_repeated": true
+              },
+              {
+                "id": 6,
+                "name": "branding",
+                "type": "Branding",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "topics",
+                "type": "Topic",
+                "is_repeated": true
+              },
+              {
+                "id": 8,
+                "name": "ad_targeting_path",
+                "type": "string",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "id": 9,
+                "name": "previous_page_url",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 10,
+                "name": "tracking",
+                "type": "Tracking"
+              },
+              {
+                "id": 11,
+                "name": "adverts",
+                "type": "int32",
+                "is_repeated": true
+              },
+              {
+                "id": 12,
+                "name": "my_guardian_follow",
+                "type": "MyGuardianFollow",
+                "optional": true
+              },
+              {
+                "id": 13,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 14,
+                "name": "web_uri",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 15,
+                "name": "ad_targeting_params",
+                "type": "AdTargetingParams"
+              },
+              {
+                "id": 16,
+                "name": "ad_unit",
+                "type": "string"
+              },
+              {
+                "id": 17,
+                "name": "last_updated_date",
+                "type": "google.protobuf.Timestamp",
+                "optional": true
+              },
+              {
+                "id": 18,
+                "name": "header",
+                "type": "Header",
+                "optional": true
+              },
+              {
+                "id": 19,
+                "name": "tighten_vertical_spacing",
+                "type": "bool",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Header",
+            "fields": [
+              {
+                "id": 1,
+                "name": "header_text",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "description",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "alignment",
+                "type": "HeaderType"
+              },
+              {
+                "id": 4,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "image",
+                "type": "Image",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "profile_image",
+                "type": "Image",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "description_html",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "LayoutAgnosticCollection",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "cards",
+                "type": "Card",
+                "is_repeated": true
+              },
+              {
+                "id": 5,
+                "name": "title",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "follow_up",
+                "type": "FollowUp",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "tracking_id",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "image",
+                "type": "Image",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Palette",
+            "fields": [
+              {
+                "id": 1,
+                "name": "accent_colour",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "background",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "comment_count",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "element_background",
+                "type": "string"
+              },
+              {
+                "id": 5,
+                "name": "headline",
+                "type": "string"
+              },
+              {
+                "id": 6,
+                "name": "immersive_kicker",
+                "type": "string"
+              },
+              {
+                "id": 7,
+                "name": "main",
+                "type": "string"
+              },
+              {
+                "id": 8,
+                "name": "media_background",
+                "type": "string"
+              },
+              {
+                "id": 9,
+                "name": "media_icon",
+                "type": "string"
+              },
+              {
+                "id": 10,
+                "name": "meta_text",
+                "type": "string"
+              },
+              {
+                "id": 11,
+                "name": "pill",
+                "type": "string"
+              },
+              {
+                "id": 12,
+                "name": "pillar",
+                "type": "string"
+              },
+              {
+                "id": 13,
+                "name": "secondary",
+                "type": "string"
+              },
+              {
+                "id": 14,
+                "name": "shadow",
+                "type": "string"
+              },
+              {
+                "id": 15,
+                "name": "top_border",
+                "type": "string"
+              },
+              {
+                "id": 16,
+                "name": "kicker_text",
+                "type": "string"
+              },
+              {
+                "id": 17,
+                "name": "media_pill_background",
+                "type": "string"
+              },
+              {
+                "id": 18,
+                "name": "media_pill_foreground",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "Links",
+            "fields": [
+              {
+                "id": 1,
+                "name": "related_uri",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "short_url",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "uri",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "web_uri",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "MediaPill",
+            "fields": [
+              {
+                "id": 1,
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "icon",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "detail",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "Image",
+            "fields": [
+              {
+                "id": 1,
+                "name": "alt_text",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "caption",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "credit",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "height",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "url_template",
+                "type": "string"
+              },
+              {
+                "id": 7,
+                "name": "width",
+                "type": "int32",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Video",
+            "fields": [
+              {
+                "id": 1,
+                "name": "alt_text",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "caption",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "credit",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "height",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "orientation",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "url",
+                "type": "string"
+              },
+              {
+                "id": 7,
+                "name": "width",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "youtube_id",
+                "type": "string",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "id": 9,
+                "name": "duration_in_seconds",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 10,
+                "name": "poster_image",
+                "type": "Image",
+                "optional": true
+              },
+              {
+                "id": 11,
+                "name": "is_live_video",
+                "type": "bool"
+              },
+              {
+                "id": 12,
+                "name": "video_id",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 13,
+                "name": "platform",
+                "type": "Platform",
+                "optional": true
+              },
+              {
+                "id": 14,
+                "name": "is_looping",
+                "type": "bool"
+              },
+              {
+                "id": 15,
+                "name": "is_autoplay",
+                "type": "bool"
+              },
+              {
+                "id": 16,
+                "name": "is_interactive",
+                "type": "bool"
+              },
+              {
+                "id": 17,
+                "name": "show_progress_bar",
+                "type": "bool"
+              },
+              {
+                "id": 18,
+                "name": "show_subtitles",
+                "type": "bool"
+              },
+              {
+                "id": 19,
+                "name": "overlay_position",
+                "type": "VideoOverlayPosition"
+              },
+              {
+                "id": 20,
+                "name": "support_audio",
+                "type": "bool"
+              },
+              {
+                "id": 21,
+                "name": "allow_seeking",
+                "type": "bool"
+              },
+              {
+                "id": 22,
+                "name": "allow_fullscreen",
+                "type": "bool"
+              },
+              {
+                "id": 23,
+                "name": "show_timestamp",
+                "type": "bool"
+              },
+              {
+                "id": 24,
+                "name": "allow_sharing",
+                "type": "bool"
+              },
+              {
+                "id": 25,
+                "name": "tracking",
+                "type": "EventTracking"
+              },
+              {
+                "id": 26,
+                "name": "auto_hide_controls",
+                "type": "bool"
+              }
+            ]
+          },
+          {
+            "name": "Audio",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "source",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "duration_in_seconds",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "uri",
+                "type": "string"
+              },
+              {
+                "id": 5,
+                "name": "ad_free_uri",
+                "type": "string"
+              },
+              {
+                "id": 6,
+                "name": "mime_type",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "article_id",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "links",
+                "type": "Links",
+                "optional": true
+              },
+              {
+                "id": 9,
+                "name": "title",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 10,
+                "name": "byline",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "PodcastSeries",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "url",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "follow_up",
+                "type": "FollowUp",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "image",
+                "type": "Image",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "description",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "latest_episode",
+                "type": "Audio",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "LiveEvent",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "body",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "published_date",
+                "type": "google.protobuf.Timestamp",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "last_updated_date",
+                "type": "google.protobuf.Timestamp",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Branding",
+            "fields": [
+              {
+                "id": 1,
+                "name": "branding_type",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "sponsor_name",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "logo",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "sponsor_uri",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "label",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "about_uri",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "alt_logo",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "RenderingPlatformSupport",
+            "fields": [
+              {
+                "id": 1,
+                "name": "min_bridget_version",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "uri",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "ListenToArticle",
+            "fields": [
+              {
+                "id": 1,
+                "name": "audio_uri",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "duration_in_seconds",
+                "type": "int32"
+              }
+            ]
+          },
+          {
+            "name": "Article",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "byline",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "images",
+                "type": "Image",
+                "is_repeated": true
+              },
+              {
+                "id": 4,
+                "name": "links",
+                "type": "Links",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "kicker",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "title",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "trail_text",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "rating",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 9,
+                "name": "comment_count",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 10,
+                "name": "published_date",
+                "type": "google.protobuf.Timestamp",
+                "optional": true
+              },
+              {
+                "id": 11,
+                "name": "last_updated_date",
+                "type": "google.protobuf.Timestamp",
+                "optional": true
+              },
+              {
+                "id": 12,
+                "name": "media_type",
+                "type": "MediaType",
+                "optional": true
+              },
+              {
+                "id": 13,
+                "name": "duration",
+                "type": "google.protobuf.Duration",
+                "optional": true
+              },
+              {
+                "id": 14,
+                "name": "profile_image",
+                "type": "Image",
+                "optional": true
+              },
+              {
+                "id": 15,
+                "name": "events",
+                "type": "LiveEvent",
+                "is_repeated": true
+              },
+              {
+                "id": 16,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 17,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 18,
+                "name": "apple_podcast_url",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 19,
+                "name": "google_podcast_url",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 20,
+                "name": "spotify_podcast_url",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 21,
+                "name": "videos",
+                "type": "Video",
+                "is_repeated": true
+              },
+              {
+                "id": 22,
+                "name": "is_live",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 23,
+                "name": "pocket_cast_podcast_url",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 24,
+                "name": "rendered_item_prod",
+                "type": "RenderingPlatformSupport",
+                "optional": true
+              },
+              {
+                "id": 25,
+                "name": "rendered_item_beta",
+                "type": "RenderingPlatformSupport",
+                "optional": true
+              },
+              {
+                "id": 26,
+                "name": "show_quoted_headline",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 27,
+                "name": "web_content_uri",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 28,
+                "name": "tracking",
+                "type": "Tracking"
+              },
+              {
+                "id": 29,
+                "name": "audio",
+                "type": "Audio",
+                "optional": true
+              },
+              {
+                "id": 30,
+                "name": "podcast_series",
+                "type": "PodcastSeries",
+                "optional": true
+              },
+              {
+                "id": 31,
+                "name": "ad_targeting_params",
+                "type": "AdTargetingParams"
+              },
+              {
+                "id": 32,
+                "name": "ad_unit",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 33,
+                "name": "should_hide_reader_revenue",
+                "type": "bool"
+              },
+              {
+                "id": 34,
+                "name": "should_hide_adverts",
+                "type": "bool"
+              },
+              {
+                "id": 35,
+                "name": "should_hide_nav",
+                "type": "bool"
+              },
+              {
+                "id": 36,
+                "name": "listen_to_article",
+                "type": "ListenToArticle",
+                "optional": true
+              },
+              {
+                "id": 37,
+                "name": "gallery_image_count",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 38,
+                "name": "basic_tags",
+                "type": "BasicTag",
+                "is_repeated": true
+              },
+              {
+                "id": 39,
+                "name": "follow_up",
+                "type": "FollowUp",
+                "optional": true
+              },
+              {
+                "id": 40,
+                "name": "media_pill",
+                "type": "MediaPill",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Puzzle",
+            "fields": [
+              {
+                "id": 1,
+                "name": "type",
+                "type": "PuzzleType",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "sub_type",
+                "type": "PuzzleSubType",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "uri",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Card",
+            "fields": [
+              {
+                "id": 1,
+                "name": "type",
+                "type": "CardType"
+              },
+              {
+                "id": 2,
+                "name": "article",
+                "type": "Article",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "boosted",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "compact",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "sublinks",
+                "type": "Article",
+                "is_repeated": true
+              },
+              {
+                "id": 6,
+                "name": "html_fallback",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "branding",
+                "type": "Branding",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "premium_content",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 9,
+                "name": "sublinks_palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 10,
+                "name": "sublinks_palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 11,
+                "name": "card_number",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 12,
+                "name": "podcast_series",
+                "type": "PodcastSeries",
+                "optional": true
+              },
+              {
+                "id": 37,
+                "name": "corresponding_tags",
+                "type": "MyGuardianFollow",
+                "is_repeated": true
+              },
+              {
+                "id": 38,
+                "name": "mega_boosted",
+                "type": "bool",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "id": 39,
+                "name": "trail_image_size",
+                "type": "int32",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "id": 41,
+                "name": "sublinks_arrangement",
+                "type": "SublinksArrangement",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "id": 42,
+                "name": "boosted_headline",
+                "type": "BoostedHeadline",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "id": 43,
+                "name": "headline_position",
+                "type": "HeadlinePosition",
+                "optional": true,
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
+              },
+              {
+                "id": 44,
+                "name": "card_size",
+                "type": "CardSize",
+                "optional": true
+              },
+              {
+                "id": 45,
+                "name": "boost_level",
+                "type": "int32",
+                "optional": true
+              },
+              {
+                "id": 46,
+                "name": "preferred_sublinks_arrangement",
+                "type": "SublinksArrangement",
+                "optional": true
+              },
+              {
+                "id": 47,
+                "name": "top_border_style",
+                "type": "TopBorderStyle",
+                "optional": true
+              },
+              {
+                "id": 48,
+                "name": "headline_weight",
+                "type": "FontWeight",
+                "optional": true
+              },
+              {
+                "id": 49,
+                "name": "nav_card_type",
+                "type": "NavCardType",
+                "optional": true
+              },
+              {
+                "id": 50,
+                "name": "should_hide_image",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 51,
+                "name": "condensed_palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 52,
+                "name": "condensed_palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 53,
+                "name": "puzzle",
+                "type": "Puzzle",
+                "optional": true
+              }
+            ],
+            "reserved_ids": [
+              40
+            ],
+            "reserved_names": [
+              "trail_image_aspect_ratio"
+            ]
+          },
+          {
+            "name": "Column",
+            "fields": [
+              {
+                "id": 1,
+                "name": "cards",
+                "type": "Card",
+                "is_repeated": true
+              },
+              {
+                "id": 2,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "preferred_width",
+                "type": "int32"
+              },
+              {
+                "id": 5,
+                "name": "show_horizontal_dividers",
+                "type": "bool",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "Row",
+            "fields": [
+              {
+                "id": 1,
+                "name": "columns",
+                "type": "Column",
+                "is_repeated": true
+              },
+              {
+                "id": 4,
+                "name": "preferred_number_of_columns",
+                "type": "int32"
+              },
+              {
+                "id": 5,
+                "name": "thrasher",
+                "type": "Thrasher",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "type",
+                "type": "RowType"
+              },
+              {
+                "id": 7,
+                "name": "title",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "tighten_spacing",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 9,
+                "name": "follow_up",
+                "type": "FollowUp",
+                "optional": true
+              },
+              {
+                "id": 11,
+                "name": "tracking_id",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 12,
+                "name": "title_style",
+                "type": "TitleStyle",
+                "optional": true
+              },
+              {
+                "id": 13,
+                "name": "show_vertical_dividers",
+                "type": "bool",
+                "optional": true
+              },
+              {
+                "id": 14,
+                "name": "show_horizontal_dividers",
+                "type": "bool",
+                "optional": true
+              }
+            ],
+            "reserved_ids": [
+              2,
+              3,
+              10
+            ],
+            "reserved_names": [
+              "palette_light",
+              "palette_dark",
+              "heading_style"
+            ]
+          },
+          {
+            "name": "Topic",
+            "fields": [
+              {
+                "id": 1,
+                "name": "type",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "display_name",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "MyGuardianFollow",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "web_title",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "type",
+                "type": "FollowType"
+              }
+            ]
+          },
+          {
+            "name": "AdTargetingParams",
+            "maps": [
+              {
+                "key_type": "string",
+                "field": {
+                  "id": 4,
+                  "name": "ad_targeting",
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Tracking",
+            "fields": [
+              {
+                "id": 1,
+                "name": "permutive",
+                "type": "Permutive"
+              },
+              {
+                "id": 2,
+                "name": "nielsen_section",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "commissioning_desks",
+                "type": "BasicTag",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "Permutive",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "type",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "title",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "section",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "authors",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 6,
+                "name": "keywords",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 7,
+                "name": "published_at",
+                "type": "google.protobuf.Timestamp",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "series",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "EventTracking",
+            "fields": [
+              {
+                "id": 1,
+                "name": "component_id",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "BasicTag",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "web_title",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "Team",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "short_code",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "crest",
+                "type": "Image"
+              }
+            ]
+          },
+          {
+            "name": "TableGroups",
+            "fields": [
+              {
+                "id": 1,
+                "name": "competition_name",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "tables",
+                "type": "Table",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "Table",
+            "fields": [
+              {
+                "id": 1,
+                "name": "group_name",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 2,
+                "name": "teams",
+                "type": "TablePosition",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "TablePosition",
+            "fields": [
+              {
+                "id": 1,
+                "name": "team",
+                "type": "Team"
+              },
+              {
+                "id": 2,
+                "name": "position",
+                "type": "int32"
+              },
+              {
+                "id": 3,
+                "name": "played",
+                "type": "int32"
+              },
+              {
+                "id": 4,
+                "name": "won",
+                "type": "int32"
+              },
+              {
+                "id": 5,
+                "name": "drawn",
+                "type": "int32"
+              },
+              {
+                "id": 6,
+                "name": "lost",
+                "type": "int32"
+              },
+              {
+                "id": 7,
+                "name": "goals_for",
+                "type": "int32"
+              },
+              {
+                "id": 8,
+                "name": "goals_against",
+                "type": "int32"
+              },
+              {
+                "id": 9,
+                "name": "goal_difference",
+                "type": "int32"
+              },
+              {
+                "id": 10,
+                "name": "points",
+                "type": "int32"
+              },
+              {
+                "id": 11,
+                "name": "recent_form",
+                "type": "Form",
+                "is_repeated": true
+              },
+              {
+                "id": 12,
+                "name": "show_divider",
+                "type": "bool"
+              },
+              {
+                "id": 13,
+                "name": "follow_up",
+                "type": "FollowUp",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "CompetitionWithMatchDays",
+            "fields": [
+              {
+                "id": 1,
+                "name": "match_days",
+                "type": "MatchDay",
+                "is_repeated": true
+              },
+              {
+                "id": 2,
+                "name": "competition_name",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "name": "MatchDay",
+            "fields": [
+              {
+                "id": 1,
+                "name": "date",
+                "type": "google.protobuf.Timestamp"
+              },
+              {
+                "id": 3,
+                "name": "match_day_name",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "matches",
+                "type": "Match",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "Match",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "home_team",
+                "type": "Team"
+              },
+              {
+                "id": 3,
+                "name": "away_team",
+                "type": "Team"
+              },
+              {
+                "id": 4,
+                "name": "kick_off",
+                "type": "google.protobuf.Timestamp"
+              },
+              {
+                "id": 5,
+                "name": "score",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "match_detail",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "match_info_uri",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "google/protobuf/duration.proto"
+          },
+          {
+            "path": "google/protobuf/timestamp.proto"
+          }
+        ],
+        "package": {
+          "name": "com.gu.mobile.mapi.models.v0"
+        },
+        "options": [
+          {
+            "name": "swift_prefix",
+            "value": "Proto"
+          }
+        ]
+      }
+    }
+  ]
+}
