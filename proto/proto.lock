@@ -763,6 +763,12 @@
                 "id": 1,
                 "name": "uri",
                 "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "required",
+                "type": "bool",
+                "optional": true
               }
             ]
           },
