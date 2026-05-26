@@ -606,6 +606,8 @@ message Puzzle {
   optional PuzzleType type = 1;
   optional PuzzleSubType sub_type = 2;
   optional string uri = 3;
+  optional string id = 4;
+  optional string title = 5;
 }
 
 message Card {

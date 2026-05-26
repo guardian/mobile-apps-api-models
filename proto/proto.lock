@@ -1803,6 +1803,18 @@
                 "name": "uri",
                 "type": "string",
                 "optional": true
+              },
+              {
+                "id": 4,
+                "name": "id",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "title",
+                "type": "string",
+                "optional": true
               }
             ]
           },
