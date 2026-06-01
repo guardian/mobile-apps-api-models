@@ -1028,6 +1028,12 @@ message Permutive {
 /** For sending users' action tracking data to Ophan */
 message EventTracking {
   string component_id = 1;
+  repeated AbTestInfo ab_tests = 2;
+}
+
+message AbTestInfo {
+  string name = 1;
+  string variant = 2; 
 }
 
 /** For some articles we return commissioning desk tracking (aka BasicTag)
