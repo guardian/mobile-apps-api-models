@@ -418,6 +418,10 @@ message Video {
    * Auto hide UI controls on player
    */
   bool auto_hide_controls = 26;
+  /**
+   * Aspect ratio of the video
+   */
+  optional string aspect_ratio = 27;
 }
 
 message Audio {
