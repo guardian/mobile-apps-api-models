@@ -1327,6 +1327,12 @@
                 "id": 26,
                 "name": "auto_hide_controls",
                 "type": "bool"
+              },
+              {
+                "id": 27,
+                "name": "aspect_ratio",
+                "type": "string",
+                "optional": true
               }
             ]
           },
