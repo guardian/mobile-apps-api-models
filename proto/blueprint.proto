@@ -1032,6 +1032,21 @@ message Permutive {
 /** For sending users' action tracking data to Ophan */
 message EventTracking {
   string component_id = 1;
+  repeated AbTestInfo ab_tests = 2;
+}
+
+/** Information about active A/B tests associated with this video. */
+message AbTestInfo {
+  /** the name of the experiment. It should be used to populate 
+   * the name field of AbTest object in Ophan's event model.
+   */
+  string name = 1;
+
+  /** the variant of the experiment this response is showing. 
+   * It should be used to populate the variant name field of 
+   * AbTest object in Ophan's event model.
+   */
+  string variant = 2; 
 }
 
 /** For some articles we return commissioning desk tracking (aka BasicTag)

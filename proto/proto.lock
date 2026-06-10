@@ -2278,6 +2278,27 @@
                 "id": 1,
                 "name": "component_id",
                 "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "ab_tests",
+                "type": "AbTestInfo",
+                "is_repeated": true
+              }
+            ]
+          },
+          {
+            "name": "AbTestInfo",
+            "fields": [
+              {
+                "id": 1,
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "variant",
+                "type": "string"
               }
             ]
           },
