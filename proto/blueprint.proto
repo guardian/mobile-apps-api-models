@@ -139,6 +139,8 @@ message Collection {
   optional ImageAspectRatio preferred_image_aspect_ratio = 23;
 
   optional bool tighten_vertical_spacing = 24;
+
+  optional TagReferences references = 25;
 }
 
 /**
@@ -171,7 +173,7 @@ message FollowUp {
 message Thrasher {
   string uri = 1;
   // Determines if the thrasher should be removable by the user.
-  optional bool required = 2; 
+  optional bool required = 2;
 }
 
 
@@ -278,6 +280,7 @@ message LayoutAgnosticCollection {
   optional string tracking_id = 7;
 
   optional Image image = 8;
+  optional TagReferences references = 9;
 }
 
 /************************* SHARED *************************/
@@ -603,8 +606,8 @@ enum PuzzleSubType {
   PUZZLE_SUB_TYPE_KILLER_SUDOKU = 10;
 }
 
-// For puzzle types that do not use sub types (e.g., WORDIPLY, WORD_WHEEL, 
-// ON_THE_BALL, FILM_REVEAL), set sub_type = PUZZLE_SUB_TYPE_UNSPECIFIED. 
+// For puzzle types that do not use sub types (e.g., WORDIPLY, WORD_WHEEL,
+// ON_THE_BALL, FILM_REVEAL), set sub_type = PUZZLE_SUB_TYPE_UNSPECIFIED.
 // This is the idiomatic way to represent "no sub type" in proto3 enums.
 message Puzzle {
   optional PuzzleType type = 1;
@@ -998,6 +1001,7 @@ message MyGuardianFollow {
   string id = 1;
   string web_title = 2;
   FollowType type = 3;
+  optional TagReferences references = 4;
 }
 
 
@@ -1037,16 +1041,16 @@ message EventTracking {
 
 /** Information about active A/B tests associated with this video. */
 message AbTestInfo {
-  /** the name of the experiment. It should be used to populate 
+  /** the name of the experiment. It should be used to populate
    * the name field of AbTest object in Ophan's event model.
    */
   string name = 1;
 
-  /** the variant of the experiment this response is showing. 
-   * It should be used to populate the variant name field of 
+  /** the variant of the experiment this response is showing.
+   * It should be used to populate the variant name field of
    * AbTest object in Ophan's event model.
    */
-  string variant = 2; 
+  string variant = 2;
 }
 
 /** For some articles we return commissioning desk tracking (aka BasicTag)
@@ -1270,4 +1274,8 @@ message Match {
    * stats and topic for notification.
    */
   optional string match_info_uri = 7;
+}
+
+message TagReferences {
+  optional string pa_football_team = 1;
 }
