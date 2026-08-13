@@ -1833,6 +1833,30 @@
                 "name": "title",
                 "type": "string",
                 "optional": true
+              },
+              {
+                "id": 6,
+                "name": "palette_light",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 7,
+                "name": "palette_dark",
+                "type": "Palette",
+                "optional": true
+              },
+              {
+                "id": 8,
+                "name": "image_light",
+                "type": "Image",
+                "optional": true
+              },
+              {
+                "id": 9,
+                "name": "image_dark",
+                "type": "Image",
+                "optional": true
               }
             ]
           },

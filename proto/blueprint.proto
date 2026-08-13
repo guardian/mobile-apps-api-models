@@ -615,6 +615,11 @@ message Puzzle {
   optional string uri = 3;
   optional string id = 4;
   optional string title = 5;
+  
+  optional Palette palette_light = 6;
+  optional Palette palette_dark = 7;
+  optional Image image_light = 8;
+  optional Image image_dark = 9;
 }
 
 message Card {
