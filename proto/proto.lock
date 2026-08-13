@@ -1922,6 +1922,12 @@
                 "id": 10,
                 "name": "puzzle_types",
                 "type": "PuzzleTypes"
+              },
+              {
+                "id": 11,
+                "name": "frequency",
+                "type": "string",
+                "optional": true
               }
             ],
             "reserved_ids": [

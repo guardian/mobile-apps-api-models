@@ -649,6 +649,11 @@ message Puzzle {
   optional Image image_dark = 9;
   
   PuzzleTypes puzzle_types = 10;
+  /** 
+   * The frequency of the puzzle, e.g. "Daily", "Weekly", "Monthly".
+   * This is used to display the frequency on the card.
+   */
+  optional string frequency = 11;
 }
 
 message Card {
