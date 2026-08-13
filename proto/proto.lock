@@ -289,6 +289,10 @@
               {
                 "name": "CARD_TYPE_PUZZLE",
                 "integer": 13
+              },
+              {
+                "name": "CARD_TYPE_ELECTION",
+                "integer": 14
               }
             ]
           },
@@ -2034,6 +2038,12 @@
                 "id": 53,
                 "name": "puzzle",
                 "type": "Puzzle",
+                "optional": true
+              },
+              {
+                "id": 54,
+                "name": "event_graphics_data_uri",
+                "type": "string",
                 "optional": true
               }
             ],
