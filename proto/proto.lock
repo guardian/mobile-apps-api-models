@@ -245,6 +245,78 @@
             ]
           },
           {
+            "name": "PuzzleTypes",
+            "enum_fields": [
+              {
+                "name": "PUZZLE_TYPE_UNSPECIFIED"
+              },
+              {
+                "name": "PUZZLE_TYPE_CROSSWORD_QUICK",
+                "integer": 1
+              },
+              {
+                "name": "PUZZLE_TYPE_CROSSWORD_MINI",
+                "integer": 2
+              },
+              {
+                "name": "PUZZLE_TYPE_CROSSWORD_CRYPTIC",
+                "integer": 3
+              },
+              {
+                "name": "PUZZLE_TYPE_CROSSWORD_QUICKCRYPTIC",
+                "integer": 4
+              },
+              {
+                "name": "PUZZLE_TYPE_CROSSWORD_WEEKEND",
+                "integer": 5
+              },
+              {
+                "name": "PUZZLE_TYPE_CROSSWORD_PRIZE",
+                "integer": 11
+              },
+              {
+                "name": "PUZZLE_TYPE_CROSSWORD_QUIPTIC",
+                "integer": 12
+              },
+              {
+                "name": "PUZZLE_TYPE_CROSSWORD_SUNDAYQUICK",
+                "integer": 13
+              },
+              {
+                "name": "PUZZLE_TYPE_SUDOKU_EASY",
+                "integer": 7
+              },
+              {
+                "name": "PUZZLE_TYPE_SUDOKU_MEDIUM",
+                "integer": 8
+              },
+              {
+                "name": "PUZZLE_TYPE_SUDOKU_HARD",
+                "integer": 9
+              },
+              {
+                "name": "PUZZLE_TYPE_SUDOKU_KILLER",
+                "integer": 10
+              },
+              {
+                "name": "PUZZLE_TYPE_WORDWHEEL",
+                "integer": 14
+              },
+              {
+                "name": "PUZZLE_TYPE_WORDIPLY",
+                "integer": 15
+              },
+              {
+                "name": "PUZZLE_TYPE_ONTHEBALL",
+                "integer": 16
+              },
+              {
+                "name": "PUZZLE_TYPE_FILMREVEAL",
+                "integer": 17
+              }
+            ]
+          },
+          {
             "name": "Card.CardType",
             "enum_fields": [
               {
@@ -1817,18 +1889,6 @@
             "name": "Puzzle",
             "fields": [
               {
-                "id": 1,
-                "name": "type",
-                "type": "PuzzleType",
-                "optional": true
-              },
-              {
-                "id": 2,
-                "name": "sub_type",
-                "type": "PuzzleSubType",
-                "optional": true
-              },
-              {
                 "id": 3,
                 "name": "uri",
                 "type": "string",
@@ -1869,7 +1929,20 @@
                 "name": "image_dark",
                 "type": "Image",
                 "optional": true
+              },
+              {
+                "id": 10,
+                "name": "puzzle_types",
+                "type": "PuzzleTypes"
               }
+            ],
+            "reserved_ids": [
+              1,
+              2
+            ],
+            "reserved_names": [
+              "type",
+              "sub_type"
             ]
           },
           {

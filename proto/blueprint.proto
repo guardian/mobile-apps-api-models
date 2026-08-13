@@ -582,6 +582,7 @@ message Article {
   optional MediaPill media_pill = 40;
 }
 
+/** Deprecated. Please just use the `PuzzleTypes` enum instead. */
 enum PuzzleType {
   PUZZLE_TYPE_UNSPECIFIED = 0;
   PUZZLE_TYPE_CROSSWORD = 1;
@@ -592,6 +593,7 @@ enum PuzzleType {
   PUZZLE_TYPE_FILM_REVEAL = 6;
 }
 
+/** Deprecated. Please just use the `PuzzleTypes` enum instead. */
 enum PuzzleSubType {
   PUZZLE_SUB_TYPE_UNSPECIFIED = 0;
   PUZZLE_SUB_TYPE_QUICK_CROSSWORD = 1;
@@ -609,12 +611,37 @@ enum PuzzleSubType {
   PUZZLE_SUB_TYPE_SUNDAY_QUICK_CROSSWORD = 13;
 }
 
-// For puzzle types that do not use sub types (e.g., WORDIPLY, WORD_WHEEL,
-// ON_THE_BALL, FILM_REVEAL), set sub_type = PUZZLE_SUB_TYPE_UNSPECIFIED.
-// This is the idiomatic way to represent "no sub type" in proto3 enums.
+enum PuzzleTypes {
+  PUZZLE_TYPES_UNSPECIFIED = 0;
+  PUZZLE_TYPES_CROSSWORD_QUICK = 1;
+  PUZZLE_TYPES_CROSSWORD_MINI = 2;
+  PUZZLE_TYPES_CROSSWORD_CRYPTIC = 3;
+  PUZZLE_TYPES_CROSSWORD_QUICKCRYPTIC = 4;
+  PUZZLE_TYPES_CROSSWORD_WEEKEND = 5;
+  PUZZLE_TYPES_CROSSWORD_PRIZE = 11;
+  PUZZLE_TYPES_CROSSWORD_QUIPTIC = 12;
+  PUZZLE_TYPES_CROSSWORD_SUNDAYQUICK = 13;
+  PUZZLE_TYPES_SUDOKU_EASY = 7;
+  PUZZLE_TYPES_SUDOKU_MEDIUM = 8;
+  PUZZLE_TYPES_SUDOKU_HARD = 9;
+  PUZZLE_TYPES_SUDOKU_KILLER = 10;
+  PUZZLE_TYPES_WORDWHEEL = 14;
+  PUZZLE_TYPES_WORDIPLY = 15;
+  PUZZLE_TYPES_ONTHEBALL = 16;
+  PUZZLE_TYPES_FILMREVEAL = 17;
+}
+
 message Puzzle {
-  optional PuzzleType type = 1;
-  optional PuzzleSubType sub_type = 2;
+  /**
+   * The old puzzle type & sub_type fields are deprecated in favour of the new 
+   * puzzle_types enum.
+   */
+    
+  reserved 1;
+  reserved "type";
+  reserved 2;
+  reserved "sub_type";
+  
   optional string uri = 3;
   optional string id = 4;
   optional string title = 5;
@@ -623,6 +650,8 @@ message Puzzle {
   optional Palette palette_dark = 7;
   optional Image image_light = 8;
   optional Image image_dark = 9;
+  
+  PuzzleTypes puzzle_types = 10;
 }
 
 message Card {
