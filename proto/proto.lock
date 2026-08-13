@@ -248,70 +248,70 @@
             "name": "PuzzleTypes",
             "enum_fields": [
               {
-                "name": "PUZZLE_TYPE_UNSPECIFIED"
+                "name": "PUZZLE_TYPES_UNSPECIFIED"
               },
               {
-                "name": "PUZZLE_TYPE_CROSSWORD_QUICK",
+                "name": "PUZZLE_TYPES_CROSSWORD_QUICK",
                 "integer": 1
               },
               {
-                "name": "PUZZLE_TYPE_CROSSWORD_MINI",
+                "name": "PUZZLE_TYPES_CROSSWORD_MINI",
                 "integer": 2
               },
               {
-                "name": "PUZZLE_TYPE_CROSSWORD_CRYPTIC",
+                "name": "PUZZLE_TYPES_CROSSWORD_CRYPTIC",
                 "integer": 3
               },
               {
-                "name": "PUZZLE_TYPE_CROSSWORD_QUICKCRYPTIC",
+                "name": "PUZZLE_TYPES_CROSSWORD_QUICKCRYPTIC",
                 "integer": 4
               },
               {
-                "name": "PUZZLE_TYPE_CROSSWORD_WEEKEND",
+                "name": "PUZZLE_TYPES_CROSSWORD_WEEKEND",
                 "integer": 5
               },
               {
-                "name": "PUZZLE_TYPE_CROSSWORD_PRIZE",
+                "name": "PUZZLE_TYPES_CROSSWORD_PRIZE",
                 "integer": 11
               },
               {
-                "name": "PUZZLE_TYPE_CROSSWORD_QUIPTIC",
+                "name": "PUZZLE_TYPES_CROSSWORD_QUIPTIC",
                 "integer": 12
               },
               {
-                "name": "PUZZLE_TYPE_CROSSWORD_SUNDAYQUICK",
+                "name": "PUZZLE_TYPES_CROSSWORD_SUNDAYQUICK",
                 "integer": 13
               },
               {
-                "name": "PUZZLE_TYPE_SUDOKU_EASY",
+                "name": "PUZZLE_TYPES_SUDOKU_EASY",
                 "integer": 7
               },
               {
-                "name": "PUZZLE_TYPE_SUDOKU_MEDIUM",
+                "name": "PUZZLE_TYPES_SUDOKU_MEDIUM",
                 "integer": 8
               },
               {
-                "name": "PUZZLE_TYPE_SUDOKU_HARD",
+                "name": "PUZZLE_TYPES_SUDOKU_HARD",
                 "integer": 9
               },
               {
-                "name": "PUZZLE_TYPE_SUDOKU_KILLER",
+                "name": "PUZZLE_TYPES_SUDOKU_KILLER",
                 "integer": 10
               },
               {
-                "name": "PUZZLE_TYPE_WORDWHEEL",
+                "name": "PUZZLE_TYPES_WORDWHEEL",
                 "integer": 14
               },
               {
-                "name": "PUZZLE_TYPE_WORDIPLY",
+                "name": "PUZZLE_TYPES_WORDIPLY",
                 "integer": 15
               },
               {
-                "name": "PUZZLE_TYPE_ONTHEBALL",
+                "name": "PUZZLE_TYPES_ONTHEBALL",
                 "integer": 16
               },
               {
-                "name": "PUZZLE_TYPE_FILMREVEAL",
+                "name": "PUZZLE_TYPES_FILMREVEAL",
                 "integer": 17
               }
             ]
