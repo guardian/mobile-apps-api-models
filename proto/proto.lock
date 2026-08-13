@@ -229,18 +229,6 @@
               {
                 "name": "PUZZLE_SUB_TYPE_KILLER_SUDOKU",
                 "integer": 10
-              },
-              {
-                "name": "PUZZLE_SUB_TYPE_PRIZE_CROSSWORD",
-                "integer": 11
-              },
-              {
-                "name": "PUZZLE_SUB_TYPE_QUIPTIC_CROSSWORD",
-                "integer": 12
-              },
-              {
-                "name": "PUZZLE_SUB_TYPE_SUNDAY_QUICK_CROSSWORD",
-                "integer": 13
               }
             ]
           },
