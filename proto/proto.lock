@@ -182,6 +182,12 @@
                 "name": "PUZZLE_TYPE_FILM_REVEAL",
                 "integer": 6
               }
+            ],
+            "options": [
+              {
+                "name": "deprecated",
+                "value": "true"
+              }
             ]
           },
           {
@@ -229,6 +235,12 @@
               {
                 "name": "PUZZLE_SUB_TYPE_KILLER_SUDOKU",
                 "integer": 10
+              }
+            ],
+            "options": [
+              {
+                "name": "deprecated",
+                "value": "true"
               }
             ]
           },

@@ -584,6 +584,7 @@ message Article {
 
 /** Deprecated. Please just use the `PuzzleTypes` enum instead. */
 enum PuzzleType {
+  option deprecated = true;
   PUZZLE_TYPE_UNSPECIFIED = 0;
   PUZZLE_TYPE_CROSSWORD = 1;
   PUZZLE_TYPE_SUDOKU = 2;
@@ -595,6 +596,7 @@ enum PuzzleType {
 
 /** Deprecated. Please just use the `PuzzleTypes` enum instead. */
 enum PuzzleSubType {
+  option deprecated = true;
   PUZZLE_SUB_TYPE_UNSPECIFIED = 0;
   PUZZLE_SUB_TYPE_QUICK_CROSSWORD = 1;
   PUZZLE_SUB_TYPE_MINI_CROSSWORD = 2;
