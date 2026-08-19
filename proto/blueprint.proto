@@ -840,12 +840,6 @@ message Card {
   optional Palette condensed_palette_dark = 52;
 
   optional Puzzle puzzle = 53;
-
-  /**
-   * Endpoint to call to get data needed to display event graphics in this card.
-   */
-  optional string event_graphics_data_uri = 54;
-
 }
 
 enum NavCardType {
