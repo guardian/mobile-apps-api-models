@@ -2039,12 +2039,6 @@
                 "name": "puzzle",
                 "type": "Puzzle",
                 "optional": true
-              },
-              {
-                "id": 54,
-                "name": "event_graphics_data_uri",
-                "type": "string",
-                "optional": true
               }
             ],
             "reserved_ids": [
