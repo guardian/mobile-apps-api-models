@@ -1990,6 +1990,12 @@
                 "optional": true
               },
               {
+                "id": 13,
+                "name": "uri_fallback",
+                "type": "string",
+                "optional": true
+              },
+              {
                 "id": 7,
                 "name": "branding",
                 "type": "Branding",

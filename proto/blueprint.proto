@@ -543,6 +543,7 @@ message Article {
   optional RenderingPlatformSupport rendered_item_beta = 25;
   // Quoted headline shown for a card if selected in the fronts tool.
   optional bool show_quoted_headline = 26;
+
   // Only applicable to cards that display web content (e.g. snap links)
   optional string web_content_uri = 27;
   Tracking tracking = 28;
@@ -727,7 +728,18 @@ message Card {
    */
   optional bool compact = 4;
   repeated Article sublinks = 5;
+  
+  /**
+   * HTML string containing a blob of HTML to render if an unknown card type or
+   * error rendering.
+  */
   optional string html_fallback = 6;
+
+  /**
+   * URL of web content to show if unknown card type or error rendering.
+  */
+  optional string uri_fallback = 13;
+  
   /**
    * Individual cards can be branded and not be part of a branded container.
    * Cards that are branded tend to show the sponsor logo and should be
