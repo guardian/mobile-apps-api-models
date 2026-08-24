@@ -822,6 +822,12 @@
                 "name": "references",
                 "type": "TagReferences",
                 "optional": true
+              },
+              {
+                "id": 26,
+                "name": "puzzle_archive_types",
+                "type": "PuzzleTypes",
+                "is_repeated": true
               }
             ]
           },
