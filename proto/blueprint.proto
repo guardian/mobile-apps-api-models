@@ -543,7 +543,6 @@ message Article {
   optional RenderingPlatformSupport rendered_item_beta = 25;
   // Quoted headline shown for a card if selected in the fronts tool.
   optional bool show_quoted_headline = 26;
-
   // Only applicable to cards that display web content (e.g. snap links)
   optional string web_content_uri = 27;
   Tracking tracking = 28;
@@ -641,9 +640,11 @@ message Puzzle {
   reserved "type";
   reserved 2;
   reserved "sub_type";
-  
+  /**
+   Puzzle URI
+   */
   optional string uri = 3;
-  optional string id = 4;
+  string id = 4;
   optional string title = 5;
   
   optional Palette palette_light = 6;

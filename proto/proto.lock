@@ -1897,8 +1897,7 @@
               {
                 "id": 4,
                 "name": "id",
-                "type": "string",
-                "optional": true
+                "type": "string"
               },
               {
                 "id": 5,
