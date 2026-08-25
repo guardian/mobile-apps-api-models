@@ -141,6 +141,14 @@ message Collection {
   optional bool tighten_vertical_spacing = 24;
 
   optional TagReferences references = 25;
+
+  /**
+   * Ordered list of puzzle types that are available in this collection. This
+   * is used to display the puzzle types in the archive menu for this
+   * collection.
+   * If this list is empty, the archive link should not be displayed.
+   */
+  repeated PuzzleTypes puzzle_archive_types = 26;
 }
 
 /**
