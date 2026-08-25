@@ -715,6 +715,10 @@ message Card {
      * A card for a puzzle item.
      */
     CARD_TYPE_PUZZLE = 13;
+    /**
+     * A card for a election results tracker.
+     */
+    CARD_TYPE_ELECTION = 14;
   }
   CardType type = 1;
   /**
@@ -898,7 +902,6 @@ message Card {
   optional Palette condensed_palette_dark = 52;
 
   optional Puzzle puzzle = 53;
-
 }
 
 enum NavCardType {
