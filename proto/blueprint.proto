@@ -232,6 +232,7 @@ message List {
   optional Header header = 18;
 
   optional bool tighten_vertical_spacing = 19;
+  optional string custom_subnav_id = 20;
 }
 
 
@@ -588,6 +589,9 @@ message Article {
 
   // The pill details that media cards should display.
   optional MediaPill media_pill = 40;
+
+  // Subnav that can appear at the top of an article
+  optional string custom_subnav_id = 41;
 }
 
 /** Deprecated. Please just use the `PuzzleTypes` enum instead. */
