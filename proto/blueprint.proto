@@ -232,6 +232,7 @@ message List {
   optional Header header = 18;
 
   optional bool tighten_vertical_spacing = 19;
+  optional string custom_subnav_id = 20;
 }
 
 
