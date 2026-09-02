@@ -1798,6 +1798,12 @@
                 "name": "media_pill",
                 "type": "MediaPill",
                 "optional": true
+              },
+              {
+                "id": 41,
+                "name": "custom_subnav_id",
+                "type": "string",
+                "optional": true
               }
             ]
           },
