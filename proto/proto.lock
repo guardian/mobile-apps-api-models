@@ -377,6 +377,10 @@
               {
                 "name": "CARD_TYPE_ELECTION",
                 "integer": 14
+              },
+              {
+                "name": "CARD_TYPE_EVENT_GRAPHIC",
+                "integer": 15
               }
             ]
           },
