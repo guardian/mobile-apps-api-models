@@ -1961,6 +1961,26 @@
             ]
           },
           {
+            "name": "EventGraphic",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "fallback_rendered_uri",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "data_uri",
+                "type": "string"
+              }
+            ]
+          },
+          {
             "name": "Card",
             "fields": [
               {
@@ -2164,6 +2184,12 @@
                 "id": 53,
                 "name": "puzzle",
                 "type": "Puzzle",
+                "optional": true
+              },
+              {
+                "id": 54,
+                "name": "event_graphic",
+                "type": "EventGraphic",
                 "optional": true
               }
             ],
