@@ -670,8 +670,7 @@ message Puzzle {
 
 message EventGraphic {
   string id = 1;
-  string fallback_rendered_uri = 2;
-  string data_uri = 3;
+  string data_uri = 2;
 }
 
 message Card {
