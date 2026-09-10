@@ -668,6 +668,12 @@ message Puzzle {
   optional string frequency = 11;
 }
 
+message EventGraphic {
+  string id = 1;
+  string fallback_rendered_uri = 2;
+  string data_uri = 3;
+}
+
 message Card {
   enum CardType {
     CARD_TYPE_UNSPECIFIED = 0;
@@ -906,6 +912,8 @@ message Card {
   optional Palette condensed_palette_dark = 52;
 
   optional Puzzle puzzle = 53;
+
+  optional EventGraphic event_graphic = 54;
 }
 
 enum NavCardType {
