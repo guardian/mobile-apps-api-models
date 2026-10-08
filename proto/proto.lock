@@ -1904,6 +1904,70 @@
                 "name": "custom_subnav_id",
                 "type": "string",
                 "optional": true
+              },
+              {
+                "id": 42,
+                "name": "multimedia_slideshow",
+                "type": "MultimediaSlideshow",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "MultimediaSlide",
+            "fields": [
+              {
+                "id": 1,
+                "name": "image",
+                "type": "Image",
+                "oneof_parent": "content"
+              },
+              {
+                "id": 2,
+                "name": "video",
+                "type": "Video",
+                "oneof_parent": "content"
+              },
+              {
+                "id": 3,
+                "name": "caption",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 4,
+                "name": "label",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 5,
+                "name": "credit",
+                "type": "string",
+                "optional": true
+              }
+            ]
+          },
+          {
+            "name": "MultimediaSlideshow",
+            "fields": [
+              {
+                "id": 1,
+                "name": "slides",
+                "type": "MultimediaSlide",
+                "is_repeated": true
+              },
+              {
+                "id": 2,
+                "name": "title",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 3,
+                "name": "aspect_ratio",
+                "type": "string",
+                "optional": true
               }
             ]
           },
