@@ -592,6 +592,33 @@ message Article {
 
   // Subnav that can appear at the top of an article
   optional string custom_subnav_id = 41;
+
+  // Only applicable to articles containing a multimedia slideshow atom
+  optional MultimediaSlideshow multimedia_slideshow = 42;
+}
+
+/**
+ * A single slide within a multimedia slideshow, displaying either a still
+ * image or a video.
+ */
+message MultimediaSlide {
+  oneof content {
+    Image image = 1;
+    Video video = 2;
+  }
+  optional string caption = 3;
+  optional string label = 4;
+  optional string credit = 5;
+}
+
+/**
+ * A multimedia slideshow made up of an ordered list of slides.
+ */
+message MultimediaSlideshow {
+  repeated MultimediaSlide slides = 1;
+  optional string title = 2;
+  // The aspect ratio the slideshow is displayed at, e.g. "16:9", "5:4"
+  optional string aspect_ratio = 3;
 }
 
 /** Deprecated. Please just use the `PuzzleTypes` enum instead. */
