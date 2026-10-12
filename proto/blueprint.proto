@@ -142,13 +142,14 @@ message Collection {
 
   optional TagReferences references = 25;
 
+  reserved 26;
+  reserved "puzzle_archive_types";
+  
   /**
-   * Ordered list of puzzle types that are available in this collection. This
-   * is used to display the puzzle types in the archive menu for this
-   * collection.
-   * If this list is empty, the archive link should not be displayed.
-   */
-  repeated PuzzleTypes puzzle_archive_types = 26;
+  * Information about archive link on a puzzles collection. If absent, don't 
+  * show the archive link.
+  */
+  optional PuzzleArchiveLink puzzle_archive_link = 27;
 }
 
 /**
@@ -640,6 +641,19 @@ enum PuzzleTypes {
   PUZZLE_TYPES_WORDIPLY = 15;
   PUZZLE_TYPES_ONTHEBALL = 16;
   PUZZLE_TYPES_FILMREVEAL = 17;
+}
+
+/**
+ * Represents a link to a collection of puzzles in the archive. */
+message PuzzleArchiveLink {
+  /** User visible title for the archive link. */
+  string title = 1;
+  /**
+  * Ordered list of puzzle types that are available in this collection. This
+  * is used to display the puzzle types in the archive menu for this
+  * collection.
+  */
+  repeated PuzzleTypes puzzle_types = 2;
 }
 
 message Puzzle {
