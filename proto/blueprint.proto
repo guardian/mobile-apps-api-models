@@ -606,9 +606,8 @@ message MultimediaSlide {
     Image image = 1;
     Video video = 2;
   }
-  optional string caption = 3;
-  optional string label = 4;
-  optional string credit = 5;
+  // Short text label for the slide, distinct from the media's caption or credit
+  optional string label = 3;
 }
 
 /**

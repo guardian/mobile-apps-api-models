@@ -1930,19 +1930,7 @@
               },
               {
                 "id": 3,
-                "name": "caption",
-                "type": "string",
-                "optional": true
-              },
-              {
-                "id": 4,
                 "name": "label",
-                "type": "string",
-                "optional": true
-              },
-              {
-                "id": 5,
-                "name": "credit",
                 "type": "string",
                 "optional": true
               }
