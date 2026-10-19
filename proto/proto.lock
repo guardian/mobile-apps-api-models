@@ -828,11 +828,17 @@
                 "optional": true
               },
               {
-                "id": 26,
-                "name": "puzzle_archive_types",
-                "type": "PuzzleTypes",
-                "is_repeated": true
+                "id": 27,
+                "name": "puzzle_archive_link",
+                "type": "PuzzleArchiveLink",
+                "optional": true
               }
+            ],
+            "reserved_ids": [
+              26
+            ],
+            "reserved_names": [
+              "puzzle_archive_types"
             ]
           },
           {
@@ -1956,6 +1962,22 @@
                 "name": "aspect_ratio",
                 "type": "string",
                 "optional": true
+              }
+            ]
+          },
+          {
+            "name": "PuzzleArchiveLink",
+            "fields": [
+              {
+                "id": 1,
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "puzzle_types",
+                "type": "PuzzleTypes",
+                "is_repeated": true
               }
             ]
           },
