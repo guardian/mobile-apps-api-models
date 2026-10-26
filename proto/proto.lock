@@ -965,12 +965,12 @@
                 "fields": [
                   {
                     "id": 1,
-                    "name": "src",
+                    "name": "light_url",
                     "type": "string"
                   },
                   {
                     "id": 2,
-                    "name": "dark_src",
+                    "name": "dark_url",
                     "type": "string",
                     "optional": true
                   },

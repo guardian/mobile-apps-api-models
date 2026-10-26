@@ -180,9 +180,9 @@ message Sponsor {
     /**
      * URL of the logo for light appearance; artwork should be tightly cropped.
      */
-    string src = 1;
+    string light_url = 1;
     /** Optional URL of the logo variant for dark appearance. */
-    optional string dark_src = 2;
+    optional string dark_url = 2;
     /** Width divided by height of the tightly cropped logo artwork. */
     double aspect_ratio = 3;
     /**
