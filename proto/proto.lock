@@ -45,6 +45,78 @@
             ]
           },
           {
+            "name": "Layout.LabelPosition",
+            "enum_fields": [
+              {
+                "name": "LABEL_POSITION_UNSPECIFIED"
+              },
+              {
+                "name": "LABEL_POSITION_LEADING",
+                "integer": 1
+              },
+              {
+                "name": "LABEL_POSITION_TRAILING",
+                "integer": 2
+              },
+              {
+                "name": "LABEL_POSITION_ABOVE",
+                "integer": 3
+              },
+              {
+                "name": "LABEL_POSITION_BELOW",
+                "integer": 4
+              },
+              {
+                "name": "LABEL_POSITION_NONE",
+                "integer": 5
+              }
+            ]
+          },
+          {
+            "name": "Layout.LabelAlignment",
+            "enum_fields": [
+              {
+                "name": "LABEL_ALIGNMENT_UNSPECIFIED"
+              },
+              {
+                "name": "LABEL_ALIGNMENT_CENTER",
+                "integer": 1
+              },
+              {
+                "name": "LABEL_ALIGNMENT_BASELINE",
+                "integer": 2
+              }
+            ]
+          },
+          {
+            "name": "Layout.VerticalPlacement",
+            "enum_fields": [
+              {
+                "name": "VERTICAL_PLACEMENT_UNSPECIFIED"
+              },
+              {
+                "name": "VERTICAL_PLACEMENT_TOP",
+                "integer": 1
+              },
+              {
+                "name": "VERTICAL_PLACEMENT_CENTER",
+                "integer": 2
+              },
+              {
+                "name": "VERTICAL_PLACEMENT_BOTTOM",
+                "integer": 3
+              },
+              {
+                "name": "VERTICAL_PLACEMENT_LABEL_BASELINE",
+                "integer": 4
+              },
+              {
+                "name": "VERTICAL_PLACEMENT_LOGO_BASELINE",
+                "integer": 5
+              }
+            ]
+          },
+          {
             "name": "FollowUp.FollowUpType",
             "enum_fields": [
               {
@@ -832,6 +904,12 @@
                 "name": "puzzle_archive_link",
                 "type": "PuzzleArchiveLink",
                 "optional": true
+              },
+              {
+                "id": 28,
+                "name": "sponsor",
+                "type": "Sponsor",
+                "optional": true
               }
             ],
             "reserved_ids": [
@@ -839,6 +917,112 @@
             ],
             "reserved_names": [
               "puzzle_archive_types"
+            ]
+          },
+          {
+            "name": "Sponsor",
+            "fields": [
+              {
+                "id": 1,
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "label",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "accessibility_label",
+                "type": "string"
+              },
+              {
+                "id": 4,
+                "name": "sponsor_uri",
+                "type": "string"
+              },
+              {
+                "id": 5,
+                "name": "about_uri",
+                "type": "string",
+                "optional": true
+              },
+              {
+                "id": 6,
+                "name": "logo",
+                "type": "Logo"
+              },
+              {
+                "id": 7,
+                "name": "layout",
+                "type": "Layout"
+              }
+            ],
+            "messages": [
+              {
+                "name": "Logo",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "light_url",
+                    "type": "string"
+                  },
+                  {
+                    "id": 2,
+                    "name": "dark_url",
+                    "type": "string",
+                    "optional": true
+                  },
+                  {
+                    "id": 3,
+                    "name": "aspect_ratio",
+                    "type": "double"
+                  },
+                  {
+                    "id": 4,
+                    "name": "baseline",
+                    "type": "double",
+                    "optional": true
+                  }
+                ]
+              },
+              {
+                "name": "Layout",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "label_position",
+                    "type": "LabelPosition"
+                  },
+                  {
+                    "id": 2,
+                    "name": "label_alignment",
+                    "type": "LabelAlignment"
+                  },
+                  {
+                    "id": 3,
+                    "name": "vertical_placement",
+                    "type": "VerticalPlacement"
+                  },
+                  {
+                    "id": 4,
+                    "name": "logo_height",
+                    "type": "double"
+                  },
+                  {
+                    "id": 5,
+                    "name": "logo_max_width",
+                    "type": "double",
+                    "optional": true
+                  },
+                  {
+                    "id": 6,
+                    "name": "gap",
+                    "type": "double"
+                  }
+                ]
+              }
             ]
           },
           {

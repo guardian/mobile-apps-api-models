@@ -150,6 +150,87 @@ message Collection {
   * show the archive link.
   */
   optional PuzzleArchiveLink puzzle_archive_link = 27;
+
+  /**
+   * A sponsored puzzles container carries its sponsor here. The same sponsor
+   * may also be delivered separately at the front level with a different
+   * layout.
+   */
+  optional Sponsor sponsor = 28;
+}
+
+/**
+ * A server-driven description of a sponsor and how it should be presented.
+ * The same sponsor may be delivered at multiple levels with a different
+ * layout for each; the consuming level determines its placement.
+ */
+message Sponsor {
+  string name = 1;
+  string label = 2;
+  /** The full spoken description of the sponsor for accessibility. */
+  string accessibility_label = 3;
+  /** Opens when the sponsored unit is tapped. */
+  string sponsor_uri = 4;
+  /** Optional link providing more information about the sponsorship. */
+  optional string about_uri = 5;
+  Logo logo = 6;
+  Layout layout = 7;
+
+  message Logo {
+    /**
+     * URL of the logo for light appearance; artwork should be tightly cropped.
+     */
+    string light_url = 1;
+    /** Optional URL of the logo variant for dark appearance. */
+    optional string dark_url = 2;
+    /** Width divided by height of the tightly cropped logo artwork. */
+    double aspect_ratio = 3;
+    /**
+     * Optional optical wordmark baseline as a fraction from the top of the
+     * artwork (0...1). Leave unset for marks without a text baseline.
+     */
+    optional double baseline = 4;
+  }
+
+  message Layout {
+    /**
+     * Where the label appears relative to the logo. The label should never
+     * wrap.
+     */
+    enum LabelPosition {
+      LABEL_POSITION_UNSPECIFIED = 0;
+      LABEL_POSITION_LEADING = 1;
+      LABEL_POSITION_TRAILING = 2;
+      LABEL_POSITION_ABOVE = 3;
+      LABEL_POSITION_BELOW = 4;
+      LABEL_POSITION_NONE = 5;
+    }
+    /** How the label is aligned with the logo. */
+    enum LabelAlignment {
+      LABEL_ALIGNMENT_UNSPECIFIED = 0;
+      LABEL_ALIGNMENT_CENTER = 1;
+      LABEL_ALIGNMENT_BASELINE = 2;
+    }
+    /** How the label and logo are positioned vertically in their slot. */
+    enum VerticalPlacement {
+      VERTICAL_PLACEMENT_UNSPECIFIED = 0;
+      VERTICAL_PLACEMENT_TOP = 1;
+      VERTICAL_PLACEMENT_CENTER = 2;
+      VERTICAL_PLACEMENT_BOTTOM = 3;
+      VERTICAL_PLACEMENT_LABEL_BASELINE = 4;
+      VERTICAL_PLACEMENT_LOGO_BASELINE = 5;
+    }
+
+    LabelPosition label_position = 1;
+    LabelAlignment label_alignment = 2;
+    VerticalPlacement vertical_placement = 3;
+    /** Target logo height in points. */
+    double logo_height = 4;
+    /** Optional maximum logo width in points. */
+    optional double logo_max_width = 5;
+    /** Space between the label and logo in points. */
+    double gap = 6;
+  }
 }
 
 /**
