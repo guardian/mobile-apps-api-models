@@ -177,19 +177,10 @@ message Sponsor {
   Layout layout = 7;
 
   message Logo {
-    /**
-     * URL of the logo for light appearance; artwork should be tightly cropped.
-     */
-    string light_url = 1;
-    /** Optional URL of the logo variant for dark appearance. */
-    optional string dark_url = 2;
-    /** Width divided by height of the tightly cropped logo artwork. */
-    double aspect_ratio = 3;
-    /**
-     * Optional optical wordmark baseline as a fraction from the top of the
-     * artwork (0...1). Leave unset for marks without a text baseline.
-     */
-    optional double baseline = 4;
+    /** The light appearance logo artwork. */
+    Image light = 1;
+    /** Optional dark appearance logo artwork. */
+    optional Image dark = 2;
   }
 
   message Layout {
@@ -230,6 +221,11 @@ message Sponsor {
     optional double logo_max_width = 5;
     /** Space between the label and logo in points. */
     double gap = 6;
+    /**
+     * Optional optical wordmark baseline as a fraction from the top of the
+     * artwork (0...1). Leave unset for marks without a text baseline.
+     */
+    optional double baseline = 7;
   }
 }
 

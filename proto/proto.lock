@@ -965,24 +965,13 @@
                 "fields": [
                   {
                     "id": 1,
-                    "name": "light_url",
-                    "type": "string"
+                    "name": "light",
+                    "type": "Image"
                   },
                   {
                     "id": 2,
-                    "name": "dark_url",
-                    "type": "string",
-                    "optional": true
-                  },
-                  {
-                    "id": 3,
-                    "name": "aspect_ratio",
-                    "type": "double"
-                  },
-                  {
-                    "id": 4,
-                    "name": "baseline",
-                    "type": "double",
+                    "name": "dark",
+                    "type": "Image",
                     "optional": true
                   }
                 ]
@@ -1020,6 +1009,12 @@
                     "id": 6,
                     "name": "gap",
                     "type": "double"
+                  },
+                  {
+                    "id": 7,
+                    "name": "baseline",
+                    "type": "double",
+                    "optional": true
                   }
                 ]
               }
