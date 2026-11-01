@@ -225,7 +225,7 @@ message Sponsor {
      * Optional optical wordmark baseline as a fraction from the top of the
      * artwork (0...1). Leave unset for marks without a text baseline.
      */
-    optional double baseline = 7;
+    optional double logo_baseline = 7;
   }
 }
 

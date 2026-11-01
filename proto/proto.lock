@@ -1012,7 +1012,7 @@
                   },
                   {
                     "id": 7,
-                    "name": "baseline",
+                    "name": "logo_baseline",
                     "type": "double",
                     "optional": true
                   }
