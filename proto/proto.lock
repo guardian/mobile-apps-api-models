@@ -385,6 +385,18 @@
               {
                 "name": "PUZZLE_TYPES_FILMREVEAL",
                 "integer": 17
+              },
+              {
+                "name": "PUZZLE_TYPES_COLOURCONNECT",
+                "integer": 18
+              },
+              {
+                "name": "PUZZLE_TYPES_WORDBOX",
+                "integer": 19
+              },
+              {
+                "name": "PUZZLE_TYPE_IMPOSTERS",
+                "integer": 20
               }
             ]
           },
