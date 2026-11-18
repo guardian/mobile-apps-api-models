@@ -757,6 +757,9 @@ message PuzzleArchiveLink {
   * collection.
   */
   repeated PuzzleTypes puzzle_types = 2;
+  
+  optional Palette palette_light = 3;
+  optional Palette palette_dark = 4;
 }
 
 message Puzzle {
