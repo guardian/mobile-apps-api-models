@@ -758,7 +758,18 @@ message PuzzleArchiveLink {
   */
   repeated PuzzleTypes puzzle_types = 2;
   
+  /**
+   * The color palette to use for the archive link in light mode.
+   * We only use `background` and `main` for background and content, 
+   * respectively.
+   */
   optional Palette palette_light = 3;
+  
+  /**
+   * The color palette to use for the archive link in dark mode.
+   * We only use `background` and `main` for background and content, 
+   * respectively.
+   */
   optional Palette palette_dark = 4;
 }
 
